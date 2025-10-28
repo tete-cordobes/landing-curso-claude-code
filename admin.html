@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Gestión de Blog | Curso Claude Code</title>
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="icon" type="image/png" href="claude-color.png">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="admin-styles.css">
+</head>
+<body class="admin-body">
+    <!-- Admin Header -->
+    <header class="admin-header">
+        <div class="admin-container">
+            <div class="admin-header-content">
+                <div class="admin-logo">
+                    <img src="claude-color.png" alt="Logo" width="32" height="32">
+                    <span>Dashboard Admin</span>
+                </div>
+                <div class="admin-user">
+                    <span id="adminUsername"></span>
+                    <button onclick="logout()" class="btn-logout">Cerrar Sesión</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Admin Main -->
+    <main class="admin-main">
+        <div class="admin-container">
+            <!-- Tabs -->
+            <div class="admin-tabs">
+                <button class="admin-tab active" onclick="showTab('posts')">📝 Posts</button>
+                <button class="admin-tab" onclick="showTab('new')">➕ Nuevo Post</button>
+                <button class="admin-tab" onclick="showTab('settings')">⚙️ Configuración</button>
+            </div>
+
+            <!-- Tab: Posts List -->
+            <div id="postsTab" class="admin-tab-content active">
+                <div class="admin-section-header">
+                    <h2>Todos los Posts</h2>
+                    <button onclick="showTab('new')" class="btn-primary-admin">+ Crear Nuevo Post</button>
+                </div>
+
+                <div id="postsListContainer" class="posts-list">
+                    <!-- Posts will be loaded here -->
+                </div>
+
+                <div id="noPostsMessage" class="no-data" style="display: none;">
+                    <div class="no-data-icon">📝</div>
+                    <h3>No hay posts todavía</h3>
+                    <p>Crea tu primer post para empezar</p>
+                    <button onclick="showTab('new')" class="btn-primary-admin">Crear Primer Post</button>
+                </div>
+            </div>
+
+            <!-- Tab: New/Edit Post -->
+            <div id="newTab" class="admin-tab-content">
+                <div class="admin-section-header">
+                    <h2 id="formTitle">Crear Nuevo Post</h2>
+                    <button onclick="cancelEdit()" class="btn-secondary-admin">Cancelar</button>
+                </div>
+
+                <form id="postForm" class="post-form">
+                    <input type="hidden" id="postId">
+
+                    <div class="form-row">
+                        <div class="form-group-admin">
+                            <label for="postTitleInput">Título del Post *</label>
+                            <input
+                                type="text"
+                                id="postTitleInput"
+                                placeholder="Ej: 10 Comandos Esenciales de Claude Code"
+                                required
+                            >
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group-admin">
+                            <label for="postSlug">URL del Post (slug) *</label>
+                            <input
+                                type="text"
+                                id="postSlug"
+                                placeholder="Ej: 10-comandos-claude-code"
+                                required
+                            >
+                            <small>Se usará como: post-template.html?slug=tu-slug</small>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group-admin">
+                            <label for="postExcerptInput">Extracto / Descripción *</label>
+                            <textarea
+                                id="postExcerptInput"
+                                rows="3"
+                                placeholder="Breve descripción que aparecerá en el listado y en meta description"
+                                required
+                            ></textarea>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group-admin">
+                            <label for="postImageInput">URL de la Imagen</label>
+                            <input
+                                type="url"
+                                id="postImageInput"
+                                placeholder="https://ejemplo.com/imagen.jpg"
+                            >
+                        </div>
+                        <div class="form-group-admin">
+                            <label for="postReadingTimeInput">Tiempo de lectura</label>
+                            <input
+                                type="text"
+                                id="postReadingTimeInput"
+                                placeholder="5 min de lectura"
+                            >
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group-admin full-width">
+                            <label for="postContentInput">Contenido del Post (HTML permitido) *</label>
+                            <textarea
+                                id="postContentInput"
+                                rows="15"
+                                placeholder="Escribe el contenido en HTML o texto plano..."
+                                required
+                            ></textarea>
+                            <small>Puedes usar HTML: &lt;h2&gt;, &lt;h3&gt;, &lt;p&gt;, &lt;ul&gt;, &lt;li&gt;, &lt;strong&gt;, &lt;code&gt;, etc.</small>
+                        </div>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="submit" class="btn-primary-admin btn-large">
+                            <span id="submitBtnText">Publicar Post</span>
+                        </button>
+                        <button type="button" onclick="cancelEdit()" class="btn-secondary-admin">Cancelar</button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Tab: Settings -->
+            <div id="settingsTab" class="admin-tab-content">
+                <div class="admin-section-header">
+                    <h2>Configuración</h2>
+                </div>
+
+                <div class="settings-section">
+                    <h3>Cambiar Credenciales de Acceso</h3>
+                    <form id="credentialsForm" class="credentials-form">
+                        <div class="form-group-admin">
+                            <label for="newUsername">Nuevo Usuario</label>
+                            <input type="text" id="newUsername" placeholder="Usuario actual o nuevo">
+                        </div>
+                        <div class="form-group-admin">
+                            <label for="newPassword">Nueva Contraseña</label>
+                            <input type="password" id="newPassword" placeholder="Nueva contraseña">
+                        </div>
+                        <div class="form-group-admin">
+                            <label for="confirmPassword">Confirmar Contraseña</label>
+                            <input type="password" id="confirmPassword" placeholder="Confirma la contraseña">
+                        </div>
+                        <button type="submit" class="btn-primary-admin">Actualizar Credenciales</button>
+                    </form>
+                </div>
+
+                <div class="settings-section danger-zone">
+                    <h3>Zona Peligrosa</h3>
+                    <p>Estas acciones no se pueden deshacer</p>
+                    <button onclick="deleteAllPosts()" class="btn-danger">Eliminar Todos los Posts</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="toast"></div>
+
+    <script src="admin.js"></script>
+</body>
+</html>
