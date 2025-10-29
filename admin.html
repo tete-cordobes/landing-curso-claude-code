@@ -150,6 +150,23 @@
                 </div>
 
                 <div class="settings-section">
+                    <h3>Generador de Sitemap</h3>
+                    <p>Genera un sitemap.xml actualizado con todas las páginas y posts del blog para mejorar el SEO.</p>
+                    <button onclick="generateSitemap()" class="btn-primary-admin">🗺️ Generar Sitemap.xml</button>
+                    <div id="sitemapPreview" style="display: none; margin-top: 1rem;">
+                        <label style="font-weight: 600; display: block; margin-bottom: 0.5rem;">Vista previa del sitemap:</label>
+                        <textarea id="sitemapContent" readonly style="width: 100%; height: 300px; font-family: monospace; font-size: 0.875rem; padding: 1rem; border: 2px solid #e2e8f0; border-radius: 8px;"></textarea>
+                        <div style="margin-top: 1rem; display: flex; gap: 1rem;">
+                            <button onclick="downloadSitemap()" class="btn-primary-admin">💾 Descargar sitemap.xml</button>
+                            <button onclick="copySitemap()" class="btn-secondary-admin">📋 Copiar al portapapeles</button>
+                        </div>
+                        <small style="color: #718096; display: block; margin-top: 0.5rem;">
+                            📝 Nota: Descarga el archivo y súbelo manualmente a tu repositorio GitHub para reemplazar el sitemap.xml existente.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="settings-section">
                     <h3>Cambiar Credenciales de Acceso</h3>
                     <form id="credentialsForm" class="credentials-form">
                         <div class="form-group-admin">

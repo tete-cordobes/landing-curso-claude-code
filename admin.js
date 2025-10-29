@@ -335,3 +335,91 @@ document.addEventListener('DOMContentLoaded', () => {
         loadPostsList();
     }
 });
+
+// ===== SITEMAP GENERATOR =====
+
+// Generate sitemap.xml with all pages and posts
+function generateSitemap() {
+    const posts = getPosts();
+    const today = new Date().toISOString().split('T')[0];
+    const baseUrl = 'https://www.claudecodecurso.com';
+
+    let sitemap = `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- Static Pages -->
+  <url>
+    <loc>${baseUrl}/</loc>
+    <lastmod>${today}</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>${baseUrl}/blog.html</loc>
+    <lastmod>${today}</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+  </url>
+`;
+
+    // Add blog posts
+    if (posts.length > 0) {
+        sitemap += `\n  <!-- Blog Posts -->\n`;
+        posts.forEach(post => {
+            const postDate = new Date(post.date).toISOString().split('T')[0];
+            sitemap += `  <url>
+    <loc>${baseUrl}/post-template.html?slug=${post.slug}</loc>
+    <lastmod>${postDate}</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+`;
+        });
+    }
+
+    sitemap += `</urlset>`;
+
+    // Show preview
+    document.getElementById('sitemapContent').value = sitemap;
+    document.getElementById('sitemapPreview').style.display = 'block';
+
+    showToast(`Sitemap generado con ${posts.length} posts`, 'success');
+}
+
+// Download sitemap as file
+function downloadSitemap() {
+    const content = document.getElementById('sitemapContent').value;
+
+    if (!content) {
+        showToast('Primero genera el sitemap', 'error');
+        return;
+    }
+
+    // Create blob and download
+    const blob = new Blob([content], { type: 'application/xml' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'sitemap.xml';
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+
+    showToast('Sitemap descargado. Súbelo a tu repositorio de GitHub', 'success');
+}
+
+// Copy sitemap to clipboard
+function copySitemap() {
+    const content = document.getElementById('sitemapContent').value;
+
+    if (!content) {
+        showToast('Primero genera el sitemap', 'error');
+        return;
+    }
+
+    navigator.clipboard.writeText(content).then(() => {
+        showToast('Sitemap copiado al portapapeles', 'success');
+    }).catch(() => {
+        showToast('Error al copiar. Usa el botón de descargar', 'error');
+    });
+}

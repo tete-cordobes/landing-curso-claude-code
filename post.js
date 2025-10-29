@@ -1,4 +1,4 @@
-// Post.js - Display individual post
+// Post.js - Display individual post with automatic SEO and JSON-LD schema
 
 // Get post by slug from URL
 function getPostBySlug() {
@@ -34,15 +34,88 @@ function formatDate(dateString) {
     return date.toLocaleDateString('es-ES', options);
 }
 
+// Generate JSON-LD Schema for BlogPosting
+function generatePostSchema(post) {
+    const currentUrl = window.location.href;
+    const postImage = post.image || 'https://www.claudecodecurso.com/claude-color.png';
+
+    // Extract text from HTML content for word count
+    const tempDiv = document.createElement('div');
+    tempDiv.innerHTML = post.content;
+    const textContent = tempDiv.textContent || tempDiv.innerText || '';
+    const wordCount = textContent.trim().split(/\s+/).length;
+
+    const schema = {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": post.title,
+        "description": post.excerpt,
+        "image": postImage,
+        "author": {
+            "@type": "Organization",
+            "name": "Curso Claude Code",
+            "url": "https://www.claudecodecurso.com/"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "Curso Claude Code",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://www.claudecodecurso.com/claude-color.png"
+            }
+        },
+        "datePublished": post.date,
+        "dateModified": post.date,
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": currentUrl
+        },
+        "url": currentUrl,
+        "keywords": "claude code, curso claude code, tutorial claude code, " + post.slug.replace(/-/g, ', '),
+        "articleSection": "Claude Code",
+        "inLanguage": "es-ES",
+        "wordCount": wordCount
+    };
+
+    return schema;
+}
+
+// Update all SEO meta tags
+function updateSEOTags(post) {
+    const currentUrl = window.location.href;
+    const postImage = post.image || 'https://www.claudecodecurso.com/claude-color.png';
+
+    // Basic SEO
+    document.getElementById('postTitle').textContent = `${post.title} | Curso Claude Code`;
+    document.getElementById('postDescription').setAttribute('content', post.excerpt);
+    document.getElementById('postKeywords').setAttribute('content', `claude code, curso claude code, ${post.slug.replace(/-/g, ', ')}, tutorial claude code español`);
+    document.getElementById('postCanonical').setAttribute('href', currentUrl);
+
+    // Open Graph
+    document.getElementById('postOgUrl').setAttribute('content', currentUrl);
+    document.getElementById('postOgTitle').setAttribute('content', post.title);
+    document.getElementById('postOgDescription').setAttribute('content', post.excerpt);
+    document.getElementById('postOgImage').setAttribute('content', postImage);
+    document.getElementById('postPublishedTime').setAttribute('content', post.date);
+
+    // Twitter Card
+    document.getElementById('postTwitterUrl').setAttribute('content', currentUrl);
+    document.getElementById('postTwitterTitle').setAttribute('content', post.title);
+    document.getElementById('postTwitterDescription').setAttribute('content', post.excerpt);
+    document.getElementById('postTwitterImage').setAttribute('content', postImage);
+
+    // JSON-LD Schema
+    const schema = generatePostSchema(post);
+    document.getElementById('postSchema').textContent = JSON.stringify(schema, null, 2);
+}
+
 // Load post content
 function loadPost() {
     const post = getPostBySlug();
     if (!post) return;
 
-    // Update page title and meta
-    document.getElementById('postTitle').textContent = `${post.title} | Curso Claude Code`;
-    document.getElementById('postDescription').setAttribute('content', post.excerpt);
-    document.getElementById('postCanonical').setAttribute('href', window.location.href);
+    // Update all SEO tags automatically
+    updateSEOTags(post);
 
     // Update header
     document.getElementById('postDate').textContent = formatDate(post.date);
