@@ -54,13 +54,40 @@ function showTab(tabName) {
 
 // Get posts from localStorage
 function getPosts() {
-    const posts = localStorage.getItem('blogPosts');
-    return posts ? JSON.parse(posts) : [];
+    try {
+        const posts = localStorage.getItem('blogPosts');
+        if (!posts) {
+            console.log('No posts found in localStorage');
+            return [];
+        }
+        const parsed = JSON.parse(posts);
+        console.log(`Loaded ${parsed.length} posts from localStorage`);
+        return parsed;
+    } catch (error) {
+        console.error('Error loading posts from localStorage:', error);
+        showToast('Error al cargar posts. Verifica que localStorage esté habilitado.', 'error');
+        return [];
+    }
 }
 
 // Save posts to localStorage
 function savePosts(posts) {
-    localStorage.setItem('blogPosts', JSON.stringify(posts));
+    try {
+        localStorage.setItem('blogPosts', JSON.stringify(posts));
+        console.log(`Saved ${posts.length} posts to localStorage`);
+
+        // Verify it was saved
+        const verification = localStorage.getItem('blogPosts');
+        if (!verification) {
+            throw new Error('Posts were not saved to localStorage');
+        }
+
+        return true;
+    } catch (error) {
+        console.error('Error saving posts to localStorage:', error);
+        showToast('⚠️ Error al guardar. Asegúrate de que localStorage esté habilitado y no estés en modo incógnito.', 'error');
+        return false;
+    }
 }
 
 // Load posts list
@@ -221,17 +248,28 @@ document.addEventListener('DOMContentLoaded', () => {
             if (postId) {
                 // Update existing post
                 posts[postId] = postData;
-                showToast('Post actualizado correctamente', 'success');
             } else {
                 // Create new post
                 posts.push(postData);
-                showToast('Post creado correctamente', 'success');
             }
 
-            savePosts(posts);
-            cancelEdit();
-            loadPostsList();
-            showTab('posts');
+            // Save and verify
+            const saved = savePosts(posts);
+
+            if (saved) {
+                // Verify by reloading
+                const verifyPosts = getPosts();
+                const found = verifyPosts.find(p => p.slug === postData.slug);
+
+                if (found) {
+                    showToast(postId ? 'Post actualizado correctamente ✅' : 'Post creado correctamente ✅', 'success');
+                    cancelEdit();
+                    loadPostsList();
+                    showTab('posts');
+                } else {
+                    showToast('Error: El post no se guardó correctamente', 'error');
+                }
+            }
         });
     }
 });

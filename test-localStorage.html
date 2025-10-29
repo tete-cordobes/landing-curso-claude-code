@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test localStorage - Diagnóstico</title>
+    <style>
+        body {
+            font-family: system-ui, -apple-system, sans-serif;
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background: #f7fafc;
+        }
+        .test-box {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #1a202c;
+            margin-bottom: 1.5rem;
+        }
+        h2 {
+            color: #2d3748;
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+        }
+        .status {
+            padding: 0.75rem 1rem;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+        .status.success {
+            background: #d1fae5;
+            color: #065f46;
+        }
+        .status.error {
+            background: #fee2e2;
+            color: #991b1b;
+        }
+        .status.warning {
+            background: #fef3c7;
+            color: #92400e;
+        }
+        button {
+            background: #4F6FFF;
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            margin-right: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+        button:hover {
+            background: #3d5ce6;
+        }
+        button.danger {
+            background: #ef4444;
+        }
+        button.danger:hover {
+            background: #dc2626;
+        }
+        pre {
+            background: #1a202c;
+            color: #e2e8f0;
+            padding: 1rem;
+            border-radius: 8px;
+            overflow-x: auto;
+            font-size: 0.875rem;
+        }
+        .info {
+            color: #4a5568;
+            font-size: 0.875rem;
+            margin-top: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <h1>🔍 Diagnóstico de localStorage</h1>
+
+    <div class="test-box">
+        <h2>1. Compatibilidad del Navegador</h2>
+        <div id="browserCheck"></div>
+    </div>
+
+    <div class="test-box">
+        <h2>2. Test de Escritura/Lectura</h2>
+        <button onclick="testWrite()">Probar Escritura</button>
+        <button onclick="testRead()">Probar Lectura</button>
+        <button onclick="testDelete()" class="danger">Limpiar Test</button>
+        <div id="testResult"></div>
+    </div>
+
+    <div class="test-box">
+        <h2>3. Posts del Blog (blogPosts)</h2>
+        <button onclick="checkPosts()">Ver Posts Guardados</button>
+        <button onclick="createTestPost()">Crear Post de Prueba</button>
+        <button onclick="deleteAllPosts()" class="danger">Borrar Todos los Posts</button>
+        <div id="postsResult"></div>
+    </div>
+
+    <div class="test-box">
+        <h2>4. Información del Navegador</h2>
+        <div id="browserInfo"></div>
+    </div>
+
+    <script>
+        // Check browser compatibility
+        function checkBrowserCompatibility() {
+            const result = document.getElementById('browserCheck');
+
+            if (typeof(Storage) !== "undefined") {
+                result.innerHTML = '<div class="status success">✅ Tu navegador soporta localStorage</div>';
+
+                try {
+                    localStorage.setItem('test', 'test');
+                    localStorage.removeItem('test');
+                    result.innerHTML += '<div class="status success">✅ localStorage está funcionando correctamente</div>';
+                } catch (e) {
+                    result.innerHTML += `<div class="status error">❌ Error al usar localStorage: ${e.message}</div>`;
+                    result.innerHTML += '<div class="info">Posibles causas: modo incógnito, cookies deshabilitadas, o cuota excedida</div>';
+                }
+            } else {
+                result.innerHTML = '<div class="status error">❌ Tu navegador NO soporta localStorage</div>';
+            }
+        }
+
+        // Test write
+        function testWrite() {
+            const result = document.getElementById('testResult');
+            try {
+                const testData = {
+                    message: 'Test exitoso',
+                    timestamp: new Date().toISOString()
+                };
+                localStorage.setItem('testData', JSON.stringify(testData));
+                result.innerHTML = '<div class="status success">✅ Escritura exitosa</div>';
+                result.innerHTML += '<pre>' + JSON.stringify(testData, null, 2) + '</pre>';
+            } catch (e) {
+                result.innerHTML = `<div class="status error">❌ Error: ${e.message}</div>`;
+            }
+        }
+
+        // Test read
+        function testRead() {
+            const result = document.getElementById('testResult');
+            try {
+                const data = localStorage.getItem('testData');
+                if (data) {
+                    result.innerHTML = '<div class="status success">✅ Lectura exitosa</div>';
+                    result.innerHTML += '<pre>' + JSON.stringify(JSON.parse(data), null, 2) + '</pre>';
+                } else {
+                    result.innerHTML = '<div class="status warning">⚠️ No hay datos de prueba. Haz click en "Probar Escritura" primero.</div>';
+                }
+            } catch (e) {
+                result.innerHTML = `<div class="status error">❌ Error: ${e.message}</div>`;
+            }
+        }
+
+        // Test delete
+        function testDelete() {
+            localStorage.removeItem('testData');
+            document.getElementById('testResult').innerHTML = '<div class="status success">✅ Datos de prueba eliminados</div>';
+        }
+
+        // Check posts
+        function checkPosts() {
+            const result = document.getElementById('postsResult');
+            try {
+                const posts = localStorage.getItem('blogPosts');
+                if (posts) {
+                    const parsed = JSON.parse(posts);
+                    result.innerHTML = `<div class="status success">✅ Encontrados ${parsed.length} post(s)</div>`;
+                    result.innerHTML += '<pre>' + JSON.stringify(parsed, null, 2) + '</pre>';
+                } else {
+                    result.innerHTML = '<div class="status warning">⚠️ No hay posts guardados en localStorage</div>';
+                    result.innerHTML += '<div class="info">Esto es normal si aún no has creado ningún post en el admin.</div>';
+                }
+            } catch (e) {
+                result.innerHTML = `<div class="status error">❌ Error: ${e.message}</div>`;
+            }
+        }
+
+        // Create test post
+        function createTestPost() {
+            const result = document.getElementById('postsResult');
+            try {
+                const posts = localStorage.getItem('blogPosts');
+                const existingPosts = posts ? JSON.parse(posts) : [];
+
+                const testPost = {
+                    title: 'Post de Prueba - ' + new Date().toLocaleTimeString(),
+                    slug: 'post-prueba-' + Date.now(),
+                    excerpt: 'Este es un post de prueba creado automáticamente para verificar que localStorage funciona correctamente.',
+                    image: '',
+                    readingTime: '1 min',
+                    content: '<p>Este es un post de prueba.</p>',
+                    date: new Date().toISOString()
+                };
+
+                existingPosts.push(testPost);
+                localStorage.setItem('blogPosts', JSON.stringify(existingPosts));
+
+                // Verify
+                const verification = localStorage.getItem('blogPosts');
+                const verifiedPosts = JSON.parse(verification);
+
+                result.innerHTML = `<div class="status success">✅ Post de prueba creado correctamente. Total: ${verifiedPosts.length} post(s)</div>`;
+                result.innerHTML += '<pre>' + JSON.stringify(testPost, null, 2) + '</pre>';
+                result.innerHTML += '<div class="info">Ve al admin dashboard para ver este post.</div>';
+            } catch (e) {
+                result.innerHTML = `<div class="status error">❌ Error al crear post: ${e.message}</div>`;
+            }
+        }
+
+        // Delete all posts
+        function deleteAllPosts() {
+            if (confirm('¿Estás seguro de que quieres borrar TODOS los posts?')) {
+                localStorage.removeItem('blogPosts');
+                document.getElementById('postsResult').innerHTML = '<div class="status success">✅ Todos los posts han sido eliminados</div>';
+            }
+        }
+
+        // Browser info
+        function showBrowserInfo() {
+            const info = document.getElementById('browserInfo');
+            info.innerHTML = `
+                <pre>Navegador: ${navigator.userAgent}
+Modo Incógnito: Posiblemente ${isIncognito() ? 'SÍ' : 'NO'}
+Cookies Habilitadas: ${navigator.cookieEnabled ? 'SÍ' : 'NO'}
+localStorage Disponible: ${typeof(Storage) !== "undefined" ? 'SÍ' : 'NO'}
+</pre>
+            `;
+        }
+
+        // Detect incognito (aproximación)
+        function isIncognito() {
+            try {
+                localStorage.setItem('test', '1');
+                localStorage.removeItem('test');
+                return false;
+            } catch (e) {
+                return true;
+            }
+        }
+
+        // Initialize
+        window.addEventListener('DOMContentLoaded', () => {
+            checkBrowserCompatibility();
+            showBrowserInfo();
+        });
+    </script>
+</body>
+</html>
