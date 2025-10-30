@@ -162,16 +162,27 @@ function cancelEdit() {
 }
 
 // Delete post
-function deletePost(index) {
+async function deletePost(index) {
     if (!confirm('¿Estás seguro de que quieres eliminar este post?')) {
         return;
     }
 
     const posts = getPosts();
+    const slug = posts[index].slug;
     posts.splice(index, 1);
     savePosts(posts);
     loadPostsList();
     showToast('Post eliminado correctamente', 'success');
+
+    // Try to update sitemap automatically
+    try {
+        await deletePostFromGitHub(slug);
+        await updateSitemap();
+        showToast('✅ Sitemap actualizado automáticamente', 'success');
+    } catch (error) {
+        console.error('Error updating sitemap:', error);
+        showToast('⚠️ Post eliminado, pero no se pudo actualizar el sitemap automáticamente', 'warning');
+    }
 }
 
 // Delete all posts
@@ -222,7 +233,7 @@ document.addEventListener('DOMContentLoaded', () => {
 document.addEventListener('DOMContentLoaded', () => {
     const form = document.getElementById('postForm');
     if (form) {
-        form.addEventListener('submit', (e) => {
+        form.addEventListener('submit', async (e) => {
             e.preventDefault();
 
             const postId = document.getElementById('postId').value;
@@ -262,10 +273,21 @@ document.addEventListener('DOMContentLoaded', () => {
                 const found = verifyPosts.find(p => p.slug === postData.slug);
 
                 if (found) {
-                    showToast(postId ? 'Post actualizado correctamente ✅' : 'Post creado correctamente ✅', 'success');
+                    const isUpdate = !!postId;
+                    showToast(isUpdate ? 'Post actualizado correctamente ✅' : 'Post creado correctamente ✅', 'success');
                     cancelEdit();
                     loadPostsList();
                     showTab('posts');
+
+                    // Try to update GitHub and sitemap automatically
+                    try {
+                        await savePostToGitHub(postData);
+                        await updateSitemap();
+                        showToast('✅ Post guardado en GitHub y sitemap actualizado', 'success');
+                    } catch (error) {
+                        console.error('Error updating GitHub/sitemap:', error);
+                        showToast('⚠️ Post guardado localmente. Configura GitHub token para sincronización automática', 'warning');
+                    }
                 } else {
                     showToast('Error: El post no se guardó correctamente', 'error');
                 }

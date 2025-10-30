@@ -1,0 +1,13 @@
+{
+  "posts": [
+    {
+      "slug": "bienvenido-blog-claude-code",
+      "title": "Bienvenido al Blog de Claude Code",
+      "excerpt": "Este es tu primer post de ejemplo. Edítalo o elimínalo y comienza a crear tu propio contenido sobre Claude Code.",
+      "image": "",
+      "readingTime": "2 min de lectura",
+      "date": "2025-10-28T20:00:00.000Z"
+    }
+  ],
+  "lastUpdated": "2025-10-28T20:00:00.000Z"
+}

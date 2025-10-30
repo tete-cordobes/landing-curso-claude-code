@@ -1,7 +1,7 @@
 // Post.js - Display individual post with automatic SEO and JSON-LD schema
 
 // Get post by slug from URL
-function getPostBySlug() {
+async function getPostBySlug() {
     const urlParams = new URLSearchParams(window.location.search);
     const slug = urlParams.get('slug');
 
@@ -10,21 +10,15 @@ function getPostBySlug() {
         return null;
     }
 
-    const posts = localStorage.getItem('blogPosts');
-    if (!posts) {
+    try {
+        // Load post from GitHub
+        const post = await loadPostContent(slug);
+        return post;
+    } catch (error) {
+        console.error(`Error loading post ${slug}:`, error);
         window.location.href = 'blog.html';
         return null;
     }
-
-    const allPosts = JSON.parse(posts);
-    const post = allPosts.find(p => p.slug === slug);
-
-    if (!post) {
-        window.location.href = 'blog.html';
-        return null;
-    }
-
-    return post;
 }
 
 // Format date
@@ -80,6 +74,38 @@ function generatePostSchema(post) {
     return schema;
 }
 
+// Generate JSON-LD Schema for Breadcrumbs
+function generateBreadcrumbSchema(post) {
+    const currentUrl = window.location.href;
+
+    const schema = {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Inicio",
+                "item": "https://www.claudecodecurso.com/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Blog",
+                "item": "https://www.claudecodecurso.com/blog.html"
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "name": post.title,
+                "item": currentUrl
+            }
+        ]
+    };
+
+    return schema;
+}
+
 // Update all SEO meta tags
 function updateSEOTags(post) {
     const currentUrl = window.location.href;
@@ -104,14 +130,18 @@ function updateSEOTags(post) {
     document.getElementById('postTwitterDescription').setAttribute('content', post.excerpt);
     document.getElementById('postTwitterImage').setAttribute('content', postImage);
 
-    // JSON-LD Schema
+    // JSON-LD Schema - BlogPosting
     const schema = generatePostSchema(post);
     document.getElementById('postSchema').textContent = JSON.stringify(schema, null, 2);
+
+    // JSON-LD Schema - Breadcrumbs
+    const breadcrumbSchema = generateBreadcrumbSchema(post);
+    document.getElementById('breadcrumbSchema').textContent = JSON.stringify(breadcrumbSchema, null, 2);
 }
 
 // Load post content
-function loadPost() {
-    const post = getPostBySlug();
+async function loadPost() {
+    const post = await getPostBySlug();
     if (!post) return;
 
     // Update all SEO tags automatically

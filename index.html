@@ -33,11 +33,19 @@
     <link rel="canonical" href="https://www.claudecodecurso.com/">
 
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="claude-color.png">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="icon" type="image/png" href="/claude-color.png">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#3b82f6">
+
+    <!-- Preconnect for Performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
     <link rel="stylesheet" href="styles.css">
 
-    <!-- JSON-LD Schema -->
+    <!-- JSON-LD Schema - Course -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -75,6 +83,67 @@
       }
     }
     </script>
+
+    <!-- JSON-LD Schema - Reviews -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      "itemListElement": [
+        {
+          "@type": "Review",
+          "author": {
+            "@type": "Person",
+            "name": "María González"
+          },
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": "5",
+            "bestRating": "5"
+          },
+          "reviewBody": "Claude Code cambió completamente mi forma de trabajar. Antes tardaba días en configurar proyectos, ahora lo hago en minutos. No puedo esperar a la formación en español.",
+          "itemReviewed": {
+            "@type": "Course",
+            "name": "Curso Claude Code en Español"
+          }
+        },
+        {
+          "@type": "Review",
+          "author": {
+            "@type": "Person",
+            "name": "Juan Rodríguez"
+          },
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": "5",
+            "bestRating": "5"
+          },
+          "reviewBody": "Como líder técnico, Claude Code me ayuda a revisar código y documentar proyectos 10x más rápido. Una formación estructurada en español es justo lo que necesitamos.",
+          "itemReviewed": {
+            "@type": "Course",
+            "name": "Curso Claude Code en Español"
+          }
+        },
+        {
+          "@type": "Review",
+          "author": {
+            "@type": "Person",
+            "name": "Ana López"
+          },
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": "5",
+            "bestRating": "5"
+          },
+          "reviewBody": "Claude Code me permitió lanzar mi MVP en semanas en lugar de meses. Estoy en la lista de espera porque quiero dominar todas sus funcionalidades avanzadas.",
+          "itemReviewed": {
+            "@type": "Course",
+            "name": "Curso Claude Code en Español"
+          }
+        }
+      ]
+    }
+    </script>
 </head>
 <body>
     <!-- Navigation -->
@@ -84,7 +153,7 @@
                 <div class="logo">
                     <a href="index.html" style="display: flex; align-items: center; gap: 0.75rem; text-decoration: none; color: inherit;">
                         <div class="logo-icon">
-                            <img src="claude-color.png" alt="Claude Code Logo" width="32" height="32">
+                            <img src="claude-color.png" alt="Claude Code Logo" width="32" height="32" loading="eager">
                         </div>
                         <span class="logo-text">Curso Claude Code</span>
                     </a>
@@ -746,7 +815,7 @@
                 <div class="footer-section">
                     <div class="footer-logo">
                         <div class="logo-icon">
-                            <img src="claude-color.png" alt="Claude Code Logo" width="32" height="32">
+                            <img src="claude-color.png" alt="Claude Code Logo" width="32" height="32" loading="eager">
                         </div>
                         <span class="logo-text">Curso Claude Code</span>
                     </div>

@@ -5,7 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard - Gestión de Blog | Curso Claude Code</title>
     <meta name="robots" content="noindex, nofollow">
-    <link rel="icon" type="image/png" href="claude-color.png">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="icon" type="image/png" href="/claude-color.png">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#3b82f6">
+
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="admin-styles.css">
 </head>
@@ -15,7 +22,7 @@
         <div class="admin-container">
             <div class="admin-header-content">
                 <div class="admin-logo">
-                    <img src="claude-color.png" alt="Logo" width="32" height="32">
+                    <img src="claude-color.png" alt="Logo" width="32" height="32" loading="eager">
                     <span>Dashboard Admin</span>
                 </div>
                 <div class="admin-user">
@@ -150,6 +157,33 @@
                 </div>
 
                 <div class="settings-section">
+                    <h3>Configuración de GitHub</h3>
+                    <p>Configura tu token de GitHub para poder crear, editar y eliminar posts. Los posts se guardarán directamente en tu repositorio.</p>
+                    <form id="githubTokenForm" class="credentials-form">
+                        <div class="form-group-admin">
+                            <label for="githubToken">Token de GitHub (Personal Access Token)</label>
+                            <input type="password" id="githubToken" placeholder="ghp_xxxxxxxxxxxx">
+                            <small style="display: block; margin-top: 0.5rem; color: #718096;">
+                                <strong>Cómo crear tu token:</strong><br>
+                                1. Ve a GitHub → Settings → Developer settings → Personal access tokens → Tokens (classic)<br>
+                                2. Genera un nuevo token con permisos: <code>repo</code> (acceso completo al repositorio)<br>
+                                3. Copia el token y pégalo aquí
+                            </small>
+                        </div>
+                        <div style="display: flex; gap: 1rem; align-items: center;">
+                            <button type="submit" class="btn-primary-admin">Guardar Token</button>
+                            <span id="tokenStatus" style="color: #718096; font-size: 0.875rem;"></span>
+                        </div>
+                    </form>
+                    <div id="githubTokenInfo" style="margin-top: 1rem; padding: 1rem; background: #f7fafc; border-radius: 8px; display: none;">
+                        <p style="margin: 0; color: #2d3748;">
+                            <strong>✅ Token configurado</strong><br>
+                            <span id="githubUsername" style="color: #718096;"></span>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="settings-section">
                     <h3>Generador de Sitemap</h3>
                     <p>Genera un sitemap.xml actualizado con todas las páginas y posts del blog para mejorar el SEO.</p>
                     <button onclick="generateSitemap()" class="btn-primary-admin">🗺️ Generar Sitemap.xml</button>
@@ -197,6 +231,7 @@
     <!-- Toast Notification -->
     <div id="toast" class="toast"></div>
 
+    <script src="github-api.js"></script>
     <script src="admin.js"></script>
 </body>
 </html>

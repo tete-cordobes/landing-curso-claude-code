@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /
+
+# Disallow admin and testing pages
+Disallow: /admin.html
+Disallow: /login.html
+Disallow: /test-localStorage.html
+
+# Sitemap location
+Sitemap: https://www.claudecodecurso.com/sitemap.xml

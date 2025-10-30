@@ -1,0 +1,9 @@
+{
+  "slug": "bienvenido-blog-claude-code",
+  "title": "Bienvenido al Blog de Claude Code",
+  "excerpt": "Este es tu primer post de ejemplo. Edítalo o elimínalo y comienza a crear tu propio contenido sobre Claude Code.",
+  "image": "",
+  "readingTime": "2 min de lectura",
+  "content": "\n                <h2>¡Bienvenido a tu nuevo blog!</h2>\n                <p>Este es un post de ejemplo para mostrarte cómo funciona el sistema de blog. Puedes editarlo, eliminarlo o crear nuevos posts desde el dashboard de administración.</p>\n\n                <h3>¿Qué puedes hacer?</h3>\n                <ul>\n                    <li>Crear nuevos posts con contenido en HTML</li>\n                    <li>Editar posts existentes</li>\n                    <li>Eliminar posts que ya no necesites</li>\n                    <li>Gestionar tu blog directamente desde GitHub</li>\n                </ul>\n\n                <h3>¿Cómo funciona?</h3>\n                <p>Cada post se guarda como un archivo JSON en el directorio <code>/posts/</code> de tu repositorio de GitHub. Cuando creas o editas un post desde el admin, se actualiza automáticamente en GitHub.</p>\n\n                <h3>Consejos para empezar</h3>\n                <p>Puedes usar HTML en el contenido de tus posts. Aquí tienes algunos ejemplos:</p>\n                <ul>\n                    <li><strong>&lt;h2&gt; y &lt;h3&gt;</strong> para títulos</li>\n                    <li><strong>&lt;p&gt;</strong> para párrafos</li>\n                    <li><strong>&lt;ul&gt; y &lt;li&gt;</strong> para listas</li>\n                    <li><strong>&lt;strong&gt;</strong> para texto en negrita</li>\n                    <li><strong>&lt;code&gt;</strong> para código inline</li>\n                </ul>\n\n                <p>¡Ahora es tu turno! Crea contenido increíble sobre Claude Code y comparte tu conocimiento.</p>\n            ",
+  "date": "2025-10-28T20:00:00.000Z"
+}

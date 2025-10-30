@@ -3,15 +3,22 @@
   <!-- Static Pages -->
   <url>
     <loc>https://www.claudecodecurso.com/</loc>
-    <lastmod>2025-10-28</lastmod>
+    <lastmod>2025-10-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.claudecodecurso.com/blog.html</loc>
-    <lastmod>2025-10-28</lastmod>
+    <lastmod>2025-10-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.9</priority>
   </url>
-  <!-- Blog posts will be added dynamically via admin dashboard -->
+  <!-- Blog Posts -->
+  <url>
+    <loc>https://www.claudecodecurso.com/post-template.html?slug=bienvenido-blog-claude-code</loc>
+    <lastmod>2025-10-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <!-- Additional posts will be automatically added when published via admin dashboard -->
 </urlset>

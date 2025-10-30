@@ -1,0 +1,26 @@
+{
+  "name": "Curso Claude Code - Domina la IA en tu Desarrollo",
+  "short_name": "Claude Code",
+  "description": "Aprende a dominar Claude Code y revoluciona tu forma de programar con inteligencia artificial",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#3b82f6",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/claude-color.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    }
+  ],
+  "categories": ["education", "productivity", "development"],
+  "lang": "es-ES",
+  "dir": "ltr"
+}

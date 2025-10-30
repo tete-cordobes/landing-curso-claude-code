@@ -1,0 +1,22 @@
+/* TEAM */
+Developer: Curso Claude Code
+Site: https://www.claudecodecurso.com
+Location: España
+
+/* SITE */
+Last update: 2025/10/30
+Language: Español / Spanish
+Standards: HTML5, CSS3, JavaScript ES6+
+Components: GitHub Pages, GitHub API, localStorage
+IDE: Claude Code
+
+/* THANKS */
+Thanks to: Anthropic for Claude Code
+
+/* TECH STACK */
+Frontend: HTML5, CSS3, Vanilla JavaScript
+Hosting: GitHub Pages
+Domain: claudecodecurso.com
+Blog System: Dynamic JSON-based with GitHub API
+SEO: JSON-LD Structured Data, Open Graph, Twitter Cards
+Analytics: Coming soon

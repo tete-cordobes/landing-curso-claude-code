@@ -36,14 +36,26 @@
     <link rel="canonical" id="postCanonical" href="">
 
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="claude-color.png">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="icon" type="image/png" href="/claude-color.png">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#3b82f6">
+
+    <!-- Preconnect for Performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
     <!-- Stylesheets -->
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="blog-styles.css">
 
-    <!-- JSON-LD Schema (will be populated dynamically) -->
+    <!-- JSON-LD Schema - BlogPosting (will be populated dynamically) -->
     <script type="application/ld+json" id="postSchema">
+    </script>
+
+    <!-- JSON-LD Schema - Breadcrumbs -->
+    <script type="application/ld+json" id="breadcrumbSchema">
     </script>
 </head>
 <body>
@@ -54,7 +66,7 @@
                 <div class="logo">
                     <a href="index.html">
                         <div class="logo-icon">
-                            <img src="claude-color.png" alt="Claude Code Logo" width="32" height="32">
+                            <img src="claude-color.png" alt="Claude Code Logo" width="32" height="32" loading="eager">
                         </div>
                         <span class="logo-text">Curso Claude Code</span>
                     </a>
@@ -107,7 +119,7 @@
                 <div class="footer-section">
                     <div class="footer-logo">
                         <div class="logo-icon">
-                            <img src="claude-color.png" alt="Claude Code Logo" width="32" height="32">
+                            <img src="claude-color.png" alt="Claude Code Logo" width="32" height="32" loading="eager">
                         </div>
                         <span class="logo-text">Curso Claude Code</span>
                     </div>
@@ -123,6 +135,7 @@
         </div>
     </footer>
 
+    <script src="github-api.js"></script>
     <script src="post.js"></script>
 </body>
 </html>
