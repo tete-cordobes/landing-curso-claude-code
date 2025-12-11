@@ -49,7 +49,7 @@ body::before {
 .container {
     max-width: 1280px;
     margin: 0 auto;
-    padding: 0 2rem;
+    padding: 0 clamp(1.25rem, 1vw + 1rem, 2rem);
 }
 
 /* Navbar */
@@ -67,6 +67,12 @@ body::before {
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+/* Ensure nav stays tidy even when inline styles exist */
+.nav-links {
+    flex-wrap: wrap;
+    gap: clamp(0.75rem, 1vw + 0.25rem, 1.25rem) !important;
 }
 
 .logo {
@@ -146,7 +152,7 @@ body::before {
 }
 
 .hero-title {
-    font-size: 3.5rem;
+    font-size: clamp(2.75rem, 2vw + 2.25rem, 3.5rem);
     font-weight: 800;
     line-height: 1.1;
     letter-spacing: -0.02em;
@@ -154,7 +160,7 @@ body::before {
 }
 
 .hero-subtitle {
-    font-size: 1.5rem;
+    font-size: clamp(1.25rem, 1vw + 1rem, 1.5rem);
     font-weight: 600;
     line-height: 1.3;
     color: var(--primary);
@@ -1048,7 +1054,7 @@ body::before {
 .contact-stats {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
+    gap: clamp(1rem, 2vw, 2rem);
     margin-top: 1rem;
 }
 
@@ -1353,8 +1359,8 @@ body::before {
 /* Floating CTA Button */
 .floating-cta {
     position: fixed;
-    bottom: 2rem;
-    right: 2rem;
+    bottom: calc(1.5rem + env(safe-area-inset-bottom, 0px));
+    right: 1.75rem;
     z-index: 999;
     display: flex;
     align-items: center;
@@ -1454,6 +1460,10 @@ body::before {
         grid-template-columns: repeat(2, 1fr);
     }
 
+    .contact-stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
     .problems-grid {
         grid-template-columns: 1fr;
     }
@@ -1483,7 +1493,7 @@ body::before {
 
 @media (max-width: 768px) {
     .container {
-        padding: 0 1.5rem;
+        padding: 0 1.25rem;
     }
 
     /* Navigation responsive */
@@ -1514,11 +1524,11 @@ body::before {
     }
 
     .hero-title {
-        font-size: 2rem;
+        font-size: 2.1rem;
     }
 
     .hero-subtitle {
-        font-size: 1.125rem;
+        font-size: 1.05rem;
     }
 
     .hero-description {
@@ -1623,8 +1633,8 @@ body::before {
     }
 
     .contact-stats {
-        grid-template-columns: repeat(3, 1fr);
-        gap: 1rem;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.25rem;
     }
 
     .stat-number {
@@ -1644,8 +1654,8 @@ body::before {
     }
 
     .floating-cta {
-        bottom: 1.5rem;
-        right: 1.5rem;
+        bottom: calc(1rem + env(safe-area-inset-bottom, 0px));
+        right: 1.25rem;
         padding: 0.875rem 1.25rem;
         font-size: 0.9375rem;
     }
@@ -1658,6 +1668,10 @@ body::before {
 }
 
 @media (max-width: 480px) {
+    .container {
+        padding: 0 1rem;
+    }
+
     .hero-title {
         font-size: 1.75rem;
     }
@@ -1681,7 +1695,7 @@ body::before {
 
     .contact-stats {
         grid-template-columns: 1fr;
-        gap: 1.5rem;
+        gap: 1.25rem;
     }
 
     .stat-item {
@@ -1697,7 +1711,7 @@ body::before {
     }
 
     .floating-cta {
-        bottom: 1rem;
+        bottom: calc(0.75rem + env(safe-area-inset-bottom, 0px));
         right: 1rem;
         left: 1rem;
         justify-content: center;

@@ -438,6 +438,15 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
+
+    // Ocultar CTA flotante al interactuar con inputs (mejor experiencia en mobile)
+    if (floatingCTA && formSection) {
+        const formFields = formSection.querySelectorAll('input, select, textarea, button');
+        formFields.forEach(field => {
+            field.addEventListener('focus', () => floatingCTA.classList.remove('visible'));
+            field.addEventListener('blur', () => window.dispatchEvent(new Event('scroll')));
+        });
+    }
 });
 
 // Función para detectar si el usuario está en mobile
