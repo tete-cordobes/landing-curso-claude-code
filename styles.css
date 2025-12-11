@@ -71,8 +71,10 @@ body::before {
 
 /* Ensure nav stays tidy even when inline styles exist */
 .nav-links {
+    display: flex;
+    align-items: center;
     flex-wrap: wrap;
-    gap: clamp(0.75rem, 1vw + 0.25rem, 1.25rem) !important;
+    gap: clamp(1rem, 1vw + 0.75rem, 2rem) !important;
 }
 
 .logo {
