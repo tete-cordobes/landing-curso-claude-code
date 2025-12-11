@@ -1,5 +1,22 @@
 // Smooth scroll para los botones CTA
 document.addEventListener('DOMContentLoaded', function() {
+    // Mobile nav toggle
+    const navToggle = document.querySelector('.nav-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    if (navToggle && navLinks) {
+        navToggle.addEventListener('click', () => {
+            const isOpen = navLinks.classList.toggle('open');
+            navToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+        });
+
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('open');
+                navToggle.setAttribute('aria-expanded', 'false');
+            });
+        });
+    }
+
     // Animación de typing para el comando en el terminal
     const commandElement = document.querySelector('.command');
     if (commandElement) {
@@ -438,6 +455,15 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
+
+    // Ocultar CTA flotante al interactuar con inputs (mejor experiencia en mobile)
+    if (floatingCTA && formSection) {
+        const formFields = formSection.querySelectorAll('input, select, textarea, button');
+        formFields.forEach(field => {
+            field.addEventListener('focus', () => floatingCTA.classList.remove('visible'));
+            field.addEventListener('blur', () => window.dispatchEvent(new Event('scroll')));
+        });
+    }
 });
 
 // Función para detectar si el usuario está en mobile
