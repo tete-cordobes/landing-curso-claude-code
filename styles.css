@@ -114,6 +114,44 @@ body::before {
     border-color: var(--primary);
 }
 
+.nav-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    width: 44px;
+    height: 44px;
+    border: 1px solid var(--card-border);
+    border-radius: 0.5rem;
+    background: rgba(0, 0, 0, 0.2);
+    color: var(--text-primary);
+    cursor: pointer;
+    transition: border-color 0.2s, background 0.2s;
+}
+
+.nav-toggle span {
+    display: block;
+    height: 2px;
+    width: 20px;
+    background: currentColor;
+    border-radius: 999px;
+    margin: 0 auto;
+}
+
+.nav-toggle:hover {
+    border-color: var(--primary);
+    background: rgba(79, 111, 255, 0.08);
+}
+
+.nav-cta {
+    background: var(--primary);
+    color: white !important;
+    padding: 0.625rem 1.25rem;
+    border-radius: 8px;
+    font-weight: 600;
+    text-decoration: none;
+}
+
 /* Hero Section */
 .hero {
     padding: 5rem 0 8rem;
@@ -1502,10 +1540,20 @@ body::before {
         gap: 1rem;
     }
 
+    .nav-toggle {
+        display: flex;
+    }
+
     .nav-links {
+        display: none;
         flex-direction: column;
         width: 100%;
         gap: 0.75rem !important;
+        padding-top: 0.75rem;
+    }
+
+    .nav-links.open {
+        display: flex;
     }
 
     .nav-links a {
