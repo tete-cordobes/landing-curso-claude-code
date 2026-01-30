@@ -63,7 +63,7 @@ function renderPosts(category) {
     noPostsMessage.style.display = 'none';
 
     postsContainer.innerHTML = filteredPosts.map(post => `
-        <a href="post-template.html?slug=${post.slug}" class="blog-post-card" data-category="${post.category || 'all'}">
+        <a href="post.html?slug=${post.slug}" class="blog-post-card" data-category="${post.category || 'all'}">
             ${post.image ? `
                 <img src="${post.image}" alt="${post.title}" class="blog-post-image">
             ` : `
