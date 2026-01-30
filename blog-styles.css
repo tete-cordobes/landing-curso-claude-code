@@ -52,6 +52,51 @@
     margin: 0 auto;
 }
 
+/* Blog Filter Tags */
+.blog-filters {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.75rem;
+    margin-top: 2rem;
+}
+
+.filter-tag {
+    background: rgba(255, 255, 255, 0.15);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    color: white;
+    padding: 0.5rem 1.25rem;
+    border-radius: 25px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.filter-tag:hover {
+    background: rgba(255, 255, 255, 0.25);
+    border-color: rgba(255, 255, 255, 0.5);
+    transform: translateY(-2px);
+}
+
+.filter-tag.active {
+    background: white;
+    color: #667eea;
+    border-color: white;
+}
+
+@media (max-width: 640px) {
+    .blog-filters {
+        gap: 0.5rem;
+        margin-top: 1.5rem;
+    }
+
+    .filter-tag {
+        padding: 0.4rem 1rem;
+        font-size: 0.85rem;
+    }
+}
+
 /* Blog Posts Section */
 .blog-posts-section {
     padding: 4rem 0;
