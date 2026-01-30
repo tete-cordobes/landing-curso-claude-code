@@ -1,13 +1,205 @@
 {
   "posts": [
     {
-      "slug": "bienvenido-blog-claude-code",
-      "title": "Bienvenido al Blog de Claude Code",
-      "excerpt": "Este es tu primer post de ejemplo. Edítalo o elimínalo y comienza a crear tu propio contenido sobre Claude Code.",
+      "slug": "openclaw-guia-completa-2026",
+      "title": "OpenClaw: Guía Completa del Asistente IA Personal 2026",
+      "excerpt": "Aprende a configurar OpenClaw (ex-Clawdbot), el asistente de IA open source que conecta WhatsApp, Telegram y Discord con Claude y GPT.",
       "image": "",
-      "readingTime": "2 min de lectura",
-      "date": "2025-10-28T20:00:00.000Z"
+      "readingTime": "15 min de lectura",
+      "date": "2026-01-31T10:00:00.000Z"
+    },
+    {
+      "slug": "openclaw-whatsapp-telegram-tutorial",
+      "title": "Cómo Conectar OpenClaw a WhatsApp y Telegram: Tutorial 2026",
+      "excerpt": "Tutorial paso a paso para configurar OpenClaw con WhatsApp y Telegram. Tené a Claude respondiendo en tus chats.",
+      "image": "",
+      "readingTime": "10 min de lectura",
+      "date": "2026-01-31T09:30:00.000Z"
+    },
+    {
+      "slug": "openclaw-skills-automatizacion",
+      "title": "OpenClaw Skills: Automatiza tu Vida con IA",
+      "excerpt": "Aprende a usar y crear skills en OpenClaw. Desde búsqueda web hasta domótica con Home Assistant.",
+      "image": "",
+      "readingTime": "12 min de lectura",
+      "date": "2026-01-31T09:00:00.000Z"
+    },
+    {
+      "slug": "openclaw-vs-chatgpt-app",
+      "title": "OpenClaw vs ChatGPT App: ¿Cuál Elegir en 2026?",
+      "excerpt": "Comparamos OpenClaw con la app oficial de ChatGPT. Diferencias en privacidad, personalización, costos y casos de uso.",
+      "image": "",
+      "readingTime": "8 min de lectura",
+      "date": "2026-01-31T08:30:00.000Z"
+    },
+    {
+      "slug": "openclaw-apiyi-configuracion",
+      "title": "Cómo Usar OpenClaw con APIYI: Guía de Configuración",
+      "excerpt": "Configura OpenClaw para usar APIYI como proxy de API. Ideal si no tenés tarjeta internacional o querés ahorrar en costos.",
+      "image": "",
+      "readingTime": "7 min de lectura",
+      "date": "2026-01-31T08:00:00.000Z"
+    },
+    {
+      "slug": "crear-videos-con-ia-gratis-2026",
+      "title": "Crear Videos con IA Gratis 2026: 10 Herramientas + Tutorial Completo",
+      "excerpt": "Aprende a crear videos con inteligencia artificial gratis. Comparamos Sora 2, Synthesia, HeyGen y las mejores herramientas.",
+      "image": "",
+      "readingTime": "15 min de lectura",
+      "date": "2026-01-30T10:00:00.000Z"
+    },
+    {
+      "slug": "que-es-claude-code-tutorial-2026",
+      "title": "Qué es Claude Code y Cómo Empezar: Tutorial Completo 2026",
+      "excerpt": "Descubre qué es Claude Code, la herramienta de Anthropic para programar con IA. Tutorial paso a paso.",
+      "image": "",
+      "readingTime": "12 min de lectura",
+      "date": "2026-01-30T09:00:00.000Z"
+    },
+    {
+      "slug": "claude-code-vs-cursor-comparativa",
+      "title": "Claude Code vs Cursor: Comparativa Completa 2026",
+      "excerpt": "Comparamos Claude Code y Cursor, las dos herramientas más populares para programar con IA.",
+      "image": "",
+      "readingTime": "10 min de lectura",
+      "date": "2026-01-30T08:30:00.000Z"
+    },
+    {
+      "slug": "comandos-claude-code-esenciales",
+      "title": "10 Comandos de Claude Code que Debes Conocer",
+      "excerpt": "Domina los comandos más útiles de Claude Code. Desde slash commands hasta atajos de teclado.",
+      "image": "",
+      "readingTime": "8 min de lectura",
+      "date": "2026-01-30T08:00:00.000Z"
+    },
+    {
+      "slug": "claude-code-principiantes-guia",
+      "title": "Claude Code para Principiantes: Guía Paso a Paso",
+      "excerpt": "¿Nuevo en Claude Code? Esta guía te lleva desde la instalación hasta tu primer proyecto completo.",
+      "image": "",
+      "readingTime": "14 min de lectura",
+      "date": "2026-01-30T07:30:00.000Z"
+    },
+    {
+      "slug": "claude-api-tutorial-espanol",
+      "title": "Claude API Tutorial: Guía Completa en Español 2026",
+      "excerpt": "Aprende a usar la API de Claude de Anthropic. Tutorial con ejemplos de código en Python y JavaScript.",
+      "image": "",
+      "readingTime": "11 min de lectura",
+      "date": "2026-01-30T07:00:00.000Z"
+    },
+    {
+      "slug": "apis-inteligencia-artificial-guia",
+      "title": "APIs de Inteligencia Artificial: Guía Completa 2026",
+      "excerpt": "Descubre las mejores APIs de IA disponibles: OpenAI, Claude, Gemini, Grok y más.",
+      "image": "",
+      "readingTime": "13 min de lectura",
+      "date": "2026-01-30T06:30:00.000Z"
+    },
+    {
+      "slug": "sora-2-api-tutorial-espanol",
+      "title": "Sora 2 API: Tutorial Completo en Español 2026",
+      "excerpt": "Aprende a usar la API de Sora 2 de OpenAI para generar videos con IA.",
+      "image": "",
+      "readingTime": "10 min de lectura",
+      "date": "2026-01-30T06:00:00.000Z"
+    },
+    {
+      "slug": "openai-vs-claude-api-comparativa",
+      "title": "OpenAI API vs Claude API: ¿Cuál Elegir en 2026?",
+      "excerpt": "Comparamos las APIs de OpenAI y Anthropic. Diferencias en modelos, precios y capacidades.",
+      "image": "",
+      "readingTime": "9 min de lectura",
+      "date": "2026-01-30T05:30:00.000Z"
+    },
+    {
+      "slug": "claude-code-n8n-automatizacion",
+      "title": "Automatizar con Claude Code + N8N: Guía Práctica",
+      "excerpt": "Aprende a combinar Claude Code con N8N para crear flujos de trabajo automatizados con IA.",
+      "image": "",
+      "readingTime": "11 min de lectura",
+      "date": "2026-01-30T05:00:00.000Z"
+    },
+    {
+      "slug": "crear-chatbot-claude-api",
+      "title": "Cómo Crear un Chatbot con Claude API: Tutorial Completo",
+      "excerpt": "Aprende a crear un chatbot funcional usando la API de Claude. Tutorial con código en Python y JavaScript.",
+      "image": "",
+      "readingTime": "12 min de lectura",
+      "date": "2026-01-30T04:30:00.000Z"
+    },
+    {
+      "slug": "gemini-api-guia-espanol",
+      "title": "Gemini API: Guía Completa en Español 2026",
+      "excerpt": "Tutorial completo de la API de Gemini de Google. Aprende a usar Gemini 2.5 Pro con ejemplos.",
+      "image": "",
+      "readingTime": "10 min de lectura",
+      "date": "2026-01-30T04:00:00.000Z"
+    },
+    {
+      "slug": "deepseek-r1-vs-o3-comparativa",
+      "title": "DeepSeek R1 vs OpenAI o3: ¿Cuál es Mejor para Razonamiento?",
+      "excerpt": "Comparativa detallada entre DeepSeek R1 y OpenAI o3. Analizamos rendimiento, precios y casos de uso.",
+      "image": "",
+      "readingTime": "9 min de lectura",
+      "date": "2026-01-30T03:30:00.000Z"
+    },
+    {
+      "slug": "generar-imagenes-ia-api",
+      "title": "Cómo Generar Imágenes con IA por API: Guía 2026",
+      "excerpt": "Aprende a usar APIs de generación de imágenes como DALL-E 3, Midjourney y Flux.",
+      "image": "",
+      "readingTime": "11 min de lectura",
+      "date": "2026-01-30T03:00:00.000Z"
+    },
+    {
+      "slug": "errores-apis-ia-soluciones",
+      "title": "Errores Comunes en APIs de IA y Cómo Solucionarlos",
+      "excerpt": "Guía de troubleshooting para APIs de OpenAI, Claude, Gemini y más.",
+      "image": "",
+      "readingTime": "8 min de lectura",
+      "date": "2026-01-30T02:30:00.000Z"
+    },
+    {
+      "slug": "precios-apis-ia-2026",
+      "title": "Precios de APIs de IA 2026: Guía Completa de Costos",
+      "excerpt": "Comparativa actualizada de precios de todas las APIs de IA: OpenAI, Claude, Gemini, DeepSeek y más.",
+      "image": "",
+      "readingTime": "9 min de lectura",
+      "date": "2026-01-30T02:00:00.000Z"
+    },
+    {
+      "slug": "cherry-studio-configuracion-apis",
+      "title": "Cherry Studio + APIs de IA: Guía de Configuración",
+      "excerpt": "Configura Cherry Studio para usar múltiples APIs de IA. Tutorial paso a paso.",
+      "image": "",
+      "readingTime": "7 min de lectura",
+      "date": "2026-01-30T01:30:00.000Z"
+    },
+    {
+      "slug": "claude-code-vscode-configuracion",
+      "title": "Cómo Configurar Claude Code con VS Code",
+      "excerpt": "Guía para integrar Claude Code con Visual Studio Code. Configura la terminal, atajos y flujo de trabajo.",
+      "image": "",
+      "readingTime": "6 min de lectura",
+      "date": "2026-01-30T01:00:00.000Z"
+    },
+    {
+      "slug": "testing-automatizado-claude-code",
+      "title": "Testing Automatizado con Claude Code: Genera Tests con IA",
+      "excerpt": "Aprende a usar Claude Code para generar tests unitarios, de integración y E2E.",
+      "image": "",
+      "readingTime": "10 min de lectura",
+      "date": "2026-01-30T00:30:00.000Z"
+    },
+    {
+      "slug": "claude-code-desarrollo-web",
+      "title": "Claude Code para Desarrollo Web: React, Next.js y Más",
+      "excerpt": "Usa Claude Code para crear aplicaciones web modernas. Tutorial con ejemplos.",
+      "image": "",
+      "readingTime": "12 min de lectura",
+      "date": "2026-01-30T00:00:00.000Z"
     }
   ],
-  "lastUpdated": "2025-10-28T20:00:00.000Z"
+  "lastUpdated": "2026-01-31T10:00:00.000Z"
 }
