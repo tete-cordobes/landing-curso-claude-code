@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-48N09S40ZB"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-48N09S40ZB');
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Changelog Claude Code — Todas las Actualizaciones | Curso Claude Code</title>
+    <meta name="description" content="Historial completo de actualizaciones de Claude Code. Timeline con las 50 funcionalidades más destacadas desde la preview hasta la versión actual.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.claudecodecurso.com/changelog.html">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="icon" type="image/png" href="/claude-color.png">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <meta name="theme-color" content="#3b82f6">
+
+    <!-- Microsoft Clarity -->
+    <script type="text/javascript">
+        (function(c,l,a,r,i,t,y){
+            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        })(window, document, "clarity", "script", "uk1m98vjak");
+    </script>
+
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Changelog-specific styles */
+        .changelog-hero { text-align:center; padding:80px 0 32px; }
+        .changelog-hero h1 { font-size:clamp(1.8rem,4vw,2.6rem); font-weight:800; letter-spacing:-0.03em; margin-bottom:10px; }
+        .changelog-hero h1 span { color:var(--primary); }
+        .changelog-hero p { color:var(--text-secondary); font-size:0.9rem; max-width:600px; margin:0 auto; }
+
+        .stats-row { display:flex; justify-content:center; gap:clamp(20px,4vw,40px); margin-top:28px; flex-wrap:wrap; }
+        .stat-item .stat-num { font-size:1.8rem; font-weight:800; color:var(--primary); }
+        .stat-item .stat-label { font-size:0.68rem; color:var(--text-muted); text-transform:uppercase; letter-spacing:0.06em; font-weight:600; }
+
+        /* Highlights grid */
+        .hl-section { padding:32px 0 40px; }
+        .hl-section-title { font-size:1.2rem; font-weight:700; margin-bottom:20px; text-align:center; }
+        .hl-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); gap:12px; }
+        .era-row { grid-column:1/-1; font-size:0.73rem; font-weight:700; text-transform:uppercase; letter-spacing:0.08em; padding:12px 0 4px; border-bottom:1px solid var(--card-border); }
+        .era-row.era-0 { color:#8b5cf6; } .era-row.era-1 { color:#10b981; } .era-row.era-2 { color:#f59e0b; } .era-row.era-3 { color:var(--primary); }
+
+        .hl-card { background:var(--card-bg); border:1px solid var(--card-border); border-radius:12px; padding:14px 16px; border-left:4px solid var(--primary); transition:all 0.2s; cursor:pointer; }
+        .hl-card:hover { border-color:var(--primary); transform:translateY(-2px); box-shadow:0 6px 24px rgba(79,111,255,0.15); }
+        .hl-card .hv { font-size:0.62rem; font-weight:700; text-transform:uppercase; letter-spacing:0.04em; }
+        .hl-card .ht { font-size:0.86rem; font-weight:700; color:var(--text-primary); margin-top:3px; line-height:1.3; }
+        .hl-card .hd { font-size:0.72rem; color:var(--text-muted); margin-top:4px; }
+        .hl-card .hdesc { font-size:0.78rem; color:var(--text-secondary); margin-top:8px; line-height:1.5; border-top:1px solid var(--card-border); padding-top:8px; }
+        .hl-card.era-0 { border-left-color:#8b5cf6; } .hl-card.era-0 .hv { color:#8b5cf6; }
+        .hl-card.era-1 { border-left-color:#10b981; } .hl-card.era-1 .hv { color:#10b981; }
+        .hl-card.era-2 { border-left-color:#f59e0b; } .hl-card.era-2 .hv { color:#f59e0b; }
+        .hl-card.era-3 { border-left-color:var(--primary); } .hl-card.era-3 .hv { color:var(--primary); }
+
+        /* Search */
+        .search-bar { max-width:500px; margin:0 auto 32px; position:relative; }
+        .search-bar input { width:100%; padding:12px 16px 12px 44px; border-radius:12px; border:1px solid var(--card-border); background:var(--card-bg); color:var(--text-primary); font-size:0.9rem; font-family:inherit; outline:none; transition:all 0.2s; }
+        .search-bar input:focus { border-color:var(--primary); box-shadow:0 0 0 3px rgba(79,111,255,0.2); }
+        .search-bar .si { position:absolute; left:15px; top:50%; transform:translateY(-50%); color:var(--text-muted); }
+        .results-counter { text-align:center; padding:8px; font-size:0.82rem; color:var(--text-muted); display:none; }
+        .results-counter.active { display:block; }
+
+        /* Timeline */
+        .tl { position:relative; padding:20px 0 60px; }
+        .tl::before { content:''; position:absolute; left:50%; top:0; bottom:0; width:3px; background:var(--card-border); transform:translateX(-50%); }
+
+        .tl-era { position:relative; text-align:center; margin:48px 0 32px; z-index:2; clear:both; }
+        .tl-era-inner { display:inline-block; background:var(--card-bg); border:2px solid var(--primary); border-radius:40px; padding:10px 28px; }
+        .tl-era h3 { font-size:1rem; font-weight:700; color:var(--primary); }
+        .tl-era p { font-size:0.72rem; color:var(--text-muted); }
+
+        .tl-item { position:relative; width:46%; padding-bottom:28px; }
+        .tl-item.hidden { display:none; }
+        .tl-item.left { float:left; clear:left; text-align:right; padding-right:32px; }
+        .tl-item.right { float:right; clear:right; text-align:left; padding-left:32px; }
+        .tl-item .dot { position:absolute; top:16px; width:14px; height:14px; border-radius:50%; background:var(--background-dark); border:3px solid var(--primary); z-index:3; }
+        .tl-item.left .dot { right:-7px; } .tl-item.right .dot { left:-7px; }
+        .tl-item.major .dot { width:18px; height:18px; background:var(--primary); box-shadow:0 0 0 4px rgba(79,111,255,0.3); }
+        .tl-item.major.left .dot { right:-9px; } .tl-item.major.right .dot { left:-9px; }
+
+        .tl-card { background:var(--card-bg); border:1px solid var(--card-border); border-radius:12px; overflow:hidden; transition:all 0.2s; cursor:pointer; }
+        .tl-card:hover { border-color:var(--primary); box-shadow:0 4px 16px rgba(79,111,255,0.12); }
+        .tl-card-header { padding:12px 16px; }
+        .tl-card-top { display:flex; align-items:center; gap:7px; flex-wrap:wrap; }
+        .tl-item.left .tl-card-top { justify-content:flex-end; }
+        .tl-card-ver { font-weight:800; font-size:0.9rem; color:var(--text-primary); }
+        .tl-item.major .tl-card-ver { color:var(--primary); }
+        .tl-badge { font-size:0.58rem; padding:2px 7px; border-radius:6px; font-weight:700; text-transform:uppercase; letter-spacing:0.03em; }
+        .tl-badge.major { background:rgba(79,111,255,0.15); color:var(--primary); }
+        .tl-badge.breaking { background:rgba(239,68,68,0.15); color:var(--danger); }
+        .tl-badge.cnt { background:rgba(255,255,255,0.05); color:var(--text-muted); }
+        .tl-card-date { font-size:0.7rem; color:var(--text-muted); margin-top:3px; }
+        .tl-item.left .tl-card-date { text-align:right; }
+        .tl-card-title { font-size:0.8rem; color:var(--text-secondary); margin-top:4px; font-weight:500; line-height:1.4; }
+        .tl-item.left .tl-card-title { text-align:right; }
+        .tl-chev { color:var(--text-muted); font-size:0.6rem; transition:transform 0.2s; }
+        .tl-item.open .tl-chev { transform:rotate(90deg); }
+        .tl-card-body { display:none; padding:0 16px 12px; }
+        .tl-item.open .tl-card-body { display:block; }
+        .tl-card-body ul { list-style:none; }
+        .tl-card-body li { padding:4px 0; font-size:0.76rem; color:var(--text-secondary); border-top:1px solid rgba(255,255,255,0.04); display:flex; gap:8px; align-items:flex-start; text-align:left; }
+        .tl-card-body li:first-child { border-top:none; }
+        .tl-card-body li .ic { flex-shrink:0; width:6px; height:6px; border-radius:50%; margin-top:6px; }
+        .tl-card-body li.feat .ic { background:#10b981; } .tl-card-body li.fix .ic { background:var(--primary); }
+        .tl-card-body li.breaking .ic { background:var(--danger); } .tl-card-body li.improve .ic { background:#8b5cf6; }
+        .tl-card-body li mark { background:rgba(79,111,255,0.2); color:var(--primary); border-radius:2px; padding:0 3px; }
+        .clearfix { clear:both; }
+
+        .back-top { position:fixed; bottom:24px; right:24px; width:48px; height:48px; border-radius:50%; background:var(--primary); color:#fff; border:none; font-size:1.2rem; cursor:pointer; opacity:0; transition:all 0.3s; z-index:99; box-shadow:0 4px 14px rgba(79,111,255,0.4); }
+        .back-top.visible { opacity:1; } .back-top:hover { transform:scale(1.1); }
+
+        .filter-btns { display:flex; justify-content:center; gap:6px; margin-bottom:24px; flex-wrap:wrap; }
+        .fbtn { padding:6px 14px; border-radius:20px; border:1px solid var(--card-border); background:transparent; color:var(--text-secondary); font-size:0.75rem; font-weight:500; font-family:inherit; cursor:pointer; transition:all 0.2s; }
+        .fbtn:hover { border-color:var(--primary); color:var(--primary); }
+        .fbtn.active { background:var(--primary); border-color:var(--primary); color:#fff; }
+
+        /* Latest update hero */
+        .latest-update { margin-bottom:36px; }
+        .latest-card { background:linear-gradient(135deg, rgba(79,111,255,0.12) 0%, rgba(139,92,246,0.12) 100%); border:2px solid var(--primary); border-radius:16px; padding:32px 28px; position:relative; overflow:hidden; }
+        .latest-card::before { content:''; position:absolute; top:-40px; right:-40px; width:120px; height:120px; background:rgba(79,111,255,0.1); border-radius:50%; }
+        .latest-label { display:inline-block; background:var(--primary); color:#fff; font-size:0.65rem; font-weight:700; text-transform:uppercase; letter-spacing:0.08em; padding:4px 12px; border-radius:20px; margin-bottom:12px; }
+        .latest-ver { font-size:clamp(1.4rem,3vw,1.8rem); font-weight:800; color:var(--text-primary); margin-bottom:4px; }
+        .latest-ver span { color:var(--primary); }
+        .latest-date { font-size:0.8rem; color:var(--text-muted); margin-bottom:16px; }
+        .latest-changes { display:grid; grid-template-columns:repeat(auto-fill,minmax(220px,1fr)); gap:8px; }
+        .latest-change { display:flex; align-items:center; gap:8px; font-size:0.82rem; color:var(--text-secondary); padding:6px 10px; background:rgba(255,255,255,0.04); border-radius:8px; }
+        .latest-change .lc-dot { width:7px; height:7px; border-radius:50%; background:var(--primary); flex-shrink:0; }
+
+        /* Footer CTA */
+        .changelog-cta { text-align:center; padding:48px 0 60px; }
+        .changelog-cta h2 { font-size:1.4rem; font-weight:700; margin-bottom:12px; }
+        .changelog-cta p { color:var(--text-secondary); font-size:0.9rem; margin-bottom:24px; max-width:500px; margin-left:auto; margin-right:auto; }
+        .changelog-cta .nav-cta { display:inline-block; padding:14px 32px; font-size:1rem; border-radius:10px; text-decoration:none; }
+
+        @media(max-width:768px){
+            .tl::before{left:20px;}
+            .tl-item{width:100%!important;float:none!important;clear:both!important;padding:0 16px 20px 50px!important;text-align:left!important;}
+            .tl-item .dot{left:13px!important;right:auto!important;} .tl-item.major .dot{left:11px!important;}
+            .tl-item.left .tl-card-top,.tl-item.left .tl-card-date,.tl-item.left .tl-card-title{justify-content:flex-start;text-align:left;}
+            .hl-grid{grid-template-columns:1fr;}
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-content">
+                <div class="logo">
+                    <a href="index.html" style="display:flex;align-items:center;gap:0.75rem;text-decoration:none;color:inherit;">
+                        <div class="logo-icon">
+                            <img src="claude-color.png" alt="Claude Code Logo" width="32" height="32" loading="eager">
+                        </div>
+                        <span class="logo-text">Curso Claude Code</span>
+                    </a>
+                </div>
+                <button class="nav-toggle" aria-label="Abrir menú" aria-expanded="false">
+                    <span></span><span></span><span></span>
+                </button>
+                <div class="nav-links">
+                    <a href="index.html" style="text-decoration:none;color:var(--text-secondary);font-weight:500;">Inicio</a>
+                    <a href="blog.html" style="text-decoration:none;color:var(--text-secondary);font-weight:500;">Blog</a>
+                    <a href="changelog.html" style="text-decoration:none;color:var(--primary);font-weight:600;">Changelog</a>
+                    <a href="index.html#formulario" class="nav-cta">Descargar Guía Gratis</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <section class="changelog-hero">
+            <h1>Changelog <span>Claude Code</span></h1>
+            <p>El historial completo de actualizaciones: desde la primera preview hasta la versión actual. Todas las funcionalidades explicadas.</p>
+            <div class="stats-row" id="stats"></div>
+        </section>
+
+        <section class="latest-update">
+            <div class="latest-card">
+                <div class="latest-label">🚀 Última Actualización</div>
+                <div class="latest-ver">v2.1.75 — <span>Ventana de Contexto 1M por Defecto</span></div>
+                <div class="latest-date">13 de marzo de 2026</div>
+                <div class="latest-changes">
+                    <div class="latest-change"><span class="lc-dot"></span>1M de tokens de contexto para Opus 4.6 (Max, Team, Enterprise)</div>
+                    <div class="latest-change"><span class="lc-dot"></span>Comando /color para personalizar la barra de sesión</div>
+                    <div class="latest-change"><span class="lc-dot"></span>Nombre de sesión visible en la barra del prompt</div>
+                    <div class="latest-change"><span class="lc-dot"></span>Timestamps en archivos de memoria</div>
+                </div>
+            </div>
+        </section>
+
+        <div class="search-bar">
+            <span class="si">🔍</span>
+            <input type="text" id="search" placeholder="Buscar actualizaciones... (MCP, hooks, VSCode, SDK...)">
+        </div>
+
+        <div class="filter-btns">
+            <button class="fbtn active" data-filter="all">Todas</button>
+            <button class="fbtn" data-filter="major">Destacadas</button>
+            <button class="fbtn" data-filter="feature">Nuevas</button>
+            <button class="fbtn" data-filter="fix">Correcciones</button>
+        </div>
+
+        <section class="hl-section">
+            <div class="hl-section-title">Top 50 Funcionalidades Destacadas</div>
+            <div class="hl-grid" id="hlGrid"></div>
+        </section>
+
+        <div class="results-counter" id="resultsCounter"></div>
+        <div class="tl" id="timeline"></div>
+        <div class="clearfix"></div>
+
+        <section class="changelog-cta">
+            <h2>¿Quieres dominar Claude Code?</h2>
+            <p>Descarga gratis la guía con los 10 comandos esenciales y empieza a programar 5x más rápido con IA.</p>
+            <a href="index.html#formulario" class="nav-cta">Descargar Guía Gratis</a>
+        </section>
+    </div>
+
+    <button class="back-top" id="backTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+    <script>
+    const highlights = [
+      {era:0,v:"0.2.44",date:"15 Mar 2025",t:"Thinking Mode",d:"Pide a Claude que razone en profundidad antes de responder. Usa 'think', 'think harder' o 'ultrathink' para activar cadenas de razonamiento cada vez más profundas."},
+      {era:0,v:"0.2.47",date:"18 Mar 2025",t:"Tab Auto-complete + Auto-accept",d:"Pulsa Tab para autocompletar archivos y carpetas. Shift+Tab activa el modo auto-accept para que Claude edite archivos sin pedir permiso cada vez."},
+      {era:0,v:"0.2.47",date:"18 Mar 2025",t:"Compactación de Conversaciones",d:"La compactación automática permite conversaciones de longitud infinita. Cuando el contexto se llena, los mensajes antiguos se resumen para liberar espacio."},
+      {era:0,v:"0.2.54",date:"25 Mar 2025",t:"MCP SSE Transport",d:"Soporte de Server-Sent Events para servidores MCP, permitiendo conexiones en streaming en tiempo real con proveedores de herramientas remotos."},
+      {era:0,v:"0.2.59",date:"2 Abr 2025",t:"Copiar y Pegar Imágenes",d:"Pega imágenes directamente desde el portapapeles. Claude puede analizar capturas de pantalla, diagramas, mockups de UI y cualquier contenido visual."},
+      {era:0,v:"0.2.75",date:"21 Abr 2025",t:"@-mention Archivos + Cola de Mensajes",d:"Usa @archivo para añadir archivos al contexto. Encola mensajes mientras Claude trabaja — pulsa Enter para apilar instrucciones."},
+      {era:0,v:"0.2.93",date:"30 Abr 2025",t:"--continue / --resume",d:"Retoma conversaciones anteriores desde la CLI. --continue continúa donde lo dejaste, --resume te permite elegir entre sesiones pasadas."},
+      {era:0,v:"0.2.105",date:"8 May 2025",t:"Búsqueda Web",d:"Claude ahora puede buscar en la web para encontrar información actualizada, documentación y respuestas más allá de sus datos de entrenamiento."},
+      {era:0,v:"0.2.107",date:"9 May 2025",t:"Importaciones en CLAUDE.md",d:"Los archivos CLAUDE.md pueden importar otros archivos con la sintaxis @path/to/file.md. Crea conjuntos de instrucciones modulares que se componen entre sí."},
+      {era:0,v:"0.2.108",date:"13 May 2025",t:"Dirección en Tiempo Real",d:"Envía mensajes a Claude mientras trabaja para redirigir su enfoque en tiempo real. No necesitas esperar a que termine."},
+      {era:1,v:"1.0.0",date:"22 May 2025",t:"GA + Sonnet 4 + Opus 4",d:"¡Claude Code disponible para todos! Lanzado con Sonnet 4 (rápido, capaz) y Opus 4 (el más inteligente) — los modelos que popularizaron la programación con IA."},
+      {era:1,v:"1.0.23",date:"13 Jun 2025",t:"TypeScript + Python SDK",d:"SDKs oficiales para construir aplicaciones sobre Claude Code. Importa @anthropic-ai/claude-code (TS) o pip install claude-code-sdk (Python)."},
+      {era:1,v:"1.0.27",date:"17 Jun 2025",t:"MCP OAuth + Streamable HTTP",d:"Los servidores MCP remotos soportan autenticación OAuth y transporte HTTP con streaming. Conecta herramientas cloud de forma segura."},
+      {era:1,v:"1.0.38",date:"30 Jun 2025",t:"Sistema de Hooks",d:"Hooks basados en eventos (PreToolUse, PostToolUse, Stop, SessionStart, SessionEnd) que permiten ejecutar comandos shell en respuesta a las acciones de Claude."},
+      {era:1,v:"1.0.44",date:"7 Jul 2025",t:"Exportar Conversaciones",d:"Exporta cualquier conversación para compartir con compañeros, reportar bugs o crear documentación desde tus sesiones de Claude Code."},
+      {era:1,v:"1.0.51",date:"11 Jul 2025",t:"Soporte Nativo Windows",d:"Claude Code corre nativamente en Windows (requiere Git para Windows). Paridad completa de funcionalidades con macOS y Linux — sin necesidad de WSL."},
+      {era:1,v:"1.0.58",date:"22 Jul 2025",t:"Lectura de PDF",d:"Lee y analiza documentos PDF directamente. Claude puede extraer texto, entender layouts y responder preguntas sobre el contenido sin herramientas externas."},
+      {era:1,v:"1.0.60",date:"24 Jul 2025",t:"Subagentes Personalizados",d:"Crea agentes especializados para tareas específicas. Define system prompts, restricciones de herramientas y modelos personalizados. Ejecuta /agents para gestionarlos."},
+      {era:1,v:"1.0.69",date:"5 Ago 2025",t:"Opus 4.1",d:"Opus actualizado a la versión 4.1 con mejor razonamiento, retención de contexto más larga y mejor generación de código en todos los lenguajes."},
+      {era:1,v:"1.0.71",date:"7 Ago 2025",t:"Comandos en Segundo Plano",d:"Pulsa Ctrl-B para enviar cualquier comando bash al segundo plano. Ideal para dev servers, builds largos o tail de logs mientras Claude sigue trabajando."},
+      {era:1,v:"1.0.77",date:"12 Ago 2025",t:"Opus Plan Mode",d:"Usa Opus para planificar y Sonnet para ejecutar. Lo mejor de ambos mundos: razonamiento profundo para arquitectura, ejecución rápida para los cambios de código."},
+      {era:1,v:"1.0.81",date:"14 Ago 2025",t:"Estilos de Salida",d:"Personaliza cómo responde Claude con estilos como 'Explanatory' y 'Learning', o crea tus propias definiciones de estilo de salida."},
+      {era:1,v:"1.0.86",date:"20 Ago 2025",t:"Debug de Contexto",d:"Inspecciona exactamente qué consume tu ventana de contexto: system prompt, herramientas, memoria, mensajes y espacio libre. Diagnostica y optimiza el uso de tokens."},
+      {era:1,v:"1.0.90",date:"24 Ago 2025",t:"Recarga en Caliente de Ajustes",d:"Los cambios en settings.json surten efecto inmediatamente sin reiniciar Claude Code. Edita permisos, hooks o configuración sobre la marcha."},
+      {era:1,v:"1.0.117",date:"16 Sep 2025",t:"Búsqueda en Historial (Ctrl-R)",d:"Busca entre comandos y prompts anteriores con Ctrl-R, igual que en bash/zsh. El fuzzy matching encuentra lo que buscas al instante."},
+      {era:2,v:"2.0.0",date:"29 Sep 2025",t:"Extensión Nativa VS Code",d:"Extensión nativa completamente nueva para VS Code con integración profunda. Nueva UI, /rewind para deshacer, /usage para límites, SDK renombrado a Agent SDK."},
+      {era:2,v:"2.0.0",date:"29 Sep 2025",t:"/rewind para Deshacer",d:"¿Has cometido un error? /rewind revierte los cambios de código a un punto anterior de la conversación. Como git reset pero para tu sesión de Claude."},
+      {era:2,v:"2.0.10",date:"7 Oct 2025",t:"Reescritura del Renderer",d:"Reescritura completa del renderer del terminal para un scroll suave, renderizado rápido y cero artefactos visuales. Una diferencia abismal."},
+      {era:2,v:"2.0.12",date:"9 Oct 2025",t:"Sistema de Plugins",d:"¡Extiende Claude Code con plugins! Instala desde marketplaces, añade comandos, agentes, hooks y servidores MCP personalizados. Comparte plugins entre equipos."},
+      {era:2,v:"2.0.17",date:"15 Oct 2025",t:"Haiku 4.5 + Subagente Explore",d:"Haiku 4.5 añadido al selector de modelos. El nuevo subagente Explore (con Haiku) busca en tu codebase de forma eficiente, ahorrando contexto."},
+      {era:2,v:"2.0.20",date:"16 Oct 2025",t:"Claude Skills",d:"Skills reutilizables en .claude/skills/ que se cargan automáticamente según el contexto. Define estándares de código, patrones y workflows."},
+      {era:2,v:"2.0.24",date:"20 Oct 2025",t:"Sandbox + Teleport",d:"Modo sandbox para Bash en Linux y Mac que restringe el acceso al sistema de archivos y red. Además teleport Web-a-CLI para saltar de claude.ai a tu terminal."},
+      {era:2,v:"2.0.45",date:"18 Nov 2025",t:"Microsoft Foundry",d:"Soporte completo para Microsoft Azure AI Foundry como proveedor. Usa Claude Code con tu infraestructura y facturación de Azure."},
+      {era:2,v:"2.0.51",date:"24 Nov 2025",t:"Opus 4.5",d:"El modelo Claude más capaz hasta la fecha. Opus 4.5 trae razonamiento y generación de código drásticamente mejorados. También se lanzó Claude Code para Desktop."},
+      {era:2,v:"2.0.60",date:"5 Dic 2025",t:"Agentes en Segundo Plano",d:"Los agentes ahora pueden ejecutarse en segundo plano mientras sigues trabajando. Lanza múltiples agentes en diferentes tareas simultáneamente."},
+      {era:2,v:"2.0.64",date:"10 Dic 2025",t:"Sesiones con Nombre + Reglas",d:"Nombra tus sesiones con /rename. Nuevo directorio .claude/rules/ para reglas por proyecto que se cargan automáticamente. Además /stats con gráficos de uso."},
+      {era:2,v:"2.0.72",date:"17 Dic 2025",t:"Claude en Chrome (Beta)",d:"Controla tu navegador directamente desde Claude Code con la extensión de Chrome. Navega, haz clic, rellena formularios y extrae datos de páginas web."},
+      {era:2,v:"2.0.74",date:"19 Dic 2025",t:"Herramienta LSP",d:"La integración con Language Server Protocol trae go-to-definition, find references y hover docs directamente al toolkit de Claude. Inteligencia de código a nivel de IDE."},
+      {era:3,v:"2.1.0",date:"7 Ene 2026",t:"Recarga de Skills + Permisos Wildcard",d:"Los skills se recargan automáticamente al cambiar archivos. Permisos Bash con wildcards (ej: Bash(npm *)) reducen las solicitudes de permisos."},
+      {era:3,v:"2.1.16",date:"22 Ene 2026",t:"Gestión de Tareas + Dependencias",d:"Sistema de gestión de tareas integrado con seguimiento de dependencias. Crea, organiza y haz seguimiento de workflows multi-paso directamente en Claude Code."},
+      {era:3,v:"2.1.18",date:"22 Ene 2026",t:"Atajos de Teclado Personalizados",d:"Configura atajos de teclado por contexto, crea secuencias chord y personaliza tu workflow. Ejecuta /keybindings para empezar."},
+      {era:3,v:"2.1.27",date:"30 Ene 2026",t:"Sesiones Vinculadas a PRs",d:"Vincula sesiones de Claude Code a PRs de GitHub con --from-pr. Las sesiones se vinculan automáticamente al crear PRs mediante gh pr create."},
+      {era:3,v:"2.1.32",date:"5 Feb 2026",t:"Opus 4.6 + Agent Teams + Auto-memory",d:"Llega Opus 4.6 con agent teams para colaboración multi-agente. Claude ahora guarda y recuerda contexto útil automáticamente entre sesiones."},
+      {era:3,v:"2.1.36",date:"7 Feb 2026",t:"Modo Rápido (Opus 4.6)",d:"Mismo modelo Opus 4.6 con salida más rápida. Actívalo con /fast. Misma inteligencia, respuestas más rápidas para cuando la velocidad importa."},
+      {era:3,v:"2.1.45",date:"17 Feb 2026",t:"Sonnet 4.6",d:"Nuevo modelo Sonnet 4.6 con capacidades mejoradas. Reemplaza a Sonnet 4.5 como modelo rápido por defecto con ventana de contexto de 1M."},
+      {era:3,v:"2.1.49",date:"19 Feb 2026",t:"Aislamiento con Git Worktree",d:"Ejecuta Claude en worktrees git aislados con --worktree (-w). Los subagentes pueden trabajar en sus propias copias, evitando conflictos."},
+      {era:3,v:"2.1.51",date:"23 Feb 2026",t:"claude remote-control",d:"Sirve tu entorno local a Claude Code en la web. Programa desde claude.ai con acceso completo a tus archivos locales, herramientas y terminal."},
+      {era:3,v:"2.1.71",date:"6 Mar 2026",t:"/loop + Programación Cron",d:"Ejecuta prompts o comandos en intervalos recurrentes con /loop (ej: /loop 5m check the deploy). Programación cron integrada para workflows automatizados."},
+      {era:3,v:"2.1.72",date:"9 Mar 2026",t:"Niveles de Esfuerzo Simplificados",d:"Esfuerzo simplificado a bajo/medio/alto. Usa /effort para controlar la profundidad de razonamiento. 'ultrathink' activa esfuerzo alto por un turno."},
+      {era:3,v:"2.1.75",date:"13 Mar 2026",t:"Ventana de Contexto 1M (por defecto)",d:"Opus 4.6 ahora incluye una ventana de contexto de 1 millón de tokens por defecto para los planes Max, Team y Enterprise. Sin coste adicional."},
+    ];
+
+    const eraLabels=["Preview (Feb–May 2025)","v1.0 GA (May–Sep 2025)","v2.0 (Sep–Dic 2025)","v2.1 (Ene–Mar 2026)"];
+    const dates={"0.2.21":"2025-02-26","0.2.26":"2025-02-27","0.2.30":"2025-03-04","0.2.31":"2025-03-05","0.2.34":"2025-03-08","0.2.44":"2025-03-15","0.2.47":"2025-03-18","0.2.50":"2025-03-19","0.2.53":"2025-03-21","0.2.54":"2025-03-25","0.2.59":"2025-04-02","0.2.70":"2025-04-15","0.2.75":"2025-04-21","0.2.93":"2025-04-30","0.2.105":"2025-05-08","0.2.107":"2025-05-09","0.2.108":"2025-05-13","0.2.117":"2025-05-17","0.2.125":"2025-05-21","1.0.0":"2025-05-22","1.0.7":"2025-05-30","1.0.11":"2025-06-04","1.0.18":"2025-06-09","1.0.23":"2025-06-13","1.0.27":"2025-06-17","1.0.38":"2025-06-30","1.0.44":"2025-07-07","1.0.51":"2025-07-11","1.0.58":"2025-07-22","1.0.60":"2025-07-24","1.0.69":"2025-08-05","1.0.71":"2025-08-07","1.0.77":"2025-08-12","1.0.81":"2025-08-14","1.0.86":"2025-08-20","1.0.90":"2025-08-24","1.0.117":"2025-09-16","1.0.120":"2025-09-19","2.0.0":"2025-09-29","2.0.10":"2025-10-07","2.0.12":"2025-10-09","2.0.17":"2025-10-15","2.0.20":"2025-10-16","2.0.24":"2025-10-20","2.0.45":"2025-11-18","2.0.51":"2025-11-24","2.0.60":"2025-12-05","2.0.64":"2025-12-10","2.0.72":"2025-12-17","2.0.74":"2025-12-19","2.1.0":"2026-01-07","2.1.16":"2026-01-22","2.1.18":"2026-01-22","2.1.27":"2026-01-30","2.1.32":"2026-02-05","2.1.36":"2026-02-07","2.1.45":"2026-02-17","2.1.49":"2026-02-19","2.1.51":"2026-02-23","2.1.59":"2026-02-25","2.1.63":"2026-02-28","2.1.68":"2026-03-04","2.1.71":"2026-03-06","2.1.72":"2026-03-09","2.1.75":"2026-03-13"};
+
+    function fmtDate(iso){if(!iso)return'';const d=new Date(iso+'T00:00:00');const m=['Ene','Feb','Mar','Abr','May','Jun','Jul','Ago','Sep','Oct','Nov','Dic'];return`${d.getDate()} ${m[d.getMonth()]} ${d.getFullYear()}`;}
+
+    const releases=[
+      {v:"0.2.44",c:["Modo thinking: think / think harder / ultrathink"]},{v:"0.2.47",c:["Tab autocompletar","Shift+Tab auto-accept","Compactación de conversaciones"]},{v:"0.2.54",c:["MCP SSE transport","'#' para memoria rápida"]},{v:"0.2.59",c:["Copiar y pegar imágenes","Indicadores de progreso mejorados"]},{v:"0.2.75",c:["Cola de mensajes","Arrastrar/pegar imágenes","@-mention archivos","--mcp-config"]},{v:"0.2.93",c:["--continue / --resume","Lista de tareas"]},{v:"0.2.105",c:["¡Búsqueda web!","Movimiento de palabras en Vim"]},{v:"0.2.107",c:["Importaciones CLAUDE.md (@path/to/file.md)"]},{v:"0.2.108",c:["Dirección en tiempo real","Wizard MCP obsoleto"]},{v:"0.2.117",c:["BREAKING: --print JSON con objetos anidados","Modo --debug"]},{v:"0.2.125",c:["BREAKING: Bedrock ARN usa / en vez de %2F"]},
+      {v:"1.0.0",c:["¡Disponible para todos!","Sonnet 4 + Opus 4"]},{v:"1.0.7",c:["/allowed-tools → /permissions","Config → settings.json"]},{v:"1.0.11",c:["Soporte Claude Pro","/upgrade"]},{v:"1.0.23",c:["SDK TypeScript","SDK Python"]},{v:"1.0.27",c:["MCP HTTP Streamable","MCP OAuth remoto","@-mention recursos","/resume"]},{v:"1.0.38",c:["¡Sistema de hooks!"]},{v:"1.0.44",c:["/export conversaciones","Ctrl+Z suspende"]},{v:"1.0.51",c:["¡Windows nativo!","/doctor valida ajustes"]},{v:"1.0.58",c:["¡Lectura de PDF!"]},{v:"1.0.60",c:["¡Subagentes personalizados! /agents"]},{v:"1.0.69",c:["Opus 4.1"]},{v:"1.0.71",c:["Comandos en segundo plano (Ctrl-B)","Barra de estado personalizable"]},{v:"1.0.77",c:["Opus Plan Mode"]},{v:"1.0.81",c:["Estilos de salida"]},{v:"1.0.86",c:["/context debug"]},{v:"1.0.90",c:["Recarga en caliente de ajustes"]},{v:"1.0.117",c:["Búsqueda Ctrl-R en historial"]},{v:"1.0.120",c:["Corregida vulnerabilidad de permisos Bash"]},
+      {v:"2.0.0",c:["¡Extensión VS Code nativa!","Nueva UI completa","/rewind","/usage","Tab cambia thinking","SDK → Agent SDK"]},{v:"2.0.10",c:["Reescritura del renderer","Tab completion en bash","Ctrl-G editor externo"]},{v:"2.0.12",c:["¡Sistema de plugins!","Comandos /plugin"]},{v:"2.0.17",c:["Haiku 4.5","Subagente Explore"]},{v:"2.0.20",c:["Claude Skills"]},{v:"2.0.24",c:["Teleport Web→CLI","Sandbox BashTool"]},{v:"2.0.45",c:["Microsoft Foundry","Hook PermissionRequest"]},{v:"2.0.51",c:["¡Opus 4.5!","Claude Code Desktop"]},{v:"2.0.60",c:["Agentes en segundo plano","/mcp enable/disable"]},{v:"2.0.64",c:["Auto-compactación instantánea","Sesiones con nombre",".claude/rules/","/stats"]},{v:"2.0.72",c:["¡Claude en Chrome (Beta)!"]},{v:"2.0.74",c:["Herramienta LSP (go-to-def, referencias, hover)"]},
+      {v:"2.1.0",c:["Recarga de skills","Permisos Bash wildcard","Motions Vim","Atajo /plan","50+ correcciones"]},{v:"2.1.16",c:["Gestión de tareas + dependencias"]},{v:"2.1.18",c:["¡Atajos de teclado personalizados!"]},{v:"2.1.27",c:["Sesiones --from-pr","Vinculación automática a PRs"]},{v:"2.1.32",c:["¡Opus 4.6!","Agent teams","Auto-memory"]},{v:"2.1.36",c:["Modo rápido (Opus 4.6)"]},{v:"2.1.45",c:["¡Sonnet 4.6!"]},{v:"2.1.49",c:["Aislamiento --worktree","Worktrees de subagentes"]},{v:"2.1.51",c:["claude remote-control","Ajustes gestionados plist/Registry"]},{v:"2.1.59",c:["Auto-memory guarda contexto","Selector /copy"]},{v:"2.1.63",c:["/simplify + /batch","HTTP hooks"]},{v:"2.1.68",c:["Esfuerzo medio por defecto","ultrathink reintroducido"]},{v:"2.1.71",c:["/loop + programación cron"]},{v:"2.1.72",c:["Esfuerzo: bajo/medio/alto","ExitWorktree"]},{v:"2.1.75",c:["Contexto 1M (por defecto)","/color","Nombre de sesión en barra"]}
+    ];
+
+    function classify(t){t=t.toLowerCase();if(t.includes('breaking'))return'breaking';if(t.startsWith('corregid')||t.startsWith('fixed')||t.startsWith('fix'))return'fix';if(t.startsWith('mejora')||t.startsWith('improved')||t.startsWith('reduced'))return'improve';return'feat';}
+    function isMajor(v){return['1.0.0','2.0.0','2.1.0','0.2.44','0.2.93','0.2.105','1.0.23','1.0.38','1.0.58','1.0.60','1.0.69','2.0.10','2.0.12','2.0.17','2.0.20','2.0.51','2.0.60','2.0.64','2.0.72','2.0.74','2.1.16','2.1.18','2.1.32','2.1.36','2.1.45','2.1.49','2.1.59','2.1.68','2.1.71','2.1.75'].includes(v);}
+
+    let tc=0,tf=0,tx=0;releases.forEach(r=>r.c.forEach(c=>{tc++;if(classify(c)==='feat')tf++;if(classify(c)==='fix')tx++;}));
+    document.getElementById('stats').innerHTML=`<div class="stat-item"><div class="stat-num">${releases.length}</div><div class="stat-label">Versiones</div></div><div class="stat-item"><div class="stat-num">${tc}</div><div class="stat-label">Cambios</div></div><div class="stat-item"><div class="stat-num">${tf}</div><div class="stat-label">Nuevas</div></div><div class="stat-item"><div class="stat-num">${tx}</div><div class="stat-label">Correcciones</div></div>`;
+
+    // Highlights — reversed (newest first)
+    const hlReversed=[...highlights].reverse();
+    const hg=document.getElementById('hlGrid');let le=-1;
+    hlReversed.forEach(h=>{
+      if(h.era!==le){le=h.era;const r=document.createElement('div');r.className=`era-row era-${h.era}`;r.textContent=eraLabels[h.era];hg.appendChild(r);}
+      const c=document.createElement('div');c.className=`hl-card era-${h.era}`;
+      c.innerHTML=`<div class="hv">v${h.v}</div><div class="ht">${h.t}</div><div class="hd">${h.date}</div><div class="hdesc">${h.d}</div>`;
+      c.onclick=()=>{const el=document.querySelector(`.tl-item[data-version="${h.v}"]`);if(el){el.classList.add('open');el.scrollIntoView({behavior:'smooth',block:'center'});}};
+      hg.appendChild(c);
+    });
+
+    // Timeline — reversed (newest first)
+    const relReversed=[...releases].reverse();
+    const tl=document.getElementById('timeline');let side='left';
+    const eras=[
+      {after:'2.1.0',t:'Versión 2.1',d:'Skills, agentes, worktrees — Ene–Mar 2026'},
+      {after:'2.0.0',t:'Versión 2.0',d:'VS Code, plugins, nueva UI — Sep–Dic 2025'},
+      {after:'1.0.0',t:'General Availability',d:'Sonnet 4 & Opus 4 — May–Sep 2025'},
+      {after:'0.0.0',t:'Preview',d:'Los cimientos — Feb–May 2025'}
+    ];
+    let ei=0;
+    function getEraIdx(v){const[a,b]=v.split('.').map(Number);if(a>=2&&b>=1)return 0;if(a>=2)return 1;if(a>=1)return 2;return 3;}
+    let currentEra=-1;
+    relReversed.forEach(r=>{
+      const eraI=getEraIdx(r.v);
+      if(eraI!==currentEra){currentEra=eraI;const e=eras[eraI];const el=document.createElement('div');el.className='tl-era clearfix';el.innerHTML=`<div class="tl-era-inner"><h3>${e.t}</h3><p>${e.d}</p></div>`;tl.appendChild(el);side='left';}
+      const maj=isMajor(r.v),brk=r.c.filter(c=>classify(c)==='breaking').length,ds=fmtDate(dates[r.v]);
+      const d=document.createElement('div');d.className=`tl-item ${side} ${maj?'major':''}`;d.dataset.version=r.v;d.dataset.text=r.c.join(' ').toLowerCase();
+      let bd='';if(maj)bd+='<span class="tl-badge major">DESTACADA</span>';if(brk)bd+=`<span class="tl-badge breaking">${brk} BREAKING</span>`;
+      const ti=r.c[0].length>50?r.c[0].substring(0,47)+'...':r.c[0];
+      d.innerHTML=`<div class="dot"></div><div class="tl-card" onclick="this.parentElement.classList.toggle('open')"><div class="tl-card-header"><div class="tl-card-top"><span class="tl-card-ver">v${r.v}</span>${bd}<span class="tl-badge cnt">${r.c.length}</span><span class="tl-chev">▶</span></div><div class="tl-card-date">${ds}</div><div class="tl-card-title">${ti}</div></div><div class="tl-card-body"><ul>${r.c.map(c=>`<li class="${classify(c)}"><span class="ic"></span><span>${c}</span></li>`).join('')}</ul></div></div>`;
+      tl.appendChild(d);side=side==='left'?'right':'left';
+    });
+    tl.appendChild(Object.assign(document.createElement('div'),{className:'clearfix'}));
+
+    // Search
+    document.getElementById('search').addEventListener('input',function(){
+      const q=this.value.toLowerCase().trim();let c=0;
+      document.querySelectorAll('.tl-item').forEach(el=>{
+        if(!q){el.classList.remove('hidden','open');el.querySelectorAll('mark').forEach(m=>m.outerHTML=m.textContent);return;}
+        const m=el.dataset.text.includes(q)||el.dataset.version.includes(q);el.classList.toggle('hidden',!m);
+        if(m){c++;el.classList.add('open');el.querySelectorAll('.tl-card-body li span:not(.ic)').forEach(s=>{s.innerHTML=s.textContent.replace(new RegExp(`(${q.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')})`,'gi'),'<mark>$1</mark>');});}
+      });
+      const rc=document.getElementById('resultsCounter');rc.textContent=q?`${c} versión${c!==1?'es':''} encontrada${c!==1?'s':''} para "${q}"`:'';rc.classList.toggle('active',!!q);
+    });
+
+    // Filters
+    document.querySelectorAll('.fbtn').forEach(b=>b.addEventListener('click',function(){
+      document.querySelectorAll('.fbtn').forEach(x=>x.classList.remove('active'));this.classList.add('active');
+      const f=this.dataset.filter;
+      document.querySelectorAll('.tl-item').forEach(el=>{
+        if(f==='all'){el.classList.remove('hidden','open');return;}
+        if(f==='major'){el.classList.toggle('hidden',!el.classList.contains('major'));return;}
+        const mp={feature:'feat',fix:'fix'};const items=el.querySelectorAll(`.tl-card-body li.${mp[f]||f}`);
+        el.classList.toggle('hidden',items.length===0);if(items.length>0)el.classList.add('open');
+      });
+    }));
+
+    window.addEventListener('scroll',()=>{document.getElementById('backTop').classList.toggle('visible',window.scrollY>400);});
+
+    // Mobile nav toggle
+    document.querySelector('.nav-toggle')?.addEventListener('click',function(){
+      const links=document.querySelector('.nav-links');
+      const open=links.classList.toggle('open');
+      this.setAttribute('aria-expanded',open);
+    });
+    document.querySelectorAll('.nav-links a').forEach(a=>a.addEventListener('click',()=>{
+      document.querySelector('.nav-links')?.classList.remove('open');
+      document.querySelector('.nav-toggle')?.setAttribute('aria-expanded','false');
+    }));
+    </script>
+</body>
+</html>
