@@ -1,0 +1,127 @@
+name: Check Claude Code Updates
+
+on:
+  schedule:
+    # Runs every day at 09:00 UTC (11:00 Spain)
+    - cron: '0 9 * * *'
+  workflow_dispatch: # Manual trigger
+
+jobs:
+  check-updates:
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+      contents: read
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Check for new Claude Code version
+        id: check
+        run: |
+          # Get latest version from npm
+          LATEST=$(npm view @anthropic-ai/claude-code version 2>/dev/null)
+          echo "latest=$LATEST" >> $GITHUB_OUTPUT
+
+          # Get our tracked version
+          if [ -f .claude-code-version ]; then
+            CURRENT=$(cat .claude-code-version)
+          else
+            CURRENT="2.1.75"
+          fi
+          echo "current=$CURRENT" >> $GITHUB_OUTPUT
+
+          # Compare
+          if [ "$LATEST" != "$CURRENT" ]; then
+            echo "new_version=true" >> $GITHUB_OUTPUT
+            echo "🆕 New version detected: $LATEST (current: $CURRENT)"
+          else
+            echo "new_version=false" >> $GITHUB_OUTPUT
+            echo "✅ Up to date: $CURRENT"
+          fi
+
+      - name: Fetch release notes
+        if: steps.check.outputs.new_version == 'true'
+        id: notes
+        run: |
+          LATEST="${{ steps.check.outputs.latest }}"
+
+          # Try to get release notes from GitHub
+          NOTES=$(gh api repos/anthropics/claude-code/releases/tags/v${LATEST} --jq '.body' 2>/dev/null || echo "")
+
+          if [ -z "$NOTES" ]; then
+            NOTES="No se encontraron notas de release para v${LATEST}. Revisa manualmente en https://github.com/anthropics/claude-code/releases"
+          fi
+
+          # Save to file (multiline safe)
+          echo "$NOTES" > /tmp/release-notes.md
+          echo "has_notes=true" >> $GITHUB_OUTPUT
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Check if issue already exists
+        if: steps.check.outputs.new_version == 'true'
+        id: existing
+        run: |
+          LATEST="${{ steps.check.outputs.latest }}"
+          EXISTING=$(gh issue list --repo ${{ github.repository }} --search "Claude Code v${LATEST}" --state open --json number --jq '.[0].number' 2>/dev/null || echo "")
+          if [ -n "$EXISTING" ]; then
+            echo "exists=true" >> $GITHUB_OUTPUT
+            echo "⚠️ Issue already exists: #$EXISTING"
+          else
+            echo "exists=false" >> $GITHUB_OUTPUT
+          fi
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Create issue for new version
+        if: steps.check.outputs.new_version == 'true' && steps.existing.outputs.exists == 'false'
+        run: |
+          LATEST="${{ steps.check.outputs.latest }}"
+          CURRENT="${{ steps.check.outputs.current }}"
+          NOTES=$(cat /tmp/release-notes.md)
+
+          gh issue create \
+            --repo ${{ github.repository }} \
+            --title "🚀 Nueva versión de Claude Code: v${LATEST}" \
+            --label "changelog" \
+            --body "$(cat <<EOF
+          ## Nueva versión detectada
+
+          | | Versión |
+          |---|---------|
+          | **Actual en changelog** | v${CURRENT} |
+          | **Nueva en npm** | v${LATEST} |
+
+          ## Qué hacer
+
+          1. Revisar las notas de release abajo
+          2. Actualizar \`changelog.html\` con las nuevas funcionalidades
+          3. Actualizar el bloque "Última Actualización" si es relevante
+          4. Actualizar \`.claude-code-version\` con la nueva versión
+          5. Actualizar el banner en \`index.html\` si hay features destacadas
+
+          ## Notas de Release
+
+          ${NOTES}
+
+          ---
+          *Issue creado automáticamente por el workflow de check de actualizaciones.*
+          EOF
+          )"
+
+          echo "✅ Issue created for v${LATEST}"
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Update tracked version
+        if: steps.check.outputs.new_version == 'true' && steps.existing.outputs.exists == 'false'
+        run: |
+          LATEST="${{ steps.check.outputs.latest }}"
+          echo "$LATEST" > .claude-code-version
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add .claude-code-version
+          git commit -m "chore: track claude code version ${LATEST}"
+          git push
