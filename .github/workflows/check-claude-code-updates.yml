@@ -120,13 +120,37 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Update tracked version
+      - name: Get release date
+        if: steps.check.outputs.new_version == 'true' && steps.existing.outputs.exists == 'false'
+        id: date
+        run: |
+          LATEST="${{ steps.check.outputs.latest }}"
+          # Get published date from GitHub release
+          RELEASE_DATE=$(gh api repos/anthropics/claude-code/releases/tags/v${LATEST} --jq '.published_at[:10]' 2>/dev/null || echo "")
+          if [ -z "$RELEASE_DATE" ]; then
+            RELEASE_DATE=$(date -u +%Y-%m-%d)
+          fi
+          echo "release_date=$RELEASE_DATE" >> $GITHUB_OUTPUT
+          echo "📅 Release date: $RELEASE_DATE"
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Update changelog.html
+        if: steps.check.outputs.new_version == 'true' && steps.existing.outputs.exists == 'false'
+        run: |
+          LATEST="${{ steps.check.outputs.latest }}"
+          RELEASE_DATE="${{ steps.date.outputs.release_date }}"
+          node scripts/update-changelog.js "$LATEST" "$RELEASE_DATE" /tmp/release-notes.md
+
+      - name: Update tracked version and push
         if: steps.check.outputs.new_version == 'true' && steps.existing.outputs.exists == 'false'
         run: |
           LATEST="${{ steps.check.outputs.latest }}"
           echo "$LATEST" > .claude-code-version
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add .claude-code-version
-          git commit -m "chore: track claude code version ${LATEST}"
+          git add .claude-code-version changelog.html
+          git commit -m "chore: track claude code version ${LATEST}
+
+          Auto-updated changelog.html with release notes."
           git push

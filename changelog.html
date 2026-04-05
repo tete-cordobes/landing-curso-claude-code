@@ -184,13 +184,13 @@
         <section class="latest-update">
             <div class="latest-card">
                 <div class="latest-label">🚀 Última Actualización</div>
-                <div class="latest-ver">v2.1.90 — <span>/powerup Lecciones Interactivas</span></div>
-                <div class="latest-date">2 de abril de 2026</div>
+                <div class="latest-ver">v2.1.92 — <span>forceRemoteSettingsRefresh policy setting</span></div>
+                <div class="latest-date">4 de abril de 2026</div>
                 <div class="latest-changes">
-                    <div class="latest-change"><span class="lc-dot"></span>/powerup — lecciones interactivas con demos animadas</div>
-                    <div class="latest-change"><span class="lc-dot"></span>Rendimiento SSE: frames grandes en tiempo lineal (era cuadrático)</div>
-                    <div class="latest-change"><span class="lc-dot"></span>Auto mode respeta límites explícitos del usuario</div>
-                    <div class="latest-change"><span class="lc-dot"></span>Mejora rendimiento SDK en sesiones largas</div>
+                    <div class="latest-change"><span class="lc-dot"></span>forceRemoteSettingsRefresh policy setting</div>
+                    <div class="latest-change"><span class="lc-dot"></span>interactive Bedrock setup wizard accessible from the login screen</div>
+                    <div class="latest-change"><span class="lc-dot"></span>per-model and cache-hit breakdown to /cost for subscription users</div>
+                    <div class="latest-change"><span class="lc-dot"></span>Eliminado: /tag command</div>
                 </div>
             </div>
         </section>
@@ -286,7 +286,7 @@
     ];
 
     const eraLabels=["Preview (Feb–May 2025)","v1.0 GA (May–Sep 2025)","v2.0 (Sep–Dic 2025)","v2.1 (Ene 2026–Actual)"];
-    const dates={"0.2.21":"2025-02-26","0.2.26":"2025-02-27","0.2.30":"2025-03-04","0.2.31":"2025-03-05","0.2.34":"2025-03-08","0.2.44":"2025-03-15","0.2.47":"2025-03-18","0.2.50":"2025-03-19","0.2.53":"2025-03-21","0.2.54":"2025-03-25","0.2.59":"2025-04-02","0.2.70":"2025-04-15","0.2.75":"2025-04-21","0.2.93":"2025-04-30","0.2.105":"2025-05-08","0.2.107":"2025-05-09","0.2.108":"2025-05-13","0.2.117":"2025-05-17","0.2.125":"2025-05-21","1.0.0":"2025-05-22","1.0.7":"2025-05-30","1.0.11":"2025-06-04","1.0.18":"2025-06-09","1.0.23":"2025-06-13","1.0.27":"2025-06-17","1.0.38":"2025-06-30","1.0.44":"2025-07-07","1.0.51":"2025-07-11","1.0.58":"2025-07-22","1.0.60":"2025-07-24","1.0.69":"2025-08-05","1.0.71":"2025-08-07","1.0.77":"2025-08-12","1.0.81":"2025-08-14","1.0.86":"2025-08-20","1.0.90":"2025-08-24","1.0.117":"2025-09-16","1.0.120":"2025-09-19","2.0.0":"2025-09-29","2.0.10":"2025-10-07","2.0.12":"2025-10-09","2.0.17":"2025-10-15","2.0.20":"2025-10-16","2.0.24":"2025-10-20","2.0.45":"2025-11-18","2.0.51":"2025-11-24","2.0.60":"2025-12-05","2.0.64":"2025-12-10","2.0.72":"2025-12-17","2.0.74":"2025-12-19","2.1.0":"2026-01-07","2.1.16":"2026-01-22","2.1.18":"2026-01-22","2.1.27":"2026-01-30","2.1.32":"2026-02-05","2.1.36":"2026-02-07","2.1.45":"2026-02-17","2.1.49":"2026-02-19","2.1.51":"2026-02-23","2.1.59":"2026-02-25","2.1.63":"2026-02-28","2.1.68":"2026-03-04","2.1.71":"2026-03-06","2.1.72":"2026-03-09","2.1.75":"2026-03-13","2.1.76":"2026-03-17","2.1.77":"2026-03-19","2.1.78":"2026-03-20","2.1.79":"2026-03-21","2.1.80":"2026-03-22","2.1.81":"2026-03-23","2.1.83":"2026-03-25","2.1.84":"2026-03-27","2.1.85":"2026-03-28","2.1.86":"2026-03-29","2.1.87":"2026-03-30","2.1.89":"2026-04-01","2.1.90":"2026-04-02"};
+    const dates={"0.2.21":"2025-02-26","0.2.26":"2025-02-27","0.2.30":"2025-03-04","0.2.31":"2025-03-05","0.2.34":"2025-03-08","0.2.44":"2025-03-15","0.2.47":"2025-03-18","0.2.50":"2025-03-19","0.2.53":"2025-03-21","0.2.54":"2025-03-25","0.2.59":"2025-04-02","0.2.70":"2025-04-15","0.2.75":"2025-04-21","0.2.93":"2025-04-30","0.2.105":"2025-05-08","0.2.107":"2025-05-09","0.2.108":"2025-05-13","0.2.117":"2025-05-17","0.2.125":"2025-05-21","1.0.0":"2025-05-22","1.0.7":"2025-05-30","1.0.11":"2025-06-04","1.0.18":"2025-06-09","1.0.23":"2025-06-13","1.0.27":"2025-06-17","1.0.38":"2025-06-30","1.0.44":"2025-07-07","1.0.51":"2025-07-11","1.0.58":"2025-07-22","1.0.60":"2025-07-24","1.0.69":"2025-08-05","1.0.71":"2025-08-07","1.0.77":"2025-08-12","1.0.81":"2025-08-14","1.0.86":"2025-08-20","1.0.90":"2025-08-24","1.0.117":"2025-09-16","1.0.120":"2025-09-19","2.0.0":"2025-09-29","2.0.10":"2025-10-07","2.0.12":"2025-10-09","2.0.17":"2025-10-15","2.0.20":"2025-10-16","2.0.24":"2025-10-20","2.0.45":"2025-11-18","2.0.51":"2025-11-24","2.0.60":"2025-12-05","2.0.64":"2025-12-10","2.0.72":"2025-12-17","2.0.74":"2025-12-19","2.1.0":"2026-01-07","2.1.16":"2026-01-22","2.1.18":"2026-01-22","2.1.27":"2026-01-30","2.1.32":"2026-02-05","2.1.36":"2026-02-07","2.1.45":"2026-02-17","2.1.49":"2026-02-19","2.1.51":"2026-02-23","2.1.59":"2026-02-25","2.1.63":"2026-02-28","2.1.68":"2026-03-04","2.1.71":"2026-03-06","2.1.72":"2026-03-09","2.1.75":"2026-03-13","2.1.76":"2026-03-17","2.1.77":"2026-03-19","2.1.78":"2026-03-20","2.1.79":"2026-03-21","2.1.80":"2026-03-22","2.1.81":"2026-03-23","2.1.83":"2026-03-25","2.1.84":"2026-03-27","2.1.85":"2026-03-28","2.1.86":"2026-03-29","2.1.87":"2026-03-30","2.1.89":"2026-04-01","2.1.90":"2026-04-02","2.1.91":"2026-04-03","2.1.92":"2026-04-04"};
 
     function fmtDate(iso){if(!iso)return'';const d=new Date(iso+'T00:00:00');const m=['Ene','Feb','Mar','Abr','May','Jun','Jul','Ago','Sep','Oct','Nov','Dic'];return`${d.getDate()} ${m[d.getMonth()]} ${d.getFullYear()}`;}
 
@@ -307,7 +307,9 @@
       {v:"2.1.86",c:["Header X-Claude-Code-Session-Id","Read tool formato compacto","Exclusión dirs .jj/.sl (Jujutsu/Sapling)"]},
       {v:"2.1.87",c:["Fix Cowork Dispatch mensajes"]},
       {v:"2.1.89",c:["Permiso 'defer' en PreToolUse","CLAUDE_CODE_NO_FLICKER=1","Hook PermissionDenied","Subagentes en @mention","/buddy (April Fools 🐣)"]},
-      {v:"2.1.90",c:["/powerup lecciones interactivas","Rendimiento SSE lineal (era cuadrático)","Auto mode respeta límites usuario","Rendimiento SDK sesiones largas",".husky en dirs protegidos"]}
+      {v:"2.1.90",c:["/powerup lecciones interactivas","Rendimiento SSE lineal (era cuadrático)","Auto mode respeta límites usuario","Rendimiento SDK sesiones largas",".husky en dirs protegidos"]},
+      {v:"2.1.91",c:["MCP tool result persistence override","disableSkillShellExecution setting","support for multi-line prompts in claude-cli://open?q= deep li...","/claude-api skill guidance","performance: faster stripAnsi on Bun","transcript chain breaks on --resume","cmd+delete not deleting to start of line on iTerm2, kitty, Wez...","Plugins can now ship executables under bin/ and invoke them as..."]},
+      {v:"2.1.92",c:["forceRemoteSettingsRefresh policy setting","interactive Bedrock setup wizard accessible from the login screen","per-model and cache-hit breakdown to /cost for subscription users","Eliminado: /tag command","Eliminado: /vim command (toggle vim mode","Write tool diff computation speed for large files (60% faster ...","subagent spawning permanently failing with \"Could not determin...","prompt-type Stop hooks incorrectly failing"]}
     ];
 
     function classify(t){t=t.toLowerCase();if(t.includes('breaking'))return'breaking';if(t.startsWith('corregid')||t.startsWith('fixed')||t.startsWith('fix'))return'fix';if(t.startsWith('mejora')||t.startsWith('improved')||t.startsWith('reduced'))return'improve';return'feat';}
