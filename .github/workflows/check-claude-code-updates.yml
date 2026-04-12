@@ -40,10 +40,10 @@ jobs:
           # Compare
           if [ "$LATEST" != "$CURRENT" ]; then
             echo "new_version=true" >> $GITHUB_OUTPUT
-            echo "🆕 New version detected: $LATEST (current: $CURRENT)"
+            echo "\ud83c\udd95 New version detected: $LATEST (current: $CURRENT)"
           else
             echo "new_version=false" >> $GITHUB_OUTPUT
-            echo "✅ Up to date: $CURRENT"
+            echo "\u2705 Up to date: $CURRENT"
           fi
 
       - name: Fetch release notes
@@ -51,12 +51,22 @@ jobs:
         id: notes
         run: |
           LATEST="${{ steps.check.outputs.latest }}"
+          NOTES=""
 
           # Try to get release notes from GitHub
-          NOTES=$(gh api repos/anthropics/claude-code/releases/tags/v${LATEST} --jq '.body' 2>/dev/null || echo "")
+          # Note: npm often publishes before GitHub releases exist, so 404 is expected
+          if gh api "repos/anthropics/claude-code/releases/tags/v${LATEST}" \
+            --jq '.body' > /tmp/gh-notes.txt 2>/dev/null; then
+            CANDIDATE=$(cat /tmp/gh-notes.txt)
+            # Verify it's actual content, not an error response or null
+            if [ -n "$CANDIDATE" ] && [ "$CANDIDATE" != "null" ] && \
+               [[ "$CANDIDATE" != *'"message"'* ]]; then
+              NOTES="$CANDIDATE"
+            fi
+          fi
 
           if [ -z "$NOTES" ]; then
-            NOTES="No se encontraron notas de release para v${LATEST}. Revisa manualmente en https://github.com/anthropics/claude-code/releases"
+            NOTES="No se encontraron notas de release para v${LATEST}. El release en GitHub puede tardar tras la publicaci\u00f3n en npm. Revisa manualmente en https://github.com/anthropics/claude-code/releases"
           fi
 
           # Save to file (multiline safe)
@@ -73,7 +83,7 @@ jobs:
           EXISTING=$(gh issue list --repo ${{ github.repository }} --search "Claude Code v${LATEST}" --state open --json number --jq '.[0].number' 2>/dev/null || echo "")
           if [ -n "$EXISTING" ]; then
             echo "exists=true" >> $GITHUB_OUTPUT
-            echo "⚠️ Issue already exists: #$EXISTING"
+            echo "\u26a0\ufe0f Issue already exists: #$EXISTING"
           else
             echo "exists=false" >> $GITHUB_OUTPUT
           fi
@@ -89,22 +99,22 @@ jobs:
 
           gh issue create \
             --repo ${{ github.repository }} \
-            --title "🚀 Nueva versión de Claude Code: v${LATEST}" \
+            --title "\ud83d\ude80 Nueva versi\u00f3n de Claude Code: v${LATEST}" \
             --label "changelog" \
             --body "$(cat <<EOF
-          ## Nueva versión detectada
+          ## Nueva versi\u00f3n detectada
 
-          | | Versión |
-          |---|---------|
+          | | Versi\u00f3n |
+          |---|--------|
           | **Actual en changelog** | v${CURRENT} |
           | **Nueva en npm** | v${LATEST} |
 
-          ## Qué hacer
+          ## Qu\u00e9 hacer
 
           1. Revisar las notas de release abajo
           2. Actualizar \`changelog.html\` con las nuevas funcionalidades
-          3. Actualizar el bloque "Última Actualización" si es relevante
-          4. Actualizar \`.claude-code-version\` con la nueva versión
+          3. Actualizar el bloque "\u00daltima Actualizaci\u00f3n" si es relevante
+          4. Actualizar \`.claude-code-version\` con la nueva versi\u00f3n
           5. Actualizar el banner en \`index.html\` si hay features destacadas
 
           ## Notas de Release
@@ -112,11 +122,11 @@ jobs:
           ${NOTES}
 
           ---
-          *Issue creado automáticamente por el workflow de check de actualizaciones.*
+          *Issue creado autom\u00e1ticamente por el workflow de check de actualizaciones.*
           EOF
           )"
 
-          echo "✅ Issue created for v${LATEST}"
+          echo "\u2705 Issue created for v${LATEST}"
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
@@ -125,13 +135,38 @@ jobs:
         id: date
         run: |
           LATEST="${{ steps.check.outputs.latest }}"
-          # Get published date from GitHub release
-          RELEASE_DATE=$(gh api repos/anthropics/claude-code/releases/tags/v${LATEST} --jq '.published_at[:10]' 2>/dev/null || echo "")
+          RELEASE_DATE=""
+
+          # Try GitHub release date first
+          if gh api "repos/anthropics/claude-code/releases/tags/v${LATEST}" \
+            --jq '.published_at[:10]' > /tmp/gh-date.txt 2>/dev/null; then
+            CANDIDATE=$(cat /tmp/gh-date.txt)
+            # Validate it looks like a proper date (YYYY-MM-DD)
+            if [[ "$CANDIDATE" =~ ^[0-9]{4}-[0-9]{2}-[0-9]{2}$ ]]; then
+              RELEASE_DATE="$CANDIDATE"
+            fi
+          fi
+
+          # Fallback: get publish date from npm
+          if [ -z "$RELEASE_DATE" ]; then
+            RELEASE_DATE=$(node -e "
+              const {execSync} = require('child_process');
+              try {
+                const out = execSync('npm view @anthropic-ai/claude-code time --json', {encoding:'utf8'});
+                const ts = JSON.parse(out)['${LATEST}'];
+                if (ts) process.stdout.write(ts.slice(0,10));
+              } catch {}
+            " 2>/dev/null || true)
+          fi
+
+          # Final fallback: today's date
           if [ -z "$RELEASE_DATE" ]; then
             RELEASE_DATE=$(date -u +%Y-%m-%d)
+            echo "\u26a0\ufe0f No release date found, using today's date"
           fi
+
           echo "release_date=$RELEASE_DATE" >> $GITHUB_OUTPUT
-          echo "📅 Release date: $RELEASE_DATE"
+          echo "\ud83d\udcc5 Release date: $RELEASE_DATE"
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
