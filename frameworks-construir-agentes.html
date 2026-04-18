@@ -1,0 +1,1648 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frameworks agénticos para construir agentes IA: CrewAI, LangGraph, AutoGen y Pydantic AI - Curso Claude Code</title>
+    <meta name="description" content="Guía completa 2026 de frameworks para construir agentes IA: CrewAI, LangGraph, AutoGen, Pydantic AI, Mastra, Agno, LlamaIndex, Letta, OpenAI Agents SDK, Google ADK, Claude Agent SDK y Microsoft Agent Framework. Con stars verificadas y casos de uso.">
+    <meta name="keywords" content="frameworks agenticos construir agentes, crewai, langgraph, autogen, pydantic ai, mastra, agno, llamaindex, openai agents sdk, claude agent sdk, google adk, microsoft agent framework, letta, smolagents, frameworks agenticos python">
+    <meta name="author" content="Curso Claude Code">
+    <meta name="robots" content="index, follow">
+    
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Frameworks agénticos para construir agentes IA: comparativa 2026">
+    <meta property="og:description" content="CrewAI, LangGraph, AutoGen, Pydantic AI, Mastra, Google ADK, Claude Agent SDK y más. Guía completa con stars verificadas.">
+    <meta property="og:locale" content="es_ES">
+    
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="blog-styles.css">
+    <link rel="stylesheet" href="article-enhancements.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-content">
+                <div class="logo">
+                    <a href="index.html">
+                        <div class="logo-icon">
+                            <img src="claude-color.png" alt="Claude Code Logo" width="32" height="32">
+                        </div>
+                        <span class="logo-text">Curso Claude Code</span>
+                    </a>
+                </div>
+                <div class="nav-links">
+                    <a href="index.html">Inicio</a>
+                    <a href="blog.html">Blog</a>
+                    <a href="frameworks-agenticos.html">Claude Code</a>
+                    <a href="frameworks-construir-agentes.html" class="active">Agentes IA</a>
+                    <a href="changelog.html">Changelog</a>
+                    <a href="index.html#formulario" class="btn-nav">Descargar Guía Gratis</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <article class="post-article">
+        <div class="container post-container">
+            <a href="blog.html" class="back-link">← Volver al blog</a>
+
+            <header class="post-header">
+                <div class="post-meta">
+                    <span class="post-date">Abril 2026</span>
+                    <span class="post-reading-time">28 min de lectura</span>
+                </div>
+                <h1 class="post-title-main">Frameworks agénticos para construir agentes IA</h1>
+                <p class="post-excerpt"><strong>CrewAI, LangGraph, AutoGen, Pydantic AI, Mastra, Agno, LlamaIndex</strong> y los SDKs oficiales de OpenAI, Anthropic, Google y Microsoft. Guía completa 2026 con stars verificadas vía GitHub API, casos de uso, tiempos de aprendizaje y la noticia que cambia el mapa: <strong>Microsoft Agent Framework</strong>.</p>
+            </header>
+
+            <div class="post-content">
+<h1 id="frameworks-agénticos-para-construir-agentes-ia">Frameworks
+agénticos para construir agentes IA</h1>
+<h2
+id="crewai-langgraph-autogen-pydantic-ai-y-más-comparativa-completa-2026">CrewAI,
+LangGraph, AutoGen, Pydantic AI y más — comparativa completa 2026</h2>
+<blockquote>
+<p><em>“No eliges un framework por sus estrellas. Eliges el que encaja
+con tu stack, tu velocidad de iteración y el tipo de producto que vas a
+construir.”</em></p>
+</blockquote>
+<hr />
+<h2 id="importante-las-2-familias-de-frameworks-agénticos">⚠️
+Importante: las 2 familias de frameworks agénticos</h2>
+<p>El término <em>“framework agéntico”</em> se usa para <strong>dos
+categorías completamente distintas</strong>. Este artículo cubre la
+<strong>Familia A</strong>: librerías para construir agentes IA como
+producto.</p>
+<h3 id="familia-a-frameworks-para-construir-agentes-ia-este-artículo">🅰️
+Familia A — Frameworks para CONSTRUIR agentes IA (ESTE ARTÍCULO)</h3>
+<p>Librerías Python/TypeScript que <strong>importas en tu
+código</strong> para <strong>construir tus propios agentes</strong>
+(chatbots, asistentes autónomos, pipelines RAG, sistemas
+multi-agente).</p>
+<p><strong>Ejemplos que analizamos aquí:</strong> LangGraph, CrewAI,
+AutoGen, Pydantic AI, Mastra, Agno, LlamaIndex, Semantic Kernel, Letta,
+OpenAI Agents SDK, Google ADK, Claude Agent SDK y más.</p>
+<p><strong>Usuario objetivo:</strong> developer que construye un
+producto con IA.</p>
+<h3 id="familia-b-frameworks-para-guiar-tu-asistente-de-coding">🅱️
+Familia B — Frameworks para GUIAR tu asistente de coding</h3>
+<p>Plugins, skills o metodologías que <strong>estructuran cómo tu
+asistente de IA</strong> (Claude Code, Cursor, Codex) <strong>te ayuda a
+programar</strong>.</p>
+<p>👉 <strong><a href="frameworks-agenticos.html">Comparativa de
+frameworks agénticos para Claude Code (Superpowers, gentle-ai,
+BMAD…)</a></strong> ← artículo hermano</p>
+<hr />
+<div class="featured-callout">
+<h2
+id="la-noticia-que-cambia-el-mapa-en-2026-microsoft-agent-framework">📰
+La noticia que cambia el mapa en 2026: Microsoft Agent Framework</h2>
+<p>Antes de entrar al catálogo, hay <strong>una noticia
+estructural</strong> que debes conocer para no invertir en tecnología
+obsoleta:</p>
+<p><strong>Microsoft fusionó AutoGen + Semantic Kernel en un solo
+framework oficial: Microsoft Agent Framework (v1.0 GA abril
+2026).</strong></p>
+<h3 id="qué-significa">Qué significa</h3>
+<ul>
+<li><strong>AutoGen</strong> (57.181 ⭐) queda como proyecto
+“research/innovation”</li>
+<li><strong>Semantic Kernel</strong> (27.731 ⭐) sigue con bugfixes y
+security patches, pero features nuevas van al nuevo framework</li>
+<li><strong>Microsoft Agent Framework</strong> (9.558 ⭐, creciendo
+rápido) es “Semantic Kernel v2.0” según el propio equipo de
+Microsoft</li>
+<li>Soporta <strong>Python + .NET</strong> en un solo SDK unificado</li>
+</ul>
+<h3 id="implicación-práctica">Implicación práctica</h3>
+<p>Si vas a empezar un proyecto nuevo en el ecosistema Microsoft (Azure,
+.NET) en 2026 y usarías AutoGen o Semantic Kernel, <strong>arranca
+directamente con Agent Framework</strong>. Si ya tienes producción con
+AutoGen 0.4, el roadmap de migración está publicado. Si tienes SK 1.x,
+igual.</p>
+<p>📦 <a
+href="https://github.com/microsoft/agent-framework">github.com/microsoft/agent-framework</a></p>
+
+</div>
+<hr />
+<h2 id="tabla-maestra-los-frameworks-más-relevantes-en-2026">Tabla
+maestra: los frameworks más relevantes en 2026</h2>
+<p><em>(Click en cualquier cabecera para ordenar — ⭐ GitHub verificadas
+vía API a 18 abril 2026)</em></p>
+<table style="width:100%;">
+<colgroup>
+<col style="width: 18%" />
+<col style="width: 21%" />
+<col style="width: 16%" />
+<col style="width: 16%" />
+<col style="width: 9%" />
+<col style="width: 18%" />
+</colgroup>
+<thead>
+<tr>
+<th>Framework</th>
+<th>Autor / Org</th>
+<th>⭐ GitHub</th>
+<th>Lenguaje</th>
+<th>Tipo</th>
+<th>Categoría</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Langflow</strong></td>
+<td>langflow-ai</td>
+<td>147.071</td>
+<td>Python</td>
+<td>Visual Builder</td>
+<td>No-code</td>
+</tr>
+<tr>
+<td><strong>Dify</strong></td>
+<td>langgenius</td>
+<td>138.216</td>
+<td>TypeScript</td>
+<td>Visual Builder</td>
+<td>Platform</td>
+</tr>
+<tr>
+<td><strong>MetaGPT</strong></td>
+<td>geekan</td>
+<td>67.190</td>
+<td>Python</td>
+<td>Library</td>
+<td>Multi-agent</td>
+</tr>
+<tr>
+<td><strong>AutoGen</strong></td>
+<td>Microsoft</td>
+<td>57.181</td>
+<td>Python / .NET</td>
+<td>Library</td>
+<td>Conversational multi-agent</td>
+</tr>
+<tr>
+<td><strong>Flowise</strong></td>
+<td>FlowiseAI</td>
+<td>52.032</td>
+<td>TypeScript</td>
+<td>Visual Builder</td>
+<td>LangChain.js drag-drop</td>
+</tr>
+<tr>
+<td><strong>CrewAI</strong></td>
+<td>crewAIInc</td>
+<td>49.139</td>
+<td>Python</td>
+<td>Library</td>
+<td>Role-based crews</td>
+</tr>
+<tr>
+<td><strong>LlamaIndex</strong></td>
+<td>run-llama</td>
+<td>48.665</td>
+<td>Python / TS</td>
+<td>Library</td>
+<td>Document agents + RAG</td>
+</tr>
+<tr>
+<td><strong>Agno</strong> (ex-Phidata)</td>
+<td>agno-agi</td>
+<td>39.516</td>
+<td>Python</td>
+<td>Library</td>
+<td>High-performance runtime</td>
+</tr>
+<tr>
+<td><strong>LangGraph</strong></td>
+<td>langchain-ai</td>
+<td>29.555</td>
+<td>Python / TS</td>
+<td>Library</td>
+<td>Graph-based state machines</td>
+</tr>
+<tr>
+<td><strong>Semantic Kernel</strong></td>
+<td>Microsoft</td>
+<td>27.731</td>
+<td>C# / Python / Java</td>
+<td>Library</td>
+<td>Enterprise .NET</td>
+</tr>
+<tr>
+<td><strong>SmolAgents</strong></td>
+<td>HuggingFace</td>
+<td>26.705</td>
+<td>Python</td>
+<td>Library</td>
+<td>Code-as-action</td>
+</tr>
+<tr>
+<td><strong>Haystack</strong></td>
+<td>deepset-ai</td>
+<td>24.887</td>
+<td>Python</td>
+<td>Library</td>
+<td>RAG + agents production</td>
+</tr>
+<tr>
+<td><strong>Mastra</strong></td>
+<td>mastra-ai</td>
+<td>23.116</td>
+<td>TypeScript</td>
+<td>Library</td>
+<td>TS-first full-stack</td>
+</tr>
+<tr>
+<td><strong>Letta</strong> (ex-MemGPT)</td>
+<td>letta-ai</td>
+<td>22.137</td>
+<td>Python</td>
+<td>Library</td>
+<td>Stateful memory agents</td>
+</tr>
+<tr>
+<td><strong>OpenAI Agents SDK</strong></td>
+<td>OpenAI</td>
+<td>22.003</td>
+<td>Python</td>
+<td>Official SDK</td>
+<td>Sucesor de Swarm</td>
+</tr>
+<tr>
+<td><strong>Google ADK</strong></td>
+<td>Google</td>
+<td>19.085</td>
+<td>Python</td>
+<td>Official SDK</td>
+<td>Gemini-native</td>
+</tr>
+<tr>
+<td><strong>CAMEL</strong></td>
+<td>camel-ai</td>
+<td>16.725</td>
+<td>Python</td>
+<td>Library</td>
+<td>Research multi-agent</td>
+</tr>
+<tr>
+<td><strong>Pydantic AI</strong></td>
+<td>pydantic</td>
+<td>16.445</td>
+<td>Python</td>
+<td>Library</td>
+<td>Type-safe agents</td>
+</tr>
+<tr>
+<td><strong>Microsoft Agent Framework</strong></td>
+<td>Microsoft</td>
+<td>9.558</td>
+<td>Python / .NET</td>
+<td>Library</td>
+<td>AutoGen + SK unificados</td>
+</tr>
+<tr>
+<td><strong>Claude Agent SDK</strong> (Python)</td>
+<td>Anthropic</td>
+<td>6.392</td>
+<td>Python</td>
+<td>Official SDK</td>
+<td>Anthropic oficial</td>
+</tr>
+<tr>
+<td><strong>Atomic Agents</strong></td>
+<td>BrainBlend-AI</td>
+<td>5.823</td>
+<td>Python</td>
+<td>Library</td>
+<td>Composable sin magia</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="marco-conceptual-los-3-tipos">Marco conceptual: los 3 tipos</h2>
+<p>Los frameworks de la Familia A se dividen en <strong>3 tipos</strong>
+según cómo los usas:</p>
+<h3 id="libraries-code-first">🧩 Libraries (code-first)</h3>
+<p>Las importas en tu código Python/TypeScript. Tú escribes el código
+que define agentes, tools, flujos. Son la opción de los developers
+serios.</p>
+<p><strong>Ejemplos:</strong> LangGraph, CrewAI, AutoGen, Pydantic AI,
+Mastra, Agno.</p>
+<h3 id="visual-builders-no-code-low-code">🎨 Visual Builders (no-code /
+low-code)</h3>
+<p>Interfaces drag-and-drop para montar flujos sin escribir código.
+Ideal para prototipos rápidos, equipos no técnicos, demos.</p>
+<p><strong>Ejemplos:</strong> Langflow, Dify, Flowise, Rivet.</p>
+<h3 id="official-sdks-de-proveedores-llm">🔌 Official SDKs (de
+proveedores LLM)</h3>
+<p>SDKs oficiales de los proveedores de modelos. Optimizados para su
+stack, con menos abstracciones pero máxima integración.</p>
+<p><strong>Ejemplos:</strong> OpenAI Agents SDK, Google ADK, Anthropic
+Claude Agent SDK.</p>
+<hr />
+<h2 id="langgraph">LangGraph</h2>
+<h3 id="qué-es">Qué es</h3>
+<p>Framework <strong>graph-based</strong> de LangChain para modelar
+agentes como máquinas de estado. Cada agente es un grafo de nodos con
+edges condicionales sobre un State schema tipado.</p>
+<h3 id="filosofía">Filosofía</h3>
+<p>Control de flujo <strong>explícito</strong>. En lugar de “magia”
+agéntica, tú defines el grafo: nodos que procesan, edges condicionales
+que deciden siguiente paso, state que persiste.</p>
+<h3 id="diferenciadores-clave">Diferenciadores clave</h3>
+<ul>
+<li><strong>Durability</strong> (checkpointing) — el estado se persiste
+en cada step</li>
+<li><strong>Time-travel debugging</strong> — puedes revertir a cualquier
+estado anterior</li>
+<li><strong>Human-in-the-loop</strong> nativo</li>
+<li>Integración con <strong>LangSmith</strong> para observabilidad
+trace-level</li>
+<li>Integración con <strong>MCP</strong> (Model Context Protocol de
+Anthropic)</li>
+</ul>
+<h3 id="casos-de-uso-ideales">Casos de uso ideales</h3>
+<ul>
+<li>Workflows complejos multi-step con backtracking</li>
+<li>Sistemas donde necesitas audit trail completo</li>
+<li>Producción enterprise con requisitos de durabilidad</li>
+<li>Pipelines que deben pausar, esperar aprobación humana, y
+continuar</li>
+</ul>
+<h3 id="casos-donde-no-usarlo">Casos donde NO usarlo</h3>
+<ul>
+<li>Prototipos simples (es verbose incluso para flujos básicos)</li>
+<li>Equipos pequeños sin tiempo para aprender curva media-alta</li>
+</ul>
+<h3 id="tiempo-de-aprendizaje">Tiempo de aprendizaje</h3>
+<p><strong>Media-alta</strong>. Schema + nodes + edges + compile.
+Verbose.</p>
+<h3 id="madurez-y-adopción">Madurez y adopción</h3>
+<p><strong>Production-ready</strong>. Superó a CrewAI en estrellas a
+principios de 2026. LangGraph Platform GA en 2025.</p>
+<h3 id="usuarios-en-producción">Usuarios en producción</h3>
+<p>Klarna, Replit, LinkedIn, Elastic, Uber, AppFolio.</p>
+<h3 id="recursos">Recursos</h3>
+<ul>
+<li>📦 <a
+href="https://github.com/langchain-ai/langgraph">github.com/langchain-ai/langgraph</a>
+· 29.555 ⭐</li>
+<li>📚 Documentación oficial con ejemplos pattern-based</li>
+<li>🔗 LangSmith para observabilidad</li>
+</ul>
+<hr />
+<h2 id="crewai">CrewAI</h2>
+<h3 id="qué-es-1">Qué es</h3>
+<p>Framework <strong>role-based</strong> donde cada agente tiene role,
+goal y backstory. Los agentes forman “crews” que trabajan en tasks
+asignadas siguiendo processes (sequential, hierarchical,
+consensual).</p>
+<h3 id="filosofía-1">Filosofía</h3>
+<p>Metáfora de equipo humano aplicada a agentes IA. Arquitecta tu
+sistema como un equipo real: tienes un researcher, un writer, un
+reviewer, y les das objetivos claros.</p>
+<h3 id="diferenciadores-clave-1">Diferenciadores clave</h3>
+<ul>
+<li><strong>La curva de aprendizaje más baja del sector</strong> —
+probablemente el framework más fácil de arrancar</li>
+<li><strong>Standalone</strong> desde 2024 (ya no depende de
+LangChain)</li>
+<li>Soporte nativo <strong>MCP + A2A</strong> desde v1.x</li>
+<li>Metáfora intuitiva que no requiere saber teoría de grafos ni
+máquinas de estado</li>
+</ul>
+<h3 id="casos-de-uso-ideales-1">Casos de uso ideales</h3>
+<ul>
+<li>Multi-agent colaborativo con roles claros (research → write →
+review)</li>
+<li>Equipos que quieren prototipar rápido</li>
+<li>Cuando tu problema tiene estructura de “equipo humano”</li>
+<li>MVPs y primeros productos agénticos</li>
+</ul>
+<h3 id="casos-donde-no-usarlo-1">Casos donde NO usarlo</h3>
+<ul>
+<li>Workflows con lógica condicional muy compleja (usa LangGraph)</li>
+<li>Cuando necesitas control extremo de flujo (usa Atomic Agents o
+LangGraph)</li>
+</ul>
+<h3 id="tiempo-de-aprendizaje-1">Tiempo de aprendizaje</h3>
+<p><strong>Bajo</strong>. Arrancar en horas, no días.</p>
+<h3 id="madurez-y-adopción-1">Madurez y adopción</h3>
+<ul>
+<li><strong>$24.5M funding</strong> total (Series A liderada por Insight
+Partners)</li>
+<li><strong>~2.000 millones de ejecuciones agénticas/año</strong>
+reportadas</li>
+<li>Uso en <strong>~50% del Fortune 500</strong> (dato de la
+empresa)</li>
+</ul>
+<h3 id="usuarios-en-producción-1">Usuarios en producción</h3>
+<p>PwC, IBM, Capgemini, NVIDIA.</p>
+<h3 id="recursos-1">Recursos</h3>
+<ul>
+<li>📦 <a
+href="https://github.com/crewAIInc/crewAI">github.com/crewAIInc/crewAI</a>
+· 49.139 ⭐</li>
+<li>🌐 CrewAI Enterprise cloud</li>
+<li>🎨 Multi-agent builder visual (v1.10.x)</li>
+</ul>
+<hr />
+<h2 id="autogen-microsoft">AutoGen (Microsoft)</h2>
+<h3 id="qué-es-2">Qué es</h3>
+<p>Framework <strong>event-driven, async, conversational
+multi-agent</strong> donde los agentes se comunican vía mensajes
+asíncronos. Rewrite completo en v0.4 (enero 2025).</p>
+<h3 id="estado-actual">⚠️ Estado actual</h3>
+<p><strong>Importante:</strong> Microsoft fusionó AutoGen con Semantic
+Kernel en <strong>Microsoft Agent Framework</strong> (preview oct-2025,
+v1.0 GA abril 2026). AutoGen queda como proyecto “research/innovation”
+pero <strong>el roadmap de producción migra a Agent
+Framework</strong>.</p>
+<p>Si empiezas nuevo, arranca con Microsoft Agent Framework.</p>
+<h3 id="diferenciadores-clave-2">Diferenciadores clave</h3>
+<ul>
+<li>Rewrite async/event-driven en v0.4</li>
+<li><strong>AutoGen Studio</strong> — low-code UI</li>
+<li><strong>Magentic-One</strong> — generalist multi-agent system</li>
+<li>Python + .NET</li>
+</ul>
+<h3 id="casos-de-uso-ideales-2">Casos de uso ideales</h3>
+<ul>
+<li>Research y prototipado multi-agent conversacional</li>
+<li>Empresas en stack Microsoft que necesitan puente hasta Agent
+Framework</li>
+</ul>
+<h3 id="tiempo-de-aprendizaje-2">Tiempo de aprendizaje</h3>
+<p><strong>Medio</strong>.</p>
+<h3 id="licencia">Licencia</h3>
+<p><strong>CC-BY-4.0</strong> (atípica, no la MIT estándar — revisar
+compatibilidad comercial).</p>
+<h3 id="recursos-2">Recursos</h3>
+<ul>
+<li>📦 <a
+href="https://github.com/microsoft/autogen">github.com/microsoft/autogen</a>
+· 57.181 ⭐</li>
+<li>🆕 <a
+href="https://github.com/microsoft/agent-framework">github.com/microsoft/agent-framework</a>
+· 9.558 ⭐ (sucesor recomendado)</li>
+</ul>
+<hr />
+<h2 id="pydantic-ai">Pydantic AI</h2>
+<h3 id="qué-es-3">Qué es</h3>
+<p>Agents <strong>type-safe</strong> al estilo Pydantic. FastAPI-feel
+pero para GenAI — structured outputs con validación Pydantic, dependency
+injection, streaming validado.</p>
+<h3 id="filosofía-2">Filosofía</h3>
+<p><em>“La forma Pydantic de construir agentes.”</em> Si vienes de
+FastAPI y Pydantic, esto te va a encantar.</p>
+<h3 id="diferenciadores-clave-3">Diferenciadores clave</h3>
+<ul>
+<li><strong>Type safety end-to-end</strong></li>
+<li><strong>Dependency injection</strong> integrada</li>
+<li><strong>Streaming validado</strong> con schemas Pydantic</li>
+<li><strong>Logfire integration</strong> para observabilidad</li>
+<li><strong>v1.0 lanzado 4 septiembre 2025</strong> — API stability
+commitment de 6 meses</li>
+<li><strong>Thoughtworks Radar: ASSESS/TRIAL</strong></li>
+</ul>
+<h3 id="casos-de-uso-ideales-3">Casos de uso ideales</h3>
+<ul>
+<li>Agents con outputs estructurados críticos (sistemas que deben
+parsear la salida)</li>
+<li>Equipos que valoran type safety</li>
+<li>Developers que ya usan Pydantic o FastAPI</li>
+<li>Integración con Amazon Bedrock AgentCore</li>
+</ul>
+<h3 id="tiempo-de-aprendizaje-3">Tiempo de aprendizaje</h3>
+<p><strong>Bajo</strong> si ya usas Pydantic/FastAPI.</p>
+<h3 id="novedades-v1">Novedades v1</h3>
+<ul>
+<li>Human-in-the-loop tool approval</li>
+<li>Durable execution</li>
+</ul>
+<h3 id="recursos-3">Recursos</h3>
+<ul>
+<li>📦 <a
+href="https://github.com/pydantic/pydantic-ai">github.com/pydantic/pydantic-ai</a>
+· 16.445 ⭐</li>
+<li>📚 Docs con Pydantic + FastAPI familiar API</li>
+</ul>
+<hr />
+<h2 id="mastra-el-typescript-first">Mastra (el TypeScript-first)</h2>
+<h3 id="qué-es-4">Qué es</h3>
+<p><strong>El framework TypeScript de referencia</strong> para construir
+agentes. Full-stack TS: workflows (durable graph), agents, RAG, evals,
+memory — todo integrado.</p>
+<h3 id="filosofía-3">Filosofía</h3>
+<p>TS-first. Creado por ex-team de Gatsby. Si tu stack es Next.js, Node
+o React, esto es tu opción nativa sin salir de TS.</p>
+<h3 id="diferenciadores-clave-4">Diferenciadores clave</h3>
+<ul>
+<li><strong>TypeScript de primera clase</strong> (no es un port Python →
+TS)</li>
+<li><strong>Dev playground local</strong></li>
+<li>Compatible con <strong>Vercel AI SDK</strong></li>
+<li>Durable workflows</li>
+</ul>
+<h3 id="madurez-y-adopción-2">Madurez y adopción</h3>
+<ul>
+<li><strong>$13M seed round YC-led</strong> (Paul Graham, Guillermo
+Rauch, Amjad Masad, Balaji como inversores)</li>
+<li><strong>220k weekly downloads</strong></li>
+<li>“Tercer JS framework que más rápido crece” según telemetría
+propia</li>
+</ul>
+<h3 id="usuarios-en-producción-2">Usuarios en producción</h3>
+<p>Replit, SoftBank, Marsh McLennan, PayPal, Adobe, Docker.</p>
+<h3 id="casos-de-uso-ideales-4">Casos de uso ideales</h3>
+<ul>
+<li>Stacks Next.js / Node / React que quieren agentes sin salir de
+TS</li>
+<li>Full-stack devs que prefieren TypeScript sobre Python</li>
+<li>Edge deployments (Vercel, Cloudflare Workers)</li>
+</ul>
+<h3 id="licencia-1">Licencia</h3>
+<p><strong>Elastic License / custom</strong> (NOASSERTION en GitHub).
+<strong>Revisa los términos si tu uso es comercial.</strong></p>
+<h3 id="recursos-4">Recursos</h3>
+<ul>
+<li>📦 <a
+href="https://github.com/mastra-ai/mastra">github.com/mastra-ai/mastra</a>
+· 23.116 ⭐</li>
+<li>💰 <a href="https://mastra.ai/blog/seed-round">Seed round blog
+post</a></li>
+</ul>
+<hr />
+<h2 id="agno-ex-phidata">Agno (ex-Phidata)</h2>
+<h3 id="qué-es-5">Qué es</h3>
+<p><strong>High-performance multi-agent runtime</strong>. Rebranded de
+Phidata en enero 2025 con rewrite de rendimiento.</p>
+<h3 id="diferenciadores-clave-5">Diferenciadores clave</h3>
+<ul>
+<li><strong>Performance</strong>: ~3μs instantiation según el
+equipo</li>
+<li>Built-in: memory, knowledge base, reasoning</li>
+<li><strong>AgentOS</strong> — runtime managed</li>
+</ul>
+<h3 id="casos-de-uso-ideales-5">Casos de uso ideales</h3>
+<ul>
+<li>Agents de producción con memoria persistente y knowledge base</li>
+<li>Alta concurrencia (miles de agents simultáneos)</li>
+<li>Cuando performance importa más que flexibilidad</li>
+</ul>
+<h3 id="tiempo-de-aprendizaje-4">Tiempo de aprendizaje</h3>
+<p><strong>Bajo-medio</strong>.</p>
+<h3 id="licencia-2">Licencia</h3>
+<p>Apache-2.0 (el marketing web menciona Mozilla Public License para
+Agno 2.0 — <strong>ambigüedad no verificada</strong>, revisar antes de
+uso comercial).</p>
+<h3 id="recursos-5">Recursos</h3>
+<ul>
+<li>📦 <a
+href="https://github.com/agno-agi/agno">github.com/agno-agi/agno</a> ·
+39.516 ⭐</li>
+</ul>
+<hr />
+<h2 id="llamaindex-el-pivot-2025">LlamaIndex (el pivot 2025)</h2>
+<h3 id="qué-es-6">Qué es</h3>
+<p><strong>Antes:</strong> framework RAG por excelencia.<br />
+<strong>Ahora (pivot 2025):</strong> <em>“Leading document agent and OCR
+platform”</em> (descripción oficial actualizada).</p>
+<h3 id="filosofía-4">Filosofía</h3>
+<p>Workflows event-driven + <strong>LlamaParse/LlamaCloud</strong> como
+producto principal. Document parsing/OCR agéntico de clase
+enterprise.</p>
+<h3 id="diferenciadores-clave-6">Diferenciadores clave</h3>
+<ul>
+<li><strong>Document parsing enterprise</strong> (PDFs con
+tablas/gráficos complejos vía LlamaParse)</li>
+<li>Workflows event-driven</li>
+<li>LlamaIndex TS también disponible</li>
+</ul>
+<h3 id="madurez-y-adopción-3">Madurez y adopción</h3>
+<ul>
+<li><strong>700%+ growth self-serve revenue en 2025</strong></li>
+<li>Pivot exitoso validado por mercado</li>
+</ul>
+<h3 id="usuarios-en-producción-3">Usuarios en producción</h3>
+<p>Cemex, Rakuten, Carlyle Group.</p>
+<h3 id="casos-de-uso-ideales-6">Casos de uso ideales</h3>
+<ul>
+<li><strong>RAG sobre documentos complejos</strong> (contratos, papers,
+reports con tablas)</li>
+<li>Knowledge assistants enterprise</li>
+<li>OCR agéntico</li>
+</ul>
+<h3 id="recursos-6">Recursos</h3>
+<ul>
+<li>📦 <a
+href="https://github.com/run-llama/llama_index">github.com/run-llama/llama_index</a>
+· 48.665 ⭐</li>
+<li>📚 <a href="https://www.llamaindex.ai/">LlamaCloud</a></li>
+</ul>
+<hr />
+<h2 id="smolagents-huggingface">SmolAgents (HuggingFace)</h2>
+<h3 id="qué-es-7">Qué es</h3>
+<p><em>“Agents that think in code”</em>. El <strong>CodeAgent</strong>
+genera y ejecuta código Python en vez de tool-calls JSON.</p>
+<h3 id="filosofía-5">Filosofía</h3>
+<p><strong>Code-as-action</strong>: si quieres que el agente haga algo,
+que escriba código y lo ejecute. Minimalista (~1000 LoC core).</p>
+<h3 id="diferenciadores-clave-7">Diferenciadores clave</h3>
+<ul>
+<li><strong>Code-as-action paradigm</strong> (único en esta lista)</li>
+<li>Integración nativa <strong>HuggingFace Hub</strong> — agents
+shareables</li>
+<li><strong>Sandboxing E2B</strong> para seguridad</li>
+<li><strong>Apache-2.0</strong> (licencia clara)</li>
+</ul>
+<h3 id="casos-de-uso-ideales-7">Casos de uso ideales</h3>
+<ul>
+<li>Agents locales con modelos open-source</li>
+<li>Prototipos simples sin overhead</li>
+<li>Education / demos</li>
+</ul>
+<h3 id="recursos-7">Recursos</h3>
+<ul>
+<li>📦 <a
+href="https://github.com/huggingface/smolagents">github.com/huggingface/smolagents</a>
+· 26.705 ⭐</li>
+</ul>
+<hr />
+<h2 id="letta-ex-memgpt">Letta (ex-MemGPT)</h2>
+<h3 id="qué-es-8">Qué es</h3>
+<p><strong>El líder indiscutible en agentes con memoria
+persistente</strong>. Rebrand de MemGPT en 2024.</p>
+<h3 id="filosofía-6">Filosofía</h3>
+<p>Agentes <strong>stateful</strong> que recuerdan interacciones pasadas
+y se auto-mejoran con memoria de largo plazo.</p>
+<h3 id="diferenciadores-clave-8">Diferenciadores clave</h3>
+<ul>
+<li><strong>Stateful memory persistente</strong> out-of-the-box</li>
+<li>Agentes que aprenden de su historial</li>
+<li>Self-improvement capabilities</li>
+</ul>
+<h3 id="casos-de-uso-ideales-8">Casos de uso ideales</h3>
+<ul>
+<li>Chatbots con memoria de conversaciones largas</li>
+<li>Agents personalizados que recuerdan preferencias del usuario</li>
+<li>Asistentes persistentes</li>
+</ul>
+<h3 id="recursos-8">Recursos</h3>
+<ul>
+<li>📦 <a
+href="https://github.com/letta-ai/letta">github.com/letta-ai/letta</a> ·
+22.137 ⭐</li>
+</ul>
+<hr />
+<h2 id="openai-agents-sdk">OpenAI Agents SDK</h2>
+<h3 id="qué-es-9">Qué es</h3>
+<p><strong>Sucesor oficial de OpenAI Swarm</strong>. Framework
+lightweight para multi-agent con handoffs, guardrails y tracing.</p>
+<h3 id="filosofía-7">Filosofía</h3>
+<p>Lightweight y production-ready. OpenAI lo lanzó en marzo 2025 para
+reemplazar Swarm (que era “educational”).</p>
+<h3 id="diferenciadores-clave-9">Diferenciadores clave</h3>
+<ul>
+<li><strong>Oficial OpenAI</strong> — integración perfecta con
+GPT-4/GPT-5</li>
+<li><strong>Handoffs</strong> entre agentes</li>
+<li><strong>Guardrails</strong> integrados</li>
+<li><strong>Tracing</strong> nativo</li>
+</ul>
+<h3 id="casos-de-uso-ideales-9">Casos de uso ideales</h3>
+<ul>
+<li>Productos construidos 100% sobre modelos OpenAI</li>
+<li>Multi-agent con handoffs simples</li>
+<li>Cuando quieres el SDK “bendecido” por el proveedor</li>
+</ul>
+<h3 id="recursos-9">Recursos</h3>
+<ul>
+<li>📦 <a
+href="https://github.com/openai/openai-agents-python">github.com/openai/openai-agents-python</a>
+· 22.003 ⭐</li>
+</ul>
+<hr />
+<h2 id="google-adk-agent-development-kit">Google ADK (Agent Development
+Kit)</h2>
+<h3 id="qué-es-10">Qué es</h3>
+<p><strong>SDK oficial de Google para agentes</strong>. Lanzado abril
+2025. Code-first, Gemini-native.</p>
+<h3 id="diferenciadores-clave-10">Diferenciadores clave</h3>
+<ul>
+<li><strong>Gemini-native</strong> — optimizado para modelos Google</li>
+<li><strong>Eval + deploy integrados</strong></li>
+<li><strong>MCP-native</strong> (Model Context Protocol)</li>
+</ul>
+<h3 id="casos-de-uso-ideales-10">Casos de uso ideales</h3>
+<ul>
+<li>Productos construidos sobre Gemini</li>
+<li>Google Cloud / Vertex AI stack</li>
+<li>Cuando necesitas eval + deploy en un solo SDK</li>
+</ul>
+<h3 id="recursos-10">Recursos</h3>
+<ul>
+<li>📦 <a
+href="https://github.com/google/adk-python">github.com/google/adk-python</a>
+· 19.085 ⭐</li>
+</ul>
+<hr />
+<h2 id="claude-agent-sdk-anthropic">Claude Agent SDK (Anthropic)</h2>
+<h3 id="qué-es-11">Qué es</h3>
+<p><strong>SDK oficial de Anthropic</strong> para construir agentes con
+Claude. Hooks, MCP tools, subagents.</p>
+<h3 id="disponible-en-2-lenguajes">Disponible en 2 lenguajes</h3>
+<ul>
+<li><strong>Python</strong>: <a
+href="https://github.com/anthropics/claude-agent-sdk-python">github.com/anthropics/claude-agent-sdk-python</a>
+· 6.392 ⭐</li>
+<li><strong>TypeScript</strong>: <a
+href="https://github.com/anthropics/claude-agent-sdk-typescript">github.com/anthropics/claude-agent-sdk-typescript</a>
+· 1.300 ⭐</li>
+</ul>
+<h3 id="diferenciadores-clave-11">Diferenciadores clave</h3>
+<ul>
+<li><strong>Oficial Anthropic</strong> — integración perfecta con
+Claude</li>
+<li><strong>Hooks</strong> para intercepción</li>
+<li><strong>MCP tools</strong> nativos</li>
+<li><strong>Subagents</strong> integrados</li>
+</ul>
+<h3 id="casos-de-uso-ideales-11">Casos de uso ideales</h3>
+<ul>
+<li>Productos construidos 100% sobre Claude</li>
+<li>Cuando quieres features Anthropic-specific (prompt caching, extended
+thinking)</li>
+<li>Integración con ecosistema Claude Code</li>
+</ul>
+<hr />
+<h2 id="microsoft-agent-framework-el-sucesor">Microsoft Agent Framework
+(el sucesor)</h2>
+<h3 id="qué-es-12">Qué es</h3>
+<p><strong>La fusión oficial de AutoGen + Semantic Kernel</strong>
+lanzada en v1.0 GA en abril 2026. El futuro del agentic stack
+Microsoft.</p>
+<h3 id="por-qué-importa">Por qué importa</h3>
+<p>Microsoft admite que eran dos productos solapados. Ahora uno solo,
+unificado:</p>
+<ul>
+<li>Python + .NET en un solo SDK</li>
+<li>Hereda lo mejor de AutoGen (multi-agent) y Semantic Kernel
+(enterprise .NET)</li>
+<li>Azure-first pero no exclusivo</li>
+<li><strong>Es efectivamente “Semantic Kernel v2.0”</strong> según el
+propio equipo Microsoft</li>
+</ul>
+<h3 id="casos-de-uso-ideales-12">Casos de uso ideales</h3>
+<ul>
+<li><strong>Cualquier proyecto nuevo</strong> en stack Microsoft
+Azure</li>
+<li>Migración desde AutoGen 0.4 o Semantic Kernel 1.x</li>
+<li>Python + .NET híbrido</li>
+</ul>
+<h3 id="recursos-11">Recursos</h3>
+<ul>
+<li>📦 <a
+href="https://github.com/microsoft/agent-framework">github.com/microsoft/agent-framework</a>
+· 9.558 ⭐</li>
+<li>📰 <a
+href="https://devblogs.microsoft.com/foundry/introducing-microsoft-agent-framework-the-open-source-engine-for-agentic-ai-apps/">Microsoft
+blog oficial</a></li>
+</ul>
+<hr />
+<h2 id="semantic-kernel-microsoft-legacy">Semantic Kernel (Microsoft —
+legacy)</h2>
+<h3 id="qué-es-13">Qué es</h3>
+<p>SDK lightweight para integrar LLMs en apps enterprise. <strong>C#,
+Python y Java.</strong></p>
+<h3 id="estado-actual-1">⚠️ Estado actual</h3>
+<p><strong>Mantenimiento, no desarrollo nuevo.</strong> Microsoft
+recomienda migrar a <strong>Agent Framework</strong> para features
+nuevas. SK v1.x sigue con bugfixes y security patches.</p>
+<h3 id="cuándo-sigue-teniendo-sentido-usarlo">Cuándo sigue teniendo
+sentido usarlo</h3>
+<ul>
+<li>Si ya tienes producción estable en SK v1.x</li>
+<li>Apps Microsoft 365 Copilot existentes</li>
+<li>Si necesitas soporte Java (Agent Framework es Python + .NET)</li>
+</ul>
+<h3 id="recursos-12">Recursos</h3>
+<ul>
+<li>📦 <a
+href="https://github.com/microsoft/semantic-kernel">github.com/microsoft/semantic-kernel</a>
+· 27.731 ⭐</li>
+</ul>
+<hr />
+<h2 id="atomic-agents">Atomic Agents</h2>
+<h3 id="qué-es-14">Qué es</h3>
+<p>Framework <strong>anti-magia</strong>. Composabilidad atómica, I/O
+via schemas Pydantic, inspirado en Atomic Design.</p>
+<h3 id="filosofía-8">Filosofía</h3>
+<p><em>“Sin abstracciones mágicas.”</em> Control total, cada componente
+reusable individualmente. Rechazo explícito al “black-box” de
+LangChain/CrewAI.</p>
+<h3 id="casos-de-uso-ideales-13">Casos de uso ideales</h3>
+<ul>
+<li>Equipos que rechazan la magia de otros frameworks</li>
+<li>Pipelines deterministas donde cada paso debe ser explícito</li>
+<li>Cuando debug es crítico</li>
+</ul>
+<h3 id="recursos-13">Recursos</h3>
+<ul>
+<li>📦 <a
+href="https://github.com/BrainBlend-AI/atomic-agents">github.com/BrainBlend-AI/atomic-agents</a>
+· 5.823 ⭐</li>
+</ul>
+<hr />
+<h2 id="haystack-deepset-ai">Haystack (deepset-ai)</h2>
+<h3 id="qué-es-15">Qué es</h3>
+<p><strong>RAG + agents production-ready</strong>. Pipelines modulares
+de deepset.</p>
+<h3 id="diferenciadores-clave-12">Diferenciadores clave</h3>
+<ul>
+<li>RAG de clase enterprise</li>
+<li>Pipelines modulares</li>
+<li>Production-ready desde hace años</li>
+</ul>
+<h3 id="casos-de-uso-ideales-14">Casos de uso ideales</h3>
+<ul>
+<li>RAG sobre grandes volúmenes de documentos</li>
+<li>Sistemas de búsqueda semántica enterprise</li>
+<li>Pipelines híbridos (retrieval + generación + tools)</li>
+</ul>
+<h3 id="recursos-14">Recursos</h3>
+<ul>
+<li>📦 <a
+href="https://github.com/deepset-ai/haystack">github.com/deepset-ai/haystack</a>
+· 24.887 ⭐</li>
+</ul>
+<hr />
+<h2 id="camel">CAMEL</h2>
+<h3 id="qué-es-16">Qué es</h3>
+<p>Framework multi-agente <strong>research-oriented</strong> con énfasis
+en role-playing y “scaling law of agents”.</p>
+<h3 id="casos-de-uso-ideales-15">Casos de uso ideales</h3>
+<ul>
+<li>Investigación académica</li>
+<li>Experimentación multi-agente</li>
+<li>Sistemas inspirados en dinámicas sociales</li>
+</ul>
+<h3 id="recursos-15">Recursos</h3>
+<ul>
+<li>📦 <a
+href="https://github.com/camel-ai/camel">github.com/camel-ai/camel</a> ·
+16.725 ⭐</li>
+</ul>
+<hr />
+<h2 id="metagpt">MetaGPT</h2>
+<h3 id="qué-es-17">Qué es</h3>
+<p>Framework multi-agente que simula una <strong>“software
+company”</strong>: PM, Architect, Engineer, QA como agentes que
+colaboran.</p>
+<h3 id="señal-de-desaceleración">⚠️ Señal de desaceleración</h3>
+<p><strong>Push parado desde enero 2026</strong>. No verificado si es
+pausa estratégica o declive. <strong>Revisa antes de
+comprometerte</strong>.</p>
+<h3 id="recursos-16">Recursos</h3>
+<ul>
+<li>📦 <a
+href="https://github.com/geekan/MetaGPT">github.com/geekan/MetaGPT</a> ·
+67.190 ⭐</li>
+</ul>
+<hr />
+<h2 id="visual-builders-no-code-low-code-1">Visual Builders (no-code /
+low-code)</h2>
+<h3 id="langflow">Langflow</h3>
+<p><strong>147.071 ⭐</strong> — Visual builder sobre LangChain.
+Drag-drop de flujos. El rey por estrellas.</p>
+<ul>
+<li>📦 <a
+href="https://github.com/langflow-ai/langflow">github.com/langflow-ai/langflow</a></li>
+</ul>
+<h3 id="dify">Dify</h3>
+<p><strong>138.216 ⭐</strong> — Plataforma production-ready agentic
+workflow con <strong>LLMOps integrado</strong>. Mayor tracción
+enterprise que Langflow.</p>
+<ul>
+<li>📦 <a
+href="https://github.com/langgenius/dify">github.com/langgenius/dify</a></li>
+</ul>
+<h3 id="flowise">Flowise</h3>
+<p><strong>52.032 ⭐</strong> — Drag-drop sobre LangChain.js. Node-based
+al estilo n8n pero para agentes.</p>
+<ul>
+<li>📦 <a
+href="https://github.com/FlowiseAI/Flowise">github.com/FlowiseAI/Flowise</a></li>
+</ul>
+<h3 id="rivet-ironclad">Rivet (Ironclad)</h3>
+<p><strong>4.539 ⭐</strong> — Visual IDE + librería TypeScript
+embebible. Crecimiento más modesto.</p>
+<ul>
+<li>📦 <a
+href="https://github.com/Ironclad/rivet">github.com/Ironclad/rivet</a></li>
+</ul>
+<h3 id="cuándo-usar-visual-builders">Cuándo usar visual builders</h3>
+<ul>
+<li>Prototipos rápidos / demos</li>
+<li>Equipos no técnicos</li>
+<li>Cuando el flujo es estable y no necesita código custom</li>
+<li>Onboarding de stakeholders no-devs</li>
+</ul>
+<h3 id="cuándo-no-usar-visual-builders">Cuándo NO usar visual
+builders</h3>
+<ul>
+<li>Productos de producción con requisitos complejos (usa
+libraries)</li>
+<li>Cuando necesitas testing automatizado, versionado de código,
+CI/CD</li>
+<li>Performance crítica</li>
+</ul>
+<hr />
+<h2 id="matriz-comparativa-consolidada">Matriz comparativa
+consolidada</h2>
+<table>
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 11%" />
+<col style="width: 8%" />
+<col style="width: 9%" />
+<col style="width: 13%" />
+<col style="width: 8%" />
+<col style="width: 12%" />
+<col style="width: 12%" />
+<col style="width: 6%" />
+<col style="width: 8%" />
+</colgroup>
+<thead>
+<tr>
+<th>Feature</th>
+<th style="text-align: center;">LangGraph</th>
+<th style="text-align: center;">CrewAI</th>
+<th style="text-align: center;">AutoGen</th>
+<th style="text-align: center;">Pydantic AI</th>
+<th style="text-align: center;">Mastra</th>
+<th style="text-align: center;">LlamaIndex</th>
+<th style="text-align: center;">SmolAgents</th>
+<th style="text-align: center;">Agno</th>
+<th style="text-align: center;">Atomic</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Python</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">❌</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+</tr>
+<tr>
+<td>TypeScript</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">❌</td>
+<td style="text-align: center;">❌</td>
+<td style="text-align: center;">❌</td>
+<td style="text-align: center;">✅✅</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">❌</td>
+<td style="text-align: center;">❌</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>Type-safe</td>
+<td style="text-align: center;">⚙️</td>
+<td style="text-align: center;">⚙️</td>
+<td style="text-align: center;">⚙️</td>
+<td style="text-align: center;">✅✅</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">⚙️</td>
+<td style="text-align: center;">⚙️</td>
+<td style="text-align: center;">⚙️</td>
+<td style="text-align: center;">✅</td>
+</tr>
+<tr>
+<td>Multi-agent</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅✅</td>
+<td style="text-align: center;">✅✅</td>
+<td style="text-align: center;">⚙️</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">⚙️</td>
+<td style="text-align: center;">⚙️</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">⚙️</td>
+</tr>
+<tr>
+<td>Memoria persistente</td>
+<td style="text-align: center;">⚙️</td>
+<td style="text-align: center;">⚙️</td>
+<td style="text-align: center;">⚙️</td>
+<td style="text-align: center;">⚙️</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">❌</td>
+<td style="text-align: center;">✅✅</td>
+<td style="text-align: center;">⚙️</td>
+</tr>
+<tr>
+<td>RAG built-in</td>
+<td style="text-align: center;">⚙️</td>
+<td style="text-align: center;">❌</td>
+<td style="text-align: center;">❌</td>
+<td style="text-align: center;">❌</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅✅</td>
+<td style="text-align: center;">❌</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>Observabilidad</td>
+<td style="text-align: center;">✅ LangSmith</td>
+<td style="text-align: center;">⚙️</td>
+<td style="text-align: center;">⚙️</td>
+<td style="text-align: center;">✅ Logfire</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">⚙️</td>
+<td style="text-align: center;">⚙️</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>Production users notables</td>
+<td style="text-align: center;">✅✅</td>
+<td style="text-align: center;">✅✅</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅✅</td>
+<td style="text-align: center;">⚙️</td>
+<td style="text-align: center;">⚙️</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>Learning curve</td>
+<td style="text-align: center;">🔴 Alta</td>
+<td style="text-align: center;">🟢 Baja</td>
+<td style="text-align: center;">🟡 Media</td>
+<td style="text-align: center;">🟢 Baja</td>
+<td style="text-align: center;">🟢 Baja</td>
+<td style="text-align: center;">🟡 Media</td>
+<td style="text-align: center;">🟢 Baja</td>
+<td style="text-align: center;">🟢 Baja</td>
+<td style="text-align: center;">🟡 Media</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Leyenda:</strong> ✅✅ = excelente / ✅ = sí / ⚙️ =
+configurable / ❌ = no / 🟢🟡🔴 = dificultad</p>
+<hr />
+<h2 id="tiempos-de-aprendizaje">Tiempos de aprendizaje</h2>
+<table>
+<thead>
+<tr>
+<th>Framework</th>
+<th>Tiempo productivo</th>
+<th>Tiempo dominio</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>CrewAI</strong></td>
+<td>Horas</td>
+<td>1 semana</td>
+</tr>
+<tr>
+<td><strong>SmolAgents</strong></td>
+<td>Horas</td>
+<td>3-5 días</td>
+</tr>
+<tr>
+<td><strong>Pydantic AI</strong></td>
+<td>1 día (si conoces Pydantic)</td>
+<td>1 semana</td>
+</tr>
+<tr>
+<td><strong>Mastra</strong></td>
+<td>1 día</td>
+<td>1-2 semanas</td>
+</tr>
+<tr>
+<td><strong>Agno</strong></td>
+<td>1-2 días</td>
+<td>1-2 semanas</td>
+</tr>
+<tr>
+<td><strong>OpenAI Agents SDK</strong></td>
+<td>1-2 días</td>
+<td>1 semana</td>
+</tr>
+<tr>
+<td><strong>Google ADK</strong></td>
+<td>1-2 días</td>
+<td>1-2 semanas</td>
+</tr>
+<tr>
+<td><strong>Claude Agent SDK</strong></td>
+<td>1-2 días</td>
+<td>1 semana</td>
+</tr>
+<tr>
+<td><strong>LlamaIndex</strong></td>
+<td>2-3 días</td>
+<td>2-3 semanas</td>
+</tr>
+<tr>
+<td><strong>Atomic Agents</strong></td>
+<td>2-3 días</td>
+<td>2 semanas</td>
+</tr>
+<tr>
+<td><strong>AutoGen</strong></td>
+<td>3-5 días</td>
+<td>2-4 semanas</td>
+</tr>
+<tr>
+<td><strong>LangGraph</strong></td>
+<td>3-5 días</td>
+<td>3-4 semanas</td>
+</tr>
+<tr>
+<td><strong>Microsoft Agent Framework</strong></td>
+<td>3-5 días</td>
+<td>3-4 semanas</td>
+</tr>
+<tr>
+<td><strong>Haystack</strong></td>
+<td>3-5 días</td>
+<td>2-4 semanas</td>
+</tr>
+<tr>
+<td><strong>Semantic Kernel</strong></td>
+<td>5 días</td>
+<td>3-4 semanas</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="recomendaciones-por-perfil">Recomendaciones por perfil</h2>
+<h3 id="soy-solo-dev-quiero-prototipar-ya">“Soy solo dev, quiero
+prototipar YA”</h3>
+<p><strong>Ganador: CrewAI</strong><br />
+Curva más baja del sector. Prototipo funcionando en horas.</p>
+<h3 id="necesito-agentes-production-ready-con-observabilidad">“Necesito
+agentes production-ready con observabilidad”</h3>
+<p><strong>Ganador: LangGraph + LangSmith</strong><br />
+Durabilidad, checkpointing, time-travel debugging, audit trails.</p>
+<h3 id="mi-stack-es-typescript-next.js-node">“Mi stack es TypeScript /
+Next.js / Node”</h3>
+<p><strong>Ganador claro: Mastra</strong><br />
+TS-first real, no port. Compatible con Vercel AI SDK.</p>
+<h3 id="quiero-type-safety-obsesiva">“Quiero type safety obsesiva”</h3>
+<p><strong>Ganador: Pydantic AI</strong><br />
+v1.0 estable, FastAPI feel, structured outputs validados.</p>
+<h3 id="mi-caso-es-rag-sobre-documentos-complejos">“Mi caso es RAG sobre
+documentos complejos”</h3>
+<p><strong>Ganador: LlamaIndex + LlamaParse</strong><br />
+PDF, tablas, gráficos, OCR agéntico. 700% growth 2025.</p>
+<h3 id="solo-uso-modelos-openai">“Solo uso modelos OpenAI”</h3>
+<p><strong>Ganador: OpenAI Agents SDK</strong><br />
+SDK oficial, handoffs + guardrails + tracing.</p>
+<h3 id="solo-uso-claude">“Solo uso Claude”</h3>
+<p><strong>Ganador: Claude Agent SDK de Anthropic</strong><br />
+Features Anthropic-native: prompt caching, extended thinking, MCP.</p>
+<h3 id="solo-uso-gemini-google-cloud">“Solo uso Gemini / Google
+Cloud”</h3>
+<p><strong>Ganador: Google ADK</strong><br />
+Gemini-native, eval + deploy integrados.</p>
+<h3 id="stack-microsoft-azure-.net">“Stack Microsoft / Azure /
+.NET”</h3>
+<p><strong>Ganador: Microsoft Agent Framework</strong><br />
+AutoGen + Semantic Kernel unificados. Python + .NET. <strong>NO empieces
+con AutoGen o SK sueltos en 2026.</strong></p>
+<h3 id="necesito-agentes-con-memoria-persistente">“Necesito agentes con
+memoria persistente”</h3>
+<p><strong>Ganador: Letta</strong><br />
+Líder indiscutible en stateful memory.</p>
+<h3 id="quiero-algo-sin-magia-control-total">“Quiero algo sin magia,
+control total”</h3>
+<p><strong>Ganador: Atomic Agents</strong><br />
+Anti-black-box por diseño.</p>
+<h3 id="no-soy-dev-necesito-drag-and-drop">“No soy dev, necesito
+drag-and-drop”</h3>
+<p><strong>Ganador: Dify</strong> (si quieres LLMOps integrado) o
+<strong>Langflow</strong> (si ya usas LangChain).</p>
+<h3 id="research-académico">“Research académico”</h3>
+<p><strong>Ganador: CAMEL</strong><br />
+Role-playing, scaling law of agents.</p>
+<hr />
+<h2 id="stacks-ganadores-2026">Stacks ganadores 2026</h2>
+<h3 id="stack-startup-ágil-python">Stack “Startup ágil Python”</h3>
+<pre><code>CrewAI (rápido de arrancar)
+   ↓
+Pydantic AI (cuando necesitas type safety en partes críticas)
+   ↓
+LangSmith (observabilidad)</code></pre>
+<h3 id="stack-producción-enterprise-python">Stack “Producción enterprise
+Python”</h3>
+<pre><code>LangGraph (workflows complejos con state)
+   ↓
+LangSmith (observabilidad + evals)
+   ↓
+LlamaIndex (RAG sobre documentos)</code></pre>
+<h3 id="stack-typescript-full-stack">Stack “TypeScript full-stack”</h3>
+<pre><code>Mastra (core)
+   ↓
+Vercel AI SDK (integración con Next.js)
+   ↓
+MCP servers (integración con herramientas externas)</code></pre>
+<h3 id="stack-azure-microsoft">Stack “Azure / Microsoft”</h3>
+<pre><code>Microsoft Agent Framework (no AutoGen ni SK por separado)
+   ↓
+Azure OpenAI Service
+   ↓
+Azure AI Foundry</code></pre>
+<h3 id="stack-solo-openai">Stack “Solo OpenAI”</h3>
+<pre><code>OpenAI Agents SDK (nativo)
+   ↓
+OpenAI Tracing Platform</code></pre>
+<h3 id="stack-solo-claude">Stack “Solo Claude”</h3>
+<pre><code>Claude Agent SDK (Python o TS)
+   ↓
+MCP tools
+   ↓
+Anthropic Workbench</code></pre>
+<hr />
+<h2 id="tendencias-y-novedades-2025-2026">Tendencias y novedades
+2025-2026</h2>
+<h3 id="lo-que-está-en-declive">📉 Lo que está en declive</h3>
+<ul>
+<li><strong>OpenAI Swarm</strong> — deprecated de facto, reemplazado por
+Agents SDK</li>
+<li><strong>AutoGen standalone</strong> — migra a Microsoft Agent
+Framework</li>
+<li><strong>Semantic Kernel</strong> — mantenimiento, no desarrollo
+nuevo</li>
+<li><strong>MetaGPT</strong> — push parado desde enero 2026 (unverified
+si es pausa o declive)</li>
+</ul>
+<h3 id="lo-que-está-surgiendo-con-fuerza">📈 Lo que está surgiendo con
+fuerza</h3>
+<ul>
+<li><strong>Mastra</strong> — 0 → 23k ⭐ en 14 meses, $13M YC seed</li>
+<li><strong>Pydantic AI</strong> — 0 → 16k ⭐ en 18 meses, v1.0
+estable</li>
+<li><strong>Google ADK</strong> — 19k ⭐ desde su lanzamiento en
+2025</li>
+<li><strong>OpenAI Agents SDK</strong> — 22k ⭐ como reemplazo de
+Swarm</li>
+<li><strong>Claude Agent SDK</strong> — 6.4k + 1.3k, entrada oficial de
+Anthropic</li>
+</ul>
+<h3 id="cambios-estructurales">🔄 Cambios estructurales</h3>
+<ul>
+<li><strong>LlamaIndex pivot</strong> de framework RAG a plataforma
+document agent (700% revenue growth)</li>
+<li><strong>Microsoft consolidation</strong> con Agent Framework</li>
+<li><strong>Visual builders masivos</strong>: Langflow (147k) y Dify
+(138k) superan a librerías tradicionales en estrellas</li>
+<li><strong>Entrada de los 3 big LLM providers</strong> (OpenAI, Google,
+Anthropic) con SDKs oficiales</li>
+</ul>
+<h3 id="patrón-de-mercado-claro">🧠 Patrón de mercado claro</h3>
+<p>Cada proveedor de LLM (OpenAI, Google, Anthropic, Microsoft) está
+lanzando <strong>su SDK oficial</strong>. Esto fragmenta el mercado pero
+simplifica la decisión: si usas solo UN proveedor, su SDK es la opción
+más integrada.</p>
+<p>Los frameworks <strong>cross-provider</strong> (LangGraph, CrewAI,
+Pydantic AI, Mastra) mantienen su ventaja para equipos que cambian de
+modelo o multi-proveedor.</p>
+<hr />
+<h2 id="decisión-sdk-oficial-o-framework-cross-provider">Decisión: ¿SDK
+oficial o framework cross-provider?</h2>
+<table>
+<colgroup>
+<col style="width: 15%" />
+<col style="width: 76%" />
+<col style="width: 7%" />
+</colgroup>
+<thead>
+<tr>
+<th>Criterio</th>
+<th>SDK oficial (OpenAI/Anthropic/Google/Microsoft)</th>
+<th>Framework cross-provider (LangGraph/CrewAI/etc)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Integración con su proveedor</td>
+<td>🟢🟢 Máxima</td>
+<td>🟡 Buena</td>
+</tr>
+<tr>
+<td>Cross-provider</td>
+<td>🔴 No</td>
+<td>🟢🟢 Sí</td>
+</tr>
+<tr>
+<td>Vendor lock-in</td>
+<td>🔴 Alto</td>
+<td>🟢 Bajo</td>
+</tr>
+<tr>
+<td>Features proveedor-específicas</td>
+<td>🟢🟢 Primeras en llegar</td>
+<td>🟡 Tardan</td>
+</tr>
+<tr>
+<td>Comunidad / templates</td>
+<td>🟡 Menor</td>
+<td>🟢🟢 Grande</td>
+</tr>
+<tr>
+<td>Riesgo de cambio de API</td>
+<td>🟡 Medio (políticas proveedor)</td>
+<td>🟢 Bajo</td>
+</tr>
+<tr>
+<td>Coste inicial</td>
+<td>🟢 Mínimo</td>
+<td>🟡 Medio</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Regla práctica</strong>: - <strong>Producto 100% sobre un
+solo proveedor</strong> → SDK oficial de ese proveedor -
+<strong>Producto multi-modelo o que puede cambiar</strong> → framework
+cross-provider - <strong>Equipo experimental / research</strong> →
+framework con más comunidad (LangGraph, CrewAI)</p>
+<hr />
+<h2 id="glosario">Glosario</h2>
+<ul>
+<li><strong>Agent</strong>: sistema que razona, decide y actúa usando un
+LLM como “cerebro”</li>
+<li><strong>Multi-agent</strong>: múltiples agentes que colaboran (roles
+distintos, mensajes, handoffs)</li>
+<li><strong>Handoff</strong>: transferencia de control entre
+agentes</li>
+<li><strong>State machine</strong>: modelo de computación donde cada
+paso cambia un estado explícito</li>
+<li><strong>Checkpointing</strong>: persistir el estado del agente en
+cada step para poder recuperar/revertir</li>
+<li><strong>Tool calling</strong>: el LLM decide invocar una función
+externa (API, DB, código)</li>
+<li><strong>MCP (Model Context Protocol)</strong>: protocolo de
+Anthropic para comunicación entre agentes y herramientas externas</li>
+<li><strong>RAG (Retrieval-Augmented Generation)</strong>: enriquecer el
+prompt del LLM con documentos recuperados</li>
+<li><strong>Code-as-action</strong>: el agente genera y ejecuta código
+en vez de tool-calls JSON</li>
+<li><strong>Guardrails</strong>: validaciones que filtran inputs/outputs
+peligrosos o fuera de política</li>
+<li><strong>Observability</strong>: tracing, logs, métricas del
+comportamiento del agente</li>
+<li><strong>Durable execution</strong>: ejecuciones que sobreviven
+crashes y restarts</li>
+<li><strong>Human-in-the-loop</strong>: pausar la ejecución automática
+para pedir aprobación humana</li>
+</ul>
+<hr />
+<h2 id="recursos-consolidados">Recursos consolidados</h2>
+<h3 id="libraries-python-principales">Libraries Python principales</h3>
+<table>
+<colgroup>
+<col style="width: 47%" />
+<col style="width: 26%" />
+<col style="width: 26%" />
+</colgroup>
+<thead>
+<tr>
+<th>Framework</th>
+<th>Repo</th>
+<th>Docs</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>LangGraph</td>
+<td><a href="https://github.com/langchain-ai/langgraph">github</a></td>
+<td><a href="https://langchain-ai.github.io/langgraph/">docs</a></td>
+</tr>
+<tr>
+<td>CrewAI</td>
+<td><a href="https://github.com/crewAIInc/crewAI">github</a></td>
+<td><a href="https://docs.crewai.com">docs.crewai.com</a></td>
+</tr>
+<tr>
+<td>AutoGen</td>
+<td><a href="https://github.com/microsoft/autogen">github</a></td>
+<td><a
+href="https://microsoft.github.io/autogen">microsoft.github.io/autogen</a></td>
+</tr>
+<tr>
+<td>Pydantic AI</td>
+<td><a href="https://github.com/pydantic/pydantic-ai">github</a></td>
+<td><a href="https://ai.pydantic.dev">ai.pydantic.dev</a></td>
+</tr>
+<tr>
+<td>LlamaIndex</td>
+<td><a href="https://github.com/run-llama/llama_index">github</a></td>
+<td><a href="https://docs.llamaindex.ai">docs.llamaindex.ai</a></td>
+</tr>
+<tr>
+<td>Agno</td>
+<td><a href="https://github.com/agno-agi/agno">github</a></td>
+<td><a href="https://docs.agno.com">docs.agno.com</a></td>
+</tr>
+<tr>
+<td>SmolAgents</td>
+<td><a href="https://github.com/huggingface/smolagents">github</a></td>
+<td><a href="https://huggingface.co/docs/smolagents">HuggingFace
+docs</a></td>
+</tr>
+<tr>
+<td>Haystack</td>
+<td><a href="https://github.com/deepset-ai/haystack">github</a></td>
+<td><a href="https://haystack.deepset.ai">haystack.deepset.ai</a></td>
+</tr>
+<tr>
+<td>Semantic Kernel</td>
+<td><a
+href="https://github.com/microsoft/semantic-kernel">github</a></td>
+<td><a
+href="https://learn.microsoft.com/semantic-kernel">learn.microsoft.com/semantic-kernel</a></td>
+</tr>
+<tr>
+<td>Letta</td>
+<td><a href="https://github.com/letta-ai/letta">github</a></td>
+<td><a href="https://docs.letta.com">docs.letta.com</a></td>
+</tr>
+<tr>
+<td>CAMEL</td>
+<td><a href="https://github.com/camel-ai/camel">github</a></td>
+<td><a href="https://www.camel-ai.org">camel-ai.org</a></td>
+</tr>
+<tr>
+<td>Atomic Agents</td>
+<td><a
+href="https://github.com/BrainBlend-AI/atomic-agents">github</a></td>
+<td>README del repo</td>
+</tr>
+<tr>
+<td>MetaGPT</td>
+<td><a href="https://github.com/geekan/MetaGPT">github</a></td>
+<td><a href="https://docs.deepwisdom.ai">docs.deepwisdom.ai</a></td>
+</tr>
+</tbody>
+</table>
+<h3 id="libraries-typescript">Libraries TypeScript</h3>
+<table>
+<colgroup>
+<col style="width: 47%" />
+<col style="width: 26%" />
+<col style="width: 26%" />
+</colgroup>
+<thead>
+<tr>
+<th>Framework</th>
+<th>Repo</th>
+<th>Docs</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Mastra</td>
+<td><a href="https://github.com/mastra-ai/mastra">github</a></td>
+<td><a href="https://mastra.ai/docs">mastra.ai/docs</a></td>
+</tr>
+</tbody>
+</table>
+<h3 id="sdks-oficiales-de-proveedores">SDKs oficiales de
+proveedores</h3>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 22%" />
+<col style="width: 27%" />
+</colgroup>
+<thead>
+<tr>
+<th>Proveedor</th>
+<th>SDK</th>
+<th>Repo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>OpenAI</td>
+<td>Agents SDK</td>
+<td><a
+href="https://github.com/openai/openai-agents-python">github</a></td>
+</tr>
+<tr>
+<td>Anthropic</td>
+<td>Claude Agent SDK (Python)</td>
+<td><a
+href="https://github.com/anthropics/claude-agent-sdk-python">github</a></td>
+</tr>
+<tr>
+<td>Anthropic</td>
+<td>Claude Agent SDK (TS)</td>
+<td><a
+href="https://github.com/anthropics/claude-agent-sdk-typescript">github</a></td>
+</tr>
+<tr>
+<td>Google</td>
+<td>ADK (Agent Development Kit)</td>
+<td><a href="https://github.com/google/adk-python">github</a></td>
+</tr>
+<tr>
+<td>Microsoft</td>
+<td>Agent Framework (NUEVO)</td>
+<td><a
+href="https://github.com/microsoft/agent-framework">github</a></td>
+</tr>
+</tbody>
+</table>
+<h3 id="visual-builders">Visual Builders</h3>
+<table>
+<thead>
+<tr>
+<th>Plataforma</th>
+<th>Repo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Langflow</td>
+<td><a href="https://github.com/langflow-ai/langflow">github</a></td>
+</tr>
+<tr>
+<td>Dify</td>
+<td><a href="https://github.com/langgenius/dify">github</a></td>
+</tr>
+<tr>
+<td>Flowise</td>
+<td><a href="https://github.com/FlowiseAI/Flowise">github</a></td>
+</tr>
+<tr>
+<td>Rivet</td>
+<td><a href="https://github.com/Ironclad/rivet">github</a></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="artículo-relacionado">Artículo relacionado</h2>
+<p>👉 <strong><a href="frameworks-agenticos.html">Frameworks agénticos
+para Claude Code: Superpowers, gentle-ai, BMAD y más</a></strong></p>
+<p>Si lo que buscas no es <strong>construir agentes</strong> sino
+<strong>estructurar cómo tu asistente de IA</strong> (Claude Code,
+Cursor, Codex) <strong>te ayuda a programar</strong>, ese es el artículo
+complementario. Cubre la Familia B: frameworks para coding workflow.</p>
+<hr />
+<p><em>Guía actualizada en Abril 2026. Las estrellas de GitHub y estado
+de mantenimiento se verificaron directamente contra la API oficial el 18
+de abril de 2026. Información de funding, production users y releases
+verificada contra blogs oficiales de cada empresa.</em></p>
+
+            </div>
+
+            <div class="post-footer">
+                <div class="post-cta">
+                    <h3>¿Te gustó esta guía?</h3>
+                    <p>Únete a la lista de espera del curso Claude Code y recibe más contenido como este + tu guía gratis</p>
+                    <a href="index.html#formulario" class="btn-primary">Descargar guía gratis</a>
+                </div>
+            </div>
+        </div>
+    </article>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <div class="logo-icon">
+                            <img src="claude-color.png" alt="Claude Code Logo" width="32" height="32">
+                        </div>
+                        <span class="logo-text">Curso Claude Code</span>
+                    </div>
+                    <p class="footer-description">
+                        El curso más completo de Claude Code en español. Aprende a automatizar tu flujo de desarrollo y multiplica tu productividad.
+                    </p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Curso Claude Code. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="article-interactive.js" defer></script>
+</body>
+</html>

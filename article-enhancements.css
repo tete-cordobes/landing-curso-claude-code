@@ -1,0 +1,674 @@
+/* ===================================================================
+   Article Enhancements — Vercel/Geist inspired
+   Overlay sobre styles.css + blog-styles.css
+   =================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800&family=Geist+Mono:wght@400;500&family=Inter:wght@400;500;600;700&display=swap');
+
+/* Design tokens */
+:root {
+    --geist-font-sans: 'Geist', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    --geist-font-mono: 'Geist Mono', 'SF Mono', ui-monospace, Menlo, monospace;
+
+    --geist-fg: #0a0a0a;
+    --geist-fg-muted: #52525b;
+    --geist-fg-subtle: #71717a;
+    --geist-bg: #fafafa;
+    --geist-bg-card: #ffffff;
+    --geist-bg-subtle: #f4f4f5;
+    --geist-bg-code: #171717;
+
+    --geist-border: #e4e4e7;
+    --geist-border-strong: #d4d4d8;
+
+    --geist-accent: #0070f3;
+    --geist-accent-hover: #0051cc;
+    --geist-success: #0cce6b;
+    --geist-warning: #f5a623;
+    --geist-danger: #ee0000;
+
+    --geist-radius-sm: 6px;
+    --geist-radius: 10px;
+    --geist-radius-lg: 14px;
+
+    --geist-shadow-sm: 0 1px 2px rgba(0,0,0,0.04);
+    --geist-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    --geist-shadow-lg: 0 20px 40px rgba(0,0,0,0.08);
+}
+
+/* Tipografía general */
+body {
+    font-family: var(--geist-font-sans);
+    background: var(--geist-bg);
+    color: var(--geist-fg);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Post container más generoso */
+.post-article {
+    background: var(--geist-bg);
+    padding: 3rem 0 6rem;
+}
+
+.post-container {
+    max-width: 880px;
+}
+
+/* Header del post rediseñado */
+.post-header {
+    background: var(--geist-bg-card);
+    border: 1px solid var(--geist-border);
+    border-radius: var(--geist-radius-lg);
+    padding: 3rem 3rem 2.5rem;
+    box-shadow: var(--geist-shadow-sm);
+}
+
+.post-title-main {
+    font-family: var(--geist-font-sans);
+    font-size: 3rem;
+    font-weight: 800;
+    letter-spacing: -0.04em;
+    line-height: 1.1;
+    color: var(--geist-fg);
+    margin-bottom: 1.25rem;
+}
+
+.post-excerpt {
+    font-size: 1.125rem;
+    line-height: 1.65;
+    color: var(--geist-fg-muted);
+}
+
+.post-meta {
+    color: var(--geist-fg-subtle);
+    font-size: 0.875rem;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+}
+
+/* Contenido del post */
+.post-content {
+    background: var(--geist-bg-card);
+    border: 1px solid var(--geist-border);
+    border-radius: var(--geist-radius-lg);
+    padding: 3rem;
+    font-family: var(--geist-font-sans);
+    font-size: 1.0625rem;
+    line-height: 1.75;
+    color: var(--geist-fg);
+    box-shadow: var(--geist-shadow-sm);
+}
+
+/* Jerarquía de headings Vercel-style */
+.post-content h1 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    letter-spacing: -0.035em;
+    margin: 3rem 0 1.25rem;
+    color: var(--geist-fg);
+}
+
+.post-content h2 {
+    font-size: 1.875rem;
+    font-weight: 700;
+    letter-spacing: -0.025em;
+    margin: 3rem 0 1.25rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--geist-border);
+    color: var(--geist-fg);
+    position: relative;
+}
+
+.post-content h2:first-child {
+    border-top: none;
+    padding-top: 0;
+    margin-top: 0;
+}
+
+.post-content h3 {
+    font-size: 1.375rem;
+    font-weight: 600;
+    letter-spacing: -0.015em;
+    margin: 2rem 0 0.875rem;
+    color: var(--geist-fg);
+}
+
+.post-content h4 {
+    font-size: 1.0625rem;
+    font-weight: 600;
+    color: var(--geist-fg);
+    margin: 1.5rem 0 0.75rem;
+}
+
+.post-content p {
+    color: var(--geist-fg);
+    margin-bottom: 1.25rem;
+    line-height: 1.75;
+}
+
+/* Links */
+.post-content a {
+    color: var(--geist-accent);
+    text-decoration: none;
+    font-weight: 500;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.15s ease;
+}
+
+.post-content a:hover {
+    border-bottom-color: var(--geist-accent);
+    color: var(--geist-accent);
+}
+
+/* Listas */
+.post-content ul,
+.post-content ol {
+    margin: 1rem 0 1.5rem;
+    padding-left: 1.5rem;
+}
+
+.post-content li {
+    margin-bottom: 0.5rem;
+    color: var(--geist-fg);
+}
+
+.post-content li::marker {
+    color: var(--geist-fg-subtle);
+}
+
+/* Code inline */
+.post-content code {
+    font-family: var(--geist-font-mono);
+    font-size: 0.9em;
+    background: var(--geist-bg-subtle);
+    color: #c7254e;
+    padding: 2px 6px;
+    border-radius: var(--geist-radius-sm);
+    border: 1px solid var(--geist-border);
+    font-weight: 500;
+}
+
+/* Code blocks — terminal style Vercel */
+.post-content pre {
+    background: var(--geist-bg-code);
+    color: #e4e4e7;
+    border: 1px solid #262626;
+    border-radius: var(--geist-radius);
+    padding: 1.25rem 1.5rem;
+    margin: 1.5rem 0;
+    overflow-x: auto;
+    font-family: var(--geist-font-mono);
+    font-size: 0.875rem;
+    line-height: 1.7;
+    box-shadow: var(--geist-shadow);
+    position: relative;
+}
+
+.post-content pre::before {
+    content: '';
+    display: block;
+    width: 12px;
+    height: 12px;
+    background: #ff5f56;
+    border-radius: 50%;
+    box-shadow: 18px 0 0 #ffbd2e, 36px 0 0 #27c93f;
+    margin-bottom: 0.75rem;
+}
+
+.post-content pre code {
+    background: transparent;
+    border: none;
+    color: inherit;
+    padding: 0;
+    font-size: inherit;
+}
+
+/* Blockquotes */
+.post-content blockquote {
+    border-left: 4px solid var(--geist-accent);
+    background: var(--geist-bg-subtle);
+    margin: 2rem 0;
+    padding: 1.25rem 1.5rem;
+    border-radius: 0 var(--geist-radius) var(--geist-radius) 0;
+    color: var(--geist-fg-muted);
+    font-style: normal;
+    font-size: 1rem;
+}
+
+.post-content blockquote p {
+    margin: 0;
+}
+
+.post-content blockquote p:not(:last-child) {
+    margin-bottom: 0.75rem;
+}
+
+/* ========================================
+   TABLAS — el gran cambio
+   ======================================== */
+
+/* Wrapper con scroll horizontal gracioso */
+.post-content table {
+    display: block;
+    overflow-x: auto;
+    width: 100%;
+    max-width: 100%;
+    margin: 2rem 0;
+    border: 1px solid var(--geist-border);
+    border-radius: var(--geist-radius);
+    border-collapse: separate;
+    border-spacing: 0;
+    font-size: 0.9rem;
+    box-shadow: var(--geist-shadow-sm);
+    background: var(--geist-bg-card);
+    -webkit-overflow-scrolling: touch;
+}
+
+/* Scrollbar estilizado */
+.post-content table::-webkit-scrollbar {
+    height: 8px;
+}
+
+.post-content table::-webkit-scrollbar-track {
+    background: var(--geist-bg-subtle);
+}
+
+.post-content table::-webkit-scrollbar-thumb {
+    background: var(--geist-border-strong);
+    border-radius: 4px;
+}
+
+.post-content table::-webkit-scrollbar-thumb:hover {
+    background: var(--geist-fg-subtle);
+}
+
+.post-content thead {
+    background: var(--geist-bg-subtle);
+    border-bottom: 1px solid var(--geist-border);
+}
+
+.post-content th {
+    background: var(--geist-bg-subtle);
+    color: var(--geist-fg);
+    font-weight: 600;
+    text-align: left;
+    padding: 0.875rem 1rem;
+    border-bottom: 1px solid var(--geist-border);
+    white-space: nowrap;
+    font-size: 0.8125rem;
+    letter-spacing: 0.01em;
+    text-transform: uppercase;
+    color: var(--geist-fg-muted);
+    position: relative;
+}
+
+/* Headers interactivos (ordenables) */
+.post-content th.sortable {
+    cursor: pointer;
+    user-select: none;
+    transition: background 0.15s ease, color 0.15s ease;
+}
+
+.post-content th.sortable:hover {
+    background: var(--geist-border);
+    color: var(--geist-fg);
+}
+
+.post-content th.sortable:focus {
+    outline: 2px solid var(--geist-accent);
+    outline-offset: -2px;
+}
+
+.post-content th.sorted {
+    background: var(--geist-accent);
+    color: white;
+}
+
+.post-content th .sort-indicator {
+    display: inline-block;
+    margin-left: 0.4rem;
+    opacity: 0.5;
+    font-size: 0.85em;
+    transition: opacity 0.15s ease;
+}
+
+.post-content th.sortable:hover .sort-indicator {
+    opacity: 0.85;
+}
+
+.post-content th.sorted .sort-indicator {
+    opacity: 1;
+}
+
+/* Hint debajo de tabla interactiva */
+.sortable-table-hint {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin: 1.5rem 0 0.5rem;
+    padding: 0.625rem 1rem;
+    background: linear-gradient(90deg, rgba(0,112,243,0.08), rgba(121,40,202,0.08));
+    border: 1px solid rgba(0,112,243,0.15);
+    border-radius: var(--geist-radius-sm);
+    font-size: 0.875rem;
+    color: var(--geist-fg-muted);
+}
+
+.sortable-table-hint strong {
+    color: var(--geist-fg);
+}
+
+.post-content td {
+    padding: 0.875rem 1rem;
+    border-bottom: 1px solid var(--geist-border);
+    color: var(--geist-fg);
+    vertical-align: top;
+    font-size: 0.9rem;
+    line-height: 1.55;
+}
+
+.post-content tr:last-child td {
+    border-bottom: none;
+}
+
+.post-content tr:hover td {
+    background: var(--geist-bg-subtle);
+    transition: background 0.15s ease;
+}
+
+.post-content tbody tr:nth-child(even) td {
+    background: rgba(244, 244, 245, 0.4);
+}
+
+.post-content tbody tr:nth-child(even):hover td {
+    background: var(--geist-bg-subtle);
+}
+
+/* Primera columna destacada (para tablas feature matrix) */
+.post-content td:first-child {
+    font-weight: 500;
+    color: var(--geist-fg);
+    white-space: nowrap;
+}
+
+/* Celdas centradas (cuando el markdown las marca con :---:) */
+.post-content th[style*="text-align: center"],
+.post-content td[style*="text-align: center"] {
+    text-align: center;
+}
+
+/* Iconos emoji en celdas */
+.post-content td strong {
+    color: var(--geist-fg);
+    font-weight: 600;
+}
+
+/* ========================================
+   CALLOUT DESTACADO DE GENTLE-AI
+   ======================================== */
+
+.featured-callout {
+    position: relative;
+    background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #2d1b69 100%);
+    color: white;
+    padding: 2.5rem 3rem;
+    border-radius: var(--geist-radius-lg);
+    margin: 2.5rem 0;
+    box-shadow: 0 24px 48px -12px rgba(45, 27, 105, 0.35);
+    overflow: hidden;
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+.featured-callout::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -20%;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(0, 112, 243, 0.25) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+.featured-callout::after {
+    content: '';
+    position: absolute;
+    bottom: -30%;
+    left: -10%;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(139, 92, 246, 0.2) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+.featured-callout > * {
+    position: relative;
+    z-index: 1;
+}
+
+.featured-callout h2 {
+    color: white !important;
+    margin-top: 0 !important;
+    border: none !important;
+    padding-top: 0 !important;
+    font-size: 1.75rem !important;
+    letter-spacing: -0.02em;
+}
+
+.featured-callout h3 {
+    color: white !important;
+    margin-top: 1.5rem !important;
+}
+
+.featured-callout p,
+.featured-callout li {
+    color: rgba(255,255,255,0.85) !important;
+}
+
+.featured-callout strong {
+    color: white !important;
+    font-weight: 600;
+}
+
+.featured-callout a {
+    color: #60a5fa !important;
+    font-weight: 500;
+    border-bottom: 1px solid rgba(96, 165, 250, 0.3) !important;
+}
+
+.featured-callout a:hover {
+    color: #93c5fd !important;
+    border-bottom-color: #93c5fd !important;
+}
+
+.featured-callout code {
+    background: rgba(255,255,255,0.12) !important;
+    color: #e4e4e7 !important;
+    border-color: rgba(255,255,255,0.15) !important;
+}
+
+.featured-callout pre {
+    background: rgba(0,0,0,0.4) !important;
+    border-color: rgba(255,255,255,0.1) !important;
+}
+
+.featured-callout ul,
+.featured-callout ol {
+    color: rgba(255,255,255,0.85);
+}
+
+.featured-callout li::marker {
+    color: rgba(255,255,255,0.5);
+}
+
+/* ========================================
+   HR elegante
+   ======================================== */
+
+.post-content hr {
+    border: none;
+    height: 1px;
+    background: var(--geist-border);
+    margin: 3rem 0;
+}
+
+/* ========================================
+   Navbar mejorado
+   ======================================== */
+
+.navbar {
+    backdrop-filter: saturate(180%) blur(20px);
+    -webkit-backdrop-filter: saturate(180%) blur(20px);
+    background: rgba(255,255,255,0.8);
+    border-bottom: 1px solid var(--geist-border);
+}
+
+.nav-links a {
+    font-family: var(--geist-font-sans);
+    font-size: 0.9375rem;
+    font-weight: 500;
+    transition: color 0.15s ease;
+}
+
+.nav-links a.active {
+    color: var(--geist-accent) !important;
+    position: relative;
+}
+
+.nav-links a.active::after {
+    content: '';
+    position: absolute;
+    bottom: -1.3rem;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: var(--geist-accent);
+    border-radius: 2px;
+}
+
+/* ========================================
+   CTA Footer del post
+   ======================================== */
+
+.post-cta {
+    background: linear-gradient(135deg, #0070f3 0%, #7928ca 100%);
+    color: white;
+    padding: 3rem !important;
+    border-radius: var(--geist-radius-lg) !important;
+    text-align: center;
+    box-shadow: 0 24px 48px -12px rgba(121, 40, 202, 0.25);
+}
+
+.post-cta h3 {
+    font-size: 2rem !important;
+    font-weight: 700 !important;
+    letter-spacing: -0.02em;
+    margin-bottom: 0.75rem !important;
+    color: white !important;
+}
+
+.post-cta p {
+    font-size: 1.125rem !important;
+    opacity: 0.95;
+    margin-bottom: 1.75rem !important;
+}
+
+.post-cta .btn-primary {
+    background: white !important;
+    color: #7928ca !important;
+    font-weight: 600;
+    padding: 0.875rem 2rem !important;
+    border-radius: var(--geist-radius) !important;
+    transition: all 0.2s ease !important;
+}
+
+.post-cta .btn-primary:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: 0 12px 24px rgba(0,0,0,0.15) !important;
+}
+
+/* ========================================
+   Back link
+   ======================================== */
+
+.back-link {
+    color: var(--geist-fg-muted);
+    font-size: 0.9375rem;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    border: 1px solid var(--geist-border);
+    border-radius: var(--geist-radius);
+    background: var(--geist-bg-card);
+    transition: all 0.15s ease;
+}
+
+.back-link:hover {
+    color: var(--geist-fg);
+    border-color: var(--geist-border-strong);
+    transform: translateX(-2px);
+}
+
+/* ========================================
+   Responsive
+   ======================================== */
+
+@media (max-width: 900px) {
+    .post-container {
+        padding: 0 1rem;
+    }
+
+    .post-header {
+        padding: 2rem 1.5rem;
+    }
+
+    .post-content {
+        padding: 1.75rem 1.5rem;
+    }
+
+    .post-title-main {
+        font-size: 2rem !important;
+    }
+
+    .featured-callout {
+        padding: 2rem 1.5rem;
+    }
+
+    .post-content h2 {
+        font-size: 1.5rem !important;
+    }
+
+    .post-content h3 {
+        font-size: 1.25rem !important;
+    }
+
+    .post-cta {
+        padding: 2rem 1.5rem !important;
+    }
+
+    .post-cta h3 {
+        font-size: 1.5rem !important;
+    }
+}
+
+/* ========================================
+   Imprimir (por si alguien imprime el PDF)
+   ======================================== */
+
+@media print {
+    .navbar, .footer, .post-cta, .back-link {
+        display: none;
+    }
+
+    .post-content {
+        border: none;
+        box-shadow: none;
+        padding: 0;
+    }
+
+    .post-content table {
+        font-size: 0.75rem;
+    }
+}

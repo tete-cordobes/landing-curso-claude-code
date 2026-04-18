@@ -1,0 +1,1558 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frameworks agénticos para Claude Code: Superpowers, gentle-ai, BMAD y más - Curso Claude Code</title>
+    <meta name="description" content="Guía completa 2026 de frameworks agénticos para Claude Code, Cursor y Codex. Compara Superpowers, gentle-ai, BMAD, GSD, nWave, Archon, Spec-Kit, Ralph loop y Rita Vrataski. Con casos de uso, tiempos de aprendizaje y recursos verificados.">
+    <meta name="keywords" content="frameworks agenticos claude code, frameworks agenticos para programar, superpowers claude code, gentle-ai, BMAD, GSD, archon, spec-kit, nwave, ralph loop, agentic coding, claude code frameworks">
+    <meta name="author" content="Curso Claude Code">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph -->
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Frameworks agénticos para Claude Code: comparativa completa 2026">
+    <meta property="og:description" content="Superpowers, gentle-ai, BMAD, GSD, nWave, Archon y más. Guía completa con casos de uso y tiempos de aprendizaje.">
+    <meta property="og:locale" content="es_ES">
+    
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="blog-styles.css">
+    <link rel="stylesheet" href="article-enhancements.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-content">
+                <div class="logo">
+                    <a href="index.html">
+                        <div class="logo-icon">
+                            <img src="claude-color.png" alt="Claude Code Logo" width="32" height="32">
+                        </div>
+                        <span class="logo-text">Curso Claude Code</span>
+                    </a>
+                </div>
+                <div class="nav-links">
+                    <a href="index.html">Inicio</a>
+                    <a href="blog.html">Blog</a>
+                    <a href="frameworks-agenticos.html" class="active">Claude Code</a>
+                    <a href="frameworks-construir-agentes.html">Agentes IA</a>
+                    <a href="changelog.html">Changelog</a>
+                    <a href="index.html#formulario" class="btn-nav">Descargar Guía Gratis</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <article class="post-article">
+        <div class="container post-container">
+            <a href="blog.html" class="back-link">← Volver al blog</a>
+
+            <header class="post-header">
+                <div class="post-meta">
+                    <span class="post-date">Abril 2026</span>
+                    <span class="post-reading-time">22 min de lectura</span>
+                </div>
+                <h1 class="post-title-main">Frameworks agénticos para Claude Code</h1>
+                <p class="post-excerpt"><strong>Superpowers, gentle-ai, BMAD, GSD, nWave y más</strong> — guía completa 2026 de los 10 frameworks que estructuran cómo tu asistente de IA (Claude Code, Cursor, Codex) te ayuda a programar. Casos de uso, tiempos de aprendizaje, repos oficiales y canales de YouTube verificados.</p>
+            </header>
+
+            <div class="post-content">
+<h1 id="frameworks-agénticos-para-claude-code">Frameworks agénticos para
+Claude Code</h1>
+<h2
+id="superpowers-gentle-ai-bmad-gsd-nwave-y-más-comparativa-completa-2026">Superpowers,
+gentle-ai, BMAD, GSD, nWave y más — comparativa completa 2026</h2>
+<blockquote>
+<p><em>“La IA es una herramienta. El humano dirige. La pregunta ya no es
+‘qué framework uso’, sino ‘qué combinación encaja con mi
+contexto’.”</em></p>
+</blockquote>
+<hr />
+<h2 id="importante-las-2-familias-de-frameworks-agénticos">⚠️
+Importante: las 2 familias de frameworks agénticos</h2>
+<p>Antes de entrar en materia, una aclaración que ahorra confusión:</p>
+<p><strong>El término “framework agéntico” se usa para dos categorías
+completamente diferentes:</strong></p>
+<h3 id="familia-a-frameworks-para-construir-agentes-ia-librerías">🅰️
+Familia A — Frameworks para CONSTRUIR agentes IA (librerías)</h3>
+<p>Librerías Python/TypeScript que <strong>importas en tu
+código</strong> para <strong>construir tus propios agentes</strong> como
+producto (chatbots, asistentes autónomos, pipelines RAG, sistemas
+multi-agente).</p>
+<p><strong>Ejemplos:</strong> CrewAI, LangGraph, AutoGen, Pydantic AI,
+Mastra, Agno, LlamaIndex, Semantic Kernel.</p>
+<p><strong>Usuario objetivo:</strong> developer que construye un
+producto con IA.</p>
+<p>👉 <strong><a href="frameworks-construir-agentes.html">Comparativa de
+frameworks para construir agentes IA (CrewAI, LangGraph,
+AutoGen…)</a></strong> ← este es el artículo hermano</p>
+<h3
+id="familia-b-frameworks-para-guiar-tu-asistente-de-coding-este-artículo">🅱️
+Familia B — Frameworks para GUIAR tu asistente de coding (este
+artículo)</h3>
+<p>Plugins, skills, scripts o metodologías que <strong>estructuran cómo
+tu asistente de IA</strong> (Claude Code, Cursor, Codex, OpenCode)
+<strong>te ayuda a programar</strong>.</p>
+<p><strong>Ejemplos:</strong> Superpowers, gentle-ai, BMAD, GSD, nWave,
+Archon, Spec-Kit, Ralph loop.</p>
+<p><strong>Usuario objetivo:</strong> developer que quiere escribir
+código más rápido usando IA.</p>
+<p><strong>Este artículo se centra exclusivamente en la Familia
+B.</strong></p>
+<hr />
+<hr />
+<div class="featured-callout">
+<h2
+id="empieza-por-aquí-gentle-ai-la-capa-que-envuelve-a-todo-el-ecosistema">⭐
+Empieza por aquí: gentle-ai, la capa que envuelve a todo el
+ecosistema</h2>
+<p>Antes de entrar en cada framework, hay que dejar algo claro desde el
+principio:</p>
+<p><strong>gentle-ai, creado por Alan Buscaglia (Gentleman-Programming,
+Angular GDE), no compite con los demás frameworks de esta guía. Los
+envuelve.</strong></p>
+<p>Es el <strong>meta-configurator</strong> que convierte cualquier
+agente de IA (Claude Code, OpenCode, Cursor, Copilot, Codex, Windsurf,
+Gemini CLI, Kiro, Qwen, Antigravity) en una estación de trabajo completa
+con:</p>
+<ul>
+<li><strong>Engram</strong> — Memoria persistente entre sesiones</li>
+<li><strong>SDD workflow</strong> — Spec-Driven Development
+estandarizado</li>
+<li><strong>Skills curadas</strong> — React 19, Next.js 15, Tailwind 4,
+TypeScript, Playwright y más</li>
+<li><strong>Per-phase model routing</strong> — Opus para diseño, Sonnet
+para implementación, Haiku para cierre (ahorro de coste real)</li>
+<li><strong>MCP servers preconfigurados</strong> y persona
+teaching-oriented</li>
+</ul>
+<h3 id="recursos-oficiales-de-gentle-ai">Recursos oficiales de
+gentle-ai</h3>
+<ul>
+<li>📦 <strong>Repositorio:</strong> <a
+href="https://github.com/Gentleman-Programming/gentle-ai">github.com/Gentleman-Programming/gentle-ai</a></li>
+<li>🎥 <strong>Canal de YouTube:</strong> <a
+href="https://www.youtube.com/@GentlemanProgramming"><span
+class="citation"
+data-cites="GentlemanProgramming">@GentlemanProgramming</span></a> —
+tutoriales, streams y deep dives en español</li>
+<li>💬 <strong>Autor:</strong> Alan Buscaglia — Google Developer Expert
+en Angular</li>
+</ul>
+<p><strong>Instalación en un comando:</strong></p>
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">brew</span> install gentle-ai</span></code></pre></div>
+<h3 id="la-decisión-real">La decisión real</h3>
+<p>No eliges entre gentle-ai y GSD. Instalas gentle-ai como base, y
+luego decides qué motor de ejecución pones encima según la tarea del
+día. Los demás frameworks de esta guía son
+<strong>aplicaciones</strong>; gentle-ai es el <strong>sistema
+operativo</strong>.</p>
+<p>Con esto claro, vamos a ver el catálogo completo.</p>
+
+</div>
+<hr />
+<h2 id="tabla-maestra-los-10-frameworks-en-una-vista">Tabla maestra: los
+10 frameworks en una vista</h2>
+<table>
+<colgroup>
+<col style="width: 6%" />
+<col style="width: 25%" />
+<col style="width: 16%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr>
+<th>#</th>
+<th>Framework</th>
+<th>Autor</th>
+<th>⭐ GitHub</th>
+<th>Categoría</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><strong>gentle-ai</strong></td>
+<td>Alan Buscaglia (Gentleman-Programming)</td>
+<td>2.131</td>
+<td>🟢 Meta-configurator (envuelve todo)</td>
+</tr>
+<tr>
+<td>2</td>
+<td><strong>Superpowers</strong></td>
+<td>Jesse Vincent (obra)</td>
+<td><strong>158.000</strong></td>
+<td>Framework oficial marketplace Claude Code</td>
+</tr>
+<tr>
+<td>3</td>
+<td><strong>GSD (Get Shit Done)</strong></td>
+<td>TÂCHES</td>
+<td>54.500</td>
+<td>Framework context-engineering</td>
+</tr>
+<tr>
+<td>4</td>
+<td><strong>BMAD-METHOD</strong></td>
+<td>bmad-code-org</td>
+<td>45.000</td>
+<td>Framework enterprise</td>
+</tr>
+<tr>
+<td>5</td>
+<td><strong>Claude-Flow / SPARC</strong></td>
+<td>ruvnet</td>
+<td>32.200</td>
+<td>Orquestador multi-agente</td>
+</tr>
+<tr>
+<td>6</td>
+<td><strong>Archon</strong></td>
+<td>Cole Medin</td>
+<td>18.600</td>
+<td>Workflows YAML deterministas</td>
+</tr>
+<tr>
+<td>7</td>
+<td><strong>Spec-Kit</strong></td>
+<td>GitHub oficial</td>
+<td>Oficial</td>
+<td>Framework spec-first</td>
+</tr>
+<tr>
+<td>8</td>
+<td><strong>nWave</strong></td>
+<td>nWave-ai</td>
+<td>360</td>
+<td>Framework con gates obligatorios</td>
+</tr>
+<tr>
+<td>9</td>
+<td><strong>Rita Vrataski Loop</strong></td>
+<td>joa23</td>
+<td>117</td>
+<td>Patrón AFK con governance Linear</td>
+</tr>
+<tr>
+<td>10</td>
+<td><strong>Ralph loop (vanilla)</strong></td>
+<td>Geoffrey Huntley</td>
+<td>Técnica</td>
+<td>Patrón loop autónomo original</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="marco-conceptual-los-dos-ejes">Marco conceptual: los dos
+ejes</h2>
+<p>Todos los frameworks se distribuyen en un plano con dos ejes
+ortogonales:</p>
+<h3 id="eje-1-autonomía-vs-supervisión">Eje 1: Autonomía vs
+Supervisión</h3>
+<ul>
+<li><strong>Autonomía total (AFK)</strong>: el agente corre solo, sin
+intervención humana entre pasos. Ejemplo: Ralph loop.</li>
+<li><strong>Supervisión total</strong>: el humano aprueba cada fase
+antes de avanzar. Ejemplo: nWave.</li>
+<li><strong>Intermedio</strong>: gates configurables, aprobaciones
+opcionales.</li>
+</ul>
+<h3 id="eje-2-individual-vs-enterprise">Eje 2: Individual vs
+Enterprise</h3>
+<ul>
+<li><strong>Solo developer</strong>: sin ceremonia, sin sprint planning,
+sin stakeholders. Ejemplo: GSD.</li>
+<li><strong>Enterprise</strong>: personas (PM, Architect, UX), procesos
+formales. Ejemplo: BMAD.</li>
+</ul>
+<h3 id="el-mapa-resultante">El mapa resultante</h3>
+<pre><code>                     AUTONOMÍA TOTAL (AFK)
+                            ↑
+                            │
+         Ralph ●            │            ● Rita Vrataski
+                            │
+                            │            ● Claude-Flow
+                            │
+                            │    ● GSD      ● Superpowers
+   ←────────────────────────┼────────────────────────→
+   INDIVIDUAL               │              ENTERPRISE
+                            │
+                     Archon ●
+                            │    ● BMAD
+                            │
+                     nWave  ●    ● Spec-Kit
+                            │
+                            ↓
+                    SUPERVISIÓN TOTAL</code></pre>
+<p><strong>gentle-ai no aparece en el mapa porque no compite en él — es
+la capa que envuelve a los demás.</strong></p>
+<hr />
+<h2 id="gentle-ai">gentle-ai</h2>
+<blockquote>
+<p><em>“This is NOT an AI agent installer. This is an ecosystem
+configurator.”</em><br />
+— README oficial</p>
+</blockquote>
+<h3 id="qué-es">Qué es</h3>
+<p>El <strong>ecosystem configurator</strong> de Alan Buscaglia
+(Gentleman-Programming). Toma cualquier agente de IA y lo transforma en
+una estación de trabajo SDD completa con memoria persistente, skills
+curadas, MCP preconfigurado y per-phase model routing.</p>
+<h3 id="filosofía">Filosofía</h3>
+<p>No compite con los demás frameworks. Los envuelve y los hace
+compatibles. Con gentle-ai instalas la <strong>base común</strong>
+(Engram, SDD, skills, MCP) y luego añades encima el motor de ejecución
+que te encaje (GSD, Archon, Ralph…) según la tarea.</p>
+<h3 id="agentes-soportados">10 agentes soportados</h3>
+<table>
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 42%" />
+<col style="width: 37%" />
+</colgroup>
+<thead>
+<tr>
+<th>Agente</th>
+<th>Delegation Model</th>
+<th>Feature clave</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Claude Code</td>
+<td>Full (Task tool)</td>
+<td>Sub-agents, output styles</td>
+</tr>
+<tr>
+<td>OpenCode</td>
+<td>Full (multi-mode overlay)</td>
+<td>Per-phase model routing</td>
+</tr>
+<tr>
+<td>Gemini CLI</td>
+<td>Full (experimental)</td>
+<td>Custom agents</td>
+</tr>
+<tr>
+<td>Cursor</td>
+<td>Full (native subagents)</td>
+<td>9 SDD agents</td>
+</tr>
+<tr>
+<td>VS Code Copilot</td>
+<td>Full (runSubagent)</td>
+<td>Parallel execution</td>
+</tr>
+<tr>
+<td>Codex</td>
+<td>Solo-agent</td>
+<td>CLI-native, TOML config</td>
+</tr>
+<tr>
+<td>Windsurf</td>
+<td>Solo-agent</td>
+<td>Plan Mode, Code Mode</td>
+</tr>
+<tr>
+<td>Antigravity</td>
+<td>Solo-agent + Mission Control</td>
+<td>Browser/Terminal sub-agents</td>
+</tr>
+<tr>
+<td>Kiro IDE</td>
+<td>Full</td>
+<td>Native subagents + steering</td>
+</tr>
+<tr>
+<td>Qwen Code</td>
+<td>Full</td>
+<td>Slash commands, auto_edit mode</td>
+</tr>
+</tbody>
+</table>
+<h3 id="v1.21.0-release-más-reciente">v1.21.0 (release más
+reciente)</h3>
+<ul>
+<li>Kimi como agente de primera clase</li>
+<li>OpenCode external profile sync</li>
+<li>Fix de Antigravity setup slug</li>
+<li>Fix en preflight de Kimi (uv dependency)</li>
+<li>Docs de Qwen Code añadidos</li>
+</ul>
+<h3 id="casos-de-uso-ideales">Casos de uso ideales</h3>
+<ul>
+<li>Developers profesionales que usan <strong>múltiples agentes</strong>
+(Claude Code + OpenCode + Cursor)</li>
+<li>Cuando quieres memoria persistente REAL sin configurar MCP
+manualmente</li>
+<li>Proyectos medios/largos donde la continuidad entre sesiones
+importa</li>
+<li>Cuando quieres ahorro de costes vía per-phase model routing</li>
+</ul>
+<h3 id="tiempo-de-aprendizaje">Tiempo de aprendizaje</h3>
+<ul>
+<li><strong>Instalación y uso básico</strong>: 30 minutos</li>
+<li><strong>Dominar SDD workflow</strong>: 1-3 días</li>
+<li><strong>Aprovechar per-phase profiles + Engram + skills</strong>: 1
+semana</li>
+</ul>
+<h3 id="recursos">Recursos</h3>
+<ul>
+<li>📦 <strong>Repositorio:</strong> <a
+href="https://github.com/Gentleman-Programming/gentle-ai">github.com/Gentleman-Programming/gentle-ai</a></li>
+<li>🎥 <strong>YouTube:</strong> <a
+href="https://www.youtube.com/@GentlemanProgramming"><span
+class="citation"
+data-cites="GentlemanProgramming">@GentlemanProgramming</span></a></li>
+<li>👤 <strong>Autor:</strong> Alan Buscaglia (Angular GDE)</li>
+</ul>
+<hr />
+<h2 id="gsd-get-shit-done">GSD (Get Shit Done)</h2>
+<h3 id="qué-es-1">Qué es</h3>
+<p>Sistema de <em>meta-prompting, context engineering y spec-driven
+development</em> para Claude Code que funciona en <strong>14+ agentes
+diferentes</strong> (Claude Code, OpenCode, Gemini CLI, Codex, Copilot,
+Cursor, Windsurf, Antigravity, Augment, Trae, Qwen Code, CodeBuddy,
+Cline).</p>
+<p>Creado por <strong>TÂCHES</strong>. El framework más estrellado del
+ecosistema (54.500 ⭐).</p>
+<h3 id="filosofía-1">Filosofía</h3>
+<p>El autor lo resume sin filtros:</p>
+<blockquote>
+<p><em>“Soy solo dev. No escribo código — Claude Code lo hace. Otras
+herramientas spec-driven existen: BMAD, Speckit… pero todas complican
+las cosas mucho más de lo necesario. No soy una empresa de 50 personas.
+No quiero jugar enterprise theater.”</em></p>
+</blockquote>
+<p>Es anti-ceremonia por diseño.</p>
+<h3 id="cómo-funciona">Cómo funciona</h3>
+<ol type="1">
+<li>Instalas con <code>npx get-shit-done-cc@latest</code></li>
+<li>Genera una carpeta <code>.planning/</code> con XML prompt
+formatting</li>
+<li>Subagent orchestration automática</li>
+<li>Quality gates integrados: schema drift detection, security
+enforcement, scope reduction detection</li>
+<li>Comandos: <code>/gsd-new-project</code>,
+<code>/gsd-map-codebase</code>, <code>/gsd-spike</code>,
+<code>/gsd-sketch</code>, <code>/gsd-help</code></li>
+</ol>
+<h3 id="casos-de-uso-ideales-1">Casos de uso ideales</h3>
+<ul>
+<li>Solo developers que quieren velocidad sin ceremonia</li>
+<li>Equipos pequeños (1-5 personas)</li>
+<li>MVPs y proyectos greenfield donde mandas tú</li>
+<li>Cuando trabajas con varios agentes y quieres consistencia</li>
+</ul>
+<h3 id="casos-donde-no-usarlo">Casos donde NO usarlo</h3>
+<ul>
+<li>Empresas grandes con procesos formales</li>
+<li>Equipos que necesitan trazabilidad enterprise (Jira, sprint
+planning)</li>
+<li>Entornos regulados donde cada decisión requiere approval humano</li>
+</ul>
+<h3 id="tiempo-de-aprendizaje-1">Tiempo de aprendizaje</h3>
+<p><strong>2-4 horas</strong> para ser productivo. La instalación es 1
+comando.</p>
+<h3 id="tradeoff-principal">Tradeoff principal</h3>
+<p>Tiene un token crypto asociado ($GSD en Solana). Para algunos es red
+flag, aunque técnicamente no afecta al uso.</p>
+<h3 id="recursos-1">Recursos</h3>
+<ul>
+<li>📦 <strong>Repositorio:</strong> <a
+href="https://github.com/gsd-build/get-shit-done">github.com/gsd-build/get-shit-done</a></li>
+<li>💬 <strong>Discord:</strong> comunidad oficial en el repo</li>
+<li>🐦 <strong>X/Twitter:</strong> <a
+href="https://x.com/gsd_foundation"><span class="citation"
+data-cites="gsd_foundation">@gsd_foundation</span></a></li>
+</ul>
+<hr />
+<h2 id="bmad-method">BMAD-METHOD</h2>
+<h3 id="qué-es-2">Qué es</h3>
+<p><em>Breakthrough Method for Agile AI-Driven Development</em>.
+Framework enterprise que trata a la IA como <strong>colaborador
+experto</strong>, no como automatizador. Ciclo completo de desarrollo
+con personas especializadas.</p>
+<h3 id="filosofía-2">Filosofía</h3>
+<p><em>“Partnership over automation. Trae tu mejor pensamiento en
+asociación con IA.”</em></p>
+<h3 id="cómo-funciona-1">Cómo funciona</h3>
+<p>Pipeline clásico con fases:</p>
+<ol type="1">
+<li>Brainstorming &amp; Analysis</li>
+<li>Planning (PM persona)</li>
+<li>Architecture (Architect persona)</li>
+<li>Implementation (Developer persona)</li>
+<li>Deployment</li>
+</ol>
+<p>Con “Party Mode” multi-perspective donde varias personas debaten
+decisiones.</p>
+<h3 id="personas">12+ personas</h3>
+<p>PM, Architect, Developer, UX, QA, DevOps, Business Analyst, Scrum
+Master, Product Owner… Módulos especializados: BMGD (game dev), TEA
+(test strategy), CIS (innovation).</p>
+<h3 id="casos-de-uso-ideales-2">Casos de uso ideales</h3>
+<ul>
+<li>Empresas 10+ personas</li>
+<li>Proyectos enterprise con stakeholders múltiples</li>
+<li>Sistemas complejos con arquitectura regulada</li>
+<li>Equipos que ya trabajan con Agile/Scrum</li>
+</ul>
+<h3 id="casos-donde-no-usarlo-1">Casos donde NO usarlo</h3>
+<ul>
+<li>Solo developers (exceso de ceremonia)</li>
+<li>MVPs rápidos</li>
+<li>Proyectos velocidad &gt; estructura</li>
+</ul>
+<h3 id="tiempo-de-aprendizaje-2">Tiempo de aprendizaje</h3>
+<p><strong>3-7 días</strong> para dominar las 12+ personas.</p>
+<h3 id="tradeoff-principal-1">Tradeoff principal</h3>
+<p>Setup pesado: Node.js + Python + uv + módulos.</p>
+<h3 id="recursos-2">Recursos</h3>
+<ul>
+<li>📦 <strong>Repositorio:</strong> <a
+href="https://github.com/bmad-code-org/BMAD-METHOD">github.com/bmad-code-org/BMAD-METHOD</a></li>
+<li>💬 <strong>Discord:</strong> comunidad activa enlazada desde el
+repo</li>
+</ul>
+<hr />
+<h2 id="claude-flow-sparc">Claude-Flow / SPARC</h2>
+<h3 id="qué-es-3">Qué es</h3>
+<p>Orquestador de <strong>multi-agentes distribuidos</strong> para
+Claude. Múltiples agentes que se hablan entre sí coordinados como un
+swarm, con MCP server nativo y RAG integrado.</p>
+<h3 id="filosofía-3">Filosofía</h3>
+<p>Enfoque enterprise-grade de coordinación distribuida.</p>
+<h3 id="cómo-funciona-2">Cómo funciona</h3>
+<ul>
+<li>Arquitectura multi-agente distribuida</li>
+<li>MCP (Model Context Protocol) como backbone</li>
+<li>RAG pipelines built-in</li>
+<li>Integración con HuggingFace</li>
+<li>Workflows autónomos coordinados</li>
+</ul>
+<h3 id="casos-de-uso-ideales-3">Casos de uso ideales</h3>
+<ul>
+<li>Sistemas multi-agente serios</li>
+<li>Pipelines RAG complejos</li>
+<li>Orquestación distribuida a escala</li>
+<li>Integraciones HuggingFace</li>
+</ul>
+<h3 id="casos-donde-no-usarlo-2">Casos donde NO usarlo</h3>
+<ul>
+<li>Proyectos individuales</li>
+<li>Cuando no necesitas varios agentes coordinados</li>
+<li>Si no has usado MCP antes</li>
+</ul>
+<h3 id="tiempo-de-aprendizaje-3">Tiempo de aprendizaje</h3>
+<p><strong>1-2 semanas</strong>. Sistemas distribuidos son sistemas
+distribuidos.</p>
+<h3 id="tradeoff-principal-2">Tradeoff principal</h3>
+<p>Documentación menos pulida. Requiere conocimientos de sistemas
+distribuidos.</p>
+<h3 id="recursos-3">Recursos</h3>
+<ul>
+<li>📦 <strong>Repositorio:</strong> <a
+href="https://github.com/ruvnet/claude-flow">github.com/ruvnet/claude-flow</a></li>
+<li>🌐 <strong>Sitio oficial:</strong> <a
+href="https://Cognitum.One">Cognitum.One</a></li>
+</ul>
+<hr />
+<h2 id="archon">Archon</h2>
+<h3 id="qué-es-4">Qué es</h3>
+<p><em>“El primer harness builder open-source para AI coding.”</em>
+Workflows <strong>deterministas</strong> mediante YAML DAGs. La
+inspiración declarada: <strong>Dockerfile pero para IA</strong>.</p>
+<p>Creado por <strong>Cole Medin</strong>, uno de los YouTubers más
+seguidos en el nicho de AI coding.</p>
+<h3 id="filosofía-4">Filosofía</h3>
+<p>Reproducibilidad sobre improvisación. Un workflow bien definido en
+YAML debería producir el mismo resultado dos veces.</p>
+<h3 id="cómo-funciona-3">Cómo funciona</h3>
+<ul>
+<li>Defines un <strong>DAG en YAML</strong></li>
+<li>Nodos pueden ser: IA-powered, deterministas (bash, git), loops
+condicionales, human approval gates</li>
+<li>Cada ejecución se aísla en su propio <strong>git
+worktree</strong></li>
+<li>Self-iteration, smart routing, multi-agent review paralelo</li>
+</ul>
+<h3 id="casos-de-uso-ideales-4">Casos de uso ideales</h3>
+<ul>
+<li>Workflows repetibles: PR reviews, issue fixing, refactoring</li>
+<li>Equipos que valoran reproducibilidad</li>
+<li>Integración profunda con GitHub</li>
+<li>Cuando quieres gates SOLO en puntos críticos</li>
+</ul>
+<h3 id="casos-donde-no-usarlo-3">Casos donde NO usarlo</h3>
+<ul>
+<li>Exploración pura / prototipado rápido</li>
+<li>Cuando no sabes aún qué workflow necesitas</li>
+</ul>
+<h3 id="tiempo-de-aprendizaje-4">Tiempo de aprendizaje</h3>
+<p><strong>4-8 horas</strong>. YAML es sencillo pero modelar bien tu DAG
+la primera vez lleva tiempo.</p>
+<h3 id="tradeoff-principal-3">Tradeoff principal</h3>
+<p>Nuevo (menos historial en producción). Principalmente enfocado en
+flujos GitHub.</p>
+<h3 id="recursos-4">Recursos</h3>
+<ul>
+<li>📦 <strong>Repositorio:</strong> <a
+href="https://github.com/coleam00/Archon">github.com/coleam00/Archon</a></li>
+<li>🎥 <strong>Canal de YouTube:</strong> <a
+href="https://www.youtube.com/@ColeMedin"><span class="citation"
+data-cites="ColeMedin">@ColeMedin</span></a> — uno de los mejores
+canales sobre AI coding en inglés</li>
+</ul>
+<hr />
+<h2 id="spec-kit">Spec-Kit</h2>
+<h3 id="qué-es-5">Qué es</h3>
+<p>Framework oficial de <strong>GitHub</strong> que invierte el
+paradigma tradicional: <strong>las especificaciones se vuelven
+ejecutables</strong>. La spec no es documentación que acompaña al
+código, <strong>es el artefacto primario que genera
+implementaciones</strong>.</p>
+<h3 id="filosofía-5">Filosofía</h3>
+<p><em>Intent-driven development</em>. El desarrollador expresa
+intención → la spec captura esa intención formalmente → el agente
+implementa contra la spec.</p>
+<h3 id="cómo-funciona-4">Cómo funciona</h3>
+<p>Seis fases secuenciales:</p>
+<ol type="1">
+<li><strong>Constitution</strong> — principios inmutables</li>
+<li><strong>Specify</strong> — qué se quiere construir</li>
+<li><strong>Clarify</strong> — resolución de ambigüedades</li>
+<li><strong>Plan</strong> — cómo abordarlo</li>
+<li><strong>Tasks</strong> — breakdown granular</li>
+<li><strong>Implement</strong> — ejecución con 30+ agentes</li>
+</ol>
+<h3 id="casos-de-uso-ideales-5">Casos de uso ideales</h3>
+<ul>
+<li>Equipos que ya trabajan con RFCs / ADRs</li>
+<li>Proyectos donde la claridad de intención &gt; velocidad</li>
+<li>Sistemas donde la spec es contrato (APIs, sistemas críticos)</li>
+<li>Cuando quieres agnosticismo de tech stack</li>
+</ul>
+<h3 id="casos-donde-no-usarlo-4">Casos donde NO usarlo</h3>
+<ul>
+<li>MVPs rápidos</li>
+<li>Equipos sin cultura de documentación formal</li>
+<li>Exploración pura</li>
+</ul>
+<h3 id="tiempo-de-aprendizaje-5">Tiempo de aprendizaje</h3>
+<p><strong>4-8 horas</strong> para la metodología. Más si el equipo no
+tiene cultura de specs.</p>
+<h3 id="tradeoff-principal-4">Tradeoff principal</h3>
+<p>Más overhead que Ralph/GSD. Requiere disciplina de
+especificación.</p>
+<h3 id="recursos-5">Recursos</h3>
+<ul>
+<li>📦 <strong>Repositorio:</strong> <a
+href="https://github.com/github/spec-kit">github.com/github/spec-kit</a></li>
+<li>📚 <strong>Documentación oficial:</strong> <a
+href="https://github.github.com/spec-kit/">github.github.com/spec-kit</a></li>
+</ul>
+<hr />
+<h2 id="nwave">nWave</h2>
+<h3 id="qué-es-6">Qué es</h3>
+<p>Framework con <strong>40 agentes especializados</strong> que divide
+el desarrollo en 7 “olas” (waves) con <strong>gates humanos
+obligatorios</strong> entre cada una.</p>
+<h3 id="filosofía-6">Filosofía</h3>
+<p><strong>“La máquina nunca corre sin supervisión
+end-to-end.”</strong></p>
+<h3 id="las-7-olas">Las 7 olas</h3>
+<ol type="1">
+<li><strong>DISCOVER</strong> — entender el problema</li>
+<li><strong>DIVERGE</strong> — explorar opciones</li>
+<li><strong>DISCUSS</strong> — debatir tradeoffs</li>
+<li><strong>DESIGN</strong> — diseño técnico</li>
+<li><strong>DEVOPS</strong> — infra/deployment</li>
+<li><strong>DISTILL</strong> — refinamiento + TDD + mutation
+testing</li>
+<li><strong>DELIVER</strong> — entrega de código</li>
+</ol>
+<p>Entry points flexibles: greenfield arranca en DISCOVER, bugfix salta
+a DISTILL.</p>
+<h3 id="rigor-profiles-ajustables">Rigor profiles ajustables</h3>
+<ul>
+<li><code>lean</code> — mínimo viable</li>
+<li><code>standard</code> — default</li>
+<li><code>thorough</code> — proyectos serios</li>
+<li><code>exhaustive</code> — sistemas críticos</li>
+</ul>
+<h3 id="casos-de-uso-ideales-6">Casos de uso ideales</h3>
+<ul>
+<li>Decisiones arquitectónicas donde equivocarse cuesta 3 meses</li>
+<li>Sistemas críticos / regulados (fintech, salud, legal)</li>
+<li>Proyectos donde la supervisión ES el valor</li>
+<li>Equipos que priorizan calidad sobre velocidad</li>
+</ul>
+<h3 id="casos-donde-no-usarlo-5">Casos donde NO usarlo</h3>
+<ul>
+<li><strong>Jamás para AFK</strong> — no tiene modo autónomo por
+diseño</li>
+<li>MVPs rápidos</li>
+<li>Exploración libre</li>
+</ul>
+<h3 id="tiempo-de-aprendizaje-6">Tiempo de aprendizaje</h3>
+<p><strong>1-2 días</strong> para las 7 waves. La curva real está en los
+rigor profiles.</p>
+<h3 id="tradeoff-principal-5">Tradeoff principal</h3>
+<p><strong>Cero AFK</strong>. Es consciente y filosófico, no un bug.
+Coste: tiempo humano en cada gate.</p>
+<h3 id="recursos-6">Recursos</h3>
+<ul>
+<li>📦 <strong>Repositorio:</strong> <a
+href="https://github.com/nWave-ai/nWave">github.com/nWave-ai/nWave</a></li>
+</ul>
+<hr />
+<h2 id="rita-vrataski-loop">Rita Vrataski Loop</h2>
+<h3 id="qué-es-7">Qué es</h3>
+<p><strong>No es un framework — es un patrón</strong>. 80 líneas de bash
+que resuelven un problema específico: AFK controlado por governance
+externa (Linear).</p>
+<p>El nombre viene del personaje de <em>Edge of Tomorrow</em>: loopea
+pero mantiene memoria.</p>
+<h3 id="filosofía-7">Filosofía</h3>
+<p>En lugar de que un <code>while true</code> ciego decida qué hacer
+(Ralph), <strong>Linear decide</strong>. El PM o tú mismo pre-autorizas
+trabajo metiendo issues en “To Do”, y el bucle los come.</p>
+<h3 id="cómo-funciona-5">Cómo funciona</h3>
+<div class="sourceCode" id="cb3"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> <span class="fu">true</span><span class="kw">;</span> <span class="cf">do</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="va">ISSUE</span><span class="op">=</span><span class="va">$(</span><span class="ex">linear</span> issues list <span class="at">--assignee</span> me <span class="at">--state</span> <span class="st">&quot;To Do&quot;</span> <span class="at">--limit</span> 1<span class="va">)</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="bu">[</span> <span class="ot">-z</span> <span class="st">&quot;</span><span class="va">$ISSUE</span><span class="st">&quot;</span> <span class="bu">]</span> <span class="kw">&amp;&amp;</span> <span class="fu">sleep</span> 60 <span class="kw">&amp;&amp;</span> <span class="cf">continue</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>  <span class="ex">linear</span> issues update <span class="st">&quot;</span><span class="va">$ISSUE</span><span class="st">&quot;</span> <span class="at">--state</span> <span class="st">&quot;In Progress&quot;</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>  <span class="ex">linear</span> tasks export <span class="st">&quot;</span><span class="va">$ISSUE</span><span class="st">&quot;</span> <span class="st">&quot;</span><span class="va">$SESSION_DIR</span><span class="st">&quot;</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>  <span class="cf">while</span> <span class="ex">has_pending_tasks</span><span class="kw">;</span> <span class="cf">do</span> <span class="fu">sleep</span> 10<span class="kw">;</span> <span class="cf">done</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>  <span class="ex">inject_create_pr_task</span></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>  <span class="cf">while</span> <span class="ex">pr_task_pending</span><span class="kw">;</span> <span class="cf">do</span> <span class="fu">sleep</span> 10<span class="kw">;</span> <span class="cf">done</span></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>  <span class="ex">linear</span> issues update <span class="st">&quot;</span><span class="va">$ISSUE</span><span class="st">&quot;</span> <span class="at">--state</span> <span class="st">&quot;Done&quot;</span></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a><span class="cf">done</span></span></code></pre></div>
+<h3 id="casos-de-uso-ideales-7">Casos de uso ideales</h3>
+<ul>
+<li>Equipos que ya viven en Linear</li>
+<li>AFK con salvaguardas humanas (el humano decide qué entra en To
+Do)</li>
+<li>Backlog triage automatizado</li>
+<li>Implementación autónoma de PRDs</li>
+</ul>
+<h3 id="casos-donde-no-usarlo-6">Casos donde NO usarlo</h3>
+<ul>
+<li>Si no usas Linear</li>
+<li>Cuando necesitas supervisión dentro de la ejecución</li>
+<li>Proyectos donde los issues no están bien definidos</li>
+</ul>
+<h3 id="tiempo-de-aprendizaje-7">Tiempo de aprendizaje</h3>
+<p><strong>1 hora</strong>. Es literalmente un script bash.</p>
+<h3 id="tradeoff-principal-6">Tradeoff principal</h3>
+<p>Requiere disciplina de PM. Issues mal definidos → basura con
+eficiencia.</p>
+<h3 id="recursos-7">Recursos</h3>
+<ul>
+<li>📦 <strong>Repositorio:</strong> <a
+href="https://github.com/joa23/linear-cli">github.com/joa23/linear-cli</a>
+(script en <code>scripts/vrataski-loop.sh</code>)</li>
+</ul>
+<hr />
+<h2 id="superpowers">Superpowers</h2>
+<h3 id="qué-es-8">Qué es</h3>
+<p><strong>El framework agéntico más estrellado del ecosistema con
+158.000 ⭐</strong> — y disponible en el <strong>marketplace oficial de
+Claude Code de Anthropic</strong>. Creado por <strong>Jesse Vincent
+(<span class="citation" data-cites="obra">@obra</span>)</strong>, es una
+metodología completa de desarrollo software construida sobre
+<strong>skills composables</strong> que se activan automáticamente en tu
+agente.</p>
+<p>No confundir con el intento homónimo de otros autores. Este es el
+Superpowers real, el que está en la marketplace oficial.</p>
+<h3 id="filosofía-8">Filosofía</h3>
+<blockquote>
+<p><em>“It doesn’t just jump into trying to write code. Instead, it
+steps back and asks you what you’re really trying to do.”</em></p>
+</blockquote>
+<p>No salta al código. Primero saca la spec de la conversación, te la
+enseña en trozos digeribles, y solo después de tu sign-off genera un
+plan de implementación claro. El agente se convierte en un orquestador
+que lanza subagentes por tarea mientras tú supervisas.</p>
+<h3 id="cómo-funciona-6">Cómo funciona</h3>
+<ol type="1">
+<li><strong>Spec extraction</strong> — conversación dirigida hasta que
+la spec está clara</li>
+<li><strong>Design approval</strong> — te muestra la spec en chunks
+cortos para aprobar</li>
+<li><strong>Implementation plan</strong> — plan tan claro que un “junior
+engineer entusiasta sin juicio ni context” podría seguirlo</li>
+<li><strong>Subagent-driven development</strong> — lanza subagentes que
+trabajan tarea por tarea</li>
+<li><strong>Autonomous runs</strong> — según el autor, “Claude puede
+trabajar autónomamente durante un par de horas sin desviarse del
+plan”</li>
+</ol>
+<h3 id="principios-fundamentales">Principios fundamentales</h3>
+<ul>
+<li><strong>TDD estricto</strong> — red/green/refactor real, no
+decorativo</li>
+<li><strong>YAGNI</strong> — You Aren’t Gonna Need It</li>
+<li><strong>DRY</strong> — Don’t Repeat Yourself</li>
+<li><strong>Composable skills</strong> — se activan automáticamente
+según contexto</li>
+</ul>
+<h3 id="agentes-soportados-1">Agentes soportados</h3>
+<p>Disponible vía plugin marketplace en:</p>
+<ul>
+<li><strong>Claude Code</strong> (marketplace oficial de Anthropic y
+marketplace propio)</li>
+<li><strong>OpenAI Codex CLI</strong> y <strong>Codex App</strong></li>
+<li><strong>Cursor</strong> (Plugin Marketplace)</li>
+<li><strong>OpenCode</strong></li>
+<li><strong>GitHub Copilot CLI</strong></li>
+</ul>
+<h3 id="instalación">Instalación</h3>
+<div class="sourceCode" id="cb4"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Claude Code (marketplace oficial)</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="ex">/plugin</span> install superpowers@claude-plugins-official</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Cursor</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="ex">/add-plugin</span> superpowers</span></code></pre></div>
+<h3 id="casos-de-uso-ideales-8">Casos de uso ideales</h3>
+<ul>
+<li><strong>Cualquier developer usando Claude Code en serio</strong> —
+al estar en la marketplace oficial, es la opción por defecto con más
+adopción</li>
+<li>Proyectos con TDD estricto como requerimiento</li>
+<li>Cuando quieres runs autónomos de horas sin perder control</li>
+<li>Equipos que valoran YAGNI/DRY como principios reales</li>
+<li>Cross-agent: si usas varios (Claude + Codex + Cursor), es compatible
+con todos</li>
+</ul>
+<h3 id="casos-donde-no-usarlo-7">Casos donde NO usarlo</h3>
+<ul>
+<li>Si prefieres AFK puro sin sign-off previo (usa Ralph)</li>
+<li>Si tu filosofía es “cero ceremonia” total (usa Ralph o Rita
+Vrataski)</li>
+<li>Proyectos donde no vas a escribir tests (el framework te
+obliga)</li>
+</ul>
+<h3 id="tiempo-de-aprendizaje-8">Tiempo de aprendizaje</h3>
+<p><strong>1-2 días</strong> para el flujo completo. Pero al activarse
+automáticamente, eres productivo desde minuto uno — el resto es aprender
+a confiar en el proceso.</p>
+<h3 id="tradeoff-principal-7">Tradeoff principal</h3>
+<p>Es opinionado. Te obliga a pasar por el design/spec antes de tocar
+código. Si tu estilo es “código primero, diseño después”, vas a chocar
+con el framework. Si estás alineado con TDD y spec-first, es el ganador
+claro.</p>
+<h3 id="recursos-8">Recursos</h3>
+<ul>
+<li>📦 <strong>Repositorio:</strong> <a
+href="https://github.com/obra/superpowers">github.com/obra/superpowers</a></li>
+<li>🏪 <strong>Marketplace oficial Claude Code:</strong> <a
+href="https://claude.com/plugins/superpowers">claude.com/plugins/superpowers</a></li>
+<li>👤 <strong>Autor:</strong> Jesse Vincent (<a
+href="https://github.com/obra"><span class="citation"
+data-cites="obra">@obra</span></a>)</li>
+</ul>
+<hr />
+<h2 id="ralph-loop-el-patrón-original">Ralph loop (el patrón
+original)</h2>
+<h3 id="qué-es-9">Qué es</h3>
+<p>El patrón original que inició todo el ecosistema. Literalmente:</p>
+<div class="sourceCode" id="cb5"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> <span class="bu">:</span><span class="kw">;</span> <span class="cf">do</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cat</span> PROMPT.md <span class="kw">|</span> <span class="ex">claude-code</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="cf">done</span></span></code></pre></div>
+<p>Un prompt fijo se alimenta en bucle infinito. Cada iteración usa
+<strong>ventana de contexto fresca</strong> (clave). El agente
+selecciona tarea, la implementa, reinicia.</p>
+<p>Creado por <strong>Geoffrey Huntley</strong> y reconocido por
+Thoughtworks Technology Radar en el ring ASSESS. <strong>No es un
+repositorio — es una técnica.</strong> Existen múltiples
+implementaciones open-source con diferente nivel de adopción.</p>
+<h3 id="implementaciones-populares-de-ralph-loop">Implementaciones
+populares de Ralph loop</h3>
+<table>
+<colgroup>
+<col style="width: 28%" />
+<col style="width: 12%" />
+<col style="width: 8%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr>
+<th>Implementación</th>
+<th>Autor</th>
+<th>⭐</th>
+<th>Característica diferencial</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>ralph-orchestrator</strong></td>
+<td>Mike O’Brien (<a
+href="https://github.com/mikeyobrien/ralph-orchestrator">mikeyobrien</a>)</td>
+<td><strong>2.724</strong></td>
+<td>La implementación más popular — orquestación mejorada</td>
+</tr>
+<tr>
+<td><strong>open-ralph-wiggum</strong></td>
+<td><a
+href="https://github.com/Th0rgal/open-ralph-wiggum">Th0rgal</a></td>
+<td>1.497</td>
+<td>Multi-agente: Open Code, Claude Code, Codex, Copilot</td>
+</tr>
+<tr>
+<td><strong>ralph-wiggum-marketer</strong></td>
+<td><a
+href="https://github.com/muratcankoylan/ralph-wiggum-marketer">muratcankoylan</a></td>
+<td>721</td>
+<td>Plugin Claude Code para copywriting autónomo</td>
+</tr>
+<tr>
+<td><strong>ralph-wiggum-cursor</strong></td>
+<td><a
+href="https://github.com/agrimsingh/ralph-wiggum-cursor">agrimsingh</a></td>
+<td>473</td>
+<td>Versión para Cursor CLI con context management</td>
+</tr>
+<tr>
+<td><strong>ralph-wiggum</strong></td>
+<td><a
+href="https://github.com/fstandhartinger/ralph-wiggum">fstandhartinger</a></td>
+<td>219</td>
+<td>Ralph + spec-driven development</td>
+</tr>
+</tbody>
+</table>
+<h3 id="matt-pocock-y-la-evangelización-de-ralph">Matt Pocock y la
+evangelización de Ralph</h3>
+<p><strong>Matt Pocock</strong> (conocido educador de TypeScript, con
+millones de visualizaciones en YouTube y Twitter) ha sido uno de los
+principales evangelizadores de la técnica Ralph en workshops y streams.
+Tiene repositorios públicos con el material de sus workshops:</p>
+<ul>
+<li>📦 <a
+href="https://github.com/mattpocock/ralph-workshop-repo-001">github.com/mattpocock/ralph-workshop-repo-001</a></li>
+<li>📦 <a
+href="https://github.com/mattpocock/ralph-workshop-repo-002">github.com/mattpocock/ralph-workshop-repo-002</a></li>
+</ul>
+<p>Estos son <strong>material didáctico</strong>, no frameworks en sí.
+Muestran cómo Matt aplica la técnica Ralph en su flujo real de
+desarrollo. Si quieres aprender Ralph con un enfoque práctico guiado,
+sus workshops son la mejor entrada.</p>
+<h3 id="filosofía-9">Filosofía</h3>
+<p><em>“Una cosa por iteración. Fe en la consistencia
+eventual.”</em></p>
+<h3 id="por-qué-funciona-según-huntley">Por qué funciona (según
+Huntley)</h3>
+<ul>
+<li>Contexto fresco en cada iteración evita <strong>context
+rot</strong></li>
+<li>El agente se auto-corrige documentando bugs</li>
+<li>Usa subagentes para operaciones costosas (~170k tokens por
+iteración)</li>
+<li>Convergencia gradual hacia la spec</li>
+</ul>
+<h3 id="historia-notable">Historia notable</h3>
+<p>Huntley reportó haber entregado un contrato cliente de
+<strong>$50.000</strong> usando Ralph loop con coste real en tokens de
+<strong>$297</strong>. Ese ratio cost-displacement es lo que encendió el
+hype.</p>
+<h3 id="veredicto-de-thoughtworks">Veredicto de Thoughtworks</h3>
+<p><strong>Ring: ASSESS</strong> — explora con cuidado.</p>
+<p>Ventajas: - Simplicidad radical vs swarms coordinados - Prevención de
+context rot - Convergencia gradual</p>
+<p>Tradeoff destacado: - 💸 <strong>Coste de tokens
+extraordinario</strong> (explícito en el Radar)</p>
+<h3 id="casos-de-uso-ideales-9">Casos de uso ideales</h3>
+<ul>
+<li>Proyectos greenfield (~90% completion reportado)</li>
+<li>Creación de lenguajes / compiladores</li>
+<li>MVPs cost-displaced</li>
+<li>Cuando tienes senior engineering guidance</li>
+</ul>
+<h3 id="casos-donde-no-usarlo-8">Casos donde NO usarlo</h3>
+<ul>
+<li><strong>Codebases establecidos</strong> (el autor lo dice
+explícitamente)</li>
+<li>Cuando necesitas outcomes deterministas</li>
+<li>Sistemas críticos</li>
+<li>Cuando el coste de tokens importa (producción a escala)</li>
+</ul>
+<h3 id="tiempo-de-aprendizaje-9">Tiempo de aprendizaje</h3>
+<p><strong>30 minutos</strong> para el script. <strong>Semanas</strong>
+para tunear bien el PROMPT.md.</p>
+<h3 id="tradeoff-principal-8">Tradeoff principal</h3>
+<p>Outcomes no deterministas + coste de tokens brutal.</p>
+<h3 id="recursos-9">Recursos</h3>
+<ul>
+<li>📝 <strong>Artículo original de Geoffrey Huntley:</strong> <a
+href="https://ghuntley.com/ralph/">ghuntley.com/ralph</a></li>
+<li>📡 <strong>Thoughtworks Technology Radar:</strong> <a
+href="https://www.thoughtworks.com/radar/techniques/ralph-loop">thoughtworks.com/radar/techniques/ralph-loop</a></li>
+</ul>
+<hr />
+<h2 id="matriz-comparativa-consolidada">Matriz comparativa
+consolidada</h2>
+<h3 id="por-características-técnicas">Por características técnicas</h3>
+<table>
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 11%" />
+<col style="width: 13%" />
+<col style="width: 5%" />
+<col style="width: 6%" />
+<col style="width: 13%" />
+<col style="width: 8%" />
+<col style="width: 10%" />
+<col style="width: 7%" />
+<col style="width: 9%" />
+<col style="width: 7%" />
+</colgroup>
+<thead>
+<tr>
+<th>Feature</th>
+<th style="text-align: center;">gentle-ai</th>
+<th style="text-align: center;">Superpowers</th>
+<th style="text-align: center;">GSD</th>
+<th style="text-align: center;">BMAD</th>
+<th style="text-align: center;">Claude-Flow</th>
+<th style="text-align: center;">Archon</th>
+<th style="text-align: center;">Spec-Kit</th>
+<th style="text-align: center;">nWave</th>
+<th style="text-align: center;">Rita V.</th>
+<th style="text-align: center;">Ralph</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AFK total</td>
+<td style="text-align: center;">❌</td>
+<td style="text-align: center;">⚙️ auto-runs</td>
+<td style="text-align: center;">⚠️</td>
+<td style="text-align: center;">❌</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">⚙️</td>
+<td style="text-align: center;">⚙️</td>
+<td style="text-align: center;">❌</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+</tr>
+<tr>
+<td>Memoria persistente</td>
+<td style="text-align: center;">✅ Engram</td>
+<td style="text-align: center;">❌</td>
+<td style="text-align: center;">❌</td>
+<td style="text-align: center;">❌</td>
+<td style="text-align: center;">⚙️</td>
+<td style="text-align: center;">❌</td>
+<td style="text-align: center;">❌</td>
+<td style="text-align: center;">❌</td>
+<td style="text-align: center;">✅ Linear</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>Multi-IDE</td>
+<td style="text-align: center;">✅ 10</td>
+<td style="text-align: center;">✅ 5+ oficial</td>
+<td style="text-align: center;">✅ 14+</td>
+<td style="text-align: center;">⚠️</td>
+<td style="text-align: center;">❌</td>
+<td style="text-align: center;">❌</td>
+<td style="text-align: center;">✅ 30+</td>
+<td style="text-align: center;">⚠️ 2</td>
+<td style="text-align: center;">❌</td>
+<td style="text-align: center;">✅</td>
+</tr>
+<tr>
+<td>TDD built-in</td>
+<td style="text-align: center;">⚙️</td>
+<td style="text-align: center;">✅✅</td>
+<td style="text-align: center;">⚠️</td>
+<td style="text-align: center;">❌</td>
+<td style="text-align: center;">❌</td>
+<td style="text-align: center;">⚙️</td>
+<td style="text-align: center;">❌</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">❌</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>Spec-driven</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅✅</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">❌</td>
+<td style="text-align: center;">⚙️</td>
+<td style="text-align: center;">✅✅</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">❌</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>Multi-agente/swarm</td>
+<td style="text-align: center;">⚙️</td>
+<td style="text-align: center;">✅ subagents</td>
+<td style="text-align: center;">⚙️</td>
+<td style="text-align: center;">✅ personas</td>
+<td style="text-align: center;">✅✅</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">⚙️</td>
+<td style="text-align: center;">✅ 40</td>
+<td style="text-align: center;">❌</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>Per-phase model</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">❌</td>
+<td style="text-align: center;">❌</td>
+<td style="text-align: center;">❌</td>
+<td style="text-align: center;">❌</td>
+<td style="text-align: center;">⚙️</td>
+<td style="text-align: center;">❌</td>
+<td style="text-align: center;">❌</td>
+<td style="text-align: center;">❌</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>Setup trivial</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅ marketplace</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">❌</td>
+<td style="text-align: center;">❌</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+</tr>
+<tr>
+<td>Marketplace oficial</td>
+<td style="text-align: center;">❌</td>
+<td style="text-align: center;">✅ Anthropic</td>
+<td style="text-align: center;">❌</td>
+<td style="text-align: center;">❌</td>
+<td style="text-align: center;">❌</td>
+<td style="text-align: center;">❌</td>
+<td style="text-align: center;">❌</td>
+<td style="text-align: center;">❌</td>
+<td style="text-align: center;">❌</td>
+<td style="text-align: center;">❌</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Leyenda:</strong> ✅ = sí / ❌ = no / ⚙️ = configurable / ⚠️
+= parcial</p>
+<h3 id="por-tiempo-de-aprendizaje">Por tiempo de aprendizaje</h3>
+<table>
+<thead>
+<tr>
+<th>Framework</th>
+<th>Tiempo productivo</th>
+<th>Tiempo dominio</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Ralph loop</strong></td>
+<td>30 min</td>
+<td>Semanas (tuning prompt)</td>
+</tr>
+<tr>
+<td><strong>Rita Vrataski</strong></td>
+<td>1 hora</td>
+<td>1-2 días</td>
+</tr>
+<tr>
+<td><strong>GSD</strong></td>
+<td>2-4 horas</td>
+<td>1 semana</td>
+</tr>
+<tr>
+<td><strong>gentle-ai</strong></td>
+<td>30 min instalación</td>
+<td>1 semana</td>
+</tr>
+<tr>
+<td><strong>Superpowers</strong></td>
+<td>Instantáneo (auto-activación)</td>
+<td>2-3 días</td>
+</tr>
+<tr>
+<td><strong>Archon</strong></td>
+<td>4-8 horas</td>
+<td>2-3 semanas</td>
+</tr>
+<tr>
+<td><strong>Spec-Kit</strong></td>
+<td>4-8 horas</td>
+<td>2-4 semanas</td>
+</tr>
+<tr>
+<td><strong>nWave</strong></td>
+<td>1 día</td>
+<td>1 semana</td>
+</tr>
+<tr>
+<td><strong>BMAD</strong></td>
+<td>3 días</td>
+<td>2-4 semanas</td>
+</tr>
+<tr>
+<td><strong>Claude-Flow</strong></td>
+<td>2-3 días</td>
+<td>1-2 meses</td>
+</tr>
+</tbody>
+</table>
+<h3 id="por-coste-aproximado">Por coste aproximado</h3>
+<table>
+<thead>
+<tr>
+<th>Framework</th>
+<th style="text-align: center;">Coste tokens</th>
+<th style="text-align: center;">Coste tiempo humano</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Ralph</strong></td>
+<td style="text-align: center;">🔴 Alto</td>
+<td style="text-align: center;">🟢 Bajo</td>
+</tr>
+<tr>
+<td><strong>Rita Vrataski</strong></td>
+<td style="text-align: center;">🟡 Medio</td>
+<td style="text-align: center;">🟢 Bajo</td>
+</tr>
+<tr>
+<td><strong>GSD</strong></td>
+<td style="text-align: center;">🟡 Medio</td>
+<td style="text-align: center;">🟡 Medio</td>
+</tr>
+<tr>
+<td><strong>Archon</strong></td>
+<td style="text-align: center;">🟡 Medio</td>
+<td style="text-align: center;">🟡 Medio</td>
+</tr>
+<tr>
+<td><strong>gentle-ai</strong></td>
+<td style="text-align: center;">🟢 Bajo (per-phase)</td>
+<td style="text-align: center;">🟡 Medio</td>
+</tr>
+<tr>
+<td><strong>Spec-Kit</strong></td>
+<td style="text-align: center;">🟡 Medio</td>
+<td style="text-align: center;">🔴 Alto (disciplina)</td>
+</tr>
+<tr>
+<td><strong>Superpowers</strong></td>
+<td style="text-align: center;">🟢 Bajo</td>
+<td style="text-align: center;">🟡 Medio</td>
+</tr>
+<tr>
+<td><strong>Claude-Flow</strong></td>
+<td style="text-align: center;">🟡 Medio</td>
+<td style="text-align: center;">🟡 Medio</td>
+</tr>
+<tr>
+<td><strong>BMAD</strong></td>
+<td style="text-align: center;">🟡 Medio</td>
+<td style="text-align: center;">🔴 Alto (personas)</td>
+</tr>
+<tr>
+<td><strong>nWave</strong></td>
+<td style="text-align: center;">🟢 Bajo</td>
+<td style="text-align: center;">🔴 Alto (gates)</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="recomendaciones-por-perfil">Recomendaciones por perfil</h2>
+<h3 id="soy-solo-dev-quiero-resultados-sin-ceremonia">“Soy solo dev,
+quiero resultados sin ceremonia”</h3>
+<p><strong>Ganador: GSD</strong><br />
+Alternativa más simple: Ralph directo (si sabes tunear prompts).</p>
+<h3
+id="tengo-equipo-pequeño-con-linear-quiero-afk-con-salvaguardas">“Tengo
+equipo pequeño con Linear, quiero AFK con salvaguardas”</h3>
+<p><strong>Ganador: Rita Vrataski pattern</strong></p>
+<h3 id="proyecto-enterprise-con-arquitectura-crítica">“Proyecto
+enterprise con arquitectura crítica”</h3>
+<p><strong>Ganador: BMAD</strong> (comunidad + personas)<br />
+<strong>Alternativa: nWave</strong> (si pesa el rigor de gates)</p>
+<h3 id="quiero-orquestar-múltiples-agentes-en-paralelo-con-mcp">“Quiero
+orquestar múltiples agentes en paralelo con MCP”</h3>
+<p><strong>Ganador: Claude-Flow / SPARC</strong></p>
+<h3 id="ya-trabajamos-con-specs-rfcs-adrs">“Ya trabajamos con specs /
+RFCs / ADRs”</h3>
+<p><strong>Ganador: Spec-Kit</strong> (oficial GitHub)</p>
+<h3 id="quiero-workflows-deterministas-con-gates-configurables">“Quiero
+workflows deterministas con gates configurables”</h3>
+<p><strong>Ganador: Archon</strong></p>
+<h3 id="soy-dev-profesional-que-usa-varios-agentes">“Soy dev profesional
+que usa varios agentes”</h3>
+<p><strong>Ganador: gentle-ai como base</strong> + uno de los anteriores
+encima según tarea.</p>
+<h3 id="quiero-tdd-forzoso">“Quiero TDD forzoso”</h3>
+<p><strong>Ganador claro: Superpowers</strong> (RED-GREEN-REFACTOR +
+YAGNI + DRY como principios no negociables, y al estar en marketplace
+oficial es plug-and-play). <strong>Alternativa:</strong> nWave (fase
+DISTILL) si necesitas también gates obligatorios en diseño.</p>
+<h3
+id="soy-dev-que-usa-claude-code-y-quiero-la-opción-por-defecto-bien-probada">“Soy
+dev que usa Claude Code y quiero LA opción por defecto bien
+probada”</h3>
+<p><strong>Ganador: Superpowers</strong><br />
+Con 158.000 ⭐ y presencia en el marketplace oficial de Anthropic, es la
+opción con mayor validación del mercado. Instalar y funciona.</p>
+<h3 id="quiero-experimentar-con-el-cutting-edge">“Quiero experimentar
+con el cutting edge”</h3>
+<p><strong>Ganador: Ralph vanilla</strong> (con caveat de Thoughtworks
+sobre tokens)</p>
+<hr />
+<h2 id="stacks-ganadores-combinaciones-reales">Stacks ganadores
+(combinaciones reales)</h2>
+<p>Pocos developers usan UN solo framework. Las combinaciones más
+potentes:</p>
+<h3 id="stack-solo-dev-serio">Stack “Solo dev serio”</h3>
+<pre><code>gentle-ai (base: memoria + SDD + skills + per-phase models)
+   ↓
+GSD (motor de ejecución día a día)
+   ↓
+nWave (solo para features críticas arquitectónicas)</code></pre>
+<p><strong>Aprendizaje total:</strong> ~2 semanas.</p>
+<h3 id="stack-equipo-en-linear">Stack “Equipo en Linear”</h3>
+<pre><code>gentle-ai (base)
+   ↓
+Rita Vrataski pattern (AFK gobernado por Linear)
+   ↓
+Spec-Kit (features donde la spec es contrato)</code></pre>
+<p><strong>Aprendizaje total:</strong> ~2 semanas.</p>
+<h3 id="stack-enterprise-serio">Stack “Enterprise serio”</h3>
+<pre><code>BMAD (personas y ceremonia estructurada)
+   ↓
+Archon (workflows deterministas en YAML)
+   ↓
+Claude-Flow (orquestación multi-agente)</code></pre>
+<p><strong>Aprendizaje total:</strong> ~2 meses.</p>
+<h3 id="stack-experimentador-investigador">Stack “Experimentador /
+Investigador”</h3>
+<pre><code>Ralph vanilla (loop puro)
+   ↓
+Adaptaciones custom de PROMPT.md</code></pre>
+<p><strong>Aprendizaje total:</strong> días-semanas.</p>
+<hr />
+<h2 id="los-gaps-de-gentle-ai-frente-a-otros-análisis-honesto">Los gaps
+de gentle-ai frente a otros (análisis honesto)</h2>
+<p>Gentle-ai es un meta-layer excelente, pero hay cosas que no cubre y
+que otros frameworks sí. Esta es la parte honesta:</p>
+<h3 id="no-tiene-afk-loop-nativo-ralph-o-rita-vrataski">No tiene AFK
+loop nativo → Ralph o Rita Vrataski</h3>
+<p>Si quieres que el agente vaya comiendo backlog sin supervisión
+humana, gentle-ai no te lo da. Su filosofía es SDD con revisión entre
+fases.</p>
+<h3 id="no-tiene-swarm-multi-agente-distribuido-claude-flow">No tiene
+swarm multi-agente distribuido → Claude-Flow</h3>
+<p>Gentle-ai orquesta UN agente a la vez. Para swarms distribuidos con
+MCP, Claude-Flow sigue siendo la referencia.</p>
+<h3 id="no-tiene-workflows-yaml-deterministas-archon">No tiene workflows
+YAML deterministas → Archon</h3>
+<p>No puedes declarar pipelines reproducibles en YAML. Archon sí.</p>
+<h3 id="no-tiene-12-personas-enterprise-bmad">No tiene 12+ personas
+enterprise → BMAD</h3>
+<p>SDD es lean. No modela PM, UX, Scrum Master como roles con contexto
+propio.</p>
+<h3 id="no-tiene-spec-executable-inversion-spec-kit">No tiene
+spec-executable inversion → Spec-Kit</h3>
+<p>En gentle-ai el código sigue siendo el output. En Spec-Kit la spec ES
+el output que genera código.</p>
+<h3 id="no-tiene-el-volumen-de-community-de-gsdbmad">No tiene el volumen
+de community de GSD/BMAD</h3>
+<p>2.131 estrellas vs 54.500 (GSD) o 45.000 (BMAD).</p>
+<h3 id="no-tiene-quality-gates-tan-específicos-como-gsd">No tiene
+quality gates tan específicos como GSD</h3>
+<p>GSD trae schema drift detection, security anchoring a threat models,
+scope reduction detection de serie.</p>
+<h3 id="conclusión-sobre-gentle-ai">Conclusión sobre gentle-ai</h3>
+<p><strong>Gentle-ai es el sistema operativo. Los demás son
+aplicaciones.</strong></p>
+<p>No eliges entre gentle-ai y GSD. Instalas gentle-ai como base, y
+luego decides qué motor de ejecución pones encima según la tarea.</p>
+<hr />
+<h2 id="veredicto-final">Veredicto final</h2>
+<h3 id="si-tuviera-que-apostar-todo-hoy-a-una-estrategia">Si tuviera que
+apostar TODO hoy a una estrategia</h3>
+<ul>
+<li><strong>Base inmutable:</strong> gentle-ai</li>
+<li><strong>Motor diario:</strong> GSD</li>
+<li><strong>AFK controlado:</strong> Rita Vrataski pattern en
+Linear</li>
+<li><strong>Gates para decisiones críticas:</strong> Spec-Kit o
+nWave</li>
+<li><strong>Ralph vanilla:</strong> NUNCA en producción</li>
+<li><strong>BMAD:</strong> solo en equipos &gt;10 personas</li>
+<li><strong>Claude-Flow:</strong> solo si necesitas swarms reales</li>
+<li><strong>Archon:</strong> alternativa sólida a GSD si prefieres
+declarativo</li>
+<li><strong>Superpowers:</strong> la opción por defecto si usas Claude
+Code — 158k ⭐ y marketplace oficial Anthropic</li>
+</ul>
+<h3 id="la-verdad-incómoda">La verdad incómoda</h3>
+<p><strong>Nadie está ganando “el” framework.</strong> El mercado se
+está fragmentando en nichos, y eso es sano. Cada framework optimiza para
+un contexto específico.</p>
+<p><strong>El error más común</strong> es adoptar el framework
+equivocado para tu contexto porque es el más popular. GSD es excelente
+para solo devs y terrible para enterprise. BMAD es al revés. Ralph es
+genial para MVPs y un suicidio financiero a escala.</p>
+<p><strong>La decisión inteligente</strong> es stackear 2-3
+herramientas:</p>
+<ol type="1">
+<li>Capa base (<strong>gentle-ai</strong> recomendado)</li>
+<li>Motor de ejecución (GSD / Archon / nWave según perfil)</li>
+<li>Patrón de autonomía (Ralph / Rita Vrataski si aplica)</li>
+</ol>
+<h3 id="preguntas-clave-para-decidir">Preguntas clave para decidir</h3>
+<ol type="1">
+<li><strong>¿Cuánto vale tu tiempo vs tokens?</strong> — Ralph sale caro
+si escalas. nWave sale caro si eres solo dev.</li>
+<li><strong>¿Cuántos agentes usas?</strong> — Si &gt;1, gentle-ai te
+ahorra dolor.</li>
+<li><strong>¿Tienes disciplina de specs?</strong> — Sí → Spec-Kit/nWave.
+No → GSD/Ralph.</li>
+<li><strong>¿Trabajas en equipo con PM?</strong> — Sí → Rita Vrataski o
+BMAD. No → lo demás.</li>
+<li><strong>¿Cuánto vale un error arquitectónico?</strong> — Mucho →
+nWave/BMAD. Poco → Ralph/GSD.</li>
+</ol>
+<hr />
+<h2 id="glosario">Glosario</h2>
+<ul>
+<li><strong>AFK (Away From Keyboard):</strong> el agente corre sin
+supervisión humana activa.</li>
+<li><strong>Context rot:</strong> degradación de calidad cuando la
+ventana de contexto se llena con historial acumulado.</li>
+<li><strong>DAG (Directed Acyclic Graph):</strong> grafo de nodos con
+dependencias direccionales sin ciclos.</li>
+<li><strong>Engram:</strong> sistema de memoria persistente de
+gentle-ai.</li>
+<li><strong>MCP (Model Context Protocol):</strong> protocolo de
+Anthropic para comunicación entre agentes y herramientas.</li>
+<li><strong>SDD (Spec-Driven Development):</strong> metodología donde la
+especificación guía el desarrollo.</li>
+<li><strong>Swarm:</strong> múltiples agentes coordinados trabajando en
+paralelo.</li>
+<li><strong>TDD (Test-Driven Development):</strong> escribir tests antes
+que código.</li>
+<li><strong>Worktree:</strong> feature de Git que permite múltiples
+branches checked out en directorios separados.</li>
+</ul>
+<hr />
+<h2 id="recursos-y-referencias">Recursos y referencias</h2>
+<h3 id="frameworks">Frameworks</h3>
+<ul>
+<li><strong>gentle-ai</strong> — <a
+href="https://github.com/Gentleman-Programming/gentle-ai">GitHub</a> ·
+<a href="https://www.youtube.com/@GentlemanProgramming">YouTube <span
+class="citation"
+data-cites="GentlemanProgramming">@GentlemanProgramming</span></a></li>
+<li><strong>GSD</strong> — <a
+href="https://github.com/gsd-build/get-shit-done">GitHub</a> · <a
+href="https://x.com/gsd_foundation">X <span class="citation"
+data-cites="gsd_foundation">@gsd_foundation</span></a></li>
+<li><strong>BMAD-METHOD</strong> — <a
+href="https://github.com/bmad-code-org/BMAD-METHOD">GitHub</a></li>
+<li><strong>Claude-Flow</strong> — <a
+href="https://github.com/ruvnet/claude-flow">GitHub</a> · <a
+href="https://Cognitum.One">Cognitum.One</a></li>
+<li><strong>Archon</strong> — <a
+href="https://github.com/coleam00/Archon">GitHub</a> · <a
+href="https://www.youtube.com/@ColeMedin">YouTube <span class="citation"
+data-cites="ColeMedin">@ColeMedin</span></a></li>
+<li><strong>Spec-Kit</strong> — <a
+href="https://github.com/github/spec-kit">GitHub</a> · <a
+href="https://github.github.com/spec-kit/">Docs oficiales</a></li>
+<li><strong>nWave</strong> — <a
+href="https://github.com/nWave-ai/nWave">GitHub</a></li>
+<li><strong>Rita Vrataski Loop</strong> — <a
+href="https://github.com/joa23/linear-cli">GitHub</a></li>
+<li><strong>Superpowers</strong> — <a
+href="https://github.com/obra/superpowers">GitHub</a> · <a
+href="https://claude.com/plugins/superpowers">Marketplace oficial
+Anthropic</a></li>
+<li><strong>Ralph loop (técnica original)</strong> — <a
+href="https://ghuntley.com/ralph/">ghuntley.com/ralph</a> · <a
+href="https://www.thoughtworks.com/radar/techniques/ralph-loop">Thoughtworks
+Radar</a></li>
+<li><strong>Ralph loop — implementación más popular</strong> — <a
+href="https://github.com/mikeyobrien/ralph-orchestrator">github.com/mikeyobrien/ralph-orchestrator</a>
+(2.724 ⭐)</li>
+<li><strong>Ralph loop — multi-agente</strong> — <a
+href="https://github.com/Th0rgal/open-ralph-wiggum">github.com/Th0rgal/open-ralph-wiggum</a>
+(1.497 ⭐)</li>
+<li><strong>Matt Pocock workshop material</strong> — <a
+href="https://github.com/mattpocock/ralph-workshop-repo-001">workshop-001</a>
+· <a
+href="https://github.com/mattpocock/ralph-workshop-repo-002">workshop-002</a></li>
+</ul>
+<hr />
+<p><em>Guía actualizada en Abril 2026. Las estrellas de GitHub y estado
+de mantenimiento se verificaron directamente contra la API
+oficial.</em></p>
+<hr />
+<h2 id="artículo-relacionado">Artículo relacionado</h2>
+<p>👉 <strong><a href="frameworks-construir-agentes.html">Frameworks
+agénticos para construir agentes IA: CrewAI, LangGraph, AutoGen y
+Pydantic AI</a></strong></p>
+<p>Si lo que quieres es <strong>construir</strong> tus propios agentes
+(no programar con ayuda de IA), ese es el artículo que buscas. Cubre la
+Familia A: librerías Python/TypeScript para armar productos
+agénticos.</p>
+
+            </div>
+
+            <div class="post-footer">
+                <div class="post-cta">
+                    <h3>¿Te gustó esta guía?</h3>
+                    <p>Únete a la lista de espera del curso Claude Code y recibe más contenido como este + tu guía gratis</p>
+                    <a href="index.html#formulario" class="btn-primary">Descargar guía gratis</a>
+                </div>
+            </div>
+        </div>
+    </article>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <div class="logo-icon">
+                            <img src="claude-color.png" alt="Claude Code Logo" width="32" height="32">
+                        </div>
+                        <span class="logo-text">Curso Claude Code</span>
+                    </div>
+                    <p class="footer-description">
+                        El curso más completo de Claude Code en español. Aprende a automatizar tu flujo de desarrollo y multiplica tu productividad.
+                    </p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Curso Claude Code. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="article-interactive.js" defer></script>
+</body>
+</html>
