@@ -132,20 +132,208 @@
         });
     }
 
+    // === Pill decoration ===
+    const pillPatterns = [
+        { re: /^✅✅/, cls: 'pill-excellent', emoji: '✅' },
+        { re: /^✅/, cls: 'pill-yes', emoji: '✅' },
+        { re: /^❌/, cls: 'pill-no', emoji: '❌' },
+        { re: /^⚙️/, cls: 'pill-config', emoji: '⚙️' },
+        { re: /^⚠️/, cls: 'pill-partial', emoji: '⚠️' },
+        { re: /^🟢/, cls: 'pill-good', emoji: '🟢' },
+        { re: /^🟡/, cls: 'pill-medium', emoji: '🟡' },
+        { re: /^🔴/, cls: 'pill-bad', emoji: '🔴' }
+    ];
+
+    function decorateCellAsPill(cell) {
+        const text = cell.textContent.trim();
+        if (!text) return;
+
+        for (const { re, cls, emoji } of pillPatterns) {
+            if (re.test(text)) {
+                const label = text.replace(re, '').trim();
+                cell.innerHTML = `<span class="pill ${cls}"><span class="pill-emoji">${emoji}</span>${label ? ` ${label}` : ''}</span>`;
+                return true;
+            }
+        }
+        return false;
+    }
+
+    function decorateTable(table) {
+        const cells = table.querySelectorAll('tbody td');
+        let pillCount = 0;
+        cells.forEach(cell => {
+            if (cell === cell.parentElement.firstElementChild) return; // skip first column
+            if (decorateCellAsPill(cell)) pillCount++;
+        });
+        return pillCount;
+    }
+
+    function addLegend(table) {
+        const legend = document.createElement('div');
+        legend.className = 'matrix-legend';
+        legend.innerHTML = `
+            <span class="matrix-legend-label">Leyenda:</span>
+            <span class="pill pill-excellent"><span class="pill-emoji">✅</span> Excelente</span>
+            <span class="pill pill-yes"><span class="pill-emoji">✅</span> Sí</span>
+            <span class="pill pill-config"><span class="pill-emoji">⚙️</span> Configurable</span>
+            <span class="pill pill-partial"><span class="pill-emoji">⚠️</span> Parcial</span>
+            <span class="pill pill-no"><span class="pill-emoji">❌</span> No</span>
+        `;
+        table.parentNode.insertBefore(legend, table);
+    }
+
+    function addStickyColumn(table) {
+        // Solo para tablas anchas (>6 columnas)
+        const headers = table.querySelectorAll('thead th');
+        if (headers.length > 6) {
+            table.classList.add('has-sticky-col');
+        }
+    }
+
+    function wrapTable(table) {
+        // Envolver la tabla en un div con overflow-x
+        const wrapper = document.createElement('div');
+        wrapper.className = 'table-wrapper';
+        table.parentNode.insertBefore(wrapper, table);
+        wrapper.appendChild(table);
+        return wrapper;
+    }
+
+    // === Link framework names to their H2 anchors ===
+    function normalizeSlug(text) {
+        return text.trim().toLowerCase()
+            .replace(/\*\*/g, '')
+            .replace(/\([^)]*\)/g, '')       // strip parenthetical
+            .replace(/[—–-].*$/, '')         // strip everything after dash
+            .replace(/\s+/g, ' ')
+            .trim();
+    }
+
+    function buildAnchorMap() {
+        const map = new Map();
+        document.querySelectorAll('.post-content h2[id]').forEach(h2 => {
+            const fullKey = normalizeSlug(h2.textContent);
+            if (!fullKey) return;
+
+            // Registrar la clave completa
+            map.set(fullKey, h2.id);
+
+            // Registrar versiones parciales: cada prefijo incremental
+            // "rita vrataski loop" → también "rita vrataski", "rita"
+            const words = fullKey.split(' ').filter(w => w.length >= 3);
+            for (let i = 1; i <= words.length; i++) {
+                const partial = words.slice(0, i).join(' ');
+                if (!map.has(partial)) map.set(partial, h2.id);
+            }
+        });
+        return map;
+    }
+
+    function findAnchor(text, anchorMap) {
+        const key = normalizeSlug(text);
+        if (!key) return null;
+
+        // Match exacto
+        if (anchorMap.has(key)) return anchorMap.get(key);
+
+        // Prefix match: probamos progresivamente quitando última palabra
+        const words = key.split(' ');
+        while (words.length > 0) {
+            const tryKey = words.join(' ');
+            if (anchorMap.has(tryKey)) return anchorMap.get(tryKey);
+            words.pop();
+        }
+        return null;
+    }
+
+    function tryLinkCell(cell, anchorMap, label) {
+        if (!cell) return false;
+        if (cell.querySelector('a.framework-link')) return false;
+
+        const text = cell.textContent.trim();
+        if (!text) return false;
+
+        const anchorId = findAnchor(text, anchorMap);
+
+        if (anchorId) {
+            const indicator = cell.querySelector('.sort-indicator');
+            let innerHTML = cell.innerHTML;
+            if (indicator) {
+                innerHTML = innerHTML.replace(indicator.outerHTML, '').trim();
+            }
+            cell.innerHTML = `<a href="#${anchorId}" class="framework-link" title="Ir a la sección de ${text}">${innerHTML}</a>${indicator ? indicator.outerHTML : ''}`;
+
+            // Si es un TH (header), prevenir que el click en el link dispare el sort
+            const link = cell.querySelector('a.framework-link');
+            if (link && cell.tagName === 'TH') {
+                link.addEventListener('click', e => e.stopPropagation());
+            }
+            return true;
+        }
+        return false;
+    }
+
+    function linkFrameworkNames(table, anchorMap) {
+        // Primera columna de tbody (cada row → firstCell)
+        table.querySelectorAll('tbody tr').forEach(row => {
+            tryLinkCell(row.children[0], anchorMap);
+        });
+
+        // Headers de feature matrix: si el thead tiene >3 columnas y las columnas 2+ son frameworks
+        const headers = table.querySelectorAll('thead th');
+        if (headers.length > 3) {
+            headers.forEach((th, idx) => {
+                if (idx === 0) return; // saltar primera (Feature/Framework)
+                tryLinkCell(th, anchorMap);
+            });
+        }
+    }
+
     function init() {
-        // Las tablas del post-content quedan sortables
         const tables = document.querySelectorAll('.post-content table');
+        let legendAdded = false;
+        const anchorMap = buildAnchorMap();
+
         tables.forEach(table => {
-            // Asegurarnos de que tenga thead/tbody (pandoc los genera)
             if (!table.querySelector('thead')) return;
 
             makeTableSortable(table);
 
-            // Indicador visual de que es interactiva
-            const wrapper = document.createElement('div');
-            wrapper.className = 'sortable-table-hint';
-            wrapper.innerHTML = '<span>💡 <strong>Click en cualquier cabecera para ordenar</strong> (estrellas, nombres, features)</span>';
-            table.parentNode.insertBefore(wrapper, table);
+            // Hacer clickableh loh nombreh de frameworkh en primera columna
+            linkFrameworkNames(table, anchorMap);
+
+            // Decorar celdas con pills
+            const pillCount = decorateTable(table);
+            const isFeatureMatrix = pillCount > 5;
+
+            // Envolver en div pa scroll horizontal
+            const wrapper = wrapTable(table);
+
+            // Si es feature matrix → sticky column + leyenda (una sola vez)
+            if (isFeatureMatrix) {
+                addStickyColumn(table);
+
+                if (!legendAdded) {
+                    const legend = document.createElement('div');
+                    legend.className = 'matrix-legend';
+                    legend.innerHTML = `
+                        <span class="matrix-legend-label">Leyenda:</span>
+                        <span class="pill pill-excellent"><span class="pill-emoji">✅</span> Excelente</span>
+                        <span class="pill pill-yes"><span class="pill-emoji">✅</span> Sí</span>
+                        <span class="pill pill-config"><span class="pill-emoji">⚙️</span> Configurable</span>
+                        <span class="pill pill-partial"><span class="pill-emoji">⚠️</span> Parcial</span>
+                        <span class="pill pill-no"><span class="pill-emoji">❌</span> No</span>
+                    `;
+                    wrapper.parentNode.insertBefore(legend, wrapper);
+                    legendAdded = true;
+                }
+            }
+
+            // Hint de interactividad encima del wrapper
+            const hint = document.createElement('div');
+            hint.className = 'sortable-table-hint';
+            hint.innerHTML = '<span>💡 <strong>Click en cualquier cabecera para ordenar</strong></span>';
+            wrapper.parentNode.insertBefore(hint, wrapper);
         });
     }
 

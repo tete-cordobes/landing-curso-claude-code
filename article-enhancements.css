@@ -45,6 +45,60 @@ body {
     -moz-osx-font-smoothing: grayscale;
 }
 
+/* Smooth scroll con offset pa el navbar fijo */
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px;
+}
+
+/* Framework links en tablas — visualmente evidenteh */
+.post-content td a.framework-link,
+.post-content th a.framework-link {
+    color: var(--geist-accent);
+    text-decoration: none;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    padding: 0.125rem 0.4rem;
+    margin: -0.125rem -0.4rem;
+    border-radius: var(--geist-radius-sm);
+    transition: all 0.15s ease;
+    border-bottom: 1px solid transparent;
+}
+
+.post-content td a.framework-link::after,
+.post-content th a.framework-link::after {
+    content: '↗';
+    font-size: 0.7em;
+    opacity: 0.6;
+    transition: opacity 0.15s ease;
+    display: inline-block;
+    transform: translateY(-1px);
+}
+
+.post-content td a.framework-link:hover,
+.post-content th a.framework-link:hover {
+    background: rgba(0, 112, 243, 0.08);
+    color: var(--geist-accent);
+    border-bottom-color: transparent;
+}
+
+.post-content td a.framework-link:hover::after,
+.post-content th a.framework-link:hover::after {
+    opacity: 1;
+}
+
+/* Header con framework-link — el fondo azul en hover se ve raro sobre bg azul activo */
+.post-content th.sorted a.framework-link {
+    color: white;
+}
+
+.post-content th.sorted a.framework-link:hover {
+    background: rgba(255, 255, 255, 0.15);
+    color: white;
+}
+
 /* Post container más generoso */
 .post-article {
     background: var(--geist-bg);
@@ -250,38 +304,50 @@ body {
    TABLAS — el gran cambio
    ======================================== */
 
-/* Wrapper con scroll horizontal gracioso */
-.post-content table {
-    display: block;
-    overflow-x: auto;
+/* Wrapper con scroll horizontal — se inyecta via JS */
+.post-content .table-wrapper {
     width: 100%;
     max-width: 100%;
+    overflow-x: auto;
     margin: 2rem 0;
     border: 1px solid var(--geist-border);
     border-radius: var(--geist-radius);
-    border-collapse: separate;
-    border-spacing: 0;
-    font-size: 0.9rem;
     box-shadow: var(--geist-shadow-sm);
     background: var(--geist-bg-card);
     -webkit-overflow-scrolling: touch;
 }
 
-/* Scrollbar estilizado */
-.post-content table::-webkit-scrollbar {
+.post-content .table-wrapper table {
+    width: 100%;
+    margin: 0;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+    background: transparent;
+}
+
+.post-content table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    font-size: 0.9rem;
+}
+
+/* Scrollbar estilizado en el wrapper */
+.post-content .table-wrapper::-webkit-scrollbar {
     height: 8px;
 }
 
-.post-content table::-webkit-scrollbar-track {
+.post-content .table-wrapper::-webkit-scrollbar-track {
     background: var(--geist-bg-subtle);
 }
 
-.post-content table::-webkit-scrollbar-thumb {
+.post-content .table-wrapper::-webkit-scrollbar-thumb {
     background: var(--geist-border-strong);
     border-radius: 4px;
 }
 
-.post-content table::-webkit-scrollbar-thumb:hover {
+.post-content .table-wrapper::-webkit-scrollbar-thumb:hover {
     background: var(--geist-fg-subtle);
 }
 
@@ -362,10 +428,10 @@ body {
 }
 
 .post-content td {
-    padding: 0.875rem 1rem;
+    padding: 0.7rem 1rem;
     border-bottom: 1px solid var(--geist-border);
     color: var(--geist-fg);
-    vertical-align: top;
+    vertical-align: middle;
     font-size: 0.9rem;
     line-height: 1.55;
 }
@@ -505,6 +571,150 @@ body {
 }
 
 /* ========================================
+   CELDAS EN PILL-STYLE (Linear/Notion look)
+   ======================================== */
+
+.post-content td .pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    padding: 0.2rem 0.65rem;
+    border-radius: 999px;
+    font-size: 0.8125rem;
+    font-weight: 500;
+    font-family: var(--geist-font-sans);
+    line-height: 1.4;
+    white-space: nowrap;
+    border: 1px solid transparent;
+    transition: all 0.15s ease;
+}
+
+.post-content td .pill-emoji {
+    font-size: 0.9em;
+    line-height: 1;
+}
+
+/* ✅ — Verde (yes) */
+.post-content td .pill-yes {
+    background: #dcfce7;
+    color: #166534;
+    border-color: #bbf7d0;
+}
+
+/* ✅✅ — Verde oscuro (excellent) */
+.post-content td .pill-excellent {
+    background: #15803d;
+    color: white;
+    border-color: #166534;
+    box-shadow: 0 0 0 2px rgba(21, 128, 61, 0.15);
+    font-weight: 600;
+}
+
+/* ❌ — Gris neutro (no) */
+.post-content td .pill-no {
+    background: #f4f4f5;
+    color: #71717a;
+    border-color: #e4e4e7;
+}
+
+/* ⚙️ — Azul (configurable) */
+.post-content td .pill-config {
+    background: #dbeafe;
+    color: #1e40af;
+    border-color: #bfdbfe;
+}
+
+/* ⚠️ — Ámbar (partial) */
+.post-content td .pill-partial {
+    background: #fef3c7;
+    color: #92400e;
+    border-color: #fde68a;
+}
+
+/* 🟢 🟡 🔴 — cost/speed indicators */
+.post-content td .pill-good {
+    background: #dcfce7;
+    color: #166534;
+    border-color: #bbf7d0;
+}
+
+.post-content td .pill-medium {
+    background: #fef3c7;
+    color: #92400e;
+    border-color: #fde68a;
+}
+
+.post-content td .pill-bad {
+    background: #fee2e2;
+    color: #991b1b;
+    border-color: #fecaca;
+}
+
+/* Hover refinado */
+.post-content td .pill:hover {
+    transform: translateY(-1px);
+    box-shadow: var(--geist-shadow-sm);
+}
+
+/* ========================================
+   STICKY FIRST COLUMN (para tablas anchas)
+   ======================================== */
+
+.post-content table.has-sticky-col td:first-child,
+.post-content table.has-sticky-col th:first-child {
+    position: sticky;
+    left: 0;
+    background: var(--geist-bg-card);
+    z-index: 2;
+    border-right: 2px solid var(--geist-border);
+    box-shadow: 4px 0 8px -4px rgba(0, 0, 0, 0.08);
+}
+
+.post-content table.has-sticky-col thead th:first-child {
+    background: var(--geist-bg-subtle);
+    z-index: 3;
+}
+
+.post-content table.has-sticky-col tbody tr:nth-child(even) td:first-child {
+    background: #fafafa;
+}
+
+.post-content table.has-sticky-col tr:hover td:first-child {
+    background: var(--geist-bg-subtle);
+}
+
+/* ========================================
+   LEYENDA FLOTANTE ARRIBA DE TABLA
+   ======================================== */
+
+.matrix-legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    align-items: center;
+    margin: 1.5rem 0 0.75rem;
+    padding: 0.875rem 1.25rem;
+    background: var(--geist-bg-card);
+    border: 1px solid var(--geist-border);
+    border-radius: var(--geist-radius);
+    box-shadow: var(--geist-shadow-sm);
+    font-size: 0.875rem;
+}
+
+.matrix-legend-label {
+    color: var(--geist-fg-muted);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    font-size: 0.75rem;
+    margin-right: 0.25rem;
+}
+
+.matrix-legend .pill {
+    cursor: default;
+}
+
+/* ========================================
    HR elegante
    ======================================== */
 
@@ -533,12 +743,82 @@ body {
     transition: color 0.15s ease;
 }
 
-.nav-links a.active {
+/* Diferencian visualmente los 2 enlaces de frameworks */
+.nav-links a[href="frameworks-agenticos.html"],
+.nav-links a[href="frameworks-construir-agentes.html"] {
+    position: relative;
+    padding: 0.4rem 0.75rem;
+    border-radius: 8px;
+    border: 1px solid var(--geist-border);
+    background: var(--geist-bg-card);
+    font-weight: 600;
+    font-size: 0.875rem;
+    transition: all 0.15s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+}
+
+/* Pill azul pa "Claude Code" (Familia B) */
+.nav-links a[href="frameworks-agenticos.html"] {
+    color: #0070f3;
+    border-color: #bfdbfe;
+    background: #eff6ff;
+}
+
+.nav-links a[href="frameworks-agenticos.html"]::before {
+    content: '🅱️';
+    font-size: 0.9em;
+}
+
+.nav-links a[href="frameworks-agenticos.html"]:hover {
+    background: #dbeafe;
+    border-color: #93c5fd;
+    transform: translateY(-1px);
+}
+
+.nav-links a[href="frameworks-agenticos.html"].active {
+    background: #0070f3 !important;
+    color: white !important;
+    border-color: #0070f3;
+}
+
+/* Pill violeta pa "Agentes IA" (Familia A) */
+.nav-links a[href="frameworks-construir-agentes.html"] {
+    color: #7928ca;
+    border-color: #e9d5ff;
+    background: #faf5ff;
+}
+
+.nav-links a[href="frameworks-construir-agentes.html"]::before {
+    content: '🅰️';
+    font-size: 0.9em;
+}
+
+.nav-links a[href="frameworks-construir-agentes.html"]:hover {
+    background: #f3e8ff;
+    border-color: #d8b4fe;
+    transform: translateY(-1px);
+}
+
+.nav-links a[href="frameworks-construir-agentes.html"].active {
+    background: #7928ca !important;
+    color: white !important;
+    border-color: #7928ca;
+}
+
+/* Ocultar la barrita azul debajo pa estos links específicos (ya tienen pill) */
+.nav-links a[href="frameworks-agenticos.html"].active::after,
+.nav-links a[href="frameworks-construir-agentes.html"].active::after {
+    display: none;
+}
+
+.nav-links a.active:not([href="frameworks-agenticos.html"]):not([href="frameworks-construir-agentes.html"]) {
     color: var(--geist-accent) !important;
     position: relative;
 }
 
-.nav-links a.active::after {
+.nav-links a.active:not([href="frameworks-agenticos.html"]):not([href="frameworks-construir-agentes.html"])::after {
     content: '';
     position: absolute;
     bottom: -1.3rem;

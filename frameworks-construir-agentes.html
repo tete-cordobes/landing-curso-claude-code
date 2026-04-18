@@ -16,6 +16,7 @@
     
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="blog-styles.css">
+    <link rel="stylesheet" href="nav-frameworks.css">
     <link rel="stylesheet" href="article-enhancements.css">
 </head>
 <body>
@@ -33,7 +34,7 @@
                 <div class="nav-links">
                     <a href="index.html">Inicio</a>
                     <a href="blog.html">Blog</a>
-                    <a href="frameworks-agenticos.html">Claude Code</a>
+                    <a href="frameworks-agenticos.html">Frameworks Claude Code</a>
                     <a href="frameworks-construir-agentes.html" class="active">Agentes IA</a>
                     <a href="changelog.html">Changelog</a>
                     <a href="index.html#formulario" class="btn-nav">Descargar Guía Gratis</a>
@@ -340,6 +341,147 @@ proveedores LLM)</h3>
 stack, con menos abstracciones pero máxima integración.</p>
 <p><strong>Ejemplos:</strong> OpenAI Agents SDK, Google ADK, Anthropic
 Claude Agent SDK.</p>
+<hr />
+<h2 id="matriz-comparativa-consolidada">Matriz comparativa
+consolidada</h2>
+<table>
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 11%" />
+<col style="width: 8%" />
+<col style="width: 9%" />
+<col style="width: 13%" />
+<col style="width: 8%" />
+<col style="width: 12%" />
+<col style="width: 12%" />
+<col style="width: 6%" />
+<col style="width: 8%" />
+</colgroup>
+<thead>
+<tr>
+<th>Feature</th>
+<th style="text-align: center;">LangGraph</th>
+<th style="text-align: center;">CrewAI</th>
+<th style="text-align: center;">AutoGen</th>
+<th style="text-align: center;">Pydantic AI</th>
+<th style="text-align: center;">Mastra</th>
+<th style="text-align: center;">LlamaIndex</th>
+<th style="text-align: center;">SmolAgents</th>
+<th style="text-align: center;">Agno</th>
+<th style="text-align: center;">Atomic</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Python</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">❌</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+</tr>
+<tr>
+<td>TypeScript</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">❌</td>
+<td style="text-align: center;">❌</td>
+<td style="text-align: center;">❌</td>
+<td style="text-align: center;">✅✅</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">❌</td>
+<td style="text-align: center;">❌</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>Type-safe</td>
+<td style="text-align: center;">⚙️</td>
+<td style="text-align: center;">⚙️</td>
+<td style="text-align: center;">⚙️</td>
+<td style="text-align: center;">✅✅</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">⚙️</td>
+<td style="text-align: center;">⚙️</td>
+<td style="text-align: center;">⚙️</td>
+<td style="text-align: center;">✅</td>
+</tr>
+<tr>
+<td>Multi-agent</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅✅</td>
+<td style="text-align: center;">✅✅</td>
+<td style="text-align: center;">⚙️</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">⚙️</td>
+<td style="text-align: center;">⚙️</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">⚙️</td>
+</tr>
+<tr>
+<td>Memoria persistente</td>
+<td style="text-align: center;">⚙️</td>
+<td style="text-align: center;">⚙️</td>
+<td style="text-align: center;">⚙️</td>
+<td style="text-align: center;">⚙️</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">❌</td>
+<td style="text-align: center;">✅✅</td>
+<td style="text-align: center;">⚙️</td>
+</tr>
+<tr>
+<td>RAG built-in</td>
+<td style="text-align: center;">⚙️</td>
+<td style="text-align: center;">❌</td>
+<td style="text-align: center;">❌</td>
+<td style="text-align: center;">❌</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅✅</td>
+<td style="text-align: center;">❌</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>Observabilidad</td>
+<td style="text-align: center;">✅ LangSmith</td>
+<td style="text-align: center;">⚙️</td>
+<td style="text-align: center;">⚙️</td>
+<td style="text-align: center;">✅ Logfire</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">⚙️</td>
+<td style="text-align: center;">⚙️</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>Production users notables</td>
+<td style="text-align: center;">✅✅</td>
+<td style="text-align: center;">✅✅</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅✅</td>
+<td style="text-align: center;">⚙️</td>
+<td style="text-align: center;">⚙️</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>Learning curve</td>
+<td style="text-align: center;">🔴 Alta</td>
+<td style="text-align: center;">🟢 Baja</td>
+<td style="text-align: center;">🟡 Media</td>
+<td style="text-align: center;">🟢 Baja</td>
+<td style="text-align: center;">🟢 Baja</td>
+<td style="text-align: center;">🟡 Media</td>
+<td style="text-align: center;">🟢 Baja</td>
+<td style="text-align: center;">🟢 Baja</td>
+<td style="text-align: center;">🟡 Media</td>
+</tr>
+</tbody>
+</table>
 <hr />
 <h2 id="langgraph">LangGraph</h2>
 <h3 id="qué-es">Qué es</h3>
@@ -959,149 +1101,6 @@ CI/CD</li>
 <li>Performance crítica</li>
 </ul>
 <hr />
-<h2 id="matriz-comparativa-consolidada">Matriz comparativa
-consolidada</h2>
-<table>
-<colgroup>
-<col style="width: 9%" />
-<col style="width: 11%" />
-<col style="width: 8%" />
-<col style="width: 9%" />
-<col style="width: 13%" />
-<col style="width: 8%" />
-<col style="width: 12%" />
-<col style="width: 12%" />
-<col style="width: 6%" />
-<col style="width: 8%" />
-</colgroup>
-<thead>
-<tr>
-<th>Feature</th>
-<th style="text-align: center;">LangGraph</th>
-<th style="text-align: center;">CrewAI</th>
-<th style="text-align: center;">AutoGen</th>
-<th style="text-align: center;">Pydantic AI</th>
-<th style="text-align: center;">Mastra</th>
-<th style="text-align: center;">LlamaIndex</th>
-<th style="text-align: center;">SmolAgents</th>
-<th style="text-align: center;">Agno</th>
-<th style="text-align: center;">Atomic</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Python</td>
-<td style="text-align: center;">✅</td>
-<td style="text-align: center;">✅</td>
-<td style="text-align: center;">✅</td>
-<td style="text-align: center;">✅</td>
-<td style="text-align: center;">❌</td>
-<td style="text-align: center;">✅</td>
-<td style="text-align: center;">✅</td>
-<td style="text-align: center;">✅</td>
-<td style="text-align: center;">✅</td>
-</tr>
-<tr>
-<td>TypeScript</td>
-<td style="text-align: center;">✅</td>
-<td style="text-align: center;">❌</td>
-<td style="text-align: center;">❌</td>
-<td style="text-align: center;">❌</td>
-<td style="text-align: center;">✅✅</td>
-<td style="text-align: center;">✅</td>
-<td style="text-align: center;">❌</td>
-<td style="text-align: center;">❌</td>
-<td style="text-align: center;">❌</td>
-</tr>
-<tr>
-<td>Type-safe</td>
-<td style="text-align: center;">⚙️</td>
-<td style="text-align: center;">⚙️</td>
-<td style="text-align: center;">⚙️</td>
-<td style="text-align: center;">✅✅</td>
-<td style="text-align: center;">✅</td>
-<td style="text-align: center;">⚙️</td>
-<td style="text-align: center;">⚙️</td>
-<td style="text-align: center;">⚙️</td>
-<td style="text-align: center;">✅</td>
-</tr>
-<tr>
-<td>Multi-agent</td>
-<td style="text-align: center;">✅</td>
-<td style="text-align: center;">✅✅</td>
-<td style="text-align: center;">✅✅</td>
-<td style="text-align: center;">⚙️</td>
-<td style="text-align: center;">✅</td>
-<td style="text-align: center;">⚙️</td>
-<td style="text-align: center;">⚙️</td>
-<td style="text-align: center;">✅</td>
-<td style="text-align: center;">⚙️</td>
-</tr>
-<tr>
-<td>Memoria persistente</td>
-<td style="text-align: center;">⚙️</td>
-<td style="text-align: center;">⚙️</td>
-<td style="text-align: center;">⚙️</td>
-<td style="text-align: center;">⚙️</td>
-<td style="text-align: center;">✅</td>
-<td style="text-align: center;">✅</td>
-<td style="text-align: center;">❌</td>
-<td style="text-align: center;">✅✅</td>
-<td style="text-align: center;">⚙️</td>
-</tr>
-<tr>
-<td>RAG built-in</td>
-<td style="text-align: center;">⚙️</td>
-<td style="text-align: center;">❌</td>
-<td style="text-align: center;">❌</td>
-<td style="text-align: center;">❌</td>
-<td style="text-align: center;">✅</td>
-<td style="text-align: center;">✅✅</td>
-<td style="text-align: center;">❌</td>
-<td style="text-align: center;">✅</td>
-<td style="text-align: center;">❌</td>
-</tr>
-<tr>
-<td>Observabilidad</td>
-<td style="text-align: center;">✅ LangSmith</td>
-<td style="text-align: center;">⚙️</td>
-<td style="text-align: center;">⚙️</td>
-<td style="text-align: center;">✅ Logfire</td>
-<td style="text-align: center;">✅</td>
-<td style="text-align: center;">⚙️</td>
-<td style="text-align: center;">⚙️</td>
-<td style="text-align: center;">✅</td>
-<td style="text-align: center;">❌</td>
-</tr>
-<tr>
-<td>Production users notables</td>
-<td style="text-align: center;">✅✅</td>
-<td style="text-align: center;">✅✅</td>
-<td style="text-align: center;">✅</td>
-<td style="text-align: center;">✅</td>
-<td style="text-align: center;">✅</td>
-<td style="text-align: center;">✅✅</td>
-<td style="text-align: center;">⚙️</td>
-<td style="text-align: center;">⚙️</td>
-<td style="text-align: center;">❌</td>
-</tr>
-<tr>
-<td>Learning curve</td>
-<td style="text-align: center;">🔴 Alta</td>
-<td style="text-align: center;">🟢 Baja</td>
-<td style="text-align: center;">🟡 Media</td>
-<td style="text-align: center;">🟢 Baja</td>
-<td style="text-align: center;">🟢 Baja</td>
-<td style="text-align: center;">🟡 Media</td>
-<td style="text-align: center;">🟢 Baja</td>
-<td style="text-align: center;">🟢 Baja</td>
-<td style="text-align: center;">🟡 Media</td>
-</tr>
-</tbody>
-</table>
-<p><strong>Leyenda:</strong> ✅✅ = excelente / ✅ = sí / ⚙️ =
-configurable / ❌ = no / 🟢🟡🔴 = dificultad</p>
-<hr />
 <h2 id="tiempos-de-aprendizaje">Tiempos de aprendizaje</h2>
 <table>
 <thead>
@@ -1609,6 +1608,10 @@ complementario. Cubre la Familia B: frameworks para coding workflow.</p>
 de mantenimiento se verificaron directamente contra la API oficial el 18
 de abril de 2026. Información de funding, production users y releases
 verificada contra blogs oficiales de cada empresa.</em></p>
+
+            
+
+            
 
             </div>
 
