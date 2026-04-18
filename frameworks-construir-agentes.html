@@ -31,6 +31,11 @@
                         <span class="logo-text">Curso Claude Code</span>
                     </a>
                 </div>
+                <button class="nav-toggle" aria-label="Abrir menú" aria-expanded="false">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
                 <div class="nav-links">
                     <a href="index.html">Inicio</a>
                     <a href="blog.html">Blog</a>
@@ -1647,5 +1652,22 @@ verificada contra blogs oficiales de cada empresa.</em></p>
     </footer>
 
     <script src="article-interactive.js" defer></script>
+    <script>
+    (function () {
+        const navToggle = document.querySelector('.nav-toggle');
+        const navLinks = document.querySelector('.nav-links');
+        if (!navToggle || !navLinks) return;
+        navToggle.addEventListener('click', () => {
+            const isOpen = navLinks.classList.toggle('open');
+            navToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+        });
+        navLinks.querySelectorAll('a').forEach(a => {
+            a.addEventListener('click', () => {
+                navLinks.classList.remove('open');
+                navToggle.setAttribute('aria-expanded', 'false');
+            });
+        });
+    })();
+    </script>
 </body>
 </html>
