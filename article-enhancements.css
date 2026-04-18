@@ -743,90 +743,9 @@ html {
     transition: color 0.15s ease;
 }
 
-/* Diferencian visualmente los 2 enlaces de frameworks */
-.nav-links a[href="frameworks-agenticos.html"],
-.nav-links a[href="frameworks-construir-agentes.html"] {
-    position: relative;
-    padding: 0.4rem 0.75rem;
-    border-radius: 8px;
-    border: 1px solid var(--geist-border);
-    background: var(--geist-bg-card);
-    font-weight: 600;
-    font-size: 0.875rem;
-    transition: all 0.15s ease;
-    display: inline-flex;
-    align-items: center;
-    gap: 0.35rem;
-}
-
-/* Pill azul pa "Claude Code" (Familia B) */
-.nav-links a[href="frameworks-agenticos.html"] {
-    color: #0070f3;
-    border-color: #bfdbfe;
-    background: #eff6ff;
-}
-
-.nav-links a[href="frameworks-agenticos.html"]::before {
-    content: '🅱️';
-    font-size: 0.9em;
-}
-
-.nav-links a[href="frameworks-agenticos.html"]:hover {
-    background: #dbeafe;
-    border-color: #93c5fd;
-    transform: translateY(-1px);
-}
-
-.nav-links a[href="frameworks-agenticos.html"].active {
-    background: #0070f3 !important;
-    color: white !important;
-    border-color: #0070f3;
-}
-
-/* Pill violeta pa "Agentes IA" (Familia A) */
-.nav-links a[href="frameworks-construir-agentes.html"] {
-    color: #7928ca;
-    border-color: #e9d5ff;
-    background: #faf5ff;
-}
-
-.nav-links a[href="frameworks-construir-agentes.html"]::before {
-    content: '🅰️';
-    font-size: 0.9em;
-}
-
-.nav-links a[href="frameworks-construir-agentes.html"]:hover {
-    background: #f3e8ff;
-    border-color: #d8b4fe;
-    transform: translateY(-1px);
-}
-
-.nav-links a[href="frameworks-construir-agentes.html"].active {
-    background: #7928ca !important;
-    color: white !important;
-    border-color: #7928ca;
-}
-
-/* Ocultar la barrita azul debajo pa estos links específicos (ya tienen pill) */
-.nav-links a[href="frameworks-agenticos.html"].active::after,
-.nav-links a[href="frameworks-construir-agentes.html"].active::after {
-    display: none;
-}
-
-.nav-links a.active:not([href="frameworks-agenticos.html"]):not([href="frameworks-construir-agentes.html"]) {
+/* Links activos del menú — los frameworks usan su propio nav-frameworks.css */
+.nav-links a.active {
     color: var(--geist-accent) !important;
-    position: relative;
-}
-
-.nav-links a.active:not([href="frameworks-agenticos.html"]):not([href="frameworks-construir-agentes.html"])::after {
-    content: '';
-    position: absolute;
-    bottom: -1.3rem;
-    left: 0;
-    right: 0;
-    height: 2px;
-    background: var(--geist-accent);
-    border-radius: 2px;
 }
 
 /* ========================================
