@@ -1,89 +1,30 @@
 /* ===================================================================
-   Nav Frameworks — pills visibles en TODAS las páginas del sitio
-   Se carga en index.html, blog.html, changelog.html, post.html, etc.
+   Nav Frameworks — estilo plano como los demás enlaces del menú
    =================================================================== */
 
-/* Los dos enlaces siempre visibles como pills distintos */
+/* Los 2 enlaces siguen el mismo estilo que Inicio / Blog / Changelog */
 .nav-links a[href="frameworks-agenticos.html"],
 .nav-links a[href="frameworks-construir-agentes.html"] {
-    position: relative;
-    padding: 0.4rem 0.85rem;
-    border-radius: 8px;
-    border: 1px solid transparent;
-    font-weight: 600;
-    font-size: 0.875rem;
-    transition: all 0.15s ease;
-    display: inline-flex;
-    align-items: center;
-    gap: 0.35rem;
-    white-space: nowrap;
-    text-decoration: none !important;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.15s ease;
 }
 
-/* 🅱️ Frameworks Claude Code — Azul */
-.nav-links a[href="frameworks-agenticos.html"] {
-    color: #0070f3 !important;
-    border-color: #bfdbfe;
-    background: #eff6ff;
+/* Color normal — gris muted como el resto */
+.nav-links a[href="frameworks-agenticos.html"]:not(.active),
+.nav-links a[href="frameworks-construir-agentes.html"]:not(.active) {
+    color: #4a5568;
 }
 
-.nav-links a[href="frameworks-agenticos.html"]::before {
-    content: '🅱️';
-    font-size: 0.85em;
-}
-
-.nav-links a[href="frameworks-agenticos.html"]:hover {
-    background: #dbeafe;
-    border-color: #93c5fd;
-    transform: translateY(-1px);
-    box-shadow: 0 4px 8px rgba(0, 112, 243, 0.15);
-}
-
-.nav-links a[href="frameworks-agenticos.html"].active,
-.nav-links a[href="frameworks-agenticos.html"][aria-current="page"] {
-    background: #0070f3 !important;
-    color: white !important;
-    border-color: #0070f3;
-    box-shadow: 0 4px 12px rgba(0, 112, 243, 0.3);
-}
-
-/* 🅰️ Agentes IA — Violeta */
-.nav-links a[href="frameworks-construir-agentes.html"] {
-    color: #7928ca !important;
-    border-color: #e9d5ff;
-    background: #faf5ff;
-}
-
-.nav-links a[href="frameworks-construir-agentes.html"]::before {
-    content: '🅰️';
-    font-size: 0.85em;
-}
-
+/* Hover — azul sutil como los demás links */
+.nav-links a[href="frameworks-agenticos.html"]:hover,
 .nav-links a[href="frameworks-construir-agentes.html"]:hover {
-    background: #f3e8ff;
-    border-color: #d8b4fe;
-    transform: translateY(-1px);
-    box-shadow: 0 4px 8px rgba(121, 40, 202, 0.15);
+    color: #4F6FFF;
 }
 
-.nav-links a[href="frameworks-construir-agentes.html"].active,
-.nav-links a[href="frameworks-construir-agentes.html"][aria-current="page"] {
-    background: #7928ca !important;
-    color: white !important;
-    border-color: #7928ca;
-    box-shadow: 0 4px 12px rgba(121, 40, 202, 0.3);
-}
-
-/* Responsive: pills más compactos en mobile */
-@media (max-width: 900px) {
-    .nav-links a[href="frameworks-agenticos.html"],
-    .nav-links a[href="frameworks-construir-agentes.html"] {
-        padding: 0.3rem 0.6rem;
-        font-size: 0.8125rem;
-    }
-
-    .nav-links a[href="frameworks-agenticos.html"]::before,
-    .nav-links a[href="frameworks-construir-agentes.html"]::before {
-        display: none; /* Ocultar emoji en mobile pa ahorrar espacio */
-    }
+/* Activo — mismo tratamiento que los demás links activos */
+.nav-links a[href="frameworks-agenticos.html"].active,
+.nav-links a[href="frameworks-construir-agentes.html"].active {
+    color: #4F6FFF !important;
+    font-weight: 600;
 }
