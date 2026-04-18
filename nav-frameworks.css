@@ -28,3 +28,80 @@
     color: #4F6FFF !important;
     font-weight: 600;
 }
+
+/* ===================================================================
+   MOBILE: scroll horizontal en lugar de hamburguesa
+   Reemplaza el comportamiento colapsable (que quitaba media pantalla)
+   por una barra de navegación siempre visible con scroll lateral.
+   =================================================================== */
+
+@media (max-width: 768px) {
+
+    /* Ocultar botón hamburguesa */
+    .nav-toggle {
+        display: none !important;
+    }
+
+    /* Nav content en dos filas: logo arriba, links abajo con scroll */
+    .nav-content {
+        flex-direction: column !important;
+        flex-wrap: nowrap !important;
+        align-items: stretch !important;
+        gap: 0.5rem !important;
+    }
+
+    .logo {
+        flex: 0 0 auto !important;
+        align-self: center !important;
+    }
+
+    /* Nav links SIEMPRE visibles en horizontal con scroll */
+    .nav-links,
+    .nav-links.open {
+        display: flex !important;
+        flex-direction: row !important;
+        flex-wrap: nowrap !important;
+        overflow-x: auto !important;
+        overflow-y: hidden !important;
+        gap: 1.25rem !important;
+        padding: 0.35rem 1rem 0.6rem !important;
+        width: 100% !important;
+        margin: 0 -1rem !important;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none; /* Firefox */
+        mask-image: linear-gradient(to right, transparent 0, black 1rem, black calc(100% - 1rem), transparent 100%);
+        -webkit-mask-image: linear-gradient(to right, transparent 0, black 1rem, black calc(100% - 1rem), transparent 100%);
+    }
+
+    .nav-links::-webkit-scrollbar {
+        display: none; /* Chrome/Safari */
+    }
+
+    .nav-links a {
+        display: inline-flex !important;
+        align-items: center !important;
+        flex: 0 0 auto !important;
+        white-space: nowrap !important;
+        padding: 0.5rem 0 !important;
+        text-align: left !important;
+        width: auto !important;
+        font-size: 0.9rem !important;
+    }
+
+    /* CTA Descargar Guía Gratis — mantener su color */
+    .nav-links a.btn-nav,
+    .nav-links a.nav-cta {
+        background: #4F6FFF !important;
+        color: white !important;
+        padding: 0.5rem 0.9rem !important;
+        border-radius: 8px !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .nav-links {
+        gap: 1rem !important;
+        font-size: 0.85rem !important;
+    }
+}
+
