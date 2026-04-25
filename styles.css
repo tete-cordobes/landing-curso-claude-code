@@ -1265,6 +1265,21 @@ body::before {
     line-height: 1.5;
 }
 
+.optional-tag {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    font-weight: 400;
+    margin-left: 0.25rem;
+}
+
+.form-hint {
+    display: block;
+    margin-top: 0.5rem;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    line-height: 1.4;
+}
+
 .form-success {
     text-align: center;
     padding: 3rem 2rem;

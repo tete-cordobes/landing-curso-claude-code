@@ -260,6 +260,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const formData = {
                 name: document.getElementById('name').value,
                 email: document.getElementById('email').value,
+                phone: document.getElementById('phone').value.trim(),
                 role: document.getElementById('role').value,
                 newsletter: document.querySelector('input[name="newsletter"]').checked,
                 timestamp: new Date().toISOString(),
