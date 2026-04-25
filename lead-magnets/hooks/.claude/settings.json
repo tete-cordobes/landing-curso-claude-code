@@ -1,0 +1,57 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-settings.json",
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "if": "Bash(rm -rf *)",
+            "command": "\"$CLAUDE_PROJECT_DIR\"/.claude/hooks/block-rm-rf.sh",
+            "timeout": 5,
+            "statusMessage": "Verificando comando destructivo..."
+          },
+          {
+            "type": "command",
+            "if": "Bash(git commit:*)",
+            "command": "\"$CLAUDE_PROJECT_DIR\"/.claude/hooks/block-secrets-on-commit.sh",
+            "timeout": 10,
+            "statusMessage": "Buscando secretos en el commit..."
+          },
+          {
+            "type": "command",
+            "if": "Bash(git push --force*)",
+            "command": "\"$CLAUDE_PROJECT_DIR\"/.claude/hooks/block-force-push-main.sh",
+            "timeout": 5,
+            "statusMessage": "Verificando rama de destino..."
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "Edit|Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "\"$CLAUDE_PROJECT_DIR\"/.claude/hooks/auto-format.sh",
+            "timeout": 30
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "\"$CLAUDE_PROJECT_DIR\"/.claude/hooks/session-summary.sh",
+            "timeout": 15,
+            "async": true
+          }
+        ]
+      }
+    ]
+  }
+}
