@@ -268,7 +268,7 @@ document.addEventListener('DOMContentLoaded', function() {
             };
 
             // Enviar datos al webhook de Make.com
-            fetch('https://hook.eu1.make.com/m5giqo7woobk5hxacakkv91sfd2q6sym', {
+            fetch('https://n8n.josegilarte.es/webhook/lead-claude-code', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
