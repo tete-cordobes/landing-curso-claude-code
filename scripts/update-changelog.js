@@ -85,17 +85,23 @@ function updateFile(version, date, changes) {
 
   // --- 1. Insert into releases array (before final ]; ) ---
   const entry = `{v:"${version}",c:[${changes.map(c => `"${esc(c)}"`).join(',')}]}`;
-  // Match last release entry followed by newline + whitespace + ];
-  const m = html.match(/(c:\[[^\]]*\]\})\s*\n(\s*)\];/g);
-  if (!m || !m.length) {
+
+  const releasesStart = html.indexOf('const releases=[');
+  if (releasesStart === -1) {
+    console.error('ERROR: could not locate releases array');
+    process.exit(1);
+  }
+  const releasesEnd = html.indexOf('];', releasesStart);
+  if (releasesEnd === -1) {
     console.error('ERROR: could not locate end of releases array');
     process.exit(1);
   }
-  const lastMatch = m[m.length - 1];
-  const pos = html.lastIndexOf(lastMatch);
-  const closeBracket = lastMatch.indexOf('\n');
-  const indent = lastMatch.slice(closeBracket + 1).replace('];', '  ');
-  html = html.slice(0, pos + closeBracket) + `,\n${indent}${entry}` + html.slice(pos + closeBracket);
+  // Find last } before ]; — robust, doesn't care about ] inside strings
+  const lastBrace = html.lastIndexOf('}', releasesEnd);
+  // Derive indent from the spaces before ];
+  const lineStart = html.lastIndexOf('\n', releasesEnd) + 1;
+  const indent = html.slice(lineStart, releasesEnd);
+  html = html.slice(0, lastBrace + 1) + `,\n${indent}${entry}` + html.slice(lastBrace + 1);
 
   // --- 2. Insert into dates object ---
   // Find the pattern: "X.Y.Z":"YYYY-MM-DD"};
