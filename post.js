@@ -31,7 +31,7 @@ function formatDate(dateString) {
 // Generate JSON-LD Schema for BlogPosting
 function generatePostSchema(post) {
     const currentUrl = window.location.href;
-    const postImage = post.image || 'https://www.claudecodecurso.com/claude-color.png';
+    const postImage = post.image || 'https://www.ccodecurso.com/claude-color.png';
 
     // Extract text from HTML content for word count
     const tempDiv = document.createElement('div');
@@ -48,14 +48,14 @@ function generatePostSchema(post) {
         "author": {
             "@type": "Organization",
             "name": "Curso Claude Code",
-            "url": "https://www.claudecodecurso.com/"
+            "url": "https://www.ccodecurso.com/"
         },
         "publisher": {
             "@type": "Organization",
             "name": "Curso Claude Code",
             "logo": {
                 "@type": "ImageObject",
-                "url": "https://www.claudecodecurso.com/claude-color.png"
+                "url": "https://www.ccodecurso.com/claude-color.png"
             }
         },
         "datePublished": post.date,
@@ -86,13 +86,13 @@ function generateBreadcrumbSchema(post) {
                 "@type": "ListItem",
                 "position": 1,
                 "name": "Inicio",
-                "item": "https://www.claudecodecurso.com/"
+                "item": "https://www.ccodecurso.com/"
             },
             {
                 "@type": "ListItem",
                 "position": 2,
                 "name": "Blog",
-                "item": "https://www.claudecodecurso.com/blog.html"
+                "item": "https://www.ccodecurso.com/blog.html"
             },
             {
                 "@type": "ListItem",
@@ -109,7 +109,7 @@ function generateBreadcrumbSchema(post) {
 // Update all SEO meta tags
 function updateSEOTags(post) {
     const currentUrl = window.location.href;
-    const postImage = post.image || 'https://www.claudecodecurso.com/claude-color.png';
+    const postImage = post.image || 'https://www.ccodecurso.com/claude-color.png';
 
     // Basic SEO
     document.getElementById('postTitle').textContent = `${post.title} | Curso Claude Code`;

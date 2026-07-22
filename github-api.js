@@ -276,13 +276,13 @@ function generateSitemapXML(posts) {
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <!-- Static Pages -->
   <url>
-    <loc>https://www.claudecodecurso.com/</loc>
+    <loc>https://www.ccodecurso.com/</loc>
     <lastmod>${today}</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://www.claudecodecurso.com/blog.html</loc>
+    <loc>https://www.ccodecurso.com/blog.html</loc>
     <lastmod>${today}</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.9</priority>
@@ -296,7 +296,7 @@ function generateSitemapXML(posts) {
             const postDate = new Date(post.date).toISOString().split('T')[0];
             xml += `
   <url>
-    <loc>https://www.claudecodecurso.com/post-template.html?slug=${post.slug}</loc>
+    <loc>https://www.ccodecurso.com/post-template.html?slug=${post.slug}</loc>
     <lastmod>${postDate}</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>

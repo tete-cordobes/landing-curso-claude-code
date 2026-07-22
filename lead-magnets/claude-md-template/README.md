@@ -174,7 +174,7 @@ Hablo de hooks en detalle en uno de los próximos emails de la serie.
 
 ## Si necesitas más
 
-Esto es solo el principio. En el [curso completo de Claude Code](https://claudecodecurso.com)
+Esto es solo el principio. En el [curso completo de Claude Code](https://ccodecurso.com)
 cubrimos:
 
 - CLAUDE.md por componentes en monorepos

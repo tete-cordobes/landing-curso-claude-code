@@ -85,7 +85,7 @@ ${HIGHLIGHTS}
 • Actualizar .claude-code-version
 
 🔗 <a href=\"https://github.com/anthropics/claude-code/releases/tag/v${LATEST}\">Ver release completa</a>
-🔗 <a href=\"https://www.claudecodecurso.com/changelog.html\">Tu changelog</a>"
+🔗 <a href=\"https://www.ccodecurso.com/changelog.html\">Tu changelog</a>"
 
 send_telegram "$MESSAGE"
 

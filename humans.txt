@@ -1,6 +1,6 @@
 /* TEAM */
 Developer: Curso Claude Code
-Site: https://www.claudecodecurso.com
+Site: https://www.ccodecurso.com
 Location: España
 
 /* SITE */
@@ -16,7 +16,7 @@ Thanks to: Anthropic for Claude Code
 /* TECH STACK */
 Frontend: HTML5, CSS3, Vanilla JavaScript
 Hosting: GitHub Pages
-Domain: claudecodecurso.com
+Domain: ccodecurso.com
 Blog System: Dynamic JSON-based with GitHub API
 SEO: JSON-LD Structured Data, Open Graph, Twitter Cards
 Analytics: Coming soon

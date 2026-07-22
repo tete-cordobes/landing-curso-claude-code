@@ -178,7 +178,7 @@ comando debe funcionar para cualquiera del equipo, no solo para ti.
 
 ## Si quieres más
 
-En el [curso completo de Claude Code](https://claudecodecurso.com) profundizamos
+En el [curso completo de Claude Code](https://ccodecurso.com) profundizamos
 en:
 
 - Slash commands con argumentos dinámicos (`/deploy {{env}}`)

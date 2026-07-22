@@ -257,7 +257,7 @@ Los formateadores son opcionales y se detectan dinámicamente.
 
 ## Si quieres más
 
-En el [curso completo de Claude Code](https://claudecodecurso.com) profundizamos en:
+En el [curso completo de Claude Code](https://ccodecurso.com) profundizamos en:
 
 - Hooks que llaman a MCPs personalizados (notificación a Linear, Slack, etc.)
 - Hooks `PreCompact` para preservar contexto crítico antes de compactar

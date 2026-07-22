@@ -7,4 +7,4 @@ Disallow: /login.html
 Disallow: /test-localStorage.html
 
 # Sitemap location
-Sitemap: https://www.claudecodecurso.com/sitemap.xml
+Sitemap: https://www.ccodecurso.com/sitemap.xml

@@ -15,7 +15,7 @@
 ### Paso 2: Crear propiedad
 
 1. Configura la propiedad:
-   - **Nombre de propiedad**: "claudecodecurso.com"
+   - **Nombre de propiedad**: "ccodecurso.com"
    - **Zona horaria**: Selecciona España
    - **Moneda**: EUR (€)
    - Click **"Siguiente"**
@@ -32,7 +32,7 @@
 
 1. Selecciona **"Web"**
 2. Configura:
-   - **URL del sitio web**: `https://www.claudecodecurso.com`
+   - **URL del sitio web**: `https://www.ccodecurso.com`
    - **Nombre del flujo**: "Sitio Web Principal"
    - Click **"Crear flujo"**
 
@@ -61,7 +61,7 @@ Una vez tengas tu `G-XXXXXXXXXX`, agrega este código en **TODAS** tus páginas 
 
 ### Paso 5: Verificar instalación
 
-1. Ve a tu sitio web: https://www.claudecodecurso.com
+1. Ve a tu sitio web: https://www.ccodecurso.com
 2. En Google Analytics, ve a **"Informes" → "Tiempo real"**
 3. Deberías ver tu visita activa en 1-2 minutos
 4. Si no aparece, verifica:
@@ -78,7 +78,7 @@ Una vez tengas tu `G-XXXXXXXXXX`, agrega este código en **TODAS** tus páginas 
 1. Ve a: https://search.google.com/search-console/
 2. Click en **"Agregar propiedad"**
 3. Selecciona **"Prefijo de URL"**
-4. Introduce: `https://www.claudecodecurso.com`
+4. Introduce: `https://www.ccodecurso.com`
 5. Click **"Continuar"**
 
 ### Paso 2: Verificar propiedad (Método 1 - Etiqueta HTML)
@@ -116,8 +116,8 @@ Para acelerar la indexación de Google:
 
 1. En Search Console, ve a **"Inspección de URLs"**
 2. Introduce cada URL importante:
-   - `https://www.claudecodecurso.com/`
-   - `https://www.claudecodecurso.com/blog.html`
+   - `https://www.ccodecurso.com/`
+   - `https://www.ccodecurso.com/blog.html`
    - Cada post del blog individualmente
 3. Click **"Solicitar indexación"**
 
