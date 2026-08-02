@@ -256,18 +256,23 @@ document.addEventListener('DOMContentLoaded', function() {
             submitButton.disabled = true;
             submitButton.querySelector('.btn-text').textContent = 'Enviando...';
 
-            // Obtener los datos del formulario
+            // Obtener los datos del formulario.
+            // privacidadAceptada y newsletter viajan por separado a proposito:
+            // el RGPD exige poder acreditar cada consentimiento de forma
+            // independiente, y el de marketing no puede ir premarcado.
             const formData = {
                 name: document.getElementById('name').value,
                 email: document.getElementById('email').value,
                 phone: document.getElementById('phone').value.trim(),
                 role: document.getElementById('role').value,
                 newsletter: document.querySelector('input[name="newsletter"]').checked,
+                privacidadAceptada: document.querySelector('input[name="privacidad"]').checked,
+                politicaVersion: '2026-08-02',
                 timestamp: new Date().toISOString(),
                 source: 'Landing Curso Claude Code'
             };
 
-            // Enviar datos al webhook de Make.com
+            // Enviar datos al webhook de n8n
             fetch('https://n8n.josegilarte.es/webhook/lead-claude-code', {
                 method: 'POST',
                 headers: {

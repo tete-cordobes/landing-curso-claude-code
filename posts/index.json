@@ -4,7 +4,7 @@
       "slug": "openclaw-guia-completa-2026",
       "title": "OpenClaw: Guía Completa del Asistente IA Personal 2026",
       "excerpt": "Aprende a configurar OpenClaw (ex-Clawdbot), el asistente de IA open source que conecta WhatsApp, Telegram y Discord con Claude y GPT.",
-      "image": "images/blog/openclaw-hero.png",
+      "image": "images/blog/openclaw-hero.webp",
       "readingTime": "15 min de lectura",
       "date": "2026-01-31T10:00:00.000Z",
       "category": "openclaw"
@@ -13,7 +13,7 @@
       "slug": "openclaw-whatsapp-telegram-tutorial",
       "title": "Cómo Conectar OpenClaw a WhatsApp y Telegram: Tutorial 2026",
       "excerpt": "Tutorial paso a paso para configurar OpenClaw con WhatsApp y Telegram. Tené a Claude respondiendo en tus chats.",
-      "image": "images/blog/openclaw-discord.png",
+      "image": "images/blog/openclaw-discord.webp",
       "readingTime": "10 min de lectura",
       "date": "2026-01-31T09:30:00.000Z",
       "category": "openclaw"
@@ -22,7 +22,7 @@
       "slug": "openclaw-skills-automatizacion",
       "title": "OpenClaw Skills: Automatiza tu Vida con IA",
       "excerpt": "Aprende a usar y crear skills en OpenClaw. Desde búsqueda web hasta domótica con Home Assistant.",
-      "image": "images/blog/openclaw-architecture.png",
+      "image": "images/blog/openclaw-architecture.webp",
       "readingTime": "12 min de lectura",
       "date": "2026-01-31T09:00:00.000Z",
       "category": "openclaw"
@@ -31,7 +31,7 @@
       "slug": "openclaw-vs-chatgpt-app",
       "title": "OpenClaw vs ChatGPT App: ¿Cuál Elegir en 2026?",
       "excerpt": "Comparamos OpenClaw con la app oficial de ChatGPT. Diferencias en privacidad, personalización, costos y casos de uso.",
-      "image": "images/blog/openclaw-comparison.png",
+      "image": "images/blog/openclaw-comparison.webp",
       "readingTime": "8 min de lectura",
       "date": "2026-01-31T08:30:00.000Z",
       "category": "openclaw"
@@ -40,7 +40,7 @@
       "slug": "openclaw-apiyi-configuracion",
       "title": "Cómo Usar OpenClaw con APIYI: Guía de Configuración",
       "excerpt": "Configura OpenClaw para usar APIYI como proxy de API. Ideal si no tenés tarjeta internacional o querés ahorrar en costos.",
-      "image": "images/blog/apiyi-proxy.png",
+      "image": "images/blog/apiyi-proxy.webp",
       "readingTime": "7 min de lectura",
       "date": "2026-01-31T08:00:00.000Z",
       "category": "openclaw"
