@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gemini API: Guía Completa en Español 2026 | Curso Claude Code</title>
+    <meta name="description" content="Tutorial completo de la API de Gemini de Google. Aprende a usar Gemini 2.5 Pro con ejemplos de código y mejores prácticas.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.ccodecurso.com/blog/gemini-api-guia-espanol/">
+
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://www.ccodecurso.com/blog/gemini-api-guia-espanol/">
+    <meta property="og:title" content="Gemini API: Guía Completa en Español 2026">
+    <meta property="og:description" content="Tutorial completo de la API de Gemini de Google. Aprende a usar Gemini 2.5 Pro con ejemplos de código y mejores prácticas.">
+    <meta property="og:image" content="https://www.ccodecurso.com/og-default.png">
+    <meta property="og:locale" content="es_ES">
+    <meta property="og:site_name" content="Curso Claude Code">
+    <meta property="article:published_time" content="2026-01-30T04:00:00.000Z">
+    <meta property="article:modified_time" content="2026-01-31T00:40:33+01:00">
+    <meta property="article:section" content="Claude Code">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Gemini API: Guía Completa en Español 2026">
+    <meta name="twitter:description" content="Tutorial completo de la API de Gemini de Google. Aprende a usar Gemini 2.5 Pro con ejemplos de código y mejores prácticas.">
+    <meta name="twitter:image" content="https://www.ccodecurso.com/og-default.png">
+
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="icon" type="image/png" href="/logo-64.png">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#3b82f6">
+
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="/blog-styles.css">
+    <link rel="stylesheet" href="/nav-frameworks.css">
+    <link rel="stylesheet" href="/article-enhancements.css">
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-48N09S40ZB"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-48N09S40ZB');
+    </script>
+    <script type="text/javascript">
+        (function(c,l,a,r,i,t,y){
+            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        })(window, document, "clarity", "script", "uk1m98vjak");
+    </script>
+
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://www.ccodecurso.com/#organization",
+  "name": "Curso Claude Code",
+  "url": "https://www.ccodecurso.com/",
+  "logo": {
+    "@type": "ImageObject",
+    "url": "https://www.ccodecurso.com/logo-512.png",
+    "width": 512,
+    "height": 512
+  }
+}
+    </script>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Gemini API: Guía Completa en Español 2026",
+  "description": "Tutorial completo de la API de Gemini de Google. Aprende a usar Gemini 2.5 Pro con ejemplos de código y mejores prácticas.",
+  "image": "https://www.ccodecurso.com/og-default.png",
+  "author": {
+    "@id": "https://www.ccodecurso.com/#organization"
+  },
+  "publisher": {
+    "@id": "https://www.ccodecurso.com/#organization"
+  },
+  "datePublished": "2026-01-30T04:00:00.000Z",
+  "dateModified": "2026-01-31T00:40:33+01:00",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://www.ccodecurso.com/blog/gemini-api-guia-espanol/"
+  },
+  "url": "https://www.ccodecurso.com/blog/gemini-api-guia-espanol/",
+  "articleSection": "Claude Code",
+  "inLanguage": "es-ES",
+  "wordCount": 519
+}
+    </script>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Inicio",
+      "item": "https://www.ccodecurso.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Blog",
+      "item": "https://www.ccodecurso.com/blog/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Gemini API: Guía Completa en Español 2026",
+      "item": "https://www.ccodecurso.com/blog/gemini-api-guia-espanol/"
+    }
+  ]
+}
+    </script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-content">
+                <div class="logo">
+                    <a href="/">
+                        <div class="logo-icon">
+                            <img src="/logo-64.png" alt="Curso Claude Code" width="32" height="32" loading="eager">
+                        </div>
+                        <span class="logo-text">Curso Claude Code</span>
+                    </a>
+                </div>
+                <button class="nav-toggle" aria-label="Abrir menú" aria-expanded="false">
+                    <span></span><span></span><span></span>
+                </button>
+                <div class="nav-links">
+                    <a href="/">Inicio</a>
+                    <a href="/blog/" class="active">Blog</a>
+                    <a href="/frameworks-agenticos.html">Frameworks Claude Code</a>
+                    <a href="/frameworks-construir-agentes.html">Agentes IA</a>
+                    <a href="/changelog.html">Changelog</a>
+                    <a href="/#formulario" class="btn-nav nav-cta">Descargar Guía Gratis</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <article class="post-article">
+        <div class="container post-container">
+            <nav class="breadcrumbs" aria-label="Migas de pan">
+                <a href="/">Inicio</a> › <a href="/blog/">Blog</a> › <span>Gemini API: Guía Completa en Español 2026</span>
+            </nav>
+
+            <header class="post-header">
+                <div class="post-meta">
+                    <span class="post-category">Claude Code</span>
+                    <time class="post-date" datetime="2026-01-30T04:00:00.000Z">30 de enero de 2026</time>
+                    <span class="post-reading-time">10 min de lectura</span>
+                </div>
+                <h1 class="post-title-main">Gemini API: Guía Completa en Español 2026</h1>
+                <p class="post-excerpt">Tutorial completo de la API de Gemini de Google. Aprende a usar Gemini 2.5 Pro con ejemplos de código y mejores prácticas.</p>
+            </header>
+
+
+            <div class="post-content">
+<h2>¿Qué es Gemini API?</h2><p><strong>Gemini</strong> es la familia de modelos de IA de Google. La API de Gemini te permite integrar estos modelos en tus aplicaciones.</p><p>El punto fuerte de Gemini: <strong>1 millón de tokens de contexto</strong> en Gemini 1.5 Pro. Si quieres aprender a usar múltiples APIs de IA, el <a href="/" title="Curso de Claude Code en español">curso de Claude Code</a> te enseña a integrarlas profesionalmente.</p><h2>Modelos Disponibles</h2><table><tr><th>Modelo</th><th>Contexto</th><th>Uso</th><th>Precio</th></tr><tr><td>Gemini 2.5 Pro</td><td>1M tokens</td><td>Tareas complejas</td><td>$7/$21 por 1M</td></tr><tr><td>Gemini 1.5 Flash</td><td>1M tokens</td><td>Respuestas rápidas</td><td>$0.075/$0.30</td></tr><tr><td>Gemini 1.0 Pro</td><td>32K tokens</td><td>Uso general</td><td>$0.50/$1.50</td></tr></table><p>Para una comparativa completa de precios, consulta nuestra <a href="/blog/precios-apis-ia-2026/" title="Precios de APIs de IA 2026">guía de precios de APIs de IA 2026</a>.</p><h2>Obtener API Key</h2><ol><li>Ve a <strong>aistudio.google.com</strong></li><li>Inicia sesión con tu cuenta de Google</li><li>Click en "Get API key"</li><li>Crea una nueva key o usa existente</li></ol><h2>Instalación</h2><h3>Python</h3><pre><code>pip install google-generativeai</code></pre><h3>JavaScript</h3><pre><code>npm install @google/generative-ai</code></pre><h2>Primera Llamada a la API</h2><h3>Python</h3><pre><code>import google.generativeai as genai
+
+genai.configure(api_key="tu-api-key")
+
+model = genai.GenerativeModel('gemini-1.5-pro')
+response = model.generate_content("Explica qué es Python en 3 frases")
+
+print(response.text)</code></pre><h3>JavaScript</h3><pre><code>import { GoogleGenerativeAI } from '@google/generative-ai';
+
+const genAI = new GoogleGenerativeAI('tu-api-key');
+const model = genAI.getGenerativeModel({ model: 'gemini-1.5-pro' });
+
+const result = await model.generateContent('Explica qué es Python');
+console.log(result.response.text());</code></pre><h2>El Superpoder: 1 Millón de Tokens</h2><p>Gemini puede procesar documentos enormes de una sola vez:</p><pre><code># Leer un libro completo
+with open('libro_completo.txt', 'r') as f:
+    libro = f.read()
+
+response = model.generate_content(f"""
+Analiza este libro y dame:
+1. Resumen ejecutivo
+2. Personajes principales
+3. Temas centrales
+4. Citas memorables
+
+Libro:
+{libro}
+""")</code></pre><h2>Multimodalidad: Texto + Imágenes</h2><p>Gemini puede analizar imágenes:</p><pre><code>import PIL.Image
+
+img = PIL.Image.open('imagen.jpg')
+
+response = model.generate_content([
+    "Describe esta imagen en detalle",
+    img
+])
+
+print(response.text)</code></pre><h2>Chat Conversacional</h2><pre><code>chat = model.start_chat(history=[])
+
+response = chat.send_message("Hola, ¿qué puedes hacer?")
+print(response.text)
+
+response = chat.send_message("Dame un ejemplo de código Python")
+print(response.text)</code></pre><h2>Configuración Avanzada</h2><pre><code>generation_config = {
+    "temperature": 0.7,
+    "top_p": 0.9,
+    "top_k": 40,
+    "max_output_tokens": 2048,
+}
+
+model = genai.GenerativeModel(
+    model_name='gemini-1.5-pro',
+    generation_config=generation_config
+)</code></pre><h2>Safety Settings</h2><p>Controla el filtrado de contenido:</p><pre><code>safety_settings = [
+    {"category": "HARM_CATEGORY_HARASSMENT", "threshold": "BLOCK_MEDIUM_AND_ABOVE"},
+    {"category": "HARM_CATEGORY_HATE_SPEECH", "threshold": "BLOCK_MEDIUM_AND_ABOVE"},
+]
+
+model = genai.GenerativeModel(
+    'gemini-1.5-pro',
+    safety_settings=safety_settings
+)</code></pre><h2>Streaming</h2><pre><code>response = model.generate_content(
+    "Escribe un cuento largo",
+    stream=True
+)
+
+for chunk in response:
+    print(chunk.text, end="")</code></pre><h2>Gemini vs Claude vs GPT-4</h2><table><tr><th>Aspecto</th><th>Gemini</th><th>Claude</th><th>GPT-4</th></tr><tr><td>Contexto máximo</td><td>1M</td><td>200K</td><td>128K</td></tr><tr><td>Precio</td><td>Medio</td><td>Medio</td><td>Alto</td></tr><tr><td>Multimodal</td><td>Sí</td><td>Imagen</td><td>Sí</td></tr><tr><td>Velocidad</td><td>Rápido</td><td>Medio</td><td>Medio</td></tr></table><p>Para una comparativa más detallada entre OpenAI y Claude, revisa nuestra <a href="/blog/openai-vs-claude-api-comparativa/" title="OpenAI API vs Claude API Comparativa">comparativa OpenAI vs Claude API</a>.</p><h2>Cuándo Usar Gemini</h2><ul><li><strong>Documentos largos:</strong> PDFs, libros, transcripciones</li><li><strong>Análisis de código:</strong> Repositorios completos</li><li><strong>Multimodal:</strong> Cuando necesitas texto + imagen</li><li><strong>Costo efectivo:</strong> Flash es muy económico</li></ul><h2>Errores Comunes</h2><p>Si encuentras problemas, consulta nuestra guía de <a href="/blog/errores-apis-ia-soluciones/" title="Errores Comunes en APIs de IA y Cómo Solucionarlos">errores comunes en APIs de IA</a>.</p><h3>SAFETY_BLOCK</h3><p>El contenido fue bloqueado por filtros de seguridad. Ajusta safety_settings o reformula.</p><h3>QUOTA_EXCEEDED</h3><p>Has excedido tu cuota gratuita. Añade billing o espera el reset.</p><h2>Conclusión</h2><p>Gemini API es excelente para tareas que requieren mucho contexto. El millón de tokens es un diferenciador único.</p><p>Úsalo cuando necesites procesar documentos largos o combinar texto con imágenes de forma nativa. Para aprender más sobre APIs de IA en general, revisa nuestra <a href="/blog/apis-inteligencia-artificial-guia/" title="APIs de Inteligencia Artificial Guía">guía completa de APIs de inteligencia artificial</a> y el <a href="/" title="Curso de Claude Code en español">curso de Claude Code</a>.</p>
+            </div>
+
+            <aside class="post-related">
+                <h2>Seguir leyendo</h2>
+                <ul>
+                    <li><a href="/blog/openclaw-guia-completa-2026/">OpenClaw: Guía Completa del Asistente IA Personal 2026</a></li>
+                    <li><a href="/blog/openclaw-whatsapp-telegram-tutorial/">Cómo Conectar OpenClaw a WhatsApp y Telegram: Tutorial 2026</a></li>
+                    <li><a href="/blog/openclaw-skills-automatizacion/">OpenClaw Skills: Automatiza tu Vida con IA</a></li>
+                </ul>
+            </aside>
+
+            <div class="post-footer">
+                <div class="post-cta">
+                    <h2>¿Quieres aprender Claude Code en serio?</h2>
+                    <p>Descarga gratis la guía de los 10 comandos esenciales y entra en la lista de la formación en español.</p>
+                    <a href="/#formulario" class="btn-primary">Descargar la guía gratis</a>
+                </div>
+            </div>
+        </div>
+    </article>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <div class="logo-icon">
+                            <img src="/logo-64.png" alt="Curso Claude Code" width="32" height="32" loading="lazy">
+                        </div>
+                        <span class="logo-text">Curso Claude Code</span>
+                    </div>
+                    <p class="footer-description">
+                        Formación de Claude Code en español para desarrolladores que ya programan.
+                    </p>
+                </div>
+                <div class="footer-section">
+                    <h4 class="footer-title">Enlaces</h4>
+                    <ul class="footer-links">
+                        <li><a href="/">Inicio</a></li>
+                        <li><a href="/blog/">Blog</a></li>
+                        <li><a href="/changelog.html">Changelog de Claude Code</a></li>
+                        <li><a href="/#formulario">Descargar la guía</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4 class="footer-title">Legal</h4>
+                    <ul class="footer-links">
+                        <li><a href="/privacidad.html">Política de privacidad</a></li>
+                        <li><a href="/terminos.html">Términos y condiciones</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Curso Claude Code. Todos los derechos reservados.</p>
+                <p class="footer-note">Claude Code es una marca de Anthropic. Este curso es independiente y no está afiliado oficialmente con Anthropic.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

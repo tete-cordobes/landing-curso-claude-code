@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OpenClaw Skills: Automatiza tu Vida con IA | Curso Claude Code</title>
+    <meta name="description" content="Aprende a usar y crear skills en OpenClaw. Desde búsqueda web hasta domótica con Home Assistant.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.ccodecurso.com/blog/openclaw-skills-automatizacion/">
+
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://www.ccodecurso.com/blog/openclaw-skills-automatizacion/">
+    <meta property="og:title" content="OpenClaw Skills: Automatiza tu Vida con IA">
+    <meta property="og:description" content="Aprende a usar y crear skills en OpenClaw. Desde búsqueda web hasta domótica con Home Assistant.">
+    <meta property="og:image" content="https://www.ccodecurso.com/images/blog/openclaw-architecture.webp">
+    <meta property="og:locale" content="es_ES">
+    <meta property="og:site_name" content="Curso Claude Code">
+    <meta property="article:published_time" content="2026-01-31T09:00:00.000Z">
+    <meta property="article:modified_time" content="2026-08-02T23:53:22+02:00">
+    <meta property="article:section" content="Claude Code">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="OpenClaw Skills: Automatiza tu Vida con IA">
+    <meta name="twitter:description" content="Aprende a usar y crear skills en OpenClaw. Desde búsqueda web hasta domótica con Home Assistant.">
+    <meta name="twitter:image" content="https://www.ccodecurso.com/images/blog/openclaw-architecture.webp">
+
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="icon" type="image/png" href="/logo-64.png">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#3b82f6">
+
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="/blog-styles.css">
+    <link rel="stylesheet" href="/nav-frameworks.css">
+    <link rel="stylesheet" href="/article-enhancements.css">
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-48N09S40ZB"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-48N09S40ZB');
+    </script>
+    <script type="text/javascript">
+        (function(c,l,a,r,i,t,y){
+            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        })(window, document, "clarity", "script", "uk1m98vjak");
+    </script>
+
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://www.ccodecurso.com/#organization",
+  "name": "Curso Claude Code",
+  "url": "https://www.ccodecurso.com/",
+  "logo": {
+    "@type": "ImageObject",
+    "url": "https://www.ccodecurso.com/logo-512.png",
+    "width": 512,
+    "height": 512
+  }
+}
+    </script>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "OpenClaw Skills: Automatiza tu Vida con IA",
+  "description": "Aprende a usar y crear skills en OpenClaw. Desde búsqueda web hasta domótica con Home Assistant.",
+  "image": "https://www.ccodecurso.com/images/blog/openclaw-architecture.webp",
+  "author": {
+    "@id": "https://www.ccodecurso.com/#organization"
+  },
+  "publisher": {
+    "@id": "https://www.ccodecurso.com/#organization"
+  },
+  "datePublished": "2026-01-31T09:00:00.000Z",
+  "dateModified": "2026-08-02T23:53:22+02:00",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://www.ccodecurso.com/blog/openclaw-skills-automatizacion/"
+  },
+  "url": "https://www.ccodecurso.com/blog/openclaw-skills-automatizacion/",
+  "articleSection": "Claude Code",
+  "inLanguage": "es-ES",
+  "wordCount": 802
+}
+    </script>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Inicio",
+      "item": "https://www.ccodecurso.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Blog",
+      "item": "https://www.ccodecurso.com/blog/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "OpenClaw Skills: Automatiza tu Vida con IA",
+      "item": "https://www.ccodecurso.com/blog/openclaw-skills-automatizacion/"
+    }
+  ]
+}
+    </script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-content">
+                <div class="logo">
+                    <a href="/">
+                        <div class="logo-icon">
+                            <img src="/logo-64.png" alt="Curso Claude Code" width="32" height="32" loading="eager">
+                        </div>
+                        <span class="logo-text">Curso Claude Code</span>
+                    </a>
+                </div>
+                <button class="nav-toggle" aria-label="Abrir menú" aria-expanded="false">
+                    <span></span><span></span><span></span>
+                </button>
+                <div class="nav-links">
+                    <a href="/">Inicio</a>
+                    <a href="/blog/" class="active">Blog</a>
+                    <a href="/frameworks-agenticos.html">Frameworks Claude Code</a>
+                    <a href="/frameworks-construir-agentes.html">Agentes IA</a>
+                    <a href="/changelog.html">Changelog</a>
+                    <a href="/#formulario" class="btn-nav nav-cta">Descargar Guía Gratis</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <article class="post-article">
+        <div class="container post-container">
+            <nav class="breadcrumbs" aria-label="Migas de pan">
+                <a href="/">Inicio</a> › <a href="/blog/">Blog</a> › <span>OpenClaw Skills: Automatiza tu Vida con IA</span>
+            </nav>
+
+            <header class="post-header">
+                <div class="post-meta">
+                    <span class="post-category">Claude Code</span>
+                    <time class="post-date" datetime="2026-01-31T09:00:00.000Z">31 de enero de 2026</time>
+                    <span class="post-reading-time">12 min de lectura</span>
+                </div>
+                <h1 class="post-title-main">OpenClaw Skills: Automatiza tu Vida con IA</h1>
+                <p class="post-excerpt">Aprende a usar y crear skills en OpenClaw. Desde búsqueda web hasta domótica con Home Assistant.</p>
+            </header>
+
+            <div class="post-image-container">
+                <img src="/images/blog/openclaw-architecture.webp" alt="OpenClaw Skills: Automatiza tu Vida con IA" loading="lazy" decoding="async">
+            </div>
+
+            <div class="post-content">
+<h2>¿Qué son los Skills de OpenClaw?</h2><p>Los <strong>Skills</strong> son habilidades que extienden lo que OpenClaw puede hacer. Van desde búsqueda web hasta controlar tu casa inteligente.</p><p>Pensalo así: Claude es el cerebro, los skills son las manos. Si venís siguiendo el <a href="/" title="Curso de Claude Code en español">curso de Claude Code</a>, ya sabés que Claude es poderoso, pero con skills se vuelve MUCHO más útil.</p><h2>Skills Incluidos por Defecto</h2><h3>1. Web Search</h3><p>Busca información actualizada en internet:</p><pre><code>Usuario: ¿Cuál es el clima en Buenos Aires hoy?\nOpenClaw: [Busca en web] Hoy en Buenos Aires: 28°C, parcialmente nublado...</code></pre><h3>2. File Operations</h3><p>Lee y escribe archivos en tu sistema:</p><pre><code>Usuario: Leé el archivo ~/notas/ideas.md\nOpenClaw: El contenido del archivo es...</code></pre><h3>3. Browser Control</h3><p>Controla el navegador para tareas automatizadas:</p><pre><code>Usuario: Abrí YouTube y buscá tutoriales de Python\nOpenClaw: [Abre navegador, navega a YouTube, busca...]</code></pre><h3>4. Code Execution</h3><p>Ejecuta código en un sandbox seguro:</p><pre><code>Usuario: Ejecutá este Python: print(2**10)\nOpenClaw: Resultado: 1024</code></pre><h2>Instalar Skills de la Comunidad</h2><p>Hay más de 100 skills creados por la comunidad:</p><pre><code># Ver skills disponibles\nopenclaw skills search\n\n# Instalar un skill\nopenclaw skills install weather\nopenclaw skills install home-assistant\nopenclaw skills install spotify</code></pre><h3>Skills Populares</h3><ul><li><strong>weather:</strong> Clima detallado por ubicación</li><li><strong>home-assistant:</strong> Control de domótica</li><li><strong>spotify:</strong> Control de reproducción</li><li><strong>calendar:</strong> Integración con Google Calendar</li><li><strong>todoist:</strong> Gestión de tareas</li><li><strong>notion:</strong> Notas y bases de datos</li><li><strong>github:</strong> Gestión de repos</li></ul><h2>Crear tu Propio Skill</h2><h3>Skill Básico (Markdown)</h3><p>Creá un archivo en <code>~/.openclaw/skills/</code>:</p><pre><code># ~/.openclaw/skills/saludo.md\n\n# Skill: Saludo Personalizado\n\n## Descripción\nResponde saludos de forma personalizada.\n\n## Triggers\n- hola\n- buenos días\n- buenas tardes\n\n## Respuesta\nCuando el usuario salude, respondé de forma amigable\nmencionando la hora del día y deseándole algo positivo.</code></pre><h3>Skill Avanzado (TypeScript)</h3><p>Para skills con lógica compleja:</p><pre><code>// ~/.openclaw/skills/crypto-price.ts\n\nimport { Skill, Context } from '@openclaw/sdk';\n\nexport default class CryptoPrice implements Skill {\n  name = 'crypto-price';\n  description = 'Obtiene precios de criptomonedas';\n  \n  triggers = ['precio de', 'cuánto vale', 'cotización'];\n  \n  async execute(ctx: Context) {\n    const crypto = ctx.extractEntity('cryptocurrency');\n    const response = await fetch(\n      `https://api.coingecko.com/api/v3/simple/price?ids=${crypto}&vs_currencies=usd`\n    );\n    const data = await response.json();\n    return `${crypto}: $${data[crypto].usd} USD`;\n  }\n}</code></pre><p>Si querés aprender TypeScript para crear skills más potentes, el <a href="/" title="Curso de Claude Code">curso de Claude Code</a> te enseña a programar con IA de manera efectiva.</p><h2>Automatización con Cron</h2><p>OpenClaw puede ejecutar tareas programadas, similar a lo que hacemos con <a href="/blog/claude-code-n8n-automatizacion/" title="Automatizar con Claude Code y N8N">N8N y Claude Code</a>:</p><h3>Configurar Tareas Programadas</h3><p>En <code>~/.openclaw/openclaw.json</code>:</p><pre><code>{\n  "cron": {\n    "morning_briefing": {\n      "schedule": "0 8 * * *",\n      "channel": "telegram",\n      "action": "Dame un resumen del clima, mis eventos de hoy y las noticias tech más importantes"\n    },\n    "weekly_review": {\n      "schedule": "0 18 * * 5",\n      "channel": "whatsapp",\n      "action": "Hacé un resumen de lo que hice esta semana basándote en mis mensajes"\n    }\n  }\n}</code></pre><h3>Sintaxis de Cron</h3><pre><code>┌───────────── minuto (0-59)\n│ ┌─────────── hora (0-23)\n│ │ ┌───────── día del mes (1-31)\n│ │ │ ┌─────── mes (1-12)\n│ │ │ │ ┌───── día de la semana (0-6)\n│ │ │ │ │\n* * * * *</code></pre><p>Ejemplos:</p><ul><li><code>0 9 * * *</code> - Todos los días a las 9:00</li><li><code>0 9 * * 1-5</code> - Lunes a viernes a las 9:00</li><li><code>*/30 * * * *</code> - Cada 30 minutos</li></ul><h2>Integración con Home Assistant</h2><p>Controlá tu casa inteligente:</p><h3>1. Instalar el Skill</h3><pre><code>openclaw skills install home-assistant</code></pre><h3>2. Configurar</h3><pre><code>{\n  "skills": {\n    "home-assistant": {\n      "url": "http://homeassistant.local:8123",\n      "token": "tu-long-lived-access-token"\n    }\n  }\n}</code></pre><h3>3. Usar</h3><pre><code>Usuario: Apagá las luces del living\nOpenClaw: [Ejecuta Home Assistant] Luces del living apagadas.\n\nUsuario: ¿Está abierta la puerta del garage?\nOpenClaw: [Consulta sensor] La puerta del garage está cerrada.</code></pre><h2>Multi-Agente</h2><p>OpenClaw soporta múltiples agentes especializados:</p><pre><code>{\n  "agents": {\n    "coder": {\n      "model": "claude-3-5-sonnet",\n      "systemPrompt": "Sos un experto en programación...",\n      "skills": ["code-execution", "github"]\n    },\n    "assistant": {\n      "model": "claude-3-haiku",\n      "systemPrompt": "Sos un asistente amigable...",\n      "skills": ["calendar", "weather", "web-search"]\n    }\n  },\n  "routing": {\n    "keywords": {\n      "código|programar|debug": "coder",\n      "default": "assistant"\n    }\n  }\n}</code></pre><p>Para entender mejor cómo funcionan los modelos, mirá nuestra comparativa <a href="/blog/openai-vs-claude-api-comparativa/" title="OpenAI API vs Claude API">OpenAI vs Claude API</a>.</p><h2>Webhooks</h2><p>Recibí eventos externos y reaccioná:</p><pre><code>{\n  "webhooks": {\n    "github_pr": {\n      "path": "/webhook/github",\n      "action": "Avisame que hay un nuevo PR: {{payload.pull_request.title}}"\n    }\n  }\n}</code></pre><h2>Tips de Automatización</h2><h3>1. Empezá Simple</h3><p>No intentes automatizar todo de una. Empezá con UNA tarea que te ahorre tiempo real.</p><h3>2. Probá Antes de Programar</h3><p>Antes de poner algo en cron, probalo manualmente varias veces.</p><h3>3. Logs son tu Amigo</h3><pre><code>openclaw logs -f</code></pre><p>Mirá los logs cuando algo no funciona.</p><h3>4. Límites de Seguridad</h3><p>Siempre poné límites en skills que interactúan con el mundo real:</p><pre><code>{\n  "skills": {\n    "home-assistant": {\n      "allowedDomains": ["light", "switch"],\n      "deniedEntities": ["lock.*", "alarm.*"]\n    }\n  }\n}</code></pre><h2>Conclusión</h2><p>Los skills transforman a OpenClaw de un chatbot a un verdadero asistente personal. La clave es automatizar tareas que hacés repetidamente.</p><p>Empezá con los skills incluidos, explorá los de la comunidad, y eventualmente creá los tuyos propios. Si querés aprender a crear automatizaciones más complejas, el <a href="/" title="Curso de Claude Code en español">curso de Claude Code</a> te da las bases para dominar la IA como herramienta.</p><p>También te puede interesar: <a href="/blog/crear-chatbot-claude-api/" title="Crear chatbot con Claude API">cómo crear un chatbot con Claude API</a> para entender cómo funciona por detrás.</p>
+            </div>
+
+            <aside class="post-related">
+                <h2>Seguir leyendo</h2>
+                <ul>
+                    <li><a href="/blog/openclaw-guia-completa-2026/">OpenClaw: Guía Completa del Asistente IA Personal 2026</a></li>
+                    <li><a href="/blog/openclaw-whatsapp-telegram-tutorial/">Cómo Conectar OpenClaw a WhatsApp y Telegram: Tutorial 2026</a></li>
+                    <li><a href="/blog/openclaw-vs-chatgpt-app/">OpenClaw vs ChatGPT App: ¿Cuál Elegir en 2026?</a></li>
+                </ul>
+            </aside>
+
+            <div class="post-footer">
+                <div class="post-cta">
+                    <h2>¿Quieres aprender Claude Code en serio?</h2>
+                    <p>Descarga gratis la guía de los 10 comandos esenciales y entra en la lista de la formación en español.</p>
+                    <a href="/#formulario" class="btn-primary">Descargar la guía gratis</a>
+                </div>
+            </div>
+        </div>
+    </article>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <div class="logo-icon">
+                            <img src="/logo-64.png" alt="Curso Claude Code" width="32" height="32" loading="lazy">
+                        </div>
+                        <span class="logo-text">Curso Claude Code</span>
+                    </div>
+                    <p class="footer-description">
+                        Formación de Claude Code en español para desarrolladores que ya programan.
+                    </p>
+                </div>
+                <div class="footer-section">
+                    <h4 class="footer-title">Enlaces</h4>
+                    <ul class="footer-links">
+                        <li><a href="/">Inicio</a></li>
+                        <li><a href="/blog/">Blog</a></li>
+                        <li><a href="/changelog.html">Changelog de Claude Code</a></li>
+                        <li><a href="/#formulario">Descargar la guía</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4 class="footer-title">Legal</h4>
+                    <ul class="footer-links">
+                        <li><a href="/privacidad.html">Política de privacidad</a></li>
+                        <li><a href="/terminos.html">Términos y condiciones</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Curso Claude Code. Todos los derechos reservados.</p>
+                <p class="footer-note">Claude Code es una marca de Anthropic. Este curso es independiente y no está afiliado oficialmente con Anthropic.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

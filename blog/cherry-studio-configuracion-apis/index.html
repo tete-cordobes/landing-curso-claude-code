@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cherry Studio + APIs de IA: Guía de Configuración | Curso Claude Code</title>
+    <meta name="description" content="Configura Cherry Studio para usar múltiples APIs de IA. Tutorial paso a paso para conectar OpenAI, Claude, Gemini y más.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.ccodecurso.com/blog/cherry-studio-configuracion-apis/">
+
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://www.ccodecurso.com/blog/cherry-studio-configuracion-apis/">
+    <meta property="og:title" content="Cherry Studio + APIs de IA: Guía de Configuración">
+    <meta property="og:description" content="Configura Cherry Studio para usar múltiples APIs de IA. Tutorial paso a paso para conectar OpenAI, Claude, Gemini y más.">
+    <meta property="og:image" content="https://www.ccodecurso.com/og-default.png">
+    <meta property="og:locale" content="es_ES">
+    <meta property="og:site_name" content="Curso Claude Code">
+    <meta property="article:published_time" content="2026-01-30T01:30:00.000Z">
+    <meta property="article:modified_time" content="2026-01-31T00:40:33+01:00">
+    <meta property="article:section" content="Claude Code">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Cherry Studio + APIs de IA: Guía de Configuración">
+    <meta name="twitter:description" content="Configura Cherry Studio para usar múltiples APIs de IA. Tutorial paso a paso para conectar OpenAI, Claude, Gemini y más.">
+    <meta name="twitter:image" content="https://www.ccodecurso.com/og-default.png">
+
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="icon" type="image/png" href="/logo-64.png">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#3b82f6">
+
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="/blog-styles.css">
+    <link rel="stylesheet" href="/nav-frameworks.css">
+    <link rel="stylesheet" href="/article-enhancements.css">
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-48N09S40ZB"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-48N09S40ZB');
+    </script>
+    <script type="text/javascript">
+        (function(c,l,a,r,i,t,y){
+            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        })(window, document, "clarity", "script", "uk1m98vjak");
+    </script>
+
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://www.ccodecurso.com/#organization",
+  "name": "Curso Claude Code",
+  "url": "https://www.ccodecurso.com/",
+  "logo": {
+    "@type": "ImageObject",
+    "url": "https://www.ccodecurso.com/logo-512.png",
+    "width": 512,
+    "height": 512
+  }
+}
+    </script>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Cherry Studio + APIs de IA: Guía de Configuración",
+  "description": "Configura Cherry Studio para usar múltiples APIs de IA. Tutorial paso a paso para conectar OpenAI, Claude, Gemini y más.",
+  "image": "https://www.ccodecurso.com/og-default.png",
+  "author": {
+    "@id": "https://www.ccodecurso.com/#organization"
+  },
+  "publisher": {
+    "@id": "https://www.ccodecurso.com/#organization"
+  },
+  "datePublished": "2026-01-30T01:30:00.000Z",
+  "dateModified": "2026-01-31T00:40:33+01:00",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://www.ccodecurso.com/blog/cherry-studio-configuracion-apis/"
+  },
+  "url": "https://www.ccodecurso.com/blog/cherry-studio-configuracion-apis/",
+  "articleSection": "Claude Code",
+  "inLanguage": "es-ES",
+  "wordCount": 495
+}
+    </script>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Inicio",
+      "item": "https://www.ccodecurso.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Blog",
+      "item": "https://www.ccodecurso.com/blog/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Cherry Studio + APIs de IA: Guía de Configuración",
+      "item": "https://www.ccodecurso.com/blog/cherry-studio-configuracion-apis/"
+    }
+  ]
+}
+    </script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-content">
+                <div class="logo">
+                    <a href="/">
+                        <div class="logo-icon">
+                            <img src="/logo-64.png" alt="Curso Claude Code" width="32" height="32" loading="eager">
+                        </div>
+                        <span class="logo-text">Curso Claude Code</span>
+                    </a>
+                </div>
+                <button class="nav-toggle" aria-label="Abrir menú" aria-expanded="false">
+                    <span></span><span></span><span></span>
+                </button>
+                <div class="nav-links">
+                    <a href="/">Inicio</a>
+                    <a href="/blog/" class="active">Blog</a>
+                    <a href="/frameworks-agenticos.html">Frameworks Claude Code</a>
+                    <a href="/frameworks-construir-agentes.html">Agentes IA</a>
+                    <a href="/changelog.html">Changelog</a>
+                    <a href="/#formulario" class="btn-nav nav-cta">Descargar Guía Gratis</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <article class="post-article">
+        <div class="container post-container">
+            <nav class="breadcrumbs" aria-label="Migas de pan">
+                <a href="/">Inicio</a> › <a href="/blog/">Blog</a> › <span>Cherry Studio + APIs de IA: Guía de Configuración</span>
+            </nav>
+
+            <header class="post-header">
+                <div class="post-meta">
+                    <span class="post-category">Claude Code</span>
+                    <time class="post-date" datetime="2026-01-30T01:30:00.000Z">30 de enero de 2026</time>
+                    <span class="post-reading-time">7 min de lectura</span>
+                </div>
+                <h1 class="post-title-main">Cherry Studio + APIs de IA: Guía de Configuración</h1>
+                <p class="post-excerpt">Configura Cherry Studio para usar múltiples APIs de IA. Tutorial paso a paso para conectar OpenAI, Claude, Gemini y más.</p>
+            </header>
+
+
+            <div class="post-content">
+<h2>¿Qué es Cherry Studio?</h2><p><strong>Cherry Studio</strong> es una aplicación de escritorio gratuita que te permite usar múltiples APIs de IA desde una interfaz unificada. Es como tener ChatGPT, Claude y Gemini en una sola app.</p><p>Si quieres aprender a usar estas APIs de forma profesional, el <a href="/" title="Curso de Claude Code en español">curso de Claude Code</a> te enseña a dominarlas.</p><h2>Características Principales</h2><ul><li>Soporta múltiples proveedores de API</li><li>Interfaz limpia y moderna</li><li>Historial de conversaciones</li><li>Exportación de chats</li><li>Temas personalizables</li><li>Gratis y open source</li></ul><h2>Instalación</h2><h3>Windows</h3><ol><li>Ve a <strong>cherry-ai.com</strong></li><li>Descarga el instalador .exe</li><li>Ejecuta e instala</li></ol><h3>macOS</h3><ol><li>Descarga el .dmg</li><li>Arrastra a Aplicaciones</li><li>Abre desde Launchpad</li></ol><h3>Linux</h3><pre><code># AppImage
+chmod +x CherryStudio.AppImage
+./CherryStudio.AppImage</code></pre><h2>Configurar OpenAI</h2><ol><li>Abre Cherry Studio</li><li>Ve a <strong>Settings > API Providers</strong></li><li>Click en <strong>OpenAI</strong></li><li>Ingresa tu API key</li><li>Selecciona modelos disponibles</li><li>Click <strong>Save</strong></li></ol><h3>Configuración Recomendada</h3><pre><code>API Endpoint: https://api.openai.com/v1
+API Key: sk-...
+Models: gpt-4-turbo, gpt-4o, gpt-4o-mini</code></pre><h2>Configurar Claude (Anthropic)</h2><p>Para obtener tu API key de Claude, sigue nuestro <a href="/blog/claude-api-tutorial-espanol/" title="Claude API Tutorial en Español">tutorial de Claude API</a>.</p><ol><li>Ve a <strong>Settings > API Providers</strong></li><li>Click en <strong>Anthropic</strong></li><li>Ingresa tu API key</li><li>Guarda configuración</li></ol><h3>Configuración</h3><pre><code>API Endpoint: https://api.anthropic.com
+API Key: sk-ant-...
+Models: claude-3-5-sonnet-20241022, claude-3-haiku</code></pre><h2>Configurar Gemini</h2><ol><li>Ve a <strong>Settings > API Providers</strong></li><li>Click en <strong>Google</strong></li><li>Ingresa tu API key de Google AI Studio</li></ol><h3>Configuración</h3><pre><code>API Key: AIza...
+Models: gemini-1.5-pro, gemini-1.5-flash</code></pre><h2>Configurar API Router (APIYI/OpenRouter)</h2><p>Para usar múltiples modelos desde un solo endpoint:</p><ol><li>Ve a <strong>Settings > Custom Provider</strong></li><li>Añade nuevo proveedor</li><li>Configura:</li></ol><pre><code>Name: APIYI
+API Endpoint: https://api.apiyi.com/v1
+API Key: tu-key-de-apiyi
+Models: gpt-4o, claude-3-5-sonnet, gemini-1.5-pro</code></pre><h2>Solución de Problemas</h2><p>Si encuentras errores, consulta nuestra guía de <a href="/blog/errores-apis-ia-soluciones/" title="Errores Comunes en APIs de IA y Cómo Solucionarlos">errores comunes en APIs de IA</a>.</p><h3>Error 403: Forbidden</h3><ul><li>Verifica que la API key sea correcta</li><li>Confirma que tienes créditos disponibles</li><li>Revisa que el endpoint sea correcto</li></ul><h3>Error de Conexión</h3><ul><li>Verifica tu conexión a internet</li><li>Prueba con VPN si estás en región restringida</li><li>Revisa firewall/antivirus</li></ul><h3>Modelos no Aparecen</h3><ul><li>Refresca la lista de modelos</li><li>Verifica que tu cuenta tenga acceso al modelo</li><li>Algunos modelos requieren tier específico</li></ul><h2>Tips de Uso</h2><h3>1. Crear Perfiles</h3><p>Crea perfiles diferentes para cada tipo de tarea:</p><ul><li><strong>Código:</strong> Claude Sonnet con temperature 0.3</li><li><strong>Creativo:</strong> GPT-4o con temperature 0.8</li><li><strong>Rápido:</strong> Haiku/Flash para consultas simples</li></ul><h3>2. Atajos de Teclado</h3><ul><li><strong>Cmd/Ctrl + N:</strong> Nueva conversación</li><li><strong>Cmd/Ctrl + Enter:</strong> Enviar mensaje</li><li><strong>Cmd/Ctrl + K:</strong> Cambiar modelo</li></ul><h3>3. Exportar Conversaciones</h3><p>Ve a la conversación > Click derecho > Export como Markdown o JSON.</p><h2>Comparativa: Cherry Studio vs Alternativas</h2><table><tr><th>App</th><th>Precio</th><th>Multi-API</th><th>Open Source</th></tr><tr><td>Cherry Studio</td><td>Gratis</td><td>Sí</td><td>Sí</td></tr><tr><td>Chatbox</td><td>Gratis</td><td>Sí</td><td>Sí</td></tr><tr><td>TypingMind</td><td>$39</td><td>Sí</td><td>No</td></tr><tr><td>BoltAI</td><td>$24</td><td>Sí</td><td>No</td></tr></table><p>Para una comparativa detallada de las APIs, revisa nuestra <a href="/blog/openai-vs-claude-api-comparativa/" title="OpenAI API vs Claude API Comparativa">comparativa OpenAI vs Claude API</a>.</p><h2>Conclusión</h2><p>Cherry Studio es excelente para quienes usan múltiples APIs de IA. La configuración es sencilla y la interfaz intuitiva.</p><p>Combínalo con un API router como APIYI para máxima flexibilidad y ahorro en costos. Para conocer los precios actualizados, consulta nuestra <a href="/blog/precios-apis-ia-2026/" title="Precios de APIs de IA 2026">guía de precios de APIs de IA</a>. Y si prefieres una herramienta de terminal más potente, prueba <a href="/blog/que-es-claude-code-tutorial-2026/" title="Qué es Claude Code Tutorial 2026">Claude Code</a> con el <a href="/" title="Curso de Claude Code en español">curso de Claude Code</a>.</p>
+            </div>
+
+            <aside class="post-related">
+                <h2>Seguir leyendo</h2>
+                <ul>
+                    <li><a href="/blog/openclaw-guia-completa-2026/">OpenClaw: Guía Completa del Asistente IA Personal 2026</a></li>
+                    <li><a href="/blog/openclaw-whatsapp-telegram-tutorial/">Cómo Conectar OpenClaw a WhatsApp y Telegram: Tutorial 2026</a></li>
+                    <li><a href="/blog/openclaw-skills-automatizacion/">OpenClaw Skills: Automatiza tu Vida con IA</a></li>
+                </ul>
+            </aside>
+
+            <div class="post-footer">
+                <div class="post-cta">
+                    <h2>¿Quieres aprender Claude Code en serio?</h2>
+                    <p>Descarga gratis la guía de los 10 comandos esenciales y entra en la lista de la formación en español.</p>
+                    <a href="/#formulario" class="btn-primary">Descargar la guía gratis</a>
+                </div>
+            </div>
+        </div>
+    </article>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <div class="logo-icon">
+                            <img src="/logo-64.png" alt="Curso Claude Code" width="32" height="32" loading="lazy">
+                        </div>
+                        <span class="logo-text">Curso Claude Code</span>
+                    </div>
+                    <p class="footer-description">
+                        Formación de Claude Code en español para desarrolladores que ya programan.
+                    </p>
+                </div>
+                <div class="footer-section">
+                    <h4 class="footer-title">Enlaces</h4>
+                    <ul class="footer-links">
+                        <li><a href="/">Inicio</a></li>
+                        <li><a href="/blog/">Blog</a></li>
+                        <li><a href="/changelog.html">Changelog de Claude Code</a></li>
+                        <li><a href="/#formulario">Descargar la guía</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4 class="footer-title">Legal</h4>
+                    <ul class="footer-links">
+                        <li><a href="/privacidad.html">Política de privacidad</a></li>
+                        <li><a href="/terminos.html">Términos y condiciones</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Curso Claude Code. Todos los derechos reservados.</p>
+                <p class="footer-note">Claude Code es una marca de Anthropic. Este curso es independiente y no está afiliado oficialmente con Anthropic.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

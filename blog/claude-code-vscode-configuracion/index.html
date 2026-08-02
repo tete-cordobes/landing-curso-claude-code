@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cómo Configurar Claude Code con VS Code | Curso Claude Code</title>
+    <meta name="description" content="Guía para integrar Claude Code con Visual Studio Code. Configura la terminal, atajos y flujo de trabajo óptimo.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.ccodecurso.com/blog/claude-code-vscode-configuracion/">
+
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://www.ccodecurso.com/blog/claude-code-vscode-configuracion/">
+    <meta property="og:title" content="Cómo Configurar Claude Code con VS Code">
+    <meta property="og:description" content="Guía para integrar Claude Code con Visual Studio Code. Configura la terminal, atajos y flujo de trabajo óptimo.">
+    <meta property="og:image" content="https://www.ccodecurso.com/og-default.png">
+    <meta property="og:locale" content="es_ES">
+    <meta property="og:site_name" content="Curso Claude Code">
+    <meta property="article:published_time" content="2026-01-30T01:00:00.000Z">
+    <meta property="article:modified_time" content="2026-01-31T00:40:33+01:00">
+    <meta property="article:section" content="Claude Code">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Cómo Configurar Claude Code con VS Code">
+    <meta name="twitter:description" content="Guía para integrar Claude Code con Visual Studio Code. Configura la terminal, atajos y flujo de trabajo óptimo.">
+    <meta name="twitter:image" content="https://www.ccodecurso.com/og-default.png">
+
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="icon" type="image/png" href="/logo-64.png">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#3b82f6">
+
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="/blog-styles.css">
+    <link rel="stylesheet" href="/nav-frameworks.css">
+    <link rel="stylesheet" href="/article-enhancements.css">
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-48N09S40ZB"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-48N09S40ZB');
+    </script>
+    <script type="text/javascript">
+        (function(c,l,a,r,i,t,y){
+            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        })(window, document, "clarity", "script", "uk1m98vjak");
+    </script>
+
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://www.ccodecurso.com/#organization",
+  "name": "Curso Claude Code",
+  "url": "https://www.ccodecurso.com/",
+  "logo": {
+    "@type": "ImageObject",
+    "url": "https://www.ccodecurso.com/logo-512.png",
+    "width": 512,
+    "height": 512
+  }
+}
+    </script>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Cómo Configurar Claude Code con VS Code",
+  "description": "Guía para integrar Claude Code con Visual Studio Code. Configura la terminal, atajos y flujo de trabajo óptimo.",
+  "image": "https://www.ccodecurso.com/og-default.png",
+  "author": {
+    "@id": "https://www.ccodecurso.com/#organization"
+  },
+  "publisher": {
+    "@id": "https://www.ccodecurso.com/#organization"
+  },
+  "datePublished": "2026-01-30T01:00:00.000Z",
+  "dateModified": "2026-01-31T00:40:33+01:00",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://www.ccodecurso.com/blog/claude-code-vscode-configuracion/"
+  },
+  "url": "https://www.ccodecurso.com/blog/claude-code-vscode-configuracion/",
+  "articleSection": "Claude Code",
+  "inLanguage": "es-ES",
+  "wordCount": 564
+}
+    </script>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Inicio",
+      "item": "https://www.ccodecurso.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Blog",
+      "item": "https://www.ccodecurso.com/blog/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Cómo Configurar Claude Code con VS Code",
+      "item": "https://www.ccodecurso.com/blog/claude-code-vscode-configuracion/"
+    }
+  ]
+}
+    </script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-content">
+                <div class="logo">
+                    <a href="/">
+                        <div class="logo-icon">
+                            <img src="/logo-64.png" alt="Curso Claude Code" width="32" height="32" loading="eager">
+                        </div>
+                        <span class="logo-text">Curso Claude Code</span>
+                    </a>
+                </div>
+                <button class="nav-toggle" aria-label="Abrir menú" aria-expanded="false">
+                    <span></span><span></span><span></span>
+                </button>
+                <div class="nav-links">
+                    <a href="/">Inicio</a>
+                    <a href="/blog/" class="active">Blog</a>
+                    <a href="/frameworks-agenticos.html">Frameworks Claude Code</a>
+                    <a href="/frameworks-construir-agentes.html">Agentes IA</a>
+                    <a href="/changelog.html">Changelog</a>
+                    <a href="/#formulario" class="btn-nav nav-cta">Descargar Guía Gratis</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <article class="post-article">
+        <div class="container post-container">
+            <nav class="breadcrumbs" aria-label="Migas de pan">
+                <a href="/">Inicio</a> › <a href="/blog/">Blog</a> › <span>Cómo Configurar Claude Code con VS Code</span>
+            </nav>
+
+            <header class="post-header">
+                <div class="post-meta">
+                    <span class="post-category">Claude Code</span>
+                    <time class="post-date" datetime="2026-01-30T01:00:00.000Z">30 de enero de 2026</time>
+                    <span class="post-reading-time">6 min de lectura</span>
+                </div>
+                <h1 class="post-title-main">Cómo Configurar Claude Code con VS Code</h1>
+                <p class="post-excerpt">Guía para integrar Claude Code con Visual Studio Code. Configura la terminal, atajos y flujo de trabajo óptimo.</p>
+            </header>
+
+
+            <div class="post-content">
+<h2>Claude Code + VS Code: El Combo Perfecto</h2><p>Aunque <a href="/blog/que-es-claude-code-tutorial-2026/" title="Qué es Claude Code Tutorial 2026">Claude Code</a> es una herramienta de terminal, se integra perfectamente con <strong>Visual Studio Code</strong>. En esta guía te muestro cómo configurar el mejor flujo de trabajo.</p><p>Si quieres dominar Claude Code, no te pierdas el <a href="/" title="Curso de Claude Code en español">curso de Claude Code</a>.</p><h2>¿Por Qué Usar Ambos?</h2><ul><li><strong>VS Code:</strong> Edición visual, extensiones, debugging</li><li><strong>Claude Code:</strong> Generación de código con IA, contexto completo</li></ul><p>Juntos: editas visualmente y generas código con IA sin salir del editor.</p><h2>Configuración Básica</h2><h3>1. Instalar Claude Code</h3><p>Si aún no lo tienes, sigue nuestra <a href="/blog/claude-code-principiantes-guia/" title="Claude Code para Principiantes Guía">guía de Claude Code para principiantes</a>.</p><pre><code>npm install -g @anthropic-ai/claude-code</code></pre><h3>2. Configurar API Key</h3><p>Añade a tu perfil de shell (~/.zshrc o ~/.bashrc):</p><pre><code>export ANTHROPIC_API_KEY="tu-api-key"</code></pre><h3>3. Abrir Terminal en VS Code</h3><p><code>Ctrl+`</code> (backtick) abre la terminal integrada.</p><h2>Ejecutar Claude Code</h2><p>En la terminal de VS Code:</p><pre><code>claude</code></pre><p>Claude Code detectará automáticamente tu proyecto.</p><h2>Configuración Avanzada</h2><h3>Task en VS Code</h3><p>Crea un task para iniciar Claude Code rápidamente. Añade a <code>.vscode/tasks.json</code>:</p><pre><code>{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Claude Code",
+      "type": "shell",
+      "command": "claude",
+      "presentation": {
+        "reveal": "always",
+        "panel": "new"
+      },
+      "problemMatcher": []
+    }
+  ]
+}</code></pre><p>Ahora puedes iniciar con <code>Ctrl+Shift+P > Run Task > Claude Code</code>.</p><h3>Atajo de Teclado</h3><p>Añade a <code>keybindings.json</code>:</p><pre><code>{
+  "key": "ctrl+shift+c",
+  "command": "workbench.action.tasks.runTask",
+  "args": "Claude Code"
+}</code></pre><h2>Flujo de Trabajo Recomendado</h2><h3>Split Terminal</h3><ol><li>Abre VS Code en tu proyecto</li><li>Abre terminal (<code>Ctrl+`</code>)</li><li>Divide terminal (click en el icono de split)</li><li>En un lado: comandos normales (npm, git)</li><li>En el otro: Claude Code</li></ol><h3>Workflow</h3><ol><li><strong>Edita</strong> archivos en el editor de VS Code</li><li><strong>Pide cambios</strong> a Claude Code en la terminal</li><li><strong>Revisa</strong> los cambios con el diff de VS Code</li><li><strong>Commit</strong> desde la terminal o Source Control</li></ol><h2>Extensiones Útiles</h2><h3>GitLens</h3><p>Ver historial de cambios que Claude hace.</p><h3>Error Lens</h3><p>Ver errores inline que Claude puede corregir.</p><h3>Todo Highlight</h3><p>Resaltar TODOs que puedes pedir a Claude que complete.</p><h2>Configuración de Terminal</h2><p>En VS Code settings (<code>Ctrl+,</code>):</p><pre><code>{
+  "terminal.integrated.defaultProfile.osx": "zsh",
+  "terminal.integrated.fontSize": 14,
+  "terminal.integrated.scrollback": 10000,
+  "terminal.integrated.copyOnSelection": true
+}</code></pre><h2>Tips de Productividad</h2><h3>1. Referencia Archivos</h3><p>En Claude Code, usa <code>@</code> para referenciar archivos que tienes abiertos. Aprende más sobre esto en los <a href="/blog/comandos-claude-code-esenciales/" title="Comandos de Claude Code Esenciales">comandos esenciales de Claude Code</a>.</p><pre><code>Revisa @src/components/Button.tsx y mejora la accesibilidad</code></pre><h3>2. Copia Rápida</h3><p>Selecciona código en VS Code, copia, y pégalo en Claude Code para análisis.</p><h3>3. Diff View</h3><p>Después de que Claude modifique archivos, usa el Source Control de VS Code para revisar cambios.</p><h2>Problemas Comunes</h2><h3>Claude Code no encuentra archivos</h3><p>Asegúrate de estar en el directorio correcto. Usa <code>pwd</code> para verificar.</p><h3>Terminal muy pequeña</h3><p>Maximiza el panel de terminal o usa terminal externa.</p><h3>API Key no funciona</h3><p>Cierra VS Code y vuelve a abrir para que cargue las variables de entorno actualizadas. Si el error persiste, consulta nuestra guía de <a href="/blog/errores-apis-ia-soluciones/" title="Errores Comunes en APIs de IA y Cómo Solucionarlos">errores comunes en APIs de IA</a>.</p><h2>Alternativa: Cursor</h2><p>Si prefieres una experiencia más integrada, considera <strong>Cursor</strong>, que es VS Code con IA nativa. Pero Claude Code te da más control y acceso directo a Claude.</p><h2>Conclusión</h2><p>VS Code + Claude Code es una combinación poderosa. Mantienes las ventajas del editor visual mientras aprovechas el poder de Claude para generar y modificar código.</p><p>Si quieres llevar tu productividad al siguiente nivel, también puedes explorar <a href="/blog/testing-automatizado-claude-code/" title="Testing Automatizado con Claude Code">testing automatizado con Claude Code</a> y <a href="/blog/claude-code-desarrollo-web/" title="Claude Code para Desarrollo Web">desarrollo web con Claude Code</a>. Todo esto y más en el <a href="/" title="Curso de Claude Code en español">curso de Claude Code</a>.</p>
+            </div>
+
+            <aside class="post-related">
+                <h2>Seguir leyendo</h2>
+                <ul>
+                    <li><a href="/blog/openclaw-guia-completa-2026/">OpenClaw: Guía Completa del Asistente IA Personal 2026</a></li>
+                    <li><a href="/blog/openclaw-whatsapp-telegram-tutorial/">Cómo Conectar OpenClaw a WhatsApp y Telegram: Tutorial 2026</a></li>
+                    <li><a href="/blog/openclaw-skills-automatizacion/">OpenClaw Skills: Automatiza tu Vida con IA</a></li>
+                </ul>
+            </aside>
+
+            <div class="post-footer">
+                <div class="post-cta">
+                    <h2>¿Quieres aprender Claude Code en serio?</h2>
+                    <p>Descarga gratis la guía de los 10 comandos esenciales y entra en la lista de la formación en español.</p>
+                    <a href="/#formulario" class="btn-primary">Descargar la guía gratis</a>
+                </div>
+            </div>
+        </div>
+    </article>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <div class="logo-icon">
+                            <img src="/logo-64.png" alt="Curso Claude Code" width="32" height="32" loading="lazy">
+                        </div>
+                        <span class="logo-text">Curso Claude Code</span>
+                    </div>
+                    <p class="footer-description">
+                        Formación de Claude Code en español para desarrolladores que ya programan.
+                    </p>
+                </div>
+                <div class="footer-section">
+                    <h4 class="footer-title">Enlaces</h4>
+                    <ul class="footer-links">
+                        <li><a href="/">Inicio</a></li>
+                        <li><a href="/blog/">Blog</a></li>
+                        <li><a href="/changelog.html">Changelog de Claude Code</a></li>
+                        <li><a href="/#formulario">Descargar la guía</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4 class="footer-title">Legal</h4>
+                    <ul class="footer-links">
+                        <li><a href="/privacidad.html">Política de privacidad</a></li>
+                        <li><a href="/terminos.html">Términos y condiciones</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Curso Claude Code. Todos los derechos reservados.</p>
+                <p class="footer-note">Claude Code es una marca de Anthropic. Este curso es independiente y no está afiliado oficialmente con Anthropic.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

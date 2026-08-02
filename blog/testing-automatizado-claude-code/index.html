@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Testing Automatizado con Claude Code: Genera Tests con IA | Curso Claude Code</title>
+    <meta name="description" content="Aprende a usar Claude Code para generar tests unitarios, de integración y E2E. Guía práctica con ejemplos en Jest, Pytest y más.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.ccodecurso.com/blog/testing-automatizado-claude-code/">
+
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://www.ccodecurso.com/blog/testing-automatizado-claude-code/">
+    <meta property="og:title" content="Testing Automatizado con Claude Code: Genera Tests con IA">
+    <meta property="og:description" content="Aprende a usar Claude Code para generar tests unitarios, de integración y E2E. Guía práctica con ejemplos en Jest, Pytest y más.">
+    <meta property="og:image" content="https://www.ccodecurso.com/og-default.png">
+    <meta property="og:locale" content="es_ES">
+    <meta property="og:site_name" content="Curso Claude Code">
+    <meta property="article:published_time" content="2026-01-30T00:30:00.000Z">
+    <meta property="article:modified_time" content="2026-01-31T00:40:33+01:00">
+    <meta property="article:section" content="Claude Code">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Testing Automatizado con Claude Code: Genera Tests con IA">
+    <meta name="twitter:description" content="Aprende a usar Claude Code para generar tests unitarios, de integración y E2E. Guía práctica con ejemplos en Jest, Pytest y más.">
+    <meta name="twitter:image" content="https://www.ccodecurso.com/og-default.png">
+
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="icon" type="image/png" href="/logo-64.png">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#3b82f6">
+
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="/blog-styles.css">
+    <link rel="stylesheet" href="/nav-frameworks.css">
+    <link rel="stylesheet" href="/article-enhancements.css">
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-48N09S40ZB"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-48N09S40ZB');
+    </script>
+    <script type="text/javascript">
+        (function(c,l,a,r,i,t,y){
+            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        })(window, document, "clarity", "script", "uk1m98vjak");
+    </script>
+
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://www.ccodecurso.com/#organization",
+  "name": "Curso Claude Code",
+  "url": "https://www.ccodecurso.com/",
+  "logo": {
+    "@type": "ImageObject",
+    "url": "https://www.ccodecurso.com/logo-512.png",
+    "width": 512,
+    "height": 512
+  }
+}
+    </script>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Testing Automatizado con Claude Code: Genera Tests con IA",
+  "description": "Aprende a usar Claude Code para generar tests unitarios, de integración y E2E. Guía práctica con ejemplos en Jest, Pytest y más.",
+  "image": "https://www.ccodecurso.com/og-default.png",
+  "author": {
+    "@id": "https://www.ccodecurso.com/#organization"
+  },
+  "publisher": {
+    "@id": "https://www.ccodecurso.com/#organization"
+  },
+  "datePublished": "2026-01-30T00:30:00.000Z",
+  "dateModified": "2026-01-31T00:40:33+01:00",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://www.ccodecurso.com/blog/testing-automatizado-claude-code/"
+  },
+  "url": "https://www.ccodecurso.com/blog/testing-automatizado-claude-code/",
+  "articleSection": "Claude Code",
+  "inLanguage": "es-ES",
+  "wordCount": 678
+}
+    </script>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Inicio",
+      "item": "https://www.ccodecurso.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Blog",
+      "item": "https://www.ccodecurso.com/blog/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Testing Automatizado con Claude Code: Genera Tests con IA",
+      "item": "https://www.ccodecurso.com/blog/testing-automatizado-claude-code/"
+    }
+  ]
+}
+    </script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-content">
+                <div class="logo">
+                    <a href="/">
+                        <div class="logo-icon">
+                            <img src="/logo-64.png" alt="Curso Claude Code" width="32" height="32" loading="eager">
+                        </div>
+                        <span class="logo-text">Curso Claude Code</span>
+                    </a>
+                </div>
+                <button class="nav-toggle" aria-label="Abrir menú" aria-expanded="false">
+                    <span></span><span></span><span></span>
+                </button>
+                <div class="nav-links">
+                    <a href="/">Inicio</a>
+                    <a href="/blog/" class="active">Blog</a>
+                    <a href="/frameworks-agenticos.html">Frameworks Claude Code</a>
+                    <a href="/frameworks-construir-agentes.html">Agentes IA</a>
+                    <a href="/changelog.html">Changelog</a>
+                    <a href="/#formulario" class="btn-nav nav-cta">Descargar Guía Gratis</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <article class="post-article">
+        <div class="container post-container">
+            <nav class="breadcrumbs" aria-label="Migas de pan">
+                <a href="/">Inicio</a> › <a href="/blog/">Blog</a> › <span>Testing Automatizado con Claude Code: Genera Tests con IA</span>
+            </nav>
+
+            <header class="post-header">
+                <div class="post-meta">
+                    <span class="post-category">Claude Code</span>
+                    <time class="post-date" datetime="2026-01-30T00:30:00.000Z">30 de enero de 2026</time>
+                    <span class="post-reading-time">10 min de lectura</span>
+                </div>
+                <h1 class="post-title-main">Testing Automatizado con Claude Code: Genera Tests con IA</h1>
+                <p class="post-excerpt">Aprende a usar Claude Code para generar tests unitarios, de integración y E2E. Guía práctica con ejemplos en Jest, Pytest y más.</p>
+            </header>
+
+
+            <div class="post-content">
+<h2>Testing con IA: El Nuevo Paradigma</h2><p>Una de las mejores aplicaciones de <a href="/blog/que-es-claude-code-tutorial-2026/" title="Qué es Claude Code Tutorial 2026">Claude Code</a> es la <strong>generación de tests</strong>. Claude entiende tu código y puede crear tests completos, incluyendo edge cases que podrías olvidar.</p><p>Si quieres dominar esta y otras capacidades, el <a href="/" title="Curso de Claude Code en español">curso de Claude Code</a> te enseña todo lo necesario.</p><h2>Por Qué Usar Claude Code para Testing</h2><ul><li><strong>Velocidad:</strong> Tests en minutos, no horas</li><li><strong>Cobertura:</strong> Claude encuentra edge cases</li><li><strong>Consistencia:</strong> Sigue tus patrones existentes</li><li><strong>Aprendizaje:</strong> Ves buenos ejemplos de tests</li></ul><h2>Generar Tests Unitarios</h2><h3>Ejemplo con Jest (JavaScript)</h3><p>Tienes este código:</p><pre><code>// utils/calculator.js
+export function add(a, b) {
+  return a + b;
+}
+
+export function divide(a, b) {
+  if (b === 0) throw new Error('Division by zero');
+  return a / b;
+}</code></pre><p>En Claude Code:</p><pre><code>Genera tests unitarios con Jest para @utils/calculator.js
+Incluye casos de éxito y edge cases.</code></pre><p>Claude genera:</p><pre><code>// utils/calculator.test.js
+import { add, divide } from './calculator';
+
+describe('Calculator', () => {
+  describe('add', () => {
+    it('should add two positive numbers', () => {
+      expect(add(2, 3)).toBe(5);
+    });
+
+    it('should handle negative numbers', () => {
+      expect(add(-1, 5)).toBe(4);
+    });
+
+    it('should handle zero', () => {
+      expect(add(0, 0)).toBe(0);
+    });
+  });
+
+  describe('divide', () => {
+    it('should divide two numbers', () => {
+      expect(divide(10, 2)).toBe(5);
+    });
+
+    it('should handle decimal results', () => {
+      expect(divide(5, 2)).toBe(2.5);
+    });
+
+    it('should throw error on division by zero', () => {
+      expect(() => divide(10, 0)).toThrow('Division by zero');
+    });
+  });
+});</code></pre><h2>Tests con Pytest (Python)</h2><p>En Claude Code:</p><pre><code>Genera tests con Pytest para @services/user_service.py
+Usa fixtures y parametrize para edge cases.</code></pre><p>Claude genera:</p><pre><code>import pytest
+from services.user_service import UserService
+
+@pytest.fixture
+def user_service():
+    return UserService()
+
+@pytest.fixture
+def sample_user():
+    return {"name": "John", "email": "john@example.com"}
+
+class TestUserService:
+    def test_create_user_success(self, user_service, sample_user):
+        result = user_service.create(sample_user)
+        assert result.name == "John"
+        assert result.email == "john@example.com"
+
+    @pytest.mark.parametrize("invalid_email", [
+        "invalid",
+        "@nodomain",
+        "spaces in@email.com",
+    ])
+    def test_create_user_invalid_email(self, user_service, invalid_email):
+        with pytest.raises(ValueError):
+            user_service.create({"name": "Test", "email": invalid_email})
+
+    def test_create_user_duplicate_email(self, user_service, sample_user):
+        user_service.create(sample_user)
+        with pytest.raises(DuplicateError):
+            user_service.create(sample_user)</code></pre><h2>Tests de Integración</h2><p>En Claude Code:</p><pre><code>Genera tests de integración para la API REST en @routes/api.js
+Usa supertest y mockea la base de datos.</code></pre><h2>Tests E2E con Playwright</h2><pre><code>Genera tests E2E con Playwright para el flujo de login.
+El usuario debe poder:
+1. Ir a /login
+2. Ingresar credenciales
+3. Ver el dashboard</code></pre><p>Claude genera:</p><pre><code>import { test, expect } from '@playwright/test';
+
+test.describe('Login Flow', () => {
+  test('should login successfully with valid credentials', async ({ page }) => {
+    await page.goto('/login');
+    
+    await page.fill('[data-testid="email"]', 'user@example.com');
+    await page.fill('[data-testid="password"]', 'password123');
+    await page.click('[data-testid="login-button"]');
+    
+    await expect(page).toHaveURL('/dashboard');
+    await expect(page.locator('h1')).toContainText('Welcome');
+  });
+
+  test('should show error with invalid credentials', async ({ page }) => {
+    await page.goto('/login');
+    
+    await page.fill('[data-testid="email"]', 'wrong@example.com');
+    await page.fill('[data-testid="password"]', 'wrongpassword');
+    await page.click('[data-testid="login-button"]');
+    
+    await expect(page.locator('.error-message')).toBeVisible();
+  });
+});</code></pre><h2>Prompts Efectivos para Tests</h2><p>Conocer los <a href="/blog/comandos-claude-code-esenciales/" title="Comandos de Claude Code Esenciales">comandos esenciales de Claude Code</a> te ayudará a escribir mejores prompts.</p><h3>Para Cobertura Completa</h3><pre><code>Genera tests para @archivo.js con:
+- Happy path
+- Edge cases (null, undefined, empty)
+- Error handling
+- Boundary conditions
+- Async scenarios si aplica</code></pre><h3>Para Seguir Patrones Existentes</h3><pre><code>Mira los tests en @tests/ y genera tests para
+@nuevo_modulo.js siguiendo el mismo estilo y estructura.</code></pre><h2>Mejorando Tests Existentes</h2><pre><code>Revisa @tests/user.test.js y sugiere:
+1. Tests que faltan
+2. Edge cases no cubiertos
+3. Mejoras en la estructura</code></pre><h2>Mocking con Claude Code</h2><pre><code>El servicio en @services/payment.js usa Stripe.
+Genera tests que mockeen las llamadas a Stripe
+usando jest.mock().</code></pre><h2>Tips para Mejores Tests</h2><ol><li><strong>Sé específico:</strong> Menciona el framework de testing</li><li><strong>Da contexto:</strong> Explica qué hace el código</li><li><strong>Pide edge cases:</strong> Claude los encuentra si se lo pides</li><li><strong>Revisa:</strong> Siempre ejecuta los tests generados</li></ol><h2>Workflow Recomendado</h2><ol><li>Escribe el código de producción</li><li>Pide a Claude Code que genere tests</li><li>Ejecuta los tests: <code>/run npm test</code></li><li>Si fallan, pide a Claude que los corrija</li><li>Itera hasta tener buena cobertura</li></ol><h2>Conclusión</h2><p>Claude Code puede multiplicar tu productividad en testing. No reemplaza entender testing, pero automatiza la parte repetitiva.</p><p>Empieza generando tests para código existente sin tests. Verás cómo mejora tu cobertura rápidamente. Si eres principiante, comienza con la <a href="/blog/claude-code-principiantes-guia/" title="Claude Code para Principiantes Guía">guía de Claude Code para principiantes</a>. Y para desarrollo web con tests, revisa nuestra guía de <a href="/blog/claude-code-desarrollo-web/" title="Claude Code para Desarrollo Web">Claude Code para desarrollo web</a>. Todo esto en el <a href="/" title="Curso de Claude Code en español">curso de Claude Code</a>.</p>
+            </div>
+
+            <aside class="post-related">
+                <h2>Seguir leyendo</h2>
+                <ul>
+                    <li><a href="/blog/openclaw-guia-completa-2026/">OpenClaw: Guía Completa del Asistente IA Personal 2026</a></li>
+                    <li><a href="/blog/openclaw-whatsapp-telegram-tutorial/">Cómo Conectar OpenClaw a WhatsApp y Telegram: Tutorial 2026</a></li>
+                    <li><a href="/blog/openclaw-skills-automatizacion/">OpenClaw Skills: Automatiza tu Vida con IA</a></li>
+                </ul>
+            </aside>
+
+            <div class="post-footer">
+                <div class="post-cta">
+                    <h2>¿Quieres aprender Claude Code en serio?</h2>
+                    <p>Descarga gratis la guía de los 10 comandos esenciales y entra en la lista de la formación en español.</p>
+                    <a href="/#formulario" class="btn-primary">Descargar la guía gratis</a>
+                </div>
+            </div>
+        </div>
+    </article>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <div class="logo-icon">
+                            <img src="/logo-64.png" alt="Curso Claude Code" width="32" height="32" loading="lazy">
+                        </div>
+                        <span class="logo-text">Curso Claude Code</span>
+                    </div>
+                    <p class="footer-description">
+                        Formación de Claude Code en español para desarrolladores que ya programan.
+                    </p>
+                </div>
+                <div class="footer-section">
+                    <h4 class="footer-title">Enlaces</h4>
+                    <ul class="footer-links">
+                        <li><a href="/">Inicio</a></li>
+                        <li><a href="/blog/">Blog</a></li>
+                        <li><a href="/changelog.html">Changelog de Claude Code</a></li>
+                        <li><a href="/#formulario">Descargar la guía</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4 class="footer-title">Legal</h4>
+                    <ul class="footer-links">
+                        <li><a href="/privacidad.html">Política de privacidad</a></li>
+                        <li><a href="/terminos.html">Términos y condiciones</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Curso Claude Code. Todos los derechos reservados.</p>
+                <p class="footer-note">Claude Code es una marca de Anthropic. Este curso es independiente y no está afiliado oficialmente con Anthropic.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

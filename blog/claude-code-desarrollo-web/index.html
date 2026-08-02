@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Claude Code para Desarrollo Web: React, Next.js y Más | Curso Claude Code</title>
+    <meta name="description" content="Usa Claude Code para crear aplicaciones web modernas. Tutorial con ejemplos de React, Next.js, APIs y despliegue.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.ccodecurso.com/blog/claude-code-desarrollo-web/">
+
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://www.ccodecurso.com/blog/claude-code-desarrollo-web/">
+    <meta property="og:title" content="Claude Code para Desarrollo Web: React, Next.js y Más">
+    <meta property="og:description" content="Usa Claude Code para crear aplicaciones web modernas. Tutorial con ejemplos de React, Next.js, APIs y despliegue.">
+    <meta property="og:image" content="https://www.ccodecurso.com/og-default.png">
+    <meta property="og:locale" content="es_ES">
+    <meta property="og:site_name" content="Curso Claude Code">
+    <meta property="article:published_time" content="2026-01-30T00:00:00.000Z">
+    <meta property="article:modified_time" content="2026-01-31T00:40:33+01:00">
+    <meta property="article:section" content="Claude Code">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Claude Code para Desarrollo Web: React, Next.js y Más">
+    <meta name="twitter:description" content="Usa Claude Code para crear aplicaciones web modernas. Tutorial con ejemplos de React, Next.js, APIs y despliegue.">
+    <meta name="twitter:image" content="https://www.ccodecurso.com/og-default.png">
+
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="icon" type="image/png" href="/logo-64.png">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#3b82f6">
+
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="/blog-styles.css">
+    <link rel="stylesheet" href="/nav-frameworks.css">
+    <link rel="stylesheet" href="/article-enhancements.css">
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-48N09S40ZB"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-48N09S40ZB');
+    </script>
+    <script type="text/javascript">
+        (function(c,l,a,r,i,t,y){
+            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        })(window, document, "clarity", "script", "uk1m98vjak");
+    </script>
+
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://www.ccodecurso.com/#organization",
+  "name": "Curso Claude Code",
+  "url": "https://www.ccodecurso.com/",
+  "logo": {
+    "@type": "ImageObject",
+    "url": "https://www.ccodecurso.com/logo-512.png",
+    "width": 512,
+    "height": 512
+  }
+}
+    </script>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Claude Code para Desarrollo Web: React, Next.js y Más",
+  "description": "Usa Claude Code para crear aplicaciones web modernas. Tutorial con ejemplos de React, Next.js, APIs y despliegue.",
+  "image": "https://www.ccodecurso.com/og-default.png",
+  "author": {
+    "@id": "https://www.ccodecurso.com/#organization"
+  },
+  "publisher": {
+    "@id": "https://www.ccodecurso.com/#organization"
+  },
+  "datePublished": "2026-01-30T00:00:00.000Z",
+  "dateModified": "2026-01-31T00:40:33+01:00",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://www.ccodecurso.com/blog/claude-code-desarrollo-web/"
+  },
+  "url": "https://www.ccodecurso.com/blog/claude-code-desarrollo-web/",
+  "articleSection": "Claude Code",
+  "inLanguage": "es-ES",
+  "wordCount": 709
+}
+    </script>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Inicio",
+      "item": "https://www.ccodecurso.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Blog",
+      "item": "https://www.ccodecurso.com/blog/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Claude Code para Desarrollo Web: React, Next.js y Más",
+      "item": "https://www.ccodecurso.com/blog/claude-code-desarrollo-web/"
+    }
+  ]
+}
+    </script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-content">
+                <div class="logo">
+                    <a href="/">
+                        <div class="logo-icon">
+                            <img src="/logo-64.png" alt="Curso Claude Code" width="32" height="32" loading="eager">
+                        </div>
+                        <span class="logo-text">Curso Claude Code</span>
+                    </a>
+                </div>
+                <button class="nav-toggle" aria-label="Abrir menú" aria-expanded="false">
+                    <span></span><span></span><span></span>
+                </button>
+                <div class="nav-links">
+                    <a href="/">Inicio</a>
+                    <a href="/blog/" class="active">Blog</a>
+                    <a href="/frameworks-agenticos.html">Frameworks Claude Code</a>
+                    <a href="/frameworks-construir-agentes.html">Agentes IA</a>
+                    <a href="/changelog.html">Changelog</a>
+                    <a href="/#formulario" class="btn-nav nav-cta">Descargar Guía Gratis</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <article class="post-article">
+        <div class="container post-container">
+            <nav class="breadcrumbs" aria-label="Migas de pan">
+                <a href="/">Inicio</a> › <a href="/blog/">Blog</a> › <span>Claude Code para Desarrollo Web: React, Next.js y Más</span>
+            </nav>
+
+            <header class="post-header">
+                <div class="post-meta">
+                    <span class="post-category">Claude Code</span>
+                    <time class="post-date" datetime="2026-01-30T00:00:00.000Z">30 de enero de 2026</time>
+                    <span class="post-reading-time">12 min de lectura</span>
+                </div>
+                <h1 class="post-title-main">Claude Code para Desarrollo Web: React, Next.js y Más</h1>
+                <p class="post-excerpt">Usa Claude Code para crear aplicaciones web modernas. Tutorial con ejemplos de React, Next.js, APIs y despliegue.</p>
+            </header>
+
+
+            <div class="post-content">
+<h2>Desarrollo Web con Claude Code</h2><p><a href="/blog/que-es-claude-code-tutorial-2026/" title="Qué es Claude Code Tutorial 2026">Claude Code</a> es especialmente potente para <strong>desarrollo web</strong>. Entiende frameworks modernos, mejores prácticas y puede generar componentes completos.</p><p>Si quieres dominar Claude Code para desarrollo web, el <a href="/" title="Curso de Claude Code en español">curso de Claude Code</a> te enseña todo lo necesario.</p><h2>Frameworks Soportados</h2><ul><li><strong>React:</strong> Componentes, hooks, estado</li><li><strong>Next.js:</strong> App Router, Server Components, API Routes</li><li><strong>Vue:</strong> Composition API, Nuxt</li><li><strong>Svelte:</strong> Componentes, SvelteKit</li><li><strong>Node.js:</strong> Express, Fastify, APIs REST</li></ul><h2>Crear un Proyecto React desde Cero</h2><p>En Claude Code:</p><pre><code>Crea un proyecto React con Vite que tenga:
+- TypeScript
+- Tailwind CSS
+- React Router
+- Estructura de carpetas organizada</code></pre><p>Claude ejecutará los comandos necesarios y creará la estructura.</p><h2>Generar Componentes</h2><h3>Componente de UI</h3><pre><code>Crea un componente Button en React con TypeScript que:
+- Tenga variantes: primary, secondary, danger
+- Soporte loading state
+- Use Tailwind para estilos
+- Incluya tipos para las props</code></pre><p>Claude genera:</p><pre><code>// components/Button.tsx
+import { ButtonHTMLAttributes, ReactNode } from 'react';
+
+interface ButtonProps extends ButtonHTMLAttributes&lt;HTMLButtonElement&gt; {
+  variant?: 'primary' | 'secondary' | 'danger';
+  isLoading?: boolean;
+  children: ReactNode;
+}
+
+const variantStyles = {
+  primary: 'bg-blue-600 hover:bg-blue-700 text-white',
+  secondary: 'bg-gray-200 hover:bg-gray-300 text-gray-800',
+  danger: 'bg-red-600 hover:bg-red-700 text-white',
+};
+
+export function Button({
+  variant = 'primary',
+  isLoading = false,
+  children,
+  disabled,
+  ...props
+}: ButtonProps) {
+  return (
+    &lt;button
+      className={`px-4 py-2 rounded-lg font-medium transition-colors
+        ${variantStyles[variant]}
+        ${(disabled || isLoading) ? 'opacity-50 cursor-not-allowed' : ''}`}
+      disabled={disabled || isLoading}
+      {...props}
+    &gt;
+      {isLoading ? (
+        &lt;span className="flex items-center gap-2"&gt;
+          &lt;LoadingSpinner /&gt;
+          Cargando...
+        &lt;/span&gt;
+      ) : children}
+    &lt;/button&gt;
+  );
+}</code></pre><h2>Next.js App Router</h2><h3>Crear API Route</h3><pre><code>Crea una API route en Next.js App Router para /api/users que:
+- GET: Lista usuarios de la base de datos
+- POST: Crea nuevo usuario con validación
+- Use Prisma como ORM</code></pre><h3>Server Component con Data Fetching</h3><pre><code>Crea un Server Component que:
+- Fetch datos de la API de productos
+- Muestre loading state con Suspense
+- Maneje errores gracefully</code></pre><h2>Conectar con Backend</h2><h3>API REST</h3><pre><code>Crea un servicio para consumir una API REST en React:
+- Endpoint base: /api
+- Métodos: GET, POST, PUT, DELETE
+- Manejo de errores
+- Tipos TypeScript para responses</code></pre><h3>Integración con APIs de IA</h3><p>Para integrar APIs de IA como Claude, revisa nuestro <a href="/blog/claude-api-tutorial-espanol/" title="Claude API Tutorial en Español">tutorial de Claude API</a>.</p><pre><code>Crea un componente de chat que:
+- Use la API de Claude/OpenAI
+- Muestre streaming de respuestas
+- Guarde historial en localStorage</code></pre><h2>Estilos y UI</h2><h3>Sistema de Diseño</h3><pre><code>Genera un sistema de diseño básico con Tailwind:
+- Colores primarios y secundarios
+- Tipografía escalable
+- Espaciado consistente
+- Componentes base: Card, Input, Modal</code></pre><h3>Responsive Design</h3><pre><code>Haz que @components/Dashboard.tsx sea responsive:
+- Mobile: stack vertical
+- Tablet: 2 columnas
+- Desktop: 3 columnas con sidebar</code></pre><h2>Testing de Componentes</h2><p>Aprende más sobre testing en nuestra guía de <a href="/blog/testing-automatizado-claude-code/" title="Testing Automatizado con Claude Code">testing automatizado con Claude Code</a>.</p><pre><code>Genera tests con React Testing Library para
+@components/LoginForm.tsx:
+- Test de renderizado
+- Test de validación
+- Test de submit</code></pre><h2>Optimización</h2><h3>Performance</h3><pre><code>Revisa @pages/Products.tsx y sugiere optimizaciones:
+- Memoización
+- Code splitting
+- Image optimization</code></pre><h3>SEO</h3><pre><code>Añade SEO optimizado a la página @app/blog/[slug]/page.tsx:
+- Meta tags dinámicos
+- Open Graph
+- JSON-LD para artículos</code></pre><h2>Despliegue</h2><h3>Configurar para Vercel</h3><pre><code>Configura el proyecto para deploy en Vercel:
+- vercel.json si necesario
+- Variables de entorno
+- Build settings</code></pre><h3>Docker</h3><pre><code>Crea un Dockerfile para esta app Next.js optimizado
+para producción con multi-stage build.</code></pre><h2>Workflow Completo</h2><p>Conoce los <a href="/blog/comandos-claude-code-esenciales/" title="Comandos de Claude Code Esenciales">comandos esenciales de Claude Code</a> para optimizar tu flujo de trabajo.</p><ol><li><strong>Planificación:</strong> Describe la feature a Claude</li><li><strong>Generación:</strong> Claude crea componentes y lógica</li><li><strong>Revisión:</strong> Verifica el código generado</li><li><strong>Testing:</strong> Pide tests a Claude</li><li><strong>Refinamiento:</strong> Itera con ajustes</li><li><strong>Deploy:</strong> Claude ayuda con configuración</li></ol><h2>Ejemplo: Feature Completa</h2><pre><code>Implementa un sistema de autenticación con:
+- Página de login (/login)
+- Página de registro (/register)
+- Contexto de Auth con React Context
+- Protección de rutas
+- Logout
+- Persistencia con cookies/localStorage</code></pre><p>Claude creará todos los archivos necesarios: componentes, hooks, contextos y páginas.</p><h2>Conclusión</h2><p>Claude Code es tu copiloto ideal para desarrollo web. Desde componentes simples hasta features completas, puede acelerar significativamente tu trabajo.</p><p>La clave: describe bien lo que necesitas y revisa el código generado. Claude es potente pero no infalible. Si eres principiante, empieza con la <a href="/blog/claude-code-principiantes-guia/" title="Claude Code para Principiantes Guía">guía de Claude Code para principiantes</a>. Y para configurar tu entorno, revisa cómo <a href="/blog/claude-code-vscode-configuracion/" title="Claude Code con VS Code">configurar Claude Code con VS Code</a>. Todo esto y más en el <a href="/" title="Curso de Claude Code en español">curso de Claude Code</a>.</p>
+            </div>
+
+            <aside class="post-related">
+                <h2>Seguir leyendo</h2>
+                <ul>
+                    <li><a href="/blog/openclaw-guia-completa-2026/">OpenClaw: Guía Completa del Asistente IA Personal 2026</a></li>
+                    <li><a href="/blog/openclaw-whatsapp-telegram-tutorial/">Cómo Conectar OpenClaw a WhatsApp y Telegram: Tutorial 2026</a></li>
+                    <li><a href="/blog/openclaw-skills-automatizacion/">OpenClaw Skills: Automatiza tu Vida con IA</a></li>
+                </ul>
+            </aside>
+
+            <div class="post-footer">
+                <div class="post-cta">
+                    <h2>¿Quieres aprender Claude Code en serio?</h2>
+                    <p>Descarga gratis la guía de los 10 comandos esenciales y entra en la lista de la formación en español.</p>
+                    <a href="/#formulario" class="btn-primary">Descargar la guía gratis</a>
+                </div>
+            </div>
+        </div>
+    </article>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <div class="logo-icon">
+                            <img src="/logo-64.png" alt="Curso Claude Code" width="32" height="32" loading="lazy">
+                        </div>
+                        <span class="logo-text">Curso Claude Code</span>
+                    </div>
+                    <p class="footer-description">
+                        Formación de Claude Code en español para desarrolladores que ya programan.
+                    </p>
+                </div>
+                <div class="footer-section">
+                    <h4 class="footer-title">Enlaces</h4>
+                    <ul class="footer-links">
+                        <li><a href="/">Inicio</a></li>
+                        <li><a href="/blog/">Blog</a></li>
+                        <li><a href="/changelog.html">Changelog de Claude Code</a></li>
+                        <li><a href="/#formulario">Descargar la guía</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4 class="footer-title">Legal</h4>
+                    <ul class="footer-links">
+                        <li><a href="/privacidad.html">Política de privacidad</a></li>
+                        <li><a href="/terminos.html">Términos y condiciones</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Curso Claude Code. Todos los derechos reservados.</p>
+                <p class="footer-note">Claude Code es una marca de Anthropic. Este curso es independiente y no está afiliado oficialmente con Anthropic.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

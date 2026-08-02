@@ -118,11 +118,21 @@ function generateBreadcrumbSchema(post) {
     return schema;
 }
 
-// Canonical URL for a post.
-// Never window.location.href: that made ?slug=X&utm_source=Y canonicalise to
-// itself, so every campaign parameter minted a new "canonical" URL.
+// Canonical URL for a post: always the pre-rendered page at /blog/<slug>/.
+//
+// This file is now a compatibility layer. post.html?slug=X is the URL Google
+// indexed before the blog was pre-rendered, so it stays alive and keeps
+// rendering — but it declares /blog/<slug>/ as the canonical version and lets
+// Google consolidate at its own pace.
+//
+// Deliberately a canonical and not a redirect: the old domain already 301s to
+// this one, and chaining a JS redirect after that 301 would stack a second
+// migration on top of one that has not settled yet.
+//
+// Never window.location.href either: that made ?slug=X&utm_source=Y
+// canonicalise to itself, so every campaign parameter minted a new "canonical".
 function canonicalUrlFor(post) {
-    return `https://www.ccodecurso.com/post.html?slug=${encodeURIComponent(post.slug)}`;
+    return `https://www.ccodecurso.com/blog/${encodeURIComponent(post.slug)}/`;
 }
 
 // Update all SEO meta tags

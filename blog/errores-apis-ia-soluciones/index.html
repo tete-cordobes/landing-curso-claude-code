@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Errores Comunes en APIs de IA y Cómo Solucionarlos | Curso Claude Code</title>
+    <meta name="description" content="Guía de troubleshooting para APIs de OpenAI, Claude, Gemini y más. Soluciona errores 429, 401, timeouts y otros problemas comunes.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.ccodecurso.com/blog/errores-apis-ia-soluciones/">
+
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://www.ccodecurso.com/blog/errores-apis-ia-soluciones/">
+    <meta property="og:title" content="Errores Comunes en APIs de IA y Cómo Solucionarlos">
+    <meta property="og:description" content="Guía de troubleshooting para APIs de OpenAI, Claude, Gemini y más. Soluciona errores 429, 401, timeouts y otros problemas comunes.">
+    <meta property="og:image" content="https://www.ccodecurso.com/og-default.png">
+    <meta property="og:locale" content="es_ES">
+    <meta property="og:site_name" content="Curso Claude Code">
+    <meta property="article:published_time" content="2026-01-30T02:30:00.000Z">
+    <meta property="article:modified_time" content="2026-01-31T00:40:33+01:00">
+    <meta property="article:section" content="Claude Code">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Errores Comunes en APIs de IA y Cómo Solucionarlos">
+    <meta name="twitter:description" content="Guía de troubleshooting para APIs de OpenAI, Claude, Gemini y más. Soluciona errores 429, 401, timeouts y otros problemas comunes.">
+    <meta name="twitter:image" content="https://www.ccodecurso.com/og-default.png">
+
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="icon" type="image/png" href="/logo-64.png">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#3b82f6">
+
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="/blog-styles.css">
+    <link rel="stylesheet" href="/nav-frameworks.css">
+    <link rel="stylesheet" href="/article-enhancements.css">
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-48N09S40ZB"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-48N09S40ZB');
+    </script>
+    <script type="text/javascript">
+        (function(c,l,a,r,i,t,y){
+            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        })(window, document, "clarity", "script", "uk1m98vjak");
+    </script>
+
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://www.ccodecurso.com/#organization",
+  "name": "Curso Claude Code",
+  "url": "https://www.ccodecurso.com/",
+  "logo": {
+    "@type": "ImageObject",
+    "url": "https://www.ccodecurso.com/logo-512.png",
+    "width": 512,
+    "height": 512
+  }
+}
+    </script>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Errores Comunes en APIs de IA y Cómo Solucionarlos",
+  "description": "Guía de troubleshooting para APIs de OpenAI, Claude, Gemini y más. Soluciona errores 429, 401, timeouts y otros problemas comunes.",
+  "image": "https://www.ccodecurso.com/og-default.png",
+  "author": {
+    "@id": "https://www.ccodecurso.com/#organization"
+  },
+  "publisher": {
+    "@id": "https://www.ccodecurso.com/#organization"
+  },
+  "datePublished": "2026-01-30T02:30:00.000Z",
+  "dateModified": "2026-01-31T00:40:33+01:00",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://www.ccodecurso.com/blog/errores-apis-ia-soluciones/"
+  },
+  "url": "https://www.ccodecurso.com/blog/errores-apis-ia-soluciones/",
+  "articleSection": "Claude Code",
+  "inLanguage": "es-ES",
+  "wordCount": 578
+}
+    </script>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Inicio",
+      "item": "https://www.ccodecurso.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Blog",
+      "item": "https://www.ccodecurso.com/blog/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Errores Comunes en APIs de IA y Cómo Solucionarlos",
+      "item": "https://www.ccodecurso.com/blog/errores-apis-ia-soluciones/"
+    }
+  ]
+}
+    </script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-content">
+                <div class="logo">
+                    <a href="/">
+                        <div class="logo-icon">
+                            <img src="/logo-64.png" alt="Curso Claude Code" width="32" height="32" loading="eager">
+                        </div>
+                        <span class="logo-text">Curso Claude Code</span>
+                    </a>
+                </div>
+                <button class="nav-toggle" aria-label="Abrir menú" aria-expanded="false">
+                    <span></span><span></span><span></span>
+                </button>
+                <div class="nav-links">
+                    <a href="/">Inicio</a>
+                    <a href="/blog/" class="active">Blog</a>
+                    <a href="/frameworks-agenticos.html">Frameworks Claude Code</a>
+                    <a href="/frameworks-construir-agentes.html">Agentes IA</a>
+                    <a href="/changelog.html">Changelog</a>
+                    <a href="/#formulario" class="btn-nav nav-cta">Descargar Guía Gratis</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <article class="post-article">
+        <div class="container post-container">
+            <nav class="breadcrumbs" aria-label="Migas de pan">
+                <a href="/">Inicio</a> › <a href="/blog/">Blog</a> › <span>Errores Comunes en APIs de IA y Cómo Solucionarlos</span>
+            </nav>
+
+            <header class="post-header">
+                <div class="post-meta">
+                    <span class="post-category">Claude Code</span>
+                    <time class="post-date" datetime="2026-01-30T02:30:00.000Z">30 de enero de 2026</time>
+                    <span class="post-reading-time">8 min de lectura</span>
+                </div>
+                <h1 class="post-title-main">Errores Comunes en APIs de IA y Cómo Solucionarlos</h1>
+                <p class="post-excerpt">Guía de troubleshooting para APIs de OpenAI, Claude, Gemini y más. Soluciona errores 429, 401, timeouts y otros problemas comunes.</p>
+            </header>
+
+
+            <div class="post-content">
+<h2>Guía de Solución de Errores en APIs de IA</h2><p>Trabajar con APIs de inteligencia artificial implica encontrarse con errores. Esta guía te ayuda a diagnosticar y solucionar los problemas más comunes.</p><p>Si estás aprendiendo a usar APIs de IA, el <a href="/" title="Curso de Claude Code en español">curso de Claude Code</a> te enseña las mejores prácticas para evitar estos errores.</p><h2>Errores de Autenticación (401/403)</h2><h3>Error 401: Unauthorized</h3><p><strong>Mensaje:</strong> "Invalid API key" o "Authentication failed"</p><p><strong>Causas:</strong></p><ul><li>API key incorrecta o expirada</li><li>Key no configurada en variables de entorno</li><li>Formato incorrecto del header</li></ul><p><strong>Solución:</strong></p><pre><code># Verificar que la key está configurada
+echo $OPENAI_API_KEY
+echo $ANTHROPIC_API_KEY
+
+# Verificar formato correcto
+# OpenAI: "Bearer sk-..."
+# Claude: "x-api-key: sk-ant-..."</code></pre><p>Consulta nuestro <a href="/blog/claude-api-tutorial-espanol/" title="Claude API Tutorial en Español">tutorial de Claude API</a> para configurar correctamente tu API key.</p><h3>Error 403: Forbidden</h3><p><strong>Causas:</strong></p><ul><li>Sin permisos para el modelo/endpoint</li><li>Región no soportada</li><li>Cuenta suspendida</li></ul><p><strong>Solución:</strong> Verifica el estado de tu cuenta en el dashboard del proveedor.</p><h2>Errores de Rate Limit (429)</h2><h3>Error 429: Too Many Requests</h3><p><strong>Mensaje:</strong> "Rate limit exceeded"</p><p><strong>Causas:</strong></p><ul><li>Demasiadas peticiones por minuto</li><li>Exceso de tokens por minuto</li><li>Tier de uso bajo</li></ul><p><strong>Solución:</strong></p><pre><code>import time
+from tenacity import retry, wait_exponential, stop_after_attempt
+
+@retry(wait=wait_exponential(min=1, max=60), stop=stop_after_attempt(5))
+def call_api(prompt):
+    return client.messages.create(
+        model="claude-3-5-sonnet-20241022",
+        max_tokens=1024,
+        messages=[{"role": "user", "content": prompt}]
+    )</code></pre><h2>Errores de Cuota (402/insufficient_quota)</h2><h3>Error: Insufficient Quota</h3><p><strong>Causas:</strong></p><ul><li>Sin créditos en la cuenta</li><li>Límite de gasto alcanzado</li><li>Método de pago inválido</li></ul><p><strong>Solución:</strong></p><ol><li>Verifica saldo en el dashboard</li><li>Añade créditos o actualiza método de pago</li><li>Aumenta límites de gasto si es necesario</li></ol><p>Consulta nuestra <a href="/blog/precios-apis-ia-2026/" title="Precios de APIs de IA 2026">guía de precios de APIs de IA</a> para planificar tu presupuesto.</p><h2>Errores de Timeout</h2><h3>Error: Request Timeout</h3><p><strong>Causas:</strong></p><ul><li>Prompt muy largo procesándose</li><li>Problemas de red</li><li>Servidor sobrecargado</li></ul><p><strong>Solución:</strong></p><pre><code>import httpx
+
+client = anthropic.Anthropic(
+    timeout=httpx.Timeout(300.0, connect=10.0)  # 5 min timeout
+)</code></pre><h2>Errores de Contenido</h2><h3>Content Policy Violation</h3><p><strong>Mensaje:</strong> "Content blocked by safety filters"</p><p><strong>Causas:</strong></p><ul><li>Prompt contiene contenido prohibido</li><li>Modelo detecta intención maliciosa</li><li>Filtros de seguridad muy estrictos</li></ul><p><strong>Solución:</strong></p><ul><li>Reformula el prompt de forma más neutral</li><li>Evita palabras clave sensibles</li><li>Ajusta safety settings si la API lo permite</li></ul><h2>Errores de Formato</h2><h3>Error 400: Bad Request</h3><p><strong>Causas comunes:</strong></p><ul><li>JSON malformado</li><li>Parámetros faltantes o inválidos</li><li>Modelo no existe</li></ul><p><strong>Ejemplo de validación:</strong></p><pre><code>def validate_request(messages, model, max_tokens):
+    if not messages:
+        raise ValueError("Messages cannot be empty")
+    if max_tokens < 1 or max_tokens > 4096:
+        raise ValueError("max_tokens must be 1-4096")
+    
+    valid_models = ["claude-3-5-sonnet-20241022", "gpt-4-turbo"]
+    if model not in valid_models:
+        raise ValueError(f"Invalid model: {model}")</code></pre><h2>Errores Específicos por Proveedor</h2><h3>OpenAI</h3><table><tr><th>Error</th><th>Solución</th></tr><tr><td>context_length_exceeded</td><td>Reduce el prompt o usa modelo con más contexto</td></tr><tr><td>model_not_found</td><td>Verifica nombre exacto del modelo</td></tr><tr><td>billing_hard_limit_reached</td><td>Aumenta límite en billing settings</td></tr></table><p>Para comparar OpenAI con otras opciones, revisa nuestra <a href="/blog/openai-vs-claude-api-comparativa/" title="OpenAI API vs Claude API Comparativa">comparativa OpenAI vs Claude API</a>.</p><h3>Anthropic (Claude)</h3><table><tr><th>Error</th><th>Solución</th></tr><tr><td>overloaded_error</td><td>Retry con backoff exponencial</td></tr><tr><td>invalid_request_error</td><td>Verifica formato de mensajes</td></tr></table><h3>Google (Gemini)</h3><table><tr><th>Error</th><th>Solución</th></tr><tr><td>SAFETY_BLOCK</td><td>Ajusta safety_settings</td></tr><tr><td>RECITATION</td><td>Reformula para evitar copia directa</td></tr></table><h2>Patrón de Manejo de Errores Robusto</h2><pre><code>import anthropic
+import logging
+
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger(__name__)
+
+def safe_api_call(prompt, max_retries=3):
+    for attempt in range(max_retries):
+        try:
+            response = client.messages.create(
+                model="claude-3-5-sonnet-20241022",
+                max_tokens=1024,
+                messages=[{"role": "user", "content": prompt}]
+            )
+            return response.content[0].text
+            
+        except anthropic.RateLimitError:
+            wait = 2 ** attempt
+            logger.warning(f"Rate limit, waiting {wait}s")
+            time.sleep(wait)
+            
+        except anthropic.AuthenticationError:
+            logger.error("Invalid API key")
+            raise
+            
+        except anthropic.APIError as e:
+            logger.error(f"API error: {e}")
+            if attempt == max_retries - 1:
+                raise
+    
+    raise Exception("Max retries exceeded")</code></pre><h2>Conclusión</h2><p>La mayoría de errores en APIs de IA tienen soluciones simples. Implementa manejo de errores robusto desde el inicio y ahorra horas de debugging.</p><p>Para una visión general de todas las APIs disponibles, consulta nuestra <a href="/blog/apis-inteligencia-artificial-guia/" title="APIs de Inteligencia Artificial Guía">guía completa de APIs de IA</a>. Y si quieres dominar estas herramientas, no te pierdas el <a href="/" title="Curso de Claude Code en español">curso de Claude Code</a>.</p>
+            </div>
+
+            <aside class="post-related">
+                <h2>Seguir leyendo</h2>
+                <ul>
+                    <li><a href="/blog/openclaw-guia-completa-2026/">OpenClaw: Guía Completa del Asistente IA Personal 2026</a></li>
+                    <li><a href="/blog/openclaw-whatsapp-telegram-tutorial/">Cómo Conectar OpenClaw a WhatsApp y Telegram: Tutorial 2026</a></li>
+                    <li><a href="/blog/openclaw-skills-automatizacion/">OpenClaw Skills: Automatiza tu Vida con IA</a></li>
+                </ul>
+            </aside>
+
+            <div class="post-footer">
+                <div class="post-cta">
+                    <h2>¿Quieres aprender Claude Code en serio?</h2>
+                    <p>Descarga gratis la guía de los 10 comandos esenciales y entra en la lista de la formación en español.</p>
+                    <a href="/#formulario" class="btn-primary">Descargar la guía gratis</a>
+                </div>
+            </div>
+        </div>
+    </article>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <div class="logo-icon">
+                            <img src="/logo-64.png" alt="Curso Claude Code" width="32" height="32" loading="lazy">
+                        </div>
+                        <span class="logo-text">Curso Claude Code</span>
+                    </div>
+                    <p class="footer-description">
+                        Formación de Claude Code en español para desarrolladores que ya programan.
+                    </p>
+                </div>
+                <div class="footer-section">
+                    <h4 class="footer-title">Enlaces</h4>
+                    <ul class="footer-links">
+                        <li><a href="/">Inicio</a></li>
+                        <li><a href="/blog/">Blog</a></li>
+                        <li><a href="/changelog.html">Changelog de Claude Code</a></li>
+                        <li><a href="/#formulario">Descargar la guía</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4 class="footer-title">Legal</h4>
+                    <ul class="footer-links">
+                        <li><a href="/privacidad.html">Política de privacidad</a></li>
+                        <li><a href="/terminos.html">Términos y condiciones</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Curso Claude Code. Todos los derechos reservados.</p>
+                <p class="footer-note">Claude Code es una marca de Anthropic. Este curso es independiente y no está afiliado oficialmente con Anthropic.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

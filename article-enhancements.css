@@ -736,6 +736,22 @@ html {
     border-bottom: 1px solid var(--geist-border);
 }
 
+/* La regla .navbar de arriba pone fondo blanco, pero .logo-text hereda
+   color: var(--text-primary), que en styles.css es #ffffff porque alli el
+   navbar es oscuro. Resultado: texto blanco sobre blanco, el nombre del sitio
+   invisible en todas las paginas que cargan esta hoja. */
+.navbar .logo a {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    text-decoration: none;
+    color: inherit;
+}
+
+.navbar .logo-text {
+    color: var(--geist-fg);
+}
+
 .nav-links a {
     font-family: var(--geist-font-sans);
     font-size: 0.9375rem;

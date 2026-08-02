@@ -7,7 +7,7 @@
       "image": "images/blog/openclaw-hero.webp",
       "readingTime": "15 min de lectura",
       "date": "2026-01-31T10:00:00.000Z",
-      "category": "openclaw"
+      "category": ""
     },
     {
       "slug": "openclaw-whatsapp-telegram-tutorial",
@@ -16,7 +16,7 @@
       "image": "images/blog/openclaw-discord.webp",
       "readingTime": "10 min de lectura",
       "date": "2026-01-31T09:30:00.000Z",
-      "category": "openclaw"
+      "category": ""
     },
     {
       "slug": "openclaw-skills-automatizacion",
@@ -25,7 +25,7 @@
       "image": "images/blog/openclaw-architecture.webp",
       "readingTime": "12 min de lectura",
       "date": "2026-01-31T09:00:00.000Z",
-      "category": "openclaw"
+      "category": ""
     },
     {
       "slug": "openclaw-vs-chatgpt-app",
@@ -34,7 +34,7 @@
       "image": "images/blog/openclaw-comparison.webp",
       "readingTime": "8 min de lectura",
       "date": "2026-01-31T08:30:00.000Z",
-      "category": "openclaw"
+      "category": ""
     },
     {
       "slug": "openclaw-apiyi-configuracion",
@@ -43,196 +43,188 @@
       "image": "images/blog/apiyi-proxy.webp",
       "readingTime": "7 min de lectura",
       "date": "2026-01-31T08:00:00.000Z",
-      "category": "openclaw"
+      "category": ""
     },
     {
       "slug": "crear-videos-con-ia-gratis-2026",
       "title": "Crear Videos con IA Gratis 2026: 10 Herramientas + Tutorial Completo",
-      "excerpt": "Aprende a crear videos con inteligencia artificial gratis. Comparamos Sora 2, Synthesia, HeyGen y las mejores herramientas.",
+      "excerpt": "Aprende a crear videos con inteligencia artificial gratis. Comparamos Sora 2, Synthesia, HeyGen y las mejores herramientas. Tutorial paso a paso para generar videos con IA sin marca de agua.",
       "image": "",
       "readingTime": "15 min de lectura",
       "date": "2026-01-30T10:00:00.000Z",
-      "category": "video-imagen"
+      "category": ""
     },
     {
       "slug": "que-es-claude-code-tutorial-2026",
       "title": "Qué es Claude Code y Cómo Empezar: Tutorial Completo 2026",
-      "excerpt": "Descubre qué es Claude Code, la herramienta de Anthropic para programar con IA. Tutorial paso a paso.",
+      "excerpt": "Descubre qué es Claude Code, la herramienta de Anthropic para programar con IA. Tutorial paso a paso para instalar, configurar y empezar a usarlo desde cero.",
       "image": "",
       "readingTime": "12 min de lectura",
       "date": "2026-01-30T09:00:00.000Z",
-      "category": "claude-code"
+      "category": ""
     },
     {
       "slug": "claude-code-vs-cursor-comparativa",
       "title": "Claude Code vs Cursor: Comparativa Completa 2026",
-      "excerpt": "Comparamos Claude Code y Cursor, las dos herramientas más populares para programar con IA.",
+      "excerpt": "Comparamos Claude Code y Cursor, las dos herramientas más populares para programar con IA. Descubre cuál es mejor para tu flujo de trabajo.",
       "image": "",
       "readingTime": "10 min de lectura",
       "date": "2026-01-30T08:30:00.000Z",
-      "category": "claude-code"
+      "category": ""
     },
     {
       "slug": "comandos-claude-code-esenciales",
       "title": "10 Comandos de Claude Code que Debes Conocer",
-      "excerpt": "Domina los comandos más útiles de Claude Code. Desde slash commands hasta atajos de teclado.",
+      "excerpt": "Domina los comandos más útiles de Claude Code. Desde slash commands hasta atajos de teclado, aprende a ser más productivo con esta guía completa.",
       "image": "",
       "readingTime": "8 min de lectura",
       "date": "2026-01-30T08:00:00.000Z",
-      "category": "claude-code"
+      "category": ""
     },
     {
       "slug": "claude-code-principiantes-guia",
       "title": "Claude Code para Principiantes: Guía Paso a Paso",
-      "excerpt": "¿Nuevo en Claude Code? Esta guía te lleva desde la instalación hasta tu primer proyecto completo.",
+      "excerpt": "¿Nuevo en Claude Code? Esta guía te lleva desde la instalación hasta tu primer proyecto completo. Aprende a programar con IA desde cero.",
       "image": "",
       "readingTime": "14 min de lectura",
       "date": "2026-01-30T07:30:00.000Z",
-      "category": "claude-code"
+      "category": ""
     },
     {
       "slug": "claude-api-tutorial-espanol",
       "title": "Claude API Tutorial: Guía Completa en Español 2026",
-      "excerpt": "Aprende a usar la API de Claude de Anthropic. Tutorial con ejemplos de código en Python y JavaScript.",
+      "excerpt": "Aprende a usar la API de Claude de Anthropic. Tutorial con ejemplos de código en Python y JavaScript para integrar Claude en tus aplicaciones.",
       "image": "",
       "readingTime": "11 min de lectura",
       "date": "2026-01-30T07:00:00.000Z",
-      "category": "apis"
+      "category": ""
     },
     {
       "slug": "apis-inteligencia-artificial-guia",
       "title": "APIs de Inteligencia Artificial: Guía Completa 2026",
-      "excerpt": "Descubre las mejores APIs de IA disponibles: OpenAI, Claude, Gemini, Grok y más.",
+      "excerpt": "Descubre las mejores APIs de IA disponibles: OpenAI, Claude, Gemini, Grok y más. Comparativa de precios, capacidades y casos de uso.",
       "image": "",
       "readingTime": "13 min de lectura",
       "date": "2026-01-30T06:30:00.000Z",
-      "category": "apis"
+      "category": ""
     },
     {
       "slug": "sora-2-api-tutorial-espanol",
       "title": "Sora 2 API: Tutorial Completo en Español 2026",
-      "excerpt": "Aprende a usar la API de Sora 2 de OpenAI para generar videos con IA.",
+      "excerpt": "Aprende a usar la API de Sora 2 de OpenAI para generar videos con IA. Tutorial con ejemplos de código, parámetros y solución de errores.",
       "image": "",
       "readingTime": "10 min de lectura",
       "date": "2026-01-30T06:00:00.000Z",
-      "category": "video-imagen"
+      "category": ""
     },
     {
       "slug": "openai-vs-claude-api-comparativa",
       "title": "OpenAI API vs Claude API: ¿Cuál Elegir en 2026?",
-      "excerpt": "Comparamos las APIs de OpenAI y Anthropic. Diferencias en modelos, precios y capacidades.",
+      "excerpt": "Comparamos las APIs de OpenAI y Anthropic. Diferencias en modelos, precios, capacidades y casos de uso para ayudarte a elegir la mejor.",
       "image": "",
       "readingTime": "9 min de lectura",
       "date": "2026-01-30T05:30:00.000Z",
-      "category": "apis"
+      "category": ""
     },
     {
       "slug": "claude-code-n8n-automatizacion",
       "title": "Automatizar con Claude Code + N8N: Guía Práctica",
-      "excerpt": "Aprende a combinar Claude Code con N8N para crear flujos de trabajo automatizados con IA.",
+      "excerpt": "Aprende a combinar Claude Code con N8N para crear flujos de trabajo automatizados con IA. Tutorial paso a paso con ejemplos prácticos.",
       "image": "",
       "readingTime": "11 min de lectura",
       "date": "2026-01-30T05:00:00.000Z",
-      "category": "claude-code"
+      "category": ""
     },
     {
       "slug": "crear-chatbot-claude-api",
       "title": "Cómo Crear un Chatbot con Claude API: Tutorial Completo",
-      "excerpt": "Aprende a crear un chatbot funcional usando la API de Claude. Tutorial con código en Python y JavaScript.",
+      "excerpt": "Aprende a crear un chatbot funcional usando la API de Claude. Tutorial paso a paso con código en Python y JavaScript.",
       "image": "",
       "readingTime": "12 min de lectura",
       "date": "2026-01-30T04:30:00.000Z",
-      "category": "apis"
+      "category": ""
     },
     {
       "slug": "gemini-api-guia-espanol",
       "title": "Gemini API: Guía Completa en Español 2026",
-      "excerpt": "Tutorial completo de la API de Gemini de Google. Aprende a usar Gemini 2.5 Pro con ejemplos.",
+      "excerpt": "Tutorial completo de la API de Gemini de Google. Aprende a usar Gemini 2.5 Pro con ejemplos de código y mejores prácticas.",
       "image": "",
       "readingTime": "10 min de lectura",
       "date": "2026-01-30T04:00:00.000Z",
-      "category": "apis"
+      "category": ""
     },
     {
       "slug": "deepseek-r1-vs-o3-comparativa",
       "title": "DeepSeek R1 vs OpenAI o3: ¿Cuál es Mejor para Razonamiento?",
-      "excerpt": "Comparativa detallada entre DeepSeek R1 y OpenAI o3. Analizamos rendimiento, precios y casos de uso.",
+      "excerpt": "Comparativa detallada entre DeepSeek R1 y OpenAI o3. Analizamos rendimiento, precios y casos de uso de estos modelos de razonamiento.",
       "image": "",
       "readingTime": "9 min de lectura",
       "date": "2026-01-30T03:30:00.000Z",
-      "category": "apis"
+      "category": ""
     },
     {
       "slug": "generar-imagenes-ia-api",
       "title": "Cómo Generar Imágenes con IA por API: Guía 2026",
-      "excerpt": "Aprende a usar APIs de generación de imágenes como DALL-E 3, Midjourney y Flux.",
+      "excerpt": "Aprende a usar APIs de generación de imágenes como DALL-E 3, Midjourney y Flux. Tutorial con ejemplos de código y mejores prácticas.",
       "image": "",
       "readingTime": "11 min de lectura",
       "date": "2026-01-30T03:00:00.000Z",
-      "category": "video-imagen"
+      "category": ""
     },
     {
       "slug": "errores-apis-ia-soluciones",
       "title": "Errores Comunes en APIs de IA y Cómo Solucionarlos",
-      "excerpt": "Guía de troubleshooting para APIs de OpenAI, Claude, Gemini y más.",
+      "excerpt": "Guía de troubleshooting para APIs de OpenAI, Claude, Gemini y más. Soluciona errores 429, 401, timeouts y otros problemas comunes.",
       "image": "",
       "readingTime": "8 min de lectura",
       "date": "2026-01-30T02:30:00.000Z",
-      "category": "apis"
+      "category": ""
     },
     {
       "slug": "precios-apis-ia-2026",
       "title": "Precios de APIs de IA 2026: Guía Completa de Costos",
-      "excerpt": "Comparativa actualizada de precios de todas las APIs de IA: OpenAI, Claude, Gemini, DeepSeek y más.",
+      "excerpt": "Comparativa actualizada de precios de todas las APIs de IA: OpenAI, Claude, Gemini, DeepSeek y más. Aprende a optimizar costos.",
       "image": "",
       "readingTime": "9 min de lectura",
       "date": "2026-01-30T02:00:00.000Z",
-      "category": "apis"
+      "category": ""
     },
     {
       "slug": "cherry-studio-configuracion-apis",
       "title": "Cherry Studio + APIs de IA: Guía de Configuración",
-      "excerpt": "Configura Cherry Studio para usar múltiples APIs de IA. Tutorial paso a paso.",
+      "excerpt": "Configura Cherry Studio para usar múltiples APIs de IA. Tutorial paso a paso para conectar OpenAI, Claude, Gemini y más.",
       "image": "",
       "readingTime": "7 min de lectura",
       "date": "2026-01-30T01:30:00.000Z",
-      "category": "herramientas"
+      "category": ""
     },
     {
       "slug": "claude-code-vscode-configuracion",
       "title": "Cómo Configurar Claude Code con VS Code",
-      "excerpt": "Guía para integrar Claude Code con Visual Studio Code. Configura la terminal, atajos y flujo de trabajo.",
+      "excerpt": "Guía para integrar Claude Code con Visual Studio Code. Configura la terminal, atajos y flujo de trabajo óptimo.",
       "image": "",
       "readingTime": "6 min de lectura",
       "date": "2026-01-30T01:00:00.000Z",
-      "category": "claude-code"
+      "category": ""
     },
     {
       "slug": "testing-automatizado-claude-code",
       "title": "Testing Automatizado con Claude Code: Genera Tests con IA",
-      "excerpt": "Aprende a usar Claude Code para generar tests unitarios, de integración y E2E.",
+      "excerpt": "Aprende a usar Claude Code para generar tests unitarios, de integración y E2E. Guía práctica con ejemplos en Jest, Pytest y más.",
       "image": "",
       "readingTime": "10 min de lectura",
       "date": "2026-01-30T00:30:00.000Z",
-      "category": "claude-code"
+      "category": ""
     },
     {
       "slug": "claude-code-desarrollo-web",
       "title": "Claude Code para Desarrollo Web: React, Next.js y Más",
-      "excerpt": "Usa Claude Code para crear aplicaciones web modernas. Tutorial con ejemplos.",
+      "excerpt": "Usa Claude Code para crear aplicaciones web modernas. Tutorial con ejemplos de React, Next.js, APIs y despliegue.",
       "image": "",
       "readingTime": "12 min de lectura",
       "date": "2026-01-30T00:00:00.000Z",
-      "category": "claude-code"
+      "category": ""
     }
   ],
-  "categories": {
-    "all": "Todos",
-    "claude-code": "Claude Code",
-    "apis": "APIs de IA",
-    "openclaw": "OpenClaw",
-    "video-imagen": "Video e Imagen",
-    "herramientas": "Herramientas"
-  },
-  "lastUpdated": "2026-01-31T10:00:00.000Z"
+  "categories": []
 }

@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Claude API Tutorial: Guía Completa en Español 2026 | Curso Claude Code</title>
+    <meta name="description" content="Aprende a usar la API de Claude de Anthropic. Tutorial con ejemplos de código en Python y JavaScript para integrar Claude en tus aplicaciones.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.ccodecurso.com/blog/claude-api-tutorial-espanol/">
+
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://www.ccodecurso.com/blog/claude-api-tutorial-espanol/">
+    <meta property="og:title" content="Claude API Tutorial: Guía Completa en Español 2026">
+    <meta property="og:description" content="Aprende a usar la API de Claude de Anthropic. Tutorial con ejemplos de código en Python y JavaScript para integrar Claude en tus aplicaciones.">
+    <meta property="og:image" content="https://www.ccodecurso.com/og-default.png">
+    <meta property="og:locale" content="es_ES">
+    <meta property="og:site_name" content="Curso Claude Code">
+    <meta property="article:published_time" content="2026-01-30T07:00:00.000Z">
+    <meta property="article:modified_time" content="2026-01-31T00:40:33+01:00">
+    <meta property="article:section" content="Claude Code">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Claude API Tutorial: Guía Completa en Español 2026">
+    <meta name="twitter:description" content="Aprende a usar la API de Claude de Anthropic. Tutorial con ejemplos de código en Python y JavaScript para integrar Claude en tus aplicaciones.">
+    <meta name="twitter:image" content="https://www.ccodecurso.com/og-default.png">
+
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="icon" type="image/png" href="/logo-64.png">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#3b82f6">
+
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="/blog-styles.css">
+    <link rel="stylesheet" href="/nav-frameworks.css">
+    <link rel="stylesheet" href="/article-enhancements.css">
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-48N09S40ZB"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-48N09S40ZB');
+    </script>
+    <script type="text/javascript">
+        (function(c,l,a,r,i,t,y){
+            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        })(window, document, "clarity", "script", "uk1m98vjak");
+    </script>
+
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://www.ccodecurso.com/#organization",
+  "name": "Curso Claude Code",
+  "url": "https://www.ccodecurso.com/",
+  "logo": {
+    "@type": "ImageObject",
+    "url": "https://www.ccodecurso.com/logo-512.png",
+    "width": 512,
+    "height": 512
+  }
+}
+    </script>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Claude API Tutorial: Guía Completa en Español 2026",
+  "description": "Aprende a usar la API de Claude de Anthropic. Tutorial con ejemplos de código en Python y JavaScript para integrar Claude en tus aplicaciones.",
+  "image": "https://www.ccodecurso.com/og-default.png",
+  "author": {
+    "@id": "https://www.ccodecurso.com/#organization"
+  },
+  "publisher": {
+    "@id": "https://www.ccodecurso.com/#organization"
+  },
+  "datePublished": "2026-01-30T07:00:00.000Z",
+  "dateModified": "2026-01-31T00:40:33+01:00",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://www.ccodecurso.com/blog/claude-api-tutorial-espanol/"
+  },
+  "url": "https://www.ccodecurso.com/blog/claude-api-tutorial-espanol/",
+  "articleSection": "Claude Code",
+  "inLanguage": "es-ES",
+  "wordCount": 598
+}
+    </script>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Inicio",
+      "item": "https://www.ccodecurso.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Blog",
+      "item": "https://www.ccodecurso.com/blog/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Claude API Tutorial: Guía Completa en Español 2026",
+      "item": "https://www.ccodecurso.com/blog/claude-api-tutorial-espanol/"
+    }
+  ]
+}
+    </script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-content">
+                <div class="logo">
+                    <a href="/">
+                        <div class="logo-icon">
+                            <img src="/logo-64.png" alt="Curso Claude Code" width="32" height="32" loading="eager">
+                        </div>
+                        <span class="logo-text">Curso Claude Code</span>
+                    </a>
+                </div>
+                <button class="nav-toggle" aria-label="Abrir menú" aria-expanded="false">
+                    <span></span><span></span><span></span>
+                </button>
+                <div class="nav-links">
+                    <a href="/">Inicio</a>
+                    <a href="/blog/" class="active">Blog</a>
+                    <a href="/frameworks-agenticos.html">Frameworks Claude Code</a>
+                    <a href="/frameworks-construir-agentes.html">Agentes IA</a>
+                    <a href="/changelog.html">Changelog</a>
+                    <a href="/#formulario" class="btn-nav nav-cta">Descargar Guía Gratis</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <article class="post-article">
+        <div class="container post-container">
+            <nav class="breadcrumbs" aria-label="Migas de pan">
+                <a href="/">Inicio</a> › <a href="/blog/">Blog</a> › <span>Claude API Tutorial: Guía Completa en Español 2026</span>
+            </nav>
+
+            <header class="post-header">
+                <div class="post-meta">
+                    <span class="post-category">Claude Code</span>
+                    <time class="post-date" datetime="2026-01-30T07:00:00.000Z">30 de enero de 2026</time>
+                    <span class="post-reading-time">11 min de lectura</span>
+                </div>
+                <h1 class="post-title-main">Claude API Tutorial: Guía Completa en Español 2026</h1>
+                <p class="post-excerpt">Aprende a usar la API de Claude de Anthropic. Tutorial con ejemplos de código en Python y JavaScript para integrar Claude en tus aplicaciones.</p>
+            </header>
+
+
+            <div class="post-content">
+<h2>¿Qué es la API de Claude?</h2><p>La <strong>API de Claude</strong> te permite integrar el modelo de inteligencia artificial de Anthropic en tus propias aplicaciones. Puedes crear chatbots, asistentes, generadores de contenido y mucho más.</p><p>Si querés usar Claude para programar, mirá también <a href="/blog/que-es-claude-code-tutorial-2026/" title="Qué es Claude Code">qué es Claude Code</a>, la CLI oficial. Y para dominar todo, el <a href="/" title="Curso de Claude Code en español">curso de Claude Code</a>.</p><h2>Ventajas de Claude API</h2><ul><li><strong>Contexto extenso:</strong> Hasta 200K tokens de contexto</li><li><strong>Razonamiento avanzado:</strong> Excelente para tareas complejas</li><li><strong>Código de calidad:</strong> Genera código limpio y funcional</li><li><strong>Multilenguaje:</strong> Funciona muy bien en español</li><li><strong>Seguro:</strong> Diseñado para ser útil y seguro</li></ul><p>Comparamos Claude con otras APIs en <a href="/blog/openai-vs-claude-api-comparativa/" title="OpenAI vs Claude API">OpenAI vs Claude API</a>.</p><h2>Requisitos</h2><ul><li>Cuenta en Anthropic (console.anthropic.com)</li><li>API Key</li><li>Python 3.8+ o Node.js 18+</li></ul><h2>Obtener tu API Key</h2><ol><li>Registra en <strong>console.anthropic.com</strong></li><li>Añade método de pago (se cobra por uso)</li><li>Ve a "API Keys" > "Create Key"</li><li>Guarda la key de forma segura</li></ol><h2>Instalación</h2><h3>Python</h3><pre><code>pip install anthropic</code></pre><h3>JavaScript/Node.js</h3><pre><code>npm install @anthropic-ai/sdk</code></pre><h2>Tu Primera Llamada a la API</h2><h3>Python</h3><pre><code>import anthropic\n\nclient = anthropic.Anthropic(\n    api_key="tu-api-key"\n)\n\nmessage = client.messages.create(\n    model="claude-3-5-sonnet-20241022",\n    max_tokens=1024,\n    messages=[\n        {"role": "user", "content": "Hola, ¿cómo estás?"}\n    ]\n)\n\nprint(message.content[0].text)</code></pre><h3>JavaScript</h3><pre><code>import Anthropic from '@anthropic-ai/sdk';\n\nconst anthropic = new Anthropic({\n    apiKey: 'tu-api-key'\n});\n\nconst message = await anthropic.messages.create({\n    model: 'claude-3-5-sonnet-20241022',\n    max_tokens: 1024,\n    messages: [\n        { role: 'user', content: 'Hola, ¿cómo estás?' }\n    ]\n});\n\nconsole.log(message.content[0].text);</code></pre><h2>Modelos Disponibles</h2><p>Para precios actualizados y comparativas, mirá nuestra <a href="/blog/precios-apis-ia-2026/" title="Precios APIs IA">guía de precios de APIs de IA</a>.</p><table><tr><th>Modelo</th><th>Uso Recomendado</th><th>Precio (input/output)</th></tr><tr><td>claude-3-5-sonnet</td><td>Balance calidad/costo</td><td>$3/$15 por 1M tokens</td></tr><tr><td>claude-3-opus</td><td>Tareas complejas</td><td>$15/$75 por 1M tokens</td></tr><tr><td>claude-3-haiku</td><td>Respuestas rápidas</td><td>$0.25/$1.25 por 1M tokens</td></tr></table><h2>Parámetros Importantes</h2><h3>max_tokens</h3><p>Máximo de tokens en la respuesta. Más tokens = respuestas más largas.</p><h3>temperature</h3><p>Controla la creatividad (0-1). Bajo = más predecible, alto = más creativo.</p><pre><code>message = client.messages.create(\n    model="claude-3-5-sonnet-20241022",\n    max_tokens=2048,\n    temperature=0.7,  # Creatividad media\n    messages=[...]\n)</code></pre><h3>system</h3><p>Instrucciones de comportamiento para Claude.</p><pre><code>message = client.messages.create(\n    model="claude-3-5-sonnet-20241022",\n    max_tokens=1024,\n    system="Eres un asistente experto en Python. Responde siempre con ejemplos de código.",\n    messages=[...]\n)</code></pre><h2>Conversaciones Multi-turno</h2><pre><code>messages = [\n    {"role": "user", "content": "¿Qué es Python?"},\n    {"role": "assistant", "content": "Python es un lenguaje..."},\n    {"role": "user", "content": "¿Cómo instalo una librería?"}\n]\n\nresponse = client.messages.create(\n    model="claude-3-5-sonnet-20241022",\n    max_tokens=1024,\n    messages=messages\n)</code></pre><h2>Streaming de Respuestas</h2><p>Para respuestas largas, usa streaming:</p><pre><code>with client.messages.stream(\n    model="claude-3-5-sonnet-20241022",\n    max_tokens=1024,\n    messages=[{"role": "user", "content": "Escribe un cuento"}]\n) as stream:\n    for text in stream.text_stream:\n        print(text, end="", flush=True)</code></pre><h2>Manejo de Errores</h2><p>Tenemos una <a href="/blog/errores-apis-ia-soluciones/" title="Errores APIs IA">guía completa de errores de APIs</a>. Los más comunes:</p><pre><code>import anthropic\n\ntry:\n    response = client.messages.create(...)\nexcept anthropic.RateLimitError:\n    print("Límite de peticiones alcanzado")\nexcept anthropic.AuthenticationError:\n    print("API key inválida")\nexcept anthropic.APIError as e:\n    print(f"Error de API: {e}")</code></pre><h2>Ejemplo Práctico: Chatbot Simple</h2><p>Tenemos un tutorial más completo en <a href="/blog/crear-chatbot-claude-api/" title="Crear chatbot Claude API">cómo crear un chatbot con Claude API</a>.</p><pre><code>import anthropic\n\nclient = anthropic.Anthropic(api_key="tu-key")\nconversation = []\n\nwhile True:\n    user_input = input("Tú: ")\n    if user_input.lower() == 'salir':\n        break\n    \n    conversation.append({"role": "user", "content": user_input})\n    \n    response = client.messages.create(\n        model="claude-3-5-sonnet-20241022",\n        max_tokens=1024,\n        system="Eres un asistente amigable.",\n        messages=conversation\n    )\n    \n    assistant_message = response.content[0].text\n    conversation.append({"role": "assistant", "content": assistant_message})\n    print(f"Claude: {assistant_message}")</code></pre><h2>Usar Claude API sin Tarjeta Internacional</h2><p>Si no tenés tarjeta internacional, podés usar proxies como APIYI. Mirá nuestra <a href="/blog/openclaw-apiyi-configuracion/" title="APIYI configuración">guía de configuración con APIYI</a>.</p><h2>Claude API + OpenClaw</h2><p>Podés usar Claude API en tus apps de mensajería con <a href="/blog/openclaw-guia-completa-2026/" title="OpenClaw guía">OpenClaw</a>, el asistente personal open source.</p><h2>Mejores Prácticas</h2><ol><li><strong>Usa system prompts:</strong> Define el comportamiento claramente</li><li><strong>Controla max_tokens:</strong> No pidas más de lo necesario</li><li><strong>Implementa retry:</strong> Para manejar rate limits</li><li><strong>Guarda contexto:</strong> Para conversaciones coherentes</li><li><strong>Valida respuestas:</strong> La IA puede equivocarse</li></ol><h2>Conclusión</h2><p>La Claude API es potente y fácil de usar. Con lo que aprendiste en este tutorial ya puedes empezar a crear aplicaciones con inteligencia artificial.</p><p>¿Quieres aprender más? El <a href="/" title="Curso de Claude Code en español">curso de Claude Code</a> te enseña a combinar Claude API con Claude Code para máximo poder de desarrollo.</p>
+            </div>
+
+            <aside class="post-related">
+                <h2>Seguir leyendo</h2>
+                <ul>
+                    <li><a href="/blog/openclaw-guia-completa-2026/">OpenClaw: Guía Completa del Asistente IA Personal 2026</a></li>
+                    <li><a href="/blog/openclaw-whatsapp-telegram-tutorial/">Cómo Conectar OpenClaw a WhatsApp y Telegram: Tutorial 2026</a></li>
+                    <li><a href="/blog/openclaw-skills-automatizacion/">OpenClaw Skills: Automatiza tu Vida con IA</a></li>
+                </ul>
+            </aside>
+
+            <div class="post-footer">
+                <div class="post-cta">
+                    <h2>¿Quieres aprender Claude Code en serio?</h2>
+                    <p>Descarga gratis la guía de los 10 comandos esenciales y entra en la lista de la formación en español.</p>
+                    <a href="/#formulario" class="btn-primary">Descargar la guía gratis</a>
+                </div>
+            </div>
+        </div>
+    </article>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <div class="logo-icon">
+                            <img src="/logo-64.png" alt="Curso Claude Code" width="32" height="32" loading="lazy">
+                        </div>
+                        <span class="logo-text">Curso Claude Code</span>
+                    </div>
+                    <p class="footer-description">
+                        Formación de Claude Code en español para desarrolladores que ya programan.
+                    </p>
+                </div>
+                <div class="footer-section">
+                    <h4 class="footer-title">Enlaces</h4>
+                    <ul class="footer-links">
+                        <li><a href="/">Inicio</a></li>
+                        <li><a href="/blog/">Blog</a></li>
+                        <li><a href="/changelog.html">Changelog de Claude Code</a></li>
+                        <li><a href="/#formulario">Descargar la guía</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4 class="footer-title">Legal</h4>
+                    <ul class="footer-links">
+                        <li><a href="/privacidad.html">Política de privacidad</a></li>
+                        <li><a href="/terminos.html">Términos y condiciones</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Curso Claude Code. Todos los derechos reservados.</p>
+                <p class="footer-note">Claude Code es una marca de Anthropic. Este curso es independiente y no está afiliado oficialmente con Anthropic.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cómo Usar OpenClaw con APIYI: Guía de Configuración | Curso Claude Code</title>
+    <meta name="description" content="Configura OpenClaw para usar APIYI como proxy de API. Ideal si no tenés tarjeta internacional o querés ahorrar en costos.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.ccodecurso.com/blog/openclaw-apiyi-configuracion/">
+
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://www.ccodecurso.com/blog/openclaw-apiyi-configuracion/">
+    <meta property="og:title" content="Cómo Usar OpenClaw con APIYI: Guía de Configuración">
+    <meta property="og:description" content="Configura OpenClaw para usar APIYI como proxy de API. Ideal si no tenés tarjeta internacional o querés ahorrar en costos.">
+    <meta property="og:image" content="https://www.ccodecurso.com/images/blog/apiyi-proxy.webp">
+    <meta property="og:locale" content="es_ES">
+    <meta property="og:site_name" content="Curso Claude Code">
+    <meta property="article:published_time" content="2026-01-31T08:00:00.000Z">
+    <meta property="article:modified_time" content="2026-08-02T23:53:22+02:00">
+    <meta property="article:section" content="Claude Code">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Cómo Usar OpenClaw con APIYI: Guía de Configuración">
+    <meta name="twitter:description" content="Configura OpenClaw para usar APIYI como proxy de API. Ideal si no tenés tarjeta internacional o querés ahorrar en costos.">
+    <meta name="twitter:image" content="https://www.ccodecurso.com/images/blog/apiyi-proxy.webp">
+
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="icon" type="image/png" href="/logo-64.png">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#3b82f6">
+
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="/blog-styles.css">
+    <link rel="stylesheet" href="/nav-frameworks.css">
+    <link rel="stylesheet" href="/article-enhancements.css">
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-48N09S40ZB"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-48N09S40ZB');
+    </script>
+    <script type="text/javascript">
+        (function(c,l,a,r,i,t,y){
+            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        })(window, document, "clarity", "script", "uk1m98vjak");
+    </script>
+
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://www.ccodecurso.com/#organization",
+  "name": "Curso Claude Code",
+  "url": "https://www.ccodecurso.com/",
+  "logo": {
+    "@type": "ImageObject",
+    "url": "https://www.ccodecurso.com/logo-512.png",
+    "width": 512,
+    "height": 512
+  }
+}
+    </script>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Cómo Usar OpenClaw con APIYI: Guía de Configuración",
+  "description": "Configura OpenClaw para usar APIYI como proxy de API. Ideal si no tenés tarjeta internacional o querés ahorrar en costos.",
+  "image": "https://www.ccodecurso.com/images/blog/apiyi-proxy.webp",
+  "author": {
+    "@id": "https://www.ccodecurso.com/#organization"
+  },
+  "publisher": {
+    "@id": "https://www.ccodecurso.com/#organization"
+  },
+  "datePublished": "2026-01-31T08:00:00.000Z",
+  "dateModified": "2026-08-02T23:53:22+02:00",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://www.ccodecurso.com/blog/openclaw-apiyi-configuracion/"
+  },
+  "url": "https://www.ccodecurso.com/blog/openclaw-apiyi-configuracion/",
+  "articleSection": "Claude Code",
+  "inLanguage": "es-ES",
+  "wordCount": 588
+}
+    </script>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Inicio",
+      "item": "https://www.ccodecurso.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Blog",
+      "item": "https://www.ccodecurso.com/blog/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Cómo Usar OpenClaw con APIYI: Guía de Configuración",
+      "item": "https://www.ccodecurso.com/blog/openclaw-apiyi-configuracion/"
+    }
+  ]
+}
+    </script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-content">
+                <div class="logo">
+                    <a href="/">
+                        <div class="logo-icon">
+                            <img src="/logo-64.png" alt="Curso Claude Code" width="32" height="32" loading="eager">
+                        </div>
+                        <span class="logo-text">Curso Claude Code</span>
+                    </a>
+                </div>
+                <button class="nav-toggle" aria-label="Abrir menú" aria-expanded="false">
+                    <span></span><span></span><span></span>
+                </button>
+                <div class="nav-links">
+                    <a href="/">Inicio</a>
+                    <a href="/blog/" class="active">Blog</a>
+                    <a href="/frameworks-agenticos.html">Frameworks Claude Code</a>
+                    <a href="/frameworks-construir-agentes.html">Agentes IA</a>
+                    <a href="/changelog.html">Changelog</a>
+                    <a href="/#formulario" class="btn-nav nav-cta">Descargar Guía Gratis</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <article class="post-article">
+        <div class="container post-container">
+            <nav class="breadcrumbs" aria-label="Migas de pan">
+                <a href="/">Inicio</a> › <a href="/blog/">Blog</a> › <span>Cómo Usar OpenClaw con APIYI: Guía de Configuración</span>
+            </nav>
+
+            <header class="post-header">
+                <div class="post-meta">
+                    <span class="post-category">Claude Code</span>
+                    <time class="post-date" datetime="2026-01-31T08:00:00.000Z">31 de enero de 2026</time>
+                    <span class="post-reading-time">7 min de lectura</span>
+                </div>
+                <h1 class="post-title-main">Cómo Usar OpenClaw con APIYI: Guía de Configuración</h1>
+                <p class="post-excerpt">Configura OpenClaw para usar APIYI como proxy de API. Ideal si no tenés tarjeta internacional o querés ahorrar en costos.</p>
+            </header>
+
+            <div class="post-image-container">
+                <img src="/images/blog/apiyi-proxy.webp" alt="Cómo Usar OpenClaw con APIYI: Guía de Configuración" loading="lazy" decoding="async">
+            </div>
+
+            <div class="post-content">
+<img src="images/blog/apiyi-proxy.webp" alt="APIYI proxy configuración para acceder a Claude API sin tarjeta internacional" title="APIYI: Proxy para APIs de IA" loading="lazy" /><h2>¿Por Qué Usar APIYI con OpenClaw?</h2><p><strong>APIYI</strong> es un API router que te permite acceder a modelos como Claude y GPT-4 sin necesitar tarjeta de crédito internacional. Ventajas:</p><ul><li><strong>Pagos locales:</strong> Alipay, WeChat, transferencia</li><li><strong>Sin tarjeta internacional:</strong> Ideal para LATAM</li><li><strong>Descuentos:</strong> A veces más barato que directo</li><li><strong>Multi-modelo:</strong> Un endpoint, todos los modelos</li></ul><p>Si estás haciendo el <a href="/" title="Curso de Claude Code en español">curso de Claude Code</a> y no tenés acceso fácil a la API directa, APIYI es tu mejor opción.</p><h2>Crear Cuenta en APIYI</h2><ol><li>Ve a <strong>apiyi.com</strong></li><li>Registrate con email</li><li>Verificá tu cuenta</li><li>Cargá créditos con tu método preferido</li><li>Generá una API key en el dashboard</li></ol><h2>Configurar OpenClaw</h2><p>Si todavía no tenés OpenClaw instalado, empezá por nuestra <a href="/blog/openclaw-guia-completa-2026/" title="Guía completa de OpenClaw">guía completa de OpenClaw</a>.</p><h3>Método 1: Comando de Configuración</h3><pre><code>openclaw configure --section llm</code></pre><p>Cuando te pregunte:</p><ul><li><strong>Provider:</strong> openai-compatible</li><li><strong>Endpoint:</strong> https://api.apiyi.com/v1</li><li><strong>API Key:</strong> tu-api-key-de-apiyi</li><li><strong>Model:</strong> claude-3-5-sonnet-20241022</li></ul><h3>Método 2: Editar Configuración Directamente</h3><p>Editá <code>~/.openclaw/openclaw.json</code>:</p><pre><code>{\n  "llm": {\n    "provider": "openai-compatible",\n    "endpoint": "https://api.apiyi.com/v1",\n    "apiKey": "sk-apiyi-xxxxxxxxxxxxx",\n    "model": "claude-3-5-sonnet-20241022",\n    "maxTokens": 4096,\n    "temperature": 0.7\n  }\n}</code></pre><h2>Modelos Disponibles en APIYI</h2><p>APIYI soporta múltiples modelos. Los más usados con OpenClaw:</p><h3>Claude (Anthropic)</h3><ul><li><code>claude-3-5-sonnet-20241022</code> - Mejor balance calidad/costo</li><li><code>claude-3-opus-20240229</code> - Máxima calidad</li><li><code>claude-3-haiku-20240307</code> - Más rápido y barato</li></ul><p>Para entender las diferencias, mirá nuestro <a href="/blog/claude-api-tutorial-espanol/" title="Tutorial Claude API español">tutorial de Claude API</a>.</p><h3>GPT (OpenAI)</h3><ul><li><code>gpt-4o</code> - Último modelo multimodal</li><li><code>gpt-4-turbo</code> - Buena calidad, buen precio</li><li><code>gpt-4o-mini</code> - Económico</li></ul><h3>Otros</h3><ul><li><code>gemini-1.5-pro</code> - Google</li><li><code>deepseek-chat</code> - DeepSeek</li></ul><p>Tenemos guías de todos estos en nuestra <a href="/blog/apis-inteligencia-artificial-guia/" title="Guía de APIs de IA">guía de APIs de IA</a>.</p><h2>Configuración Multi-Modelo</h2><p>Podés configurar diferentes modelos para diferentes usos:</p><pre><code>{\n  "llm": {\n    "provider": "openai-compatible",\n    "endpoint": "https://api.apiyi.com/v1",\n    "apiKey": "sk-apiyi-xxxxxxxxxxxxx",\n    "models": {\n      "default": "claude-3-5-sonnet-20241022",\n      "fast": "claude-3-haiku-20240307",\n      "smart": "claude-3-opus-20240229",\n      "cheap": "gpt-4o-mini"\n    }\n  }\n}</code></pre><p>Después podés cambiar con <code>/model fast</code> en el chat.</p><h2>Verificar Conexión</h2><pre><code>openclaw doctor</code></pre><p>Deberías ver:</p><pre><code>✓ LLM endpoint reachable\n✓ API key valid\n✓ Model available</code></pre><h2>Probar</h2><pre><code>openclaw chat</code></pre><p>Escribí algo y verificá que responda.</p><h2>Optimizar Costos</h2><h3>1. Usar Haiku para Consultas Simples</h3><p>No necesitás Sonnet para preguntas básicas:</p><pre><code>{\n  "routing": {\n    "simple_queries": {\n      "pattern": "(clima|hora|fecha|qué es)",\n      "model": "claude-3-haiku-20240307"\n    },\n    "default": "claude-3-5-sonnet-20241022"\n  }\n}</code></pre><h3>2. Limitar Contexto</h3><p>Menos tokens de contexto = menos costo:</p><pre><code>{\n  "llm": {\n    "contextMessages": 10,\n    "maxContextTokens": 8000\n  }\n}</code></pre><h3>3. Cache de Respuestas</h3><p>Para preguntas repetitivas:</p><pre><code>{\n  "cache": {\n    "enabled": true,\n    "ttl": 3600\n  }\n}</code></pre><p>Para más tips de optimización, mirá nuestra <a href="/blog/precios-apis-ia-2026/" title="Precios APIs IA 2026">guía de precios de APIs</a>.</p><h2>Comparativa de Precios</h2><table><tr><th>Modelo</th><th>Directo</th><th>APIYI</th></tr><tr><td>Claude Sonnet</td><td>$3/$15 (in/out)</td><td>~$2.5/$12</td></tr><tr><td>Claude Opus</td><td>$15/$75</td><td>~$12/$60</td></tr><tr><td>GPT-4o</td><td>$5/$15</td><td>~$4/$12</td></tr></table><p>*Precios por millón de tokens, pueden variar.</p><h2>Solución de Problemas</h2><h3>Error 401: Unauthorized</h3><ul><li>Verificá que la API key sea correcta</li><li>Asegurate de tener créditos en APIYI</li></ul><h3>Error 429: Rate Limited</h3><ul><li>Esperá un minuto</li><li>Considerá upgrade de tier en APIYI</li></ul><p>Más errores comunes en nuestra <a href="/blog/errores-apis-ia-soluciones/" title="Errores comunes APIs IA">guía de troubleshooting</a>.</p><h3>Error de Modelo No Encontrado</h3><ul><li>Verificá el nombre exacto del modelo</li><li>Algunos modelos requieren acceso especial</li></ul><h3>Respuestas Lentas</h3><ul><li>APIYI agrega latencia mínima (~50-100ms)</li><li>Para latencia crítica, usá API directa</li></ul><h2>APIYI vs API Directa</h2><table><tr><th>Aspecto</th><th>APIYI</th><th>Directo</th></tr><tr><td>Pagos LATAM</td><td>✓</td><td>✗</td></tr><tr><td>Tarjeta internacional</td><td>No necesaria</td><td>Requerida</td></tr><tr><td>Latencia</td><td>+50-100ms</td><td>Mínima</td></tr><tr><td>Multi-modelo</td><td>Un endpoint</td><td>Múltiples configs</td></tr><tr><td>Soporte</td><td>APIYI</td><td>Anthropic/OpenAI</td></tr></table><h2>Usar APIYI con Cherry Studio</h2><p>APIYI también funciona con <a href="/blog/cherry-studio-configuracion-apis/" title="Cherry Studio configuración APIs">Cherry Studio</a>, otra forma de acceder a múltiples modelos desde una interfaz unificada.</p><h2>Conclusión</h2><p>APIYI es la forma más fácil de usar OpenClaw si estás en LATAM o no tenés tarjeta internacional. La configuración toma 5 minutos y funciona igual que la API directa.</p><p>Combiná APIYI con routing inteligente de modelos para optimizar costos sin sacrificar calidad. Y si querés dominar todas estas herramientas, el <a href="/" title="Curso de Claude Code - aprende a programar con IA">curso de Claude Code</a> te da las bases para convertirte en un power user de IA.</p>
+            </div>
+
+            <aside class="post-related">
+                <h2>Seguir leyendo</h2>
+                <ul>
+                    <li><a href="/blog/openclaw-guia-completa-2026/">OpenClaw: Guía Completa del Asistente IA Personal 2026</a></li>
+                    <li><a href="/blog/openclaw-whatsapp-telegram-tutorial/">Cómo Conectar OpenClaw a WhatsApp y Telegram: Tutorial 2026</a></li>
+                    <li><a href="/blog/openclaw-skills-automatizacion/">OpenClaw Skills: Automatiza tu Vida con IA</a></li>
+                </ul>
+            </aside>
+
+            <div class="post-footer">
+                <div class="post-cta">
+                    <h2>¿Quieres aprender Claude Code en serio?</h2>
+                    <p>Descarga gratis la guía de los 10 comandos esenciales y entra en la lista de la formación en español.</p>
+                    <a href="/#formulario" class="btn-primary">Descargar la guía gratis</a>
+                </div>
+            </div>
+        </div>
+    </article>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <div class="logo-icon">
+                            <img src="/logo-64.png" alt="Curso Claude Code" width="32" height="32" loading="lazy">
+                        </div>
+                        <span class="logo-text">Curso Claude Code</span>
+                    </div>
+                    <p class="footer-description">
+                        Formación de Claude Code en español para desarrolladores que ya programan.
+                    </p>
+                </div>
+                <div class="footer-section">
+                    <h4 class="footer-title">Enlaces</h4>
+                    <ul class="footer-links">
+                        <li><a href="/">Inicio</a></li>
+                        <li><a href="/blog/">Blog</a></li>
+                        <li><a href="/changelog.html">Changelog de Claude Code</a></li>
+                        <li><a href="/#formulario">Descargar la guía</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4 class="footer-title">Legal</h4>
+                    <ul class="footer-links">
+                        <li><a href="/privacidad.html">Política de privacidad</a></li>
+                        <li><a href="/terminos.html">Términos y condiciones</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Curso Claude Code. Todos los derechos reservados.</p>
+                <p class="footer-note">Claude Code es una marca de Anthropic. Este curso es independiente y no está afiliado oficialmente con Anthropic.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
