@@ -6,19 +6,31 @@ async function getPostBySlug() {
     const slug = urlParams.get('slug');
 
     if (!slug) {
-        window.location.href = 'blog.html';
+        window.location.replace('/404.html');
         return null;
     }
 
     try {
-        // Load post from GitHub
         const post = await loadPostContent(slug);
         return post;
     } catch (error) {
+        // Never redirect on a transient load failure. A crawler that hits this
+        // would see the article URL turn into a redirect and could drop it from
+        // the index. Show an inline error and keep the URL intact.
         console.error(`Error loading post ${slug}:`, error);
-        window.location.href = 'blog.html';
+        showLoadError();
         return null;
     }
+}
+
+// Inline error state — keeps the URL and the page alive.
+function showLoadError() {
+    const container = document.getElementById('postContent');
+    if (!container) return;
+    document.getElementById('postImageContainer')?.style.setProperty('display', 'none');
+    container.innerHTML = `
+        <p>No hemos podido cargar este artículo en este momento.</p>
+        <p><a href="/blog.html">Ver todos los artículos del blog</a></p>`;
 }
 
 // Format date
@@ -30,8 +42,8 @@ function formatDate(dateString) {
 
 // Generate JSON-LD Schema for BlogPosting
 function generatePostSchema(post) {
-    const currentUrl = window.location.href;
-    const postImage = post.image || 'https://www.ccodecurso.com/claude-color.png';
+    const currentUrl = canonicalUrlFor(post);
+    const postImage = post.image || 'https://www.ccodecurso.com/og-default.png';
 
     // Extract text from HTML content for word count
     const tempDiv = document.createElement('div');
@@ -55,7 +67,7 @@ function generatePostSchema(post) {
             "name": "Curso Claude Code",
             "logo": {
                 "@type": "ImageObject",
-                "url": "https://www.ccodecurso.com/claude-color.png"
+                "url": "https://www.ccodecurso.com/logo-512.png"
             }
         },
         "datePublished": post.date,
@@ -76,7 +88,7 @@ function generatePostSchema(post) {
 
 // Generate JSON-LD Schema for Breadcrumbs
 function generateBreadcrumbSchema(post) {
-    const currentUrl = window.location.href;
+    const currentUrl = canonicalUrlFor(post);
 
     const schema = {
         "@context": "https://schema.org",
@@ -106,10 +118,17 @@ function generateBreadcrumbSchema(post) {
     return schema;
 }
 
+// Canonical URL for a post.
+// Never window.location.href: that made ?slug=X&utm_source=Y canonicalise to
+// itself, so every campaign parameter minted a new "canonical" URL.
+function canonicalUrlFor(post) {
+    return `https://www.ccodecurso.com/post.html?slug=${encodeURIComponent(post.slug)}`;
+}
+
 // Update all SEO meta tags
 function updateSEOTags(post) {
-    const currentUrl = window.location.href;
-    const postImage = post.image || 'https://www.ccodecurso.com/claude-color.png';
+    const currentUrl = canonicalUrlFor(post);
+    const postImage = post.image || 'https://www.ccodecurso.com/og-default.png';
 
     // Basic SEO
     document.getElementById('postTitle').textContent = `${post.title} | Curso Claude Code`;

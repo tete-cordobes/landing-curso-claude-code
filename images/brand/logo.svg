@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256" role="img" aria-label="Curso Claude Code">
+  <rect width="256" height="256" rx="56" fill="#0F172A"/>
+  <!-- terminal chevron -->
+  <path d="M74 84 L126 128 L74 172"
+        fill="none" stroke="#3B82F6" stroke-width="22"
+        stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- cursor bar -->
+  <rect x="140" y="152" width="52" height="20" rx="10" fill="#60A5FA"/>
+</svg>
