@@ -294,11 +294,16 @@ document.addEventListener('DOMContentLoaded', function() {
                 // Scroll suave al mensaje de éxito
                 formSuccess.scrollIntoView({ behavior: 'smooth', block: 'center' });
 
-                // Opcional: Enviar a Google Analytics
-                if (typeof gtag !== 'undefined') {
-                    gtag('event', 'form_submission', {
-                        'event_category': 'Lead',
-                        'event_label': 'Waitlist Sign Up'
+                if (window.posthog) {
+                    posthog.identify(formData.email, {
+                        name: formData.name,
+                        role: formData.role || undefined
+                    });
+                    posthog.capture('form_submitted', {
+                        source: formData.source,
+                        role: formData.role || undefined,
+                        has_whatsapp: Boolean(formData.phone),
+                        newsletter: formData.newsletter
                     });
                 }
 
