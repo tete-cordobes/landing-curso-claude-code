@@ -229,7 +229,29 @@ def safe_api_call(prompt, max_retries=3):
                 <div class="post-cta">
                     <h2>¿Quieres aprender Claude Code en serio?</h2>
                     <p>Descarga gratis la guía de los 10 comandos esenciales y entra en la lista de la formación en español.</p>
-                    <a href="/#formulario" class="btn-primary">Descargar la guía gratis</a>
+                    <form class="contact-form" data-lead-form data-source="Blog articulo">
+                        <div class="form-group">
+                            <label for="lead-name">Nombre</label>
+                            <input type="text" id="lead-name" name="name" placeholder="Tu nombre" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="lead-email">Email</label>
+                            <input type="email" id="lead-email" name="email" placeholder="tu@email.com" required>
+                        </div>
+                        <div class="form-group checkbox-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="privacidad" required>
+                                <span class="checkbox-text">He leído y acepto la <a href="/privacidad.html" target="_blank" rel="noopener">política de privacidad</a></span>
+                            </label>
+                        </div>
+                        <button type="submit" class="btn-submit">
+                            <span class="btn-text">Descargar guía + Unirme a la lista</span>
+                        </button>
+                    </form>
+                    <div class="form-success" data-lead-success style="display: none;">
+                        <h3>¡Listo! Revisa tu email</h3>
+                        <p>Te hemos enviado la guía de los 10 comandos esenciales.</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -272,5 +294,6 @@ def safe_api_call(prompt, max_retries=3):
             </div>
         </div>
     </footer>
+    <script src="/lead-form.js"></script>
 </body>
 </html>

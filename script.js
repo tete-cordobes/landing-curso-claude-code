@@ -453,6 +453,10 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
+    if (window.location.hash === '#formulario' && formSection) {
+        formSection.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+
     // Smooth scroll para todos los enlaces que apuntan a #formulario
     document.querySelectorAll('a[href="#formulario"]').forEach(link => {
         link.addEventListener('click', function(e) {

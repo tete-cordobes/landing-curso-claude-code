@@ -5,6 +5,8 @@ Allow: /
 Disallow: /admin.html
 Disallow: /login.html
 Disallow: /test-localStorage.html
+Disallow: /post.html
+Disallow: /blog.html
 
 # Sitemap location
 Sitemap: https://www.ccodecurso.com/sitemap.xml
